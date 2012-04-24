@@ -456,5 +456,4 @@ window.addEventListener('DOMContentLoaded', function() {
 		}
 	}
 	//delete window.correctflagext;
-	//window.correctflagext ;
 }, false);
