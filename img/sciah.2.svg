@@ -1,0 +1,29 @@
+<?xml version="1.0"?> 
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 16" preserveAspectRatio="none">
+<style type="text/css">
+	@media all and (max-width:18px) { #contour { opacity:.2} #cliprect {rx:1px}}
+</style>
+<defs>
+	<clipPath id="clip">
+		<rect id="cliprect" fill="none" width="24" height="16" />
+	</clipPath>
+	<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="0.0898" y1="-2.271" x2="25.0163" y2="19.2252">
+		<stop offset="0.1484" stop-color="#F1F0EC"/>
+		<stop offset="0.2196" stop-color="#FEFDF9"/>
+		<stop offset="0.3429" stop-color="#FCFBF7"/>
+		<stop offset="0.3872" stop-color="#f5f4f0"/>
+		<stop offset="0.4116" stop-color="#f2f1ed"/>
+		<stop offset="0.4662" stop-color="#FEFDF9"/>
+		<stop offset="0.6008" stop-color="#FBFAF6"/>
+		<stop offset="0.6929" stop-color="#F2F1ED"/>
+		<stop offset="0.7722" stop-color="#E3E2DE"/>
+		<stop offset="0.8439" stop-color="#CDCCC9"/>
+		<stop offset="0.8739" stop-color="#c9c8c5"/>
+	</linearGradient>
+</defs>
+<g clip-path="url(#clip)">
+	<rect fill="url(#SVGID_1_)" width="24" height="16"/>
+	<rect fill="#E21313" y="5" width="24" height="6"/>
+	<rect id="contour" stroke="#000" stroke-width="2" opacity="0.10" fill="none" width="24" height="16" vector-effect="non-scaling-stroke"/>
+</g>
+</svg>

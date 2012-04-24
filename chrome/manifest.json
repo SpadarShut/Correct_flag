@@ -1,0 +1,16 @@
+﻿{
+  "name": "Правільны сцяг",
+  "version": "1.2.3",
+  "description": "Замяняе значкі з чырвона-зялёным сцягам на бел-чырвона-белы нябесны вольны смелы.",
+  "icons": { "16": "icon-16.png", "48": "icon-48.png", "128": "icon-128.png" },
+  "content_scripts": [
+    {
+	  "matches":["http://*/*","https://*/*"],
+      "js": ["sciah.js"],
+	  "run_at": "document_start"
+    }
+  ],
+  "permissions": [
+    "http://*/*"
+  ]
+}
