@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget xmlns="http://www.w3.org/ns/widgets" id="https://addons.opera.com/addons/extensions/details/pravilny-stsiag/" version="1.2">
+<widget xmlns="http://www.w3.org/ns/widgets" id="https://addons.opera.com/addons/extensions/details/pravilny-stsiag/" version="1.3.1">
   <name short="Sciah">Правільны сцяг</name>
   <access origin="*"/>
   <icon src="img/icon-16.png"/>
   <icon src="img/icon-64.png"/>
   <update-description href="https://extension-updates.opera.com/api/w3c-wd1/update/676ee627-737c-487b-b970-e719d7d73a45/"/>
   <license>
-  Copyright 2011 SpShut
+  Copyright 2012 SpShut
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 </license>
   <author href="http://my.opera.com/SpShut/" email="sp.shut@gmail.com">SpShut</author>
-  <description xml:lang="be">На пэўных сайтах замяняе значкі з чырвона-зялёным сцягам на бел-чырвона-белы нябесны вольны смелы.
+  <description>На пэўных сайтах замяняе значкі з чырвона-зялёным сцягам на бел-чырвона-белы нябесны вольны смелы.
 &#13;
 Паведамляйце пра сайты, дзе патрэбна выправіць сцяг тут: http://my.opera.com/SpShut/blog/extension-correct-flag
 &#13;

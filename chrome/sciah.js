@@ -39,8 +39,22 @@
 // @include     *goals.by*
 // @include     *pac.by*
 // @include     *postcrossing.com*
+
+// @include     *rfe.by*
+// @include     *1c-bitrix.ru*
+// @include     *free-torrents.org*
+// @include     *nnm-club.ru*
+// @include     *active.by*
+// @include     *active.am*
+// @include     *activecloud.az*
+// @include     *activecloud.ge*
+// @include     *activecloud.ru*
+// @include     *activecloud.com*
+// @include     *active.uz*
+// @include     *flagcounter.com*
+// @include     *internetworldstats.com*
+// @include     *go.hrw.com*
 // @include     */*
-// @include     *turgrad.by*
 // ==/UserScript==
 
 (function(){
@@ -50,7 +64,7 @@
 		background:\
      -o-linear-gradient(transparent, transparent 32%, rgba(204,18,18,.95) 32%,  rgba(204,18,18,.95) 68%, transparent 68%, transparent),\
      -o-linear-gradient(-45deg, rgba(198,198,198,0.43) 0%, rgba(204,204,204,0.01) 21%,rgba(213,213,213,0.37) 55%,rgba(221,221,221,0) 83%,rgba(226,226,226,0.42) 100%) !important;\
-		background:-moz-linear-gradient(transparent, transparent 32%, rgba(204,18,18,.95) 32%,  rgba(204,18,18,.95) 68%, transparent 68%, transparent),\
+		background:-moz-linear-gradient(transparent, transparent 32%, rgba(204,18,18,.95) 32%,  rgba(204,18,18,.95) 67%, transparent 67%, transparent),\
    -moz-linear-gradient(-45deg, rgba(198,198,198,0.43) 0%, rgba(204,204,204,0.01) 21%,rgba(213,213,213,0.37) 55%,rgba(221,221,221,0) 83%,rgba(226,226,226,0.42) 100%) !important;\
 		background:\
 -webkit-linear-gradient(transparent, transparent 32%, rgba(204,18,18,.95) 32%,  rgba(204,18,18,.95) 68%, transparent 68%, transparent),\
@@ -80,6 +94,51 @@
 		'+ gradientCSS;
 
 	var dzieShto = [
+        {
+            addr: "go.hrw.com",
+            css: 'img[src $="flags/belarus.gif"] {'+ flagCSS +'; \
+             -webkit-box-shadow:inset 0 0 0 1px rgba(0,0,0,.9);\
+                -moz-box-shadow:inset 0 0 0 1px rgba(0,0,0,.9);\
+                     box-shadow:inset 0 0 0 1px rgba(0,0,0,.9);\
+                      width: 200px; height: 100px;}'
+        },
+        {
+            addr: "internetworldstats.com",
+            css: 'img[src $="images/belarusia.jpg"] {'+ flagCSS +'; \
+             -webkit-box-shadow:inset 0 0 0 1px rgba(0,0,0,.9);\
+                -moz-box-shadow:inset 0 0 0 1px rgba(0,0,0,.9);\
+                     box-shadow:inset 0 0 0 1px rgba(0,0,0,.9)}'
+        },
+        {
+            addr: "flagcounter.com",
+            css: 'img[src $="flags/by.png"] {'+ flagCSS +';padding:1px 0 0; \
+             -webkit-box-shadow:inset 0 0 0 1px rgba(0,0,0,.4);\
+                -moz-box-shadow:inset 0 0 0 1px rgba(0,0,0,.4);\
+                     box-shadow:inset 0 0 0 1px rgba(0,0,0,.4)}'
+        },
+        {
+            addr: "(active.by|active.am|activecloud.az|activecloud.ge|activecloud.com|activecloud.ru|active.uz)",
+            css: '.by > img, .ru-by > img, .content .selector .selBar .cont ul.flags li.by a i  {'+ flagCSS +'}'
+        },
+        {
+            addr: "(free-torrents.org|nnm-club.ru)",
+            css: 'img[src $="images/flags/belarus.gif"]{'+ flagCSS +'; width:32px; height:20px;\
+             -webkit-box-shadow:inset 0 0 0 1px rgba(0,0,0,.6);\
+                -moz-box-shadow:inset 0 0 0 1px rgba(0,0,0,.6);\
+                     box-shadow:inset 0 0 0 1px rgba(0,0,0,.6)}'
+        },
+        {
+            addr: "1c-bitrix.ru",
+            css: 'img[src $="icons/Flag_Belarus.png"]{'+ flagCSS +';\
+             -webkit-box-shadow:inset 0 0 0 1px rgba(0,0,0,.2), 0 0 3px rgba(0,0,0,.2);\
+                -moz-box-shadow:inset 0 0 0 1px rgba(0,0,0,.2), 0 0 3px rgba(0,0,0,.2);\
+                     box-shadow:inset 0 0 0 1px rgba(0,0,0,.2), 0 0 3px rgba(0,0,0,.2)}\
+            img[src $="icons/belarus.jpg"]{'+ flagCSS +'; border:0; padding:0px; margin-left:.4em}'
+        },
+        {
+            addr: "rfe.by",
+            css: 'img[src $="lang_by.gif"]{'+ flagCSS+'; width: 15px; height: 11px; vertical-align: top}'
+        },
 		{ addr: '.*',
 		  css: ' html body .skype_pnh_container span[style *="background-position: -909px"], \
 				 html body .skype_pnh_container span[style ="background-position:-909px 1px !important;"] {background:none !important;position:relative !important;} \
@@ -115,7 +174,7 @@
 		  css: 'img[src $="belarus.gif"]{'+ flagCSS +'width:22px;height:13px;border:0 !important;}'
 		},
 		{ addr: 'yandex\..*',
-		  css:  '.b-country-flag_size-16_by {'+ gradientCSS +'} \
+		  css:  '.b-country-flag_size-16_by {'+ flagCSS +'} \
 				 img[src $="b-foot__lang__by.png"] {position:relative; top:1px;'+ flagCSS +' width:16px;height:12px !important; } \
 				.b-keyboard__lang-by .b-keyboard__lang-ic { \
 						' +gradientCSS+'\
@@ -335,7 +394,7 @@ box-shadow:inset 0 0 0 1px #333,inset 0 0 0 2px rgba(255,255,255,.6); \
 
 	var FixForFireFox = function(css){
 		var transparentGIF = "data:image/gif;base64,R0lGODlhAQABAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAABAAEAAAICVAEAOw==";
-		var imgs
+
 		return css.replace(/(\[src\s\$=\s?(["']))([^"'\]]*)(\2\])(?!\:not\(dontfixinFF\))/gi,
 			function(){
 				var theimages = window.document.querySelectorAll('img[src $="'+ arguments[3] +'"]');
@@ -397,17 +456,4 @@ window.addEventListener('DOMContentLoaded', function() {
 		}
 	}
 	//delete window.correctflagext;
-	//window.correctflagext ;
 }, false);
-
-
-
-
-
-
-
-
-
-
-
-
