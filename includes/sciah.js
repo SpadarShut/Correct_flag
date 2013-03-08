@@ -67,12 +67,18 @@
 // @include     *vk.com*
 // @include     *vkontakte.ru*
 // @include     *busuu.com*
-
 // @include     *sports.ru*
 // @include     *pefl.ru*
 // @include     *sportpanorama.by*
 // @include     *exist.by*
 
+//@include      *dinamo-minsk.by*
+//@include      *championat.com*
+//@include      *myscore.ru*
+//@include      *joma.by*
+//@include      *battlefield.com*
+//@include      *belpost.by*
+//@include      *tamby.info*
 
 
 // @include     */*
@@ -136,6 +142,34 @@
 
 	var dzieShto = [
         {
+            addr: 'tamby.info',
+            css:'img[src $="images/strany/belarus.png"]{ '+ flagCSS +'; '+ boxShadow(0.15) +'}'
+        },
+        {
+            addr: 'belpost.by',
+            css:'img[src $="/i/blr.jpg"]{ '+ flagCSS +';width:24px;height: 15px !important;margin-top:-1px; '+ boxShadow(0.2) +'}'
+        },
+        {
+            addr: 'battlefield.com',
+            css:'img[src $="/flags/by.gif"]{ '+ flagCSS +';width:16px;height: 12px !important; '+ boxShadow(0.3) +'}'
+        },
+        {
+            addr: 'joma.by',
+            css:'img[src $="/images/by.png"]{ '+ flagCSS +';width:16px;height: 12px !important;vertical-align: middle;}'
+        },
+        {
+            addr: 'myscore.ru',
+            css:'.flag.fl_31{ '+ flagCSS +';height: 12px !important}'
+        },
+        {
+            addr: 'championat.com',
+            css:'img[src $="cflags/by.gif"]{ '+ flagCSS +'; display: inline-block !important; width: 16px; height: 12px;}'
+        },
+        {
+            addr: 'dinamo-minsk.by',
+            css:'img[src $="_8_0x0.jpg"][title="Беларусь"]{ '+ flagCSS +'; display: inline-block !important; width: 33px; height: 18px; '+ boxShadow(0.2) +'}'
+        },
+        {
             addr: 'exist.by',
             css:'img[src $="/flags/by.gif"]{ '+ flagCSS +'; display: inline-block !important; width: 16px; height: 11px; '+ boxShadow(0.99) +'}'
         },
@@ -145,7 +179,8 @@
         },
         {
             addr: 'pefl.ru',
-            css:'img[src $="/flags/18.gif"]{ '+ flagCSS +'; display: inline-block !important } img[src $="/flags/18.gif"][width="30"]{ height: 20px; vertical-align: middle}'
+            css:'img[src $="/flags/18.gif"]{ '+ flagCSS +'; display: inline-block !important } ' +
+                'img[src $="/flags/18.gif"][width="30"]{ height: 20px; vertical-align: middle}'
         },
         {
             addr: 'sports.ru',
@@ -547,10 +582,11 @@ box-shadow:inset 0 0 0 1px #333,inset 0 0 0 2px rgba(255,255,255,.6); \
 
 	};
 
-	window.correctflagext = {};
-	window.correctflagext.CSSAdded = false;
-	window.correctflagext.dzieShto = dzieShto;
-	window.correctflagext.addCSS = addCSS;
+	window.correctflagext = {
+        CSSAdded: false,
+        dzieShto: dzieShto,
+        addCSS: addCSS
+    };
 
 	if (document.head) {
 		for (var i = 0, il = dzieShto.length, site; i < il, site = dzieShto[i]; i++ ) {
