@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2fb3d1c2-747d-4821-a2f0-eff7423ae4bc" name="Default" comment="">
-      <change type="DELETED" beforePath="D:\Dropbox\sciah.extension\chrome.crx" afterPath="" />
-      <change type="DELETED" beforePath="D:\Dropbox\sciah.extension\chrome.crx.zip" afterPath="" />
-      <change type="DELETED" beforePath="D:\Dropbox\sciah.extension\chrome\sciah.zip" afterPath="" />
-      <change type="DELETED" beforePath="D:\Dropbox\sciah.extension\sciah-chrome.zip.zip" afterPath="" />
-      <change type="DELETED" beforePath="D:\Dropbox\sciah.extension\sciah.crx" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sciah.extension.oex" afterPath="$PROJECT_DIR$/sciah.extension.oex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.xml" afterPath="$PROJECT_DIR$/config.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chrome/manifest.json" afterPath="$PROJECT_DIR$/chrome/manifest.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chrome/sciah.js" afterPath="$PROJECT_DIR$/chrome/sciah.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/sciah.js" afterPath="$PROJECT_DIR$/includes/sciah.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testlinks.htm" afterPath="$PROJECT_DIR$/testlinks.htm" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="sciah.extension.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,7 +32,7 @@
       <file leaf-file-name="sciah.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/includes/sciah.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="140" column="23" selection-start="9816" selection-end="9816" vertical-scroll-proportion="-1.1138393">
+            <state line="144" column="129" selection-start="9994" selection-end="9994" vertical-scroll-proportion="0.4695752">
               <folding />
             </state>
           </provider>
@@ -78,8 +67,8 @@
       <list>
         <option value="D:/Gameclub/css/gameclub.css" />
         <option value="$PROJECT_DIR$/config.xml" />
-        <option value="$PROJECT_DIR$/includes/sciah.js" />
         <option value="$PROJECT_DIR$/testlinks.htm" />
+        <option value="$PROJECT_DIR$/includes/sciah.js" />
       </list>
     </option>
   </component>
@@ -197,6 +186,14 @@
     </servers>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="scope" value="ALL" />
+      <option name="testName" />
+      <method />
+    </configuration>
     <list size="0" />
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
@@ -422,7 +419,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/includes/sciah.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="140" column="23" selection-start="9816" selection-end="9816" vertical-scroll-proportion="-1.1138393">
+        <state line="144" column="129" selection-start="9994" selection-end="9994" vertical-scroll-proportion="0.4695752">
           <folding />
         </state>
       </provider>
