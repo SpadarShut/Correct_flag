@@ -2,14 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2fb3d1c2-747d-4821-a2f0-eff7423ae4bc" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.xml" afterPath="$PROJECT_DIR$/config.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/sciah.js" afterPath="$PROJECT_DIR$/includes/sciah.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="sciah.extension.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="2fb3d1c2-747d-4821-a2f0-eff7423ae4bc" time="1362734948170" ignored="false" />
+    <file path="/Dummy.txt" changelist="2fb3d1c2-747d-4821-a2f0-eff7423ae4bc" time="1362857412196" ignored="false" />
     <file path="$PROJECT_DIR$/../Reload CSS/config.xml" changelist="2fb3d1c2-747d-4821-a2f0-eff7423ae4bc" time="1362734974238" ignored="false" />
-    <file path="/config.xml" changelist="2fb3d1c2-747d-4821-a2f0-eff7423ae4bc" time="1362734974238" ignored="false" />
+    <file path="/config.xml" changelist="2fb3d1c2-747d-4821-a2f0-eff7423ae4bc" time="1362778448026" ignored="false" />
     <file path="/testlinks.htm" changelist="2fb3d1c2-747d-4821-a2f0-eff7423ae4bc" time="1362746224564" ignored="false" />
+    <file path="/sciah.js" changelist="2fb3d1c2-747d-4821-a2f0-eff7423ae4bc" time="1362870645268" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +35,18 @@
       <file leaf-file-name="sciah.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/includes/sciah.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="144" column="129" selection-start="9994" selection-end="9994" vertical-scroll-proportion="0.4695752">
+            <state line="651" column="65" selection-start="0" selection-end="45019" vertical-scroll-proportion="0.19821826">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="16" selection-start="1079" selection-end="1079" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -41,7 +55,7 @@
       <file leaf-file-name="testlinks.htm" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testlinks.htm">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="0" selection-start="1422" selection-end="1422" vertical-scroll-proportion="-18.692308">
+            <state line="27" column="0" selection-start="1422" selection-end="1422" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -66,8 +80,8 @@
     <option name="changedFiles">
       <list>
         <option value="D:/Gameclub/css/gameclub.css" />
-        <option value="$PROJECT_DIR$/config.xml" />
         <option value="$PROJECT_DIR$/testlinks.htm" />
+        <option value="$PROJECT_DIR$/config.xml" />
         <option value="$PROJECT_DIR$/includes/sciah.js" />
       </list>
     </option>
@@ -104,6 +118,16 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -148,16 +172,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="img" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -234,9 +248,8 @@
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32969433" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952183" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18256131" sideWeight="0.67047817" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18256131" sideWeight="0.37214136" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18256131" sideWeight="0.6205821" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32883817" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -246,6 +259,7 @@
       <window_info id="Phing Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952183" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -333,7 +347,9 @@
     <entry file="file://$PROJECT_DIR$/includes/sciah.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="57" column="0" selection-start="1751" selection-end="2222" vertical-scroll-proportion="0.0">
-          <folding />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -354,7 +370,9 @@
     <entry file="file://$PROJECT_DIR$/includes/sciah.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="537" column="27" selection-start="38981" selection-end="38981" vertical-scroll-proportion="0.0">
-          <folding />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -368,7 +386,9 @@
     <entry file="file://$PROJECT_DIR$/includes/sciah.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="589" column="88" selection-start="40961" selection-end="40961" vertical-scroll-proportion="0.0">
-          <folding />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -382,7 +402,9 @@
     <entry file="file://$PROJECT_DIR$/includes/sciah.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="589" column="88" selection-start="40961" selection-end="40961" vertical-scroll-proportion="0.0">
-          <folding />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -403,24 +425,26 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-9.312102" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config.xml">
+    <entry file="file://$PROJECT_DIR$/testlinks.htm">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="67" selection-start="965" selection-end="965" vertical-scroll-proportion="0.5516129">
+        <state line="27" column="0" selection-start="1422" selection-end="1422" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testlinks.htm">
+    <entry file="file://$PROJECT_DIR$/config.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="0" selection-start="1422" selection-end="1422" vertical-scroll-proportion="-18.692308">
+        <state line="22" column="16" selection-start="1079" selection-end="1079" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/includes/sciah.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="144" column="129" selection-start="9994" selection-end="9994" vertical-scroll-proportion="0.4695752">
-          <folding />
+        <state line="651" column="65" selection-start="0" selection-end="45019" vertical-scroll-proportion="0.19821826">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
