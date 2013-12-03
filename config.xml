@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget xmlns="http://www.w3.org/ns/widgets" id="https://addons.opera.com/addons/extensions/details/pravilny-stsiag/" version="1.6-20130308">
+<widget xmlns="http://www.w3.org/ns/widgets" id="https://addons.opera.com/addons/extensions/details/pravilny-stsiag/" version="1.8">
   <name short="Sciah">Правільны сцяг</name>
   <access origin="*"/>
   <icon src="img/icon-64.png"/>
@@ -22,5 +22,7 @@ limitations under the License.
   <author href="http://my.opera.com/SpShut/" email="sp.shut@gmail.com">SpShut</author>
   <description>Замяняе значкі з чырвона-зялёным сцягам на бел-чырвона-белы нябесны вольны смелы.
 &#13;
-http://goo.gl/4GrGg - паведамляйце дзе трэба выправіць сцяг</description>
+http://goo.gl/4GrGg - паведамляйце пра сцягі</description>
+
+
 </widget>
