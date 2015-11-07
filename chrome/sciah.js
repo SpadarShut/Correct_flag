@@ -86,9 +86,30 @@
 // @include      *transfermarkt.de*
 // @include      *erepublik.com*
 // @include      *catholic.by*
-
 // @include      *google.com*
 // @include      *budist.ru*
+// @include      *kinozal.tv*
+// @include      *transinfo.by*
+// @include      *meteo-europ.com*
+// @include      *greyorder.su*
+// @include      *timeanddate.com*
+// @include      *myjob.by*
+// @include      *football.by*
+// @include      *telegraf.by*
+// @include      *sportbox.ru*
+// @include      *eventot.com*
+// @include      *skyscanner.*
+// @include      *tb.by*
+// @include      *ecolines.by*
+
+// @include      *codeforces.com*
+// @include      *tribuna.com*
+// @include      *iihfworlds2014.com*
+// @include      *pressball.by*
+// @include      *secret.ly*
+
+// @include      *paypal.com*
+// @include      *theprintful.com*
 
 
 
@@ -97,13 +118,6 @@
 // ==/UserScript==
 
 (function(){
-
-    function browser(check) {
-        var webkit = '';
-        var presto = '';
-        var gecko = '';
-
-    }
 
     function boxShadow (param) {
 
@@ -120,9 +134,7 @@
         shadow = shadow || 'inset 0 0 0 1px rgba(0,0,0,'+ darkness +')';
 
         return '\
-            -webkit-box-shadow: '+ shadow + ';\
-               -moz-box-shadow: '+ shadow + ';\
-                    box-shadow: '+ shadow + ';\
+            box-shadow: '+ shadow + ';\
         ';
     }
 
@@ -135,9 +147,6 @@
 		background:-moz-linear-gradient(transparent, transparent 32%, rgba(204,18,18,.95) 32%,  rgba(204,18,18,.95) 67%, transparent 67%, transparent),\
    -moz-linear-gradient(-45deg, rgba(198,198,198,0.43) 0%, rgba(204,204,204,0.01) 21%,rgba(213,213,213,0.37) 55%,rgba(221,221,221,0) 83%,rgba(226,226,226,0.42) 100%) !important;\
 		background:\
--webkit-linear-gradient(transparent, transparent 32%, rgba(204,18,18,.95) 32%,  rgba(204,18,18,.95) 68%, transparent 68%, transparent),\
--webkit-linear-gradient(-45deg, rgba(198,198,198,0.43) 0%, rgba(204,204,204,0.01) 21%,rgba(213,213,213,0.37) 55%,rgba(221,221,221,0) 83%,rgba(226,226,226,0.42) 100%) !important;\
-		background:\
         linear-gradient(transparent, transparent 32%, rgba(204,18,18,.95) 32%,  rgba(204,18,18,.95) 68%, transparent 68%, transparent),\
         linear-gradient(-45deg, rgba(198,198,198,0.43) 0%, rgba(204,204,204,0.01) 21%,rgba(213,213,213,0.37) 55%,rgba(221,221,221,0) 83%,rgba(226,226,226,0.42) 100%) !important;\
 		background-color:#fff !important;';
@@ -146,8 +155,6 @@
 			background: \
 		-moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,0.67) 33%, rgba(204,18,18,0.66) 34%, rgba(204,18,18,0.32) 68%, rgba(255,255,255,0.31) 69%, rgba(255,255,255,0) 100%); \
 			background:\
-		-webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,0.67) 33%,rgba(204,18,18,0.66) 34%,rgba(204,18,18,0.32) 68%,rgba(255,255,255,0.31) 69%,rgba(255,255,255,0) 100%);\
-			background:\
  		-o-linear-gradient(top, rgba(255,255,255,.5) 0%,rgba(255,255,255,0.25) 30%,rgba(204,18,18,0.25) 30%,rgba(204,18,18,0.15) 62%,rgba(255,255,255,0.23) 62%,rgba(255,255,255,0) 100%); \
 			background:\
  			linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,0.67) 33%,rgba(204,18,18,0.66) 34%,rgba(204,18,18,0.32) 68%,rgba(255,255,255,0.31) 69%,rgba(255,255,255,0) 100%); ';
@@ -155,14 +162,68 @@
     var transparentGIF = "data:image/gif;base64,R0lGODlhAQABAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAABAAEAAAICVAEAOw==";
 
     var flagCSS = '\
-		content:"";\
-		display:inline-block;\
-		border-radius:1px;\
-		font-family: Zyvie-Bielarus !important;/*hack for firefox*/\
+        content:"";\
+        display:inline-block;\
+        border-radius:1px;\
+        font-family: Zyvie-Bielarus !important;/*hack for firefox*/\
         '+ boxShadow() +'\
 		'+ gradientCSS;
 
     var dzieShto = [
+        {
+            addr: 'theprintful.com',
+            css: '.flag.by {'+ flagCSS+ '}'
+        },
+        {
+            addr: 'behance.net|adobe.com',
+            css: '.iti-flag.by {'+ flagCSS+ ' box-shadow:none; border-radius: 0; }'
+        },
+        {
+            addr: 'paypal.com',
+            css: '' +
+                'img[src *="icon/icon_BY_22x14.gif"],.fffx{'+ flagCSS+'width: 22px;height: 16px;padding:0 !important;margin:3px 3px 1px 10px }' +
+                '.country-selector .belarus, .country-selector .BY {background: none;}'+
+                '.country-selector .belarus:before, .country-selector .BY:before {' + flagCSS +'width: 22px;height:16px;margin: 3px 0 0 5px;display: block}'
+        },
+        {
+            addr: 'secret.ly',
+            css: '' +
+                '.id-country-by{'+ flagCSS+' } '
+        },
+        {
+            addr: 'pressball.by',
+            css: '' +
+                'img[src *="online_games/teams/th_belarus.jpg"],.fffx {'+ flagCSS+'width: 200px; height: 130px } '+
+                'img[src *="online_games/teams/th_blr1.jpg"],img[src *="online_games/teams/th_blr2.jpg"],img[src *="online_games/teams/th_blr4.jpg"] {'+ flagCSS+' } '+
+                '#rbl_onl a img[src *="online_games/teams/th_blr"], #rbl_onl span img {height: 130px}'+
+                'img[src *="images/countries/belarus.png"] {'+ flagCSS+'  height:14px; width: 14px}' +
+                '.euro-football .country img[src *="images/countries/belarus.png"] { height:12px}'
+        },
+        {
+            addr: 'iihfworlds2014.com',
+            css: '' +
+                'img[src *="images/umbraco/by.png"],img[src *="flags/16x11/BLR.png"] {  width: 16px; height: 12px;'+ flagCSS+' } '+
+                'img[src *="flags/30x22/BLR.png"], img[src *="/media/182946/belarus.png"] { width: 30px; height: 22px;'+ flagCSS +'} ' +
+                '#teams .team-overview h1 img[src *="/media/182946/belarus.png"], #teams .team-overview h1 img.fff {border: 0; margin-top: 2px}'
+        },
+        {
+            addr: 'mail.ru',
+            css: '.phonePrefix[style *="country_icons/by.png"], ' +
+                 '.form__phone-prefix__prefix[style *="country_icons/by.png"] { background: none !important;}'+
+                 '.phonePrefix[style *="country_icons/by.png"]:before, ' +
+                 '.form__phone-prefix__prefix[style *="country_icons/by.png"]:before { ' +
+                      'width: 16px; height: 12px;position: absolute; left: 0; top: 2px; '+  flagCSS   +'}' +
+                'img[src *="/img/country/flag16x11/by.png"] {height: 12px;'+ flagCSS+'}' +
+                '[style *="background-image: url(/res120/pic/sport/team/d1/600.png#120x120)"] { background-image: url("'+ sciahSphereSrc +'") !important; -moz-background-size: 94px 94px; background-size: 94px 94px;}'
+        },
+        {
+            addr: 'tribuna.com',
+            css: '.flag-1302 { '+ flagCSS + boxShadow('inset 0 0 1px rgba(0,0,0,1), inset 0 0 0 2px rgba(255,265,255,.25)') +'; border-radius: 2px}'
+        },
+        {
+            addr: 'codeforces.com|codeforces.ru',
+            css: '.standings-flag[src *="flags-16/by.png"], .fffx{ '+ flagCSS + boxShadow('inset 0 0 1px rgba(0,0,0,.45), 0 1px 3px rgba(0,0,0,.2)') +' height: 12px; width: 16px; border-radius:2px;}'
+        },
         {
             addr: 'budist.ru',
             css:'.flag[style *="background-image"][style *="img/flags/by.png"]:before{ '+ flagCSS +' height: 12px; width: 100%; position: relative; top: 50%; margin-top: -6px}' +
@@ -172,8 +233,10 @@
         },
         {
             addr: 'google.com',
-            css:'.talk-flag[style *="background-position: 0px -1100px"]{ '+ flagCSS +' background-position: 0 0; height: 12px; }' +
-                '.aYU-aYX-aD2[style *="background-position"][style *="-1100px"] { '+ flagCSS +' height: 12px; }'
+            css:'.talk-flag[style *="background-position: 0px -1100px"], .i18n-phone-flag[style *="background-position: 0px -1100px"]{ '+
+                      flagCSS +' background-position: 0 0; height: 12px; }' +
+                '.aYU-aYX-aD2[style *="background-position"][style *="-1100px"] { '+ flagCSS +' height: 12px; }' +
+              '._GAf-_countryFlag-_BY {'+ flagCSS +'; height: 12px}'
         },
         {
             //todo: this doesn't work
@@ -467,10 +530,10 @@
             css: 'img[src $="belarus.gif"],.fffx{'+ flagCSS +'width:22px;height:13px;border:0 !important;}'
         },
         { addr: 'yandex\..*',
-            css:  '.b-country-flag_size-16_by {'+ flagCSS +'} \
+            css:  '.b-country-flag_size-16_by, .country-flag_size-16_by {'+ flagCSS +'} \
 				 img[src $="b-foot__lang__by.png"],\
-				 .b-langs__flag_lang_by,\
-				 .b-mail-icon_lang-be { \
+				 .b-langs__flag_lang_by, .langs__flag_lang_by, \
+				 .b-mail-icon_lang-be, .mail-icon_lang-be { \
 				    position:relative; \
 				    top:1px;\
 				    '+ flagCSS +'\
@@ -490,7 +553,19 @@
 						height:11px;\
 						margin-right:3px\
 				}\
-				.b-keyboard__lang-by .b-keyboard__lang-ic{'+ flagCSS +'width:16px;height:12px;} '
+				.b-keyboard__lang-by .b-keyboard__lang-ic, \
+				img[src *="b-country-flag_size-16_by.png"] {'+ flagCSS +'width:16px;height:12px;} ' +
+                '.b-country-flag_size-16_by,' +
+                '.b-country-flag_size-24_by, ' +
+                '.b-country-flag_size-32_by, ' +
+                '.b-country-flag_size-48_by {'+ flagCSS +'}' +
+                '.b-country-flag_size-16_by { padding: 12px 0 0 16px; }' +
+
+                '.b-country-flag_size-48_by.event__rival_pos_l, ' +
+                '.b-country-flag_size-48_by.event__rival_pos_r {height:37px; width:48px; top: 40px; bottom: auto; padding: 0 }'+
+
+                '.b-country-flag_size-24_by.event__rival_pos_l, ' +
+                '.b-country-flag_size-24_by.event__rival_pos_r {background-size: 24px 18px; width: 24px;height: 18px; top: 22px; bottom: auto; padding: 0}'
         },
         { addr: 'godaddy.com',
             css: 'div[style *="/country_flags_sml/by.gif"],.ffi_by{'+ flagCSS+'}\
@@ -640,7 +715,7 @@
         },
         { addr: 'livescore.in',
             css: '#fsbody .fl_31, .fl_31 { background:none !important;} ' +
-                '.fl_31:before{'+flagCSS+'width:16px;height:12px;margin:0 8px -1px -24px;}'
+                '.fl_31:before{'+flagCSS+'width:16px; height:12px; vertical-align:top;} ul.menu-left .fl_31:before { margin:0 8px -1px -24px; vertical-align:text-top}'
         },
         { addr: 'livetv.ru',
             css:'img[src $="national/by.gif"],img[src $="img/flags/24.png"],.fffx{'+flagCSS+'width:16px;height:12px;}\
