@@ -86,9 +86,26 @@
 // @include      *transfermarkt.de*
 // @include      *erepublik.com*
 // @include      *catholic.by*
-
 // @include      *google.com*
 // @include      *budist.ru*
+// @include      *kinozal.tv*
+// @include      *transinfo.by*
+// @include      *meteo-europ.com*
+// @include      *greyorder.su*
+// @include      *timeanddate.com*
+// @include      *myjob.by*
+// @include      *football.by*
+// @include      *telegraf.by*
+// @include      *sportbox.ru*
+// @include      *eventot.com*
+// @include      *skyscanner.*
+// @include      *tb.by*
+// @include      *ecolines.by*
+
+// @include      *codeforces.com*
+// @include      *tribuna.com*
+// @include      *iihfworlds2014.com*
+// @include      *pressball.by*
 
 
 
@@ -164,6 +181,36 @@
 
     var dzieShto = [
         {
+            addr: 'pressball.by',
+            css: '' +
+                'img[src *="online_games/teams/th_belarus.jpg"] {'+ flagCSS+'width: 200px; height: 130px } '
+        },
+        {
+            addr: 'iihfworlds2014.com',
+            css: '' +
+                'img[src *="images/umbraco/by.png"],img[src *="flags/16x11/BLR.png"] {  width: 16px; height: 12px;'+ flagCSS+' } '+
+                'img[src *="flags/30x22/BLR.png"], img[src *="/media/182946/belarus.png"] { width: 30px; height: 22px;'+ flagCSS +'} ' +
+                '#teams .team-overview h1 img[src *="/media/182946/belarus.png"], #teams .team-overview h1 img.fff {border: 0; margin-top: 2px}'
+        },
+        {
+            addr: 'mail.ru',
+            css: '.phonePrefix[style *="country_icons/by.png"], ' +
+                 '.form__phone-prefix__prefix[style *="country_icons/by.png"] { background: none !important;}'+
+                 '.phonePrefix[style *="country_icons/by.png"]:before, ' +
+                 '.form__phone-prefix__prefix[style *="country_icons/by.png"]:before { ' +
+                      'width: 16px; height: 12px;position: absolute; left: 0; top: 2px; '+  flagCSS   +'}' +
+                'img[src *="/img/country/flag16x11/by.png"] {height: 12px;'+ flagCSS+'}' +
+                '[style *="background-image: url(/res120/pic/sport/team/d1/600.png#120x120)"] { background-image: url("'+ sciahSphereSrc +'") !important; -moz-background-size: 94px 94px; -webkit-background-size: 94px 94px; background-size: 94px 94px;}'
+        },
+        {
+            addr: 'tribuna.com',
+            css: '.flag-1302 { '+ flagCSS + boxShadow('inset 0 0 1px rgba(0,0,0,1), inset 0 0 0 2px rgba(255,265,255,.25)') +'; border-radius: 2px}'
+        },
+        {
+            addr: 'codeforces.com',
+            css: '.standings-flag[src *="flags-16/by.png"], .fffx{ '+ flagCSS + boxShadow('inset 0 0 1px rgba(0,0,0,.45), 0 1px 3px rgba(0,0,0,.2)') +' height: 12px; width: 16px; border-radius:2px;}'
+        },
+        {
             addr: 'budist.ru',
             css:'.flag[style *="background-image"][style *="img/flags/by.png"]:before{ '+ flagCSS +' height: 12px; width: 100%; position: relative; top: 50%; margin-top: -6px}' +
                 '.flag[style *="background-image"][style *="img/flags/by.png"]{ background: none !important}' +
@@ -172,8 +219,10 @@
         },
         {
             addr: 'google.com',
-            css:'.talk-flag[style *="background-position: 0px -1100px"]{ '+ flagCSS +' background-position: 0 0; height: 12px; }' +
-                '.aYU-aYX-aD2[style *="background-position"][style *="-1100px"] { '+ flagCSS +' height: 12px; }'
+            css:'.talk-flag[style *="background-position: 0px -1100px"], .i18n-phone-flag[style *="background-position: 0px -1100px"]{ '+
+                      flagCSS +' background-position: 0 0; height: 12px; }' +
+                '.aYU-aYX-aD2[style *="background-position"][style *="-1100px"] { '+ flagCSS +' height: 12px; }' +
+              '._GAf-_countryFlag-_BY {'+ flagCSS +'; height: 12px}'
         },
         {
             //todo: this doesn't work
@@ -490,7 +539,19 @@
 						height:11px;\
 						margin-right:3px\
 				}\
-				.b-keyboard__lang-by .b-keyboard__lang-ic{'+ flagCSS +'width:16px;height:12px;} '
+				.b-keyboard__lang-by .b-keyboard__lang-ic, \
+				img[src *="b-country-flag_size-16_by.png"] {'+ flagCSS +'width:16px;height:12px;} ' +
+                '.b-country-flag_size-16_by,' +
+                '.b-country-flag_size-24_by, ' +
+                '.b-country-flag_size-32_by, ' +
+                '.b-country-flag_size-48_by {'+ flagCSS +'}' +
+                '.b-country-flag_size-16_by { padding: 12px 0 0 16px; }' +
+
+                '.b-country-flag_size-48_by.event__rival_pos_l, ' +
+                '.b-country-flag_size-48_by.event__rival_pos_r {height:37px; width:48px; top: 40px; bottom: auto; padding: 0 }'+
+
+                '.b-country-flag_size-24_by.event__rival_pos_l, ' +
+                '.b-country-flag_size-24_by.event__rival_pos_r {background-size: 24px 18px; width: 24px;height: 18px; top: 22px; bottom: auto; padding: 0}'
         },
         { addr: 'godaddy.com',
             css: 'div[style *="/country_flags_sml/by.gif"],.ffi_by{'+ flagCSS+'}\

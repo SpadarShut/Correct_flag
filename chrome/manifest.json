@@ -13,6 +13,6 @@
     }
   ],
   "permissions": [
-    "http://*/*"
+    "http://*/*","https://*/*"
   ]
 }
