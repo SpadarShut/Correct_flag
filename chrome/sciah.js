@@ -117,7 +117,8 @@
 // @include     */*
 // ==/UserScript==
 
-(function(){
+window.addEventListener('DOMContentLoaded', function() {
+
 
     function boxShadow (param) {
 
@@ -169,6 +170,46 @@
         '+ boxShadow() +'\
 		'+ gradientCSS;
 
+
+
+    function getSVGFlag (prm) {
+
+        var flagTpl = '\
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 16" preserveAspectRatio="none">\
+                <defs>\
+                    <clipPath id="clip">\
+                        <rect id="cliprect" fill="none" width="24" height="16" rx="0"/>\
+                    </clipPath>\
+                    <linearGradient id="gradient" gradientUnits="userSpaceOnUse" x1="0.0898" y1="-2.271" x2="25.0163" y2="19.2252">\
+                        <stop offset="0.1484" stop-color="#F1F0EC"/>\
+                        <stop offset="0.2196" stop-color="#FEFDF9"/>\
+                        <stop offset="0.3429" stop-color="#FCFBF7"/>\
+                        <stop offset="0.3872" stop-color="#f5f4f0"/>\
+                        <stop offset="0.4116" stop-color="#f2f1ed"/>\
+                        <stop offset="0.4662" stop-color="#FEFDF9"/>\
+                        <stop offset="0.6008" stop-color="#FBFAF6"/>\
+                        <stop offset="0.6929" stop-color="#F2F1ED"/>\
+                        <stop offset="0.7722" stop-color="#E3E2DE"/>\
+                        <stop offset="0.8439" stop-color="#CDCCC9"/>\
+                        <stop offset="0.8739" stop-color="#c9c8c5"/>\
+                    </linearGradient>\
+                </defs>\
+                <g clip-path="url(#clip)">\
+                    <rect fill="url(#gradient)" width="24" height="16"/>\
+                    <rect fill="#E21313" y="5" width="24" height="6"/>\
+                    <rect id="contour" stroke="#000" stroke-width="2px" opacity="0.10" fill="none" width="24" height="16" vector-effect="non-scaling-stroke"/>\
+                </g>\
+            </svg>\
+            ';
+
+        var SVGParent = window.document.createElement('div');
+        SVGParent.innerHTML = flagTpl;
+        var SVG = SVGParent.querySelector('svg');
+
+        return  'data:image/svg+xml,'+window.encodeURIComponent( SVG.outerHTML);
+    }
+
+
     var dzieShto = [
         {
             addr: 'theprintful.com',
@@ -181,40 +222,40 @@
         {
             addr: 'paypal.com',
             css: '' +
-                'img[src *="icon/icon_BY_22x14.gif"],.fffx{'+ flagCSS+'width: 22px;height: 16px;padding:0 !important;margin:3px 3px 1px 10px }' +
-                '.country-selector .belarus, .country-selector .BY {background: none;}'+
-                '.country-selector .belarus:before, .country-selector .BY:before {' + flagCSS +'width: 22px;height:16px;margin: 3px 0 0 5px;display: block}'
+            'img[src *="icon/icon_BY_22x14.gif"],.fffx{'+ flagCSS+'width: 22px;height: 16px;padding:0 !important;margin:3px 3px 1px 10px }' +
+            '.country-selector .belarus, .country-selector .BY {background: none;}'+
+            '.country-selector .belarus:before, .country-selector .BY:before {' + flagCSS +'width: 22px;height:16px;margin: 3px 0 0 5px;display: block}'
         },
         {
             addr: 'secret.ly',
             css: '' +
-                '.id-country-by{'+ flagCSS+' } '
+            '.id-country-by{'+ flagCSS+' } '
         },
         {
             addr: 'pressball.by',
             css: '' +
-                'img[src *="online_games/teams/th_belarus.jpg"],.fffx {'+ flagCSS+'width: 200px; height: 130px } '+
-                'img[src *="online_games/teams/th_blr1.jpg"],img[src *="online_games/teams/th_blr2.jpg"],img[src *="online_games/teams/th_blr4.jpg"] {'+ flagCSS+' } '+
-                '#rbl_onl a img[src *="online_games/teams/th_blr"], #rbl_onl span img {height: 130px}'+
-                'img[src *="images/countries/belarus.png"] {'+ flagCSS+'  height:14px; width: 14px}' +
-                '.euro-football .country img[src *="images/countries/belarus.png"] { height:12px}'
+            'img[src *="online_games/teams/th_belarus.jpg"],.fffx {'+ flagCSS+'width: 200px; height: 130px } '+
+            'img[src *="online_games/teams/th_blr1.jpg"],img[src *="online_games/teams/th_blr2.jpg"],img[src *="online_games/teams/th_blr4.jpg"] {'+ flagCSS+' } '+
+            '#rbl_onl a img[src *="online_games/teams/th_blr"], #rbl_onl span img {height: 130px}'+
+            'img[src *="images/countries/belarus.png"] {'+ flagCSS+'  height:14px; width: 14px}' +
+            '.euro-football .country img[src *="images/countries/belarus.png"] { height:12px}'
         },
         {
             addr: 'iihfworlds2014.com',
             css: '' +
-                'img[src *="images/umbraco/by.png"],img[src *="flags/16x11/BLR.png"] {  width: 16px; height: 12px;'+ flagCSS+' } '+
-                'img[src *="flags/30x22/BLR.png"], img[src *="/media/182946/belarus.png"] { width: 30px; height: 22px;'+ flagCSS +'} ' +
-                '#teams .team-overview h1 img[src *="/media/182946/belarus.png"], #teams .team-overview h1 img.fff {border: 0; margin-top: 2px}'
+            'img[src *="images/umbraco/by.png"],img[src *="flags/16x11/BLR.png"] {  width: 16px; height: 12px;'+ flagCSS+' } '+
+            'img[src *="flags/30x22/BLR.png"], img[src *="/media/182946/belarus.png"] { width: 30px; height: 22px;'+ flagCSS +'} ' +
+            '#teams .team-overview h1 img[src *="/media/182946/belarus.png"], #teams .team-overview h1 img.fff {border: 0; margin-top: 2px}'
         },
         {
             addr: 'mail.ru',
             css: '.phonePrefix[style *="country_icons/by.png"], ' +
-                 '.form__phone-prefix__prefix[style *="country_icons/by.png"] { background: none !important;}'+
-                 '.phonePrefix[style *="country_icons/by.png"]:before, ' +
-                 '.form__phone-prefix__prefix[style *="country_icons/by.png"]:before { ' +
-                      'width: 16px; height: 12px;position: absolute; left: 0; top: 2px; '+  flagCSS   +'}' +
-                'img[src *="/img/country/flag16x11/by.png"] {height: 12px;'+ flagCSS+'}' +
-                '[style *="background-image: url(/res120/pic/sport/team/d1/600.png#120x120)"] { background-image: url("'+ sciahSphereSrc +'") !important; -moz-background-size: 94px 94px; background-size: 94px 94px;}'
+            '.form__phone-prefix__prefix[style *="country_icons/by.png"] { background: none !important;}'+
+            '.phonePrefix[style *="country_icons/by.png"]:before, ' +
+            '.form__phone-prefix__prefix[style *="country_icons/by.png"]:before { ' +
+            'width: 16px; height: 12px;position: absolute; left: 0; top: 2px; '+  flagCSS   +'}' +
+            'img[src *="/img/country/flag16x11/by.png"] {height: 12px;'+ flagCSS+'}' +
+            '[style *="background-image: url(/res120/pic/sport/team/d1/600.png#120x120)"] { background-image: url("'+ sciahSphereSrc +'") !important; -moz-background-size: 94px 94px; background-size: 94px 94px;}'
         },
         {
             addr: 'tribuna.com',
@@ -227,16 +268,16 @@
         {
             addr: 'budist.ru',
             css:'.flag[style *="background-image"][style *="img/flags/by.png"]:before{ '+ flagCSS +' height: 12px; width: 100%; position: relative; top: 50%; margin-top: -6px}' +
-                '.flag[style *="background-image"][style *="img/flags/by.png"]{ background: none !important}' +
-                'img[src *="/img/flags/by.png"], .fffx{ '+ flagCSS + boxShadow(0.2) +' height: 12px; display: inline-block !important; padding: 0 !important}',
+            '.flag[style *="background-image"][style *="img/flags/by.png"]{ background: none !important}' +
+            'img[src *="/img/flags/by.png"], .fffx{ '+ flagCSS + boxShadow(0.2) +' height: 12px; display: inline-block !important; padding: 0 !important}',
             isAsyncSite: true
         },
         {
             addr: 'google.com',
             css:'.talk-flag[style *="background-position: 0px -1100px"], .i18n-phone-flag[style *="background-position: 0px -1100px"]{ '+
-                      flagCSS +' background-position: 0 0; height: 12px; }' +
-                '.aYU-aYX-aD2[style *="background-position"][style *="-1100px"] { '+ flagCSS +' height: 12px; }' +
-              '._GAf-_countryFlag-_BY {'+ flagCSS +'; height: 12px}'
+            flagCSS +' background-position: 0 0; height: 12px; }' +
+            '.aYU-aYX-aD2[style *="background-position"][style *="-1100px"] { '+ flagCSS +' height: 12px; }' +
+            '._GAf-_countryFlag-_BY {'+ flagCSS +'; height: 12px}'
         },
         {
             //todo: this doesn't work
@@ -250,34 +291,34 @@
         {
             addr: 'erepublik.com',
             css:'img[src *="/flags"][src *="/Belarus"], .fffx{ '+
-                flagCSS  +
-                'border-radius: 2px;' +
-                '}' +
-                'img[src *="/flags"][src *="/Belarus"][src *="/S/"],' +
-                'img[data-origsrc *="/flags"][data-origsrc *="/Belarus"][data-origsrc *="/S/"] {' +
-                'width: 14px; height: 12px;' +
-                'border-radius: 1px;' +
-                boxShadow("inset 0 0 0 1px rgba(0,0,0,.20), 0 1px 2px rgba(0,0,0,.1)") +
-                '}' +
-                'img[src *="/flags"][src *="/Belarus"][src *="/M/"],' +
-                'img[data-origsrc *="/flags"][data-origsrc *="/Belarus"][data-origsrc *="/M/"] {' +
-                'width: 22px; height: 15px;' +
-                'border-radius: 1px' +
-                boxShadow("inset 0 0 0 1px rgba(0,0,0,.20), 0 1px 3px rgba(0,0,0,.15)") +
-                '}' +
-                'img[src *="/flags"][src *="/Belarus"][src *="/L/"],' +
-                'img[data-origsrc *="/flags"][data-origsrc *="/Belarus"][data-origsrc *="/L/"] {' +
-                'width: 30px; height: 21px;' +
-                boxShadow("inset 0 0 0 1px rgba(0,0,0,.20), 0 1px 4px rgba(0,0,0,.15)") +
-                '}' +
-                'img[src *="/flags"][src *="/Belarus"][src *="/XL/"],' +
-                'img[data-origsrc *="/flags"][data-origsrc *="/Belarus"][data-origsrc *="/XL/"] {' +
-                'width: 46px; height: 33px; '+
-                boxShadow("inset 0 0 0 1px rgba(0,0,0,.20), 0 1px 6px rgba(0,0,0,.25)") +
-                '}' +
-                '#filters a.selector img[src *="/Belarus"], .fffx {display: block}' +
-                '.flag[src *="Belarus"], .flag[data-origsrc *="Belarus"] {padding:0; margin-right: 5px}' +
-                '#battle_listing img[src *="Belarus"],#battle_listing img [data-origsrc *="Belarus"]{ height: 18px } '
+            flagCSS  +
+            'border-radius: 2px;' +
+            '}' +
+            'img[src *="/flags"][src *="/Belarus"][src *="/S/"],' +
+            'img[data-origsrc *="/flags"][data-origsrc *="/Belarus"][data-origsrc *="/S/"] {' +
+            'width: 14px; height: 12px;' +
+            'border-radius: 1px;' +
+            boxShadow("inset 0 0 0 1px rgba(0,0,0,.20), 0 1px 2px rgba(0,0,0,.1)") +
+            '}' +
+            'img[src *="/flags"][src *="/Belarus"][src *="/M/"],' +
+            'img[data-origsrc *="/flags"][data-origsrc *="/Belarus"][data-origsrc *="/M/"] {' +
+            'width: 22px; height: 15px;' +
+            'border-radius: 1px' +
+            boxShadow("inset 0 0 0 1px rgba(0,0,0,.20), 0 1px 3px rgba(0,0,0,.15)") +
+            '}' +
+            'img[src *="/flags"][src *="/Belarus"][src *="/L/"],' +
+            'img[data-origsrc *="/flags"][data-origsrc *="/Belarus"][data-origsrc *="/L/"] {' +
+            'width: 30px; height: 21px;' +
+            boxShadow("inset 0 0 0 1px rgba(0,0,0,.20), 0 1px 4px rgba(0,0,0,.15)") +
+            '}' +
+            'img[src *="/flags"][src *="/Belarus"][src *="/XL/"],' +
+            'img[data-origsrc *="/flags"][data-origsrc *="/Belarus"][data-origsrc *="/XL/"] {' +
+            'width: 46px; height: 33px; '+
+            boxShadow("inset 0 0 0 1px rgba(0,0,0,.20), 0 1px 6px rgba(0,0,0,.25)") +
+            '}' +
+            '#filters a.selector img[src *="/Belarus"], .fffx {display: block}' +
+            '.flag[src *="Belarus"], .flag[data-origsrc *="Belarus"] {padding:0; margin-right: 5px}' +
+            '#battle_listing img[src *="Belarus"],#battle_listing img [data-origsrc *="Belarus"]{ height: 18px } '
         },
         {
             addr: 'kinozal.tv',
@@ -338,7 +379,7 @@
         {
             addr: 'pbliga.com',
             css:'img[src *="flags/flag_17.png"],.fffx{ '+ flagCSS +'; width: 22px; height: 18px; vertical-align: middle; '+ boxShadow("inset 0 0 0 1px rgba(0,0,0,0.25), inset -5px 0 10px rgba(255,255,255,.4)") +'}' +
-                'img[src *="flags/blr.gif"][title],.fffx[title]{ '+ flagCSS +'width: 16px; height: 12px;'+ boxShadow("inset 0 0 0 1px rgba(0,0,0,0.25), inset -5px 0 10px rgba(255,255,255,.4)") + '}'
+            'img[src *="flags/blr.gif"][title],.fffx[title]{ '+ flagCSS +'width: 16px; height: 12px;'+ boxShadow("inset 0 0 0 1px rgba(0,0,0,0.25), inset -5px 0 10px rgba(255,255,255,.4)") + '}'
         },
         {
             addr: 'tamby.info',
@@ -359,21 +400,21 @@
         {
             addr: 'myscore.ru',
             css:'.flag.fl_31,.fffx{ ' +
-                flagCSS +
-                'content: normal; ' +
-                'background-position: 0 50%, 0 50% !important; ' +
-                'background-size: 16px 12px,  16px 12px !important; ' +
-                'background-repeat: no-repeat, no-repeat !important;' +
-                '}' +
-                '.header .flag.fl_31 { background: none !important; box-shadow: none !important;vertical-align: middle}'+
-                '.header .flag.fl_31:before { ' +
-                flagCSS +
-                'width: 16px;' +
-                'height: 12px;' +
-                'margin: 0 8px -1px -24px;'+
-                '}'+
-                '#fs .flag, #fsmenu .flag, #main .flag.fl_31 { height: 12px !important }' +
-                'img[src *="/res/image/data/rN9xhjRc-I7KbpC8c.png"], .fffx {'+ flagCSS +' height: 25px; margin-top: 12px}'
+            flagCSS +
+            'content: normal; ' +
+            'background-position: 0 50%, 0 50% !important; ' +
+            'background-size: 16px 12px,  16px 12px !important; ' +
+            'background-repeat: no-repeat, no-repeat !important;' +
+            '}' +
+            '.header .flag.fl_31 { background: none !important; box-shadow: none !important;vertical-align: middle}'+
+            '.header .flag.fl_31:before { ' +
+            flagCSS +
+            'width: 16px;' +
+            'height: 12px;' +
+            'margin: 0 8px -1px -24px;'+
+            '}'+
+            '#fs .flag, #fsmenu .flag, #main .flag.fl_31 { height: 12px !important }' +
+            'img[src *="/res/image/data/rN9xhjRc-I7KbpC8c.png"], .fffx {'+ flagCSS +' height: 25px; margin-top: 12px}'
         },
         {
             addr: 'championat.com',
@@ -382,7 +423,7 @@
         {
             addr: 'dinamo-minsk.by',
             css:'img[src $="_8_0x0.jpg"][title="Беларусь"], ' +
-                'img[src $="/51/~568_8_0x0.jpg"],.fffx {'+ flagCSS +'; display: inline-block !important; width: 33px; height: 18px; '+ boxShadow(0.2) +'}'
+            'img[src $="/51/~568_8_0x0.jpg"],.fffx {'+ flagCSS +'; display: inline-block !important; width: 33px; height: 18px; '+ boxShadow(0.2) +'}'
         },
         {
             addr: 'exist.by',
@@ -395,13 +436,13 @@
         {
             addr: 'pefl.ru',
             css:'img[src $="/flags/18.gif"],.fffx{ '+ flagCSS +'; display: inline-block !important } ' +
-                'img[src $="/flags/18.gif"][width="30"]{ height: 20px; vertical-align: middle}'
+            'img[src $="/flags/18.gif"][width="30"]{ height: 20px; vertical-align: middle}'
         },
         {
             addr: 'sports.ru',
             css:'.flag-s.flag-1302,.fffx{ '+ flagCSS +' }' +
-                '.flag-circle.f-belarus {'+ flagCSS +' border-radius: 50%; '+ boxShadow("inset 0 0 9px rgba(0,0,0,.2)")+'}' +
-                'img[src *="73017810/1317751561.637227_34.jpg"]{' + boxShadow('inset 0 0 6px rgba(0,0,0,.4)') +'content:"";background:50% no-repeat url("'+sciahSphereSrc+'"); background-size: 48px 48px; border-radius: 50%;}'
+            '.flag-circle.f-belarus {'+ flagCSS +' border-radius: 50%; '+ boxShadow("inset 0 0 9px rgba(0,0,0,.2)")+'}' +
+            'img[src *="73017810/1317751561.637227_34.jpg"]{' + boxShadow('inset 0 0 6px rgba(0,0,0,.4)') +'content:"";background:50% no-repeat url("'+sciahSphereSrc+'"); background-size: 48px 48px; border-radius: 50%;}'
         },
         {
             addr: 'busuu.com',
@@ -410,11 +451,11 @@
         {
             addr: 'vk.com|vkontakte.ru',
             css:'.lang_box_row {position: relative;} .lang_box_row[style *="images/lang_flags/2.gif"]{ background-image: none !important}' +
-                '.lang_box_row[style *="images/lang_flags/2.gif"]:before {'+ flagCSS +
-                'width: 34px;' +
-                'height: 26px;' +
-                'position: absolute; left: 10px; top: 50%; margin-top: -13px;'+
-                ' }'
+            '.lang_box_row[style *="images/lang_flags/2.gif"]:before {'+ flagCSS +
+            'width: 34px;' +
+            'height: 26px;' +
+            'position: absolute; left: 10px; top: 50%; margin-top: -13px;'+
+            ' }'
         },
         {
             addr: 'gismeteo.(by|ru|ua|lt|com)',
@@ -427,7 +468,7 @@
         {
             addr: 'samsungapps.com',
             css:  'img[src $="flag/BY.png"]:not(.fakeclassforspecificity),.fffx:not(.fakeclassforspecificity) {'+
-                + flagCSS +'; \
+            + flagCSS +'; \
                         height: 12px; \
                         width:18px;\
                         border:0\
@@ -436,16 +477,16 @@
                   a.country img {\
                         margin-bottom:-2px;\
                         '+ boxShadow(0) +
-                '}'
+            '}'
         },
         {
             //todo check it in FF
             addr: 'freeads.by',
             css: 'img[src $="flag_header_freeads.by.gif"] {content:"";background:50% no-repeat url("'+sciahSphereSrc+'"); background-size: 35px 35px;}\
                   img[src $="flags/flag_icon_freeads.by.gif"],.fffx {'+
-                flagCSS +'\
+            flagCSS +'\
                       '+ boxShadow(0.65) +
-                '}'
+            '}'
         },
         {
             addr: "go.hrw.com",
@@ -472,9 +513,9 @@
         {
             addr: "(active.by|active.am|activecloud.az|activecloud.ge|activecloud.com|activecloud.ru|active.uz)",
             css: '.by > img, .ru-by > img,' +
-                '.content .selector .selBar .cont ul.flags li.by a i,' +
-                ' li.lang a.by i,' +
-                'i.by,.fffx  {'+ flagCSS +'}'
+            '.content .selector .selBar .cont ul.flags li.by a i,' +
+            ' li.lang a.by i,' +
+            'i.by,.fffx  {'+ flagCSS +'}'
         },
         {
             addr: "(free-torrents.org|nnm-club.ru)",
@@ -506,11 +547,11 @@
             css: '[style *= "flags/BY.png"]::before, img[src $= "flags/BY.png"], .f-BY::before{ '+ flagCSS +';height:12px}\
 		  [style *= "flags/BY.png"]{background-image:none !important;position:relative;}\
 		  [style *= "flags/BY.png"]::before{' +
-                'width:16px;height:12px;position:absolute;top:6px;right:3px;content:"";' +
-                '-webkit-box-shadow:inset 0 0 0 1px rgba(0,0,0,.3);' +
-                '-moz-box-shadow:inset 0 0 0 1px rgba(0,0,0,.3);' +
-                'box-shadow:inset 0 0 0 1px rgba(0,0,0,.3);}\
-        a[href="/community/members/location/Belarus"]{margin-left:.5em;}'
+            'width:16px;height:12px;position:absolute;top:6px;right:3px;content:"";' +
+            '-webkit-box-shadow:inset 0 0 0 1px rgba(0,0,0,.3);' +
+            '-moz-box-shadow:inset 0 0 0 1px rgba(0,0,0,.3);' +
+            'box-shadow:inset 0 0 0 1px rgba(0,0,0,.3);}\
+    a[href="/community/members/location/Belarus"]{margin-left:.5em;}'
         },
         { addr: 'sovrep.gov.by',
             css: 'img[src $="top_01.jpg"],.fffx{'+flagCSS+';width:190px;height:108px;margin:0;border-left:1px solid #c24621}'
@@ -555,17 +596,17 @@
 				}\
 				.b-keyboard__lang-by .b-keyboard__lang-ic, \
 				img[src *="b-country-flag_size-16_by.png"] {'+ flagCSS +'width:16px;height:12px;} ' +
-                '.b-country-flag_size-16_by,' +
-                '.b-country-flag_size-24_by, ' +
-                '.b-country-flag_size-32_by, ' +
-                '.b-country-flag_size-48_by {'+ flagCSS +'}' +
-                '.b-country-flag_size-16_by { padding: 12px 0 0 16px; }' +
+            '.b-country-flag_size-16_by,' +
+            '.b-country-flag_size-24_by, ' +
+            '.b-country-flag_size-32_by, ' +
+            '.b-country-flag_size-48_by {'+ flagCSS +'}' +
+            '.b-country-flag_size-16_by { padding: 12px 0 0 16px; }' +
 
-                '.b-country-flag_size-48_by.event__rival_pos_l, ' +
-                '.b-country-flag_size-48_by.event__rival_pos_r {height:37px; width:48px; top: 40px; bottom: auto; padding: 0 }'+
+            '.b-country-flag_size-48_by.event__rival_pos_l, ' +
+            '.b-country-flag_size-48_by.event__rival_pos_r {height:37px; width:48px; top: 40px; bottom: auto; padding: 0 }'+
 
-                '.b-country-flag_size-24_by.event__rival_pos_l, ' +
-                '.b-country-flag_size-24_by.event__rival_pos_r {background-size: 24px 18px; width: 24px;height: 18px; top: 22px; bottom: auto; padding: 0}'
+            '.b-country-flag_size-24_by.event__rival_pos_l, ' +
+            '.b-country-flag_size-24_by.event__rival_pos_r {background-size: 24px 18px; width: 24px;height: 18px; top: 22px; bottom: auto; padding: 0}'
         },
         { addr: 'godaddy.com',
             css: 'div[style *="/country_flags_sml/by.gif"],.ffi_by{'+ flagCSS+'}\
@@ -573,11 +614,11 @@
         },
         { addr: 'rutracker.org',
             css: 'img[src $="flags/17.gif"],img[src $="flags/by.gif"],.fffx{'+
-                flagCSS+';height:22px;width:32px;' +
-                '-webkit-box-shadow:inset 0 0 0 1px rgba(0,0,0,.7);' +
-                '-moz-box-shadow:inset 0 0 0 1px rgba(0,0,0,.7);' +
-                'box-shadow:inset 0 0 0 1px rgba(0,0,0,.7);}' +
-                'img[src $="flags/by.gif"] {width:24px;height:15px;}',
+            flagCSS+';height:22px;width:32px;' +
+            '-webkit-box-shadow:inset 0 0 0 1px rgba(0,0,0,.7);' +
+            '-moz-box-shadow:inset 0 0 0 1px rgba(0,0,0,.7);' +
+            'box-shadow:inset 0 0 0 1px rgba(0,0,0,.7);}' +
+            'img[src $="flags/by.gif"] {width:24px;height:15px;}',
             files: [
                 {
                     src: 'logo_new_by.gif',
@@ -590,7 +631,7 @@
         },
         { addr: 'skyscanner\.*',
             css:'img[src $="flag/small/by.png"], .fffx {'+flagCSS+';width: 16px; height:12px;}' +
-                '#culture-info #current-user-country img[title=Belarus]{margin-top: 2px }'
+            '#culture-info #current-user-country img[title=Belarus]{margin-top: 2px }'
         },
         { addr: 'tb.by',
             css:'img[src $="img/bel.png"], .fffx {'+flagCSS+';width: 15px; height:10px} '
@@ -600,13 +641,14 @@
         },
         { addr: 'kvitki.by',
             css:'img[src $="lang_by.gif"], ' +
-                'img[src $="lang_by_ov.gif"],.fffx {'+flagCSS+';width:16px;height:12px;} ' +
-                'img[src $="lang_by_ov.gif"]{opacity: .6}'
+            'img[src $="lang_by_ov.gif"],.fffx {'+flagCSS+';width:16px;height:12px;} ' +
+            'img[src $="lang_by_ov.gif"]{opacity: .6}',
+            images: ['lang_by.gif', 'lang_by_ov.gif']
         },
         { addr: 'cybergames.by',
             css:'img[src $="flags/by.gif"],.fffx {'+flagCSS+'width:18px;height:12px;}' +
-                ' img[src $="flags/by_large.png"],.fffx {'+flagCSS+'width:180px;height:90px;' +
-                '-moz-box-shadow:inset 0 0 1px 1px rgba(0,0,0,.3);-webkit-box-shadow:inset 0 0 1px 1px rgba(0,0,0,.3);box-shadow:inset 0 0 1px 1px rgba(0,0,0,.3);}'
+            'img[src $="flags/by_large.png"],.fffx {'+flagCSS+'width:180px;height:90px;' +
+            'box-shadow:inset 0 0 1px 1px rgba(0,0,0,.3);}'
         },
         { addr: 'audience.by',
             css:'img[src $="flags/by.gif"],.fffx {'+flagCSS+'width:23px;height:15px;}'
@@ -632,7 +674,7 @@
             css:'img[src $="/img/by.gif"] {content:"";height:50px;width:50px;display:inline-block;background:url("'+ sciahSphereSrc +'") no-repeat} '},
         { addr:'prazdnik.by',
             css:'.logo:after {content:"";position:absolute;z-index:10;width:43px;height:43px;left:269px;top:47px;' +
-                'background: url("data:image/png;base64,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") no-repeat}'
+            'background: url("data:image/png;base64,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") no-repeat}'
         },
         { addr: 'kinopoisk.ru',
             css:'.flag69 * {'+flagCSS+'; height:12px}\
@@ -649,23 +691,23 @@
         },
         { addr: 'techlabs.by',
             css:'img[src $="flag-by.gif"],.fffx {'+flagCSS+
-                'width:18px;height:12px;' +
-                '-webkit-box-shadow:inset 0 0 0 1px rgba(0,0,0,.7);' +
-                '-moz-box-shadow:inset 0 0 0 1px rgba(0,0,0,.7);' +
-                'box-shadow:inset 0 0 0 1px rgba(0,0,0,.7);}'
+            'width:18px;height:12px;' +
+            '-webkit-box-shadow:inset 0 0 0 1px rgba(0,0,0,.7);' +
+            '-moz-box-shadow:inset 0 0 0 1px rgba(0,0,0,.7);' +
+            'box-shadow:inset 0 0 0 1px rgba(0,0,0,.7);}'
         },
         { addr: 'parta.by',
             css:'img[src $="icons/flag_by.gif"],.fffx {'+flagCSS+'width:18px;height:12px;' +
-                '-webkit-box-shadow:inset 0 0 0 1px rgba(0,0,0,.4);' +
-                '-moz-box-shadow:inset 0 0 0 1px rgba(0,0,0,.4);' +
-                'box-shadow:inset 0 0 0 1px rgba(0,0,0,.4);}'
+            '-webkit-box-shadow:inset 0 0 0 1px rgba(0,0,0,.4);' +
+            '-moz-box-shadow:inset 0 0 0 1px rgba(0,0,0,.4);' +
+            'box-shadow:inset 0 0 0 1px rgba(0,0,0,.4);}'
         },
         { addr: 'fotoclub.by',
             css:'img[src $="icons/flag-by.png"],.fffx {'+flagCSS+'width:40px;height:25px}'
         },
         { addr: 'mypet.by',
             css:'img[src $="16x12/by.png"],.fffx {'+flagCSS+'width:17px;height:12px;}' +
-                '.small_container img.flag{padding:0;margin:3px 7px 0 0;}',
+            '.small_container img.flag{padding:0;margin:3px 7px 0 0;}',
             files: [
                 { src: "50x50/by.png",
                     newSrc: sciahSphereSrc,
@@ -684,25 +726,25 @@
         },
         { addr: '((pl|en)\.)?brestintourist.*',
             css: 'img[src $="lang/by.png"],.fffx{'+flagCSS+'width:25px;height:18px;margin:0 0 3px;' +
-                '-webkit-box-shadow:inset 0 0 0 1px rgba(0,0,0,.7);' +
-                '   -moz-box-shadow:inset 0 0 0 1px rgba(0,0,0,.7);' +
-                '        box-shadow:inset 0 0 0 1px rgba(0,0,0,.7);}\
-          .item_by a{position:relative}\
-          .item_by a:after{content:"";display:block;position:absolute;left:-34px;top:-3px;' +
-                'width:25px;height:25px;background:url("'+sciahSphereSrc+'") no-repeat}'
+            '-webkit-box-shadow:inset 0 0 0 1px rgba(0,0,0,.7);' +
+            '   -moz-box-shadow:inset 0 0 0 1px rgba(0,0,0,.7);' +
+            '        box-shadow:inset 0 0 0 1px rgba(0,0,0,.7);}\
+      .item_by a{position:relative}\
+      .item_by a:after{content:"";display:block;position:absolute;left:-34px;top:-3px;' +
+            'width:25px;height:25px;background:url("'+sciahSphereSrc+'") no-repeat}'
         },
         { addr: 'navitel.*',
             css:'img[src $="global/by.png"],.fffx {'+flagCSS+'width:18px;height:13px;' +
-                '-webkit-box-shadow:inset 0 0 0 1px rgba(0,0,0,.15), 1px 1px 2px  rgba(0,0,0,.4);' +
-                '   -moz-box-shadow:inset 0 0 0 1px rgba(0,0,0,.15), 1px 1px 2px  rgba(0,0,0,.4);' +
-                '        box-shadow:inset 0 0 0 1px rgba(0,0,0,.15), 1px 1px 2px  rgba(0,0,0,.4);}'
+            '-webkit-box-shadow:inset 0 0 0 1px rgba(0,0,0,.15), 1px 1px 2px  rgba(0,0,0,.4);' +
+            '   -moz-box-shadow:inset 0 0 0 1px rgba(0,0,0,.15), 1px 1px 2px  rgba(0,0,0,.4);' +
+            '        box-shadow:inset 0 0 0 1px rgba(0,0,0,.15), 1px 1px 2px  rgba(0,0,0,.4);}'
         },
         { addr: 'world-geographics.com',
             css:'img[src $="flags/BY.png"],.fffx{'+flagCSS+'height:18px;border-radius:1.5px;' +
-                '-webkit-box-shadow:inset 0 0 0 1px rgba(0,0,0,.04),inset 0 -1px 0  rgba(0,0,0,.15);' +
-                '   -moz-box-shadow:inset 0 0 0 1px rgba(0,0,0,.04),inset 0 -1px 0  rgba(0,0,0,.15);' +
-                '        box-shadow:inset 0 0 0 1px rgba(0,0,0,.04),inset 0 -1px 0  rgba(0,0,0,.15);}'+
-                'img[src $="flags/BY.png"]:not(".flagsmall") {width:48px;height:42px;}'
+            '-webkit-box-shadow:inset 0 0 0 1px rgba(0,0,0,.04),inset 0 -1px 0  rgba(0,0,0,.15);' +
+            '   -moz-box-shadow:inset 0 0 0 1px rgba(0,0,0,.04),inset 0 -1px 0  rgba(0,0,0,.15);' +
+            '        box-shadow:inset 0 0 0 1px rgba(0,0,0,.04),inset 0 -1px 0  rgba(0,0,0,.15);}'+
+            'img[src $="flags/BY.png"]:not(".flagsmall") {width:48px;height:42px;}'
         },
 
         { addr: 'sportlemon.tv',
@@ -710,12 +752,12 @@
         },
         { addr: 'allsport-live.ru',
             css: 'td[width="30"][height="20"] img[src $="flags/flag_belarus.png"],.fffx {'+flagCSS+'width:16px !important;height:12px !important;}' +
-                '#fsbody .fl_31, .fl_31 { background:none !important;}' +
-                '.fl_31:before{'+flagCSS+'width:16px;height:12px;margin:0 8px -1px -24px;}'
+            '#fsbody .fl_31, .fl_31 { background:none !important;}' +
+            '.fl_31:before{'+flagCSS+'width:16px;height:12px;margin:0 8px -1px -24px;}'
         },
         { addr: 'livescore.in',
             css: '#fsbody .fl_31, .fl_31 { background:none !important;} ' +
-                '.fl_31:before{'+flagCSS+'width:16px; height:12px; vertical-align:top;} ul.menu-left .fl_31:before { margin:0 8px -1px -24px; vertical-align:text-top}'
+            '.fl_31:before{'+flagCSS+'width:16px; height:12px; vertical-align:top;} ul.menu-left .fl_31:before { margin:0 8px -1px -24px; vertical-align:text-top}'
         },
         { addr: 'livetv.ru',
             css:'img[src $="national/by.gif"],img[src $="img/flags/24.png"],.fffx{'+flagCSS+'width:16px;height:12px;}\
@@ -778,28 +820,28 @@ box-shadow:inset 0 0 0 1px #333,inset 0 0 0 2px rgba(255,255,255,.6); \
         },
         { addr: 'adsl.by',
             css: 'img[src $="flags/Belarus.png"],.fffx{'
-                + flagCSS +
-                'width:14px;' +
-                'height:12px;'+
-                '-webkit-box-shadow:inset 0 0 0 1px rgba(0,0,0,.1), 0 1px 2px rgba(0,0,0,.1);' +
-                '   -moz-box-shadow:inset 0 0 0 1px rgba(0,0,0,.1), 0 1px 2px rgba(0,0,0,.1);' +
-                '        box-shadow:inset 0 0 0 1px rgba(0,0,0,.1), 0 1px 2px rgba(0,0,0,.1);}'
+            + flagCSS +
+            'width:14px;' +
+            'height:12px;'+
+            '-webkit-box-shadow:inset 0 0 0 1px rgba(0,0,0,.1), 0 1px 2px rgba(0,0,0,.1);' +
+            '   -moz-box-shadow:inset 0 0 0 1px rgba(0,0,0,.1), 0 1px 2px rgba(0,0,0,.1);' +
+            '        box-shadow:inset 0 0 0 1px rgba(0,0,0,.1), 0 1px 2px rgba(0,0,0,.1);}'
         },
         { addr: 'goals.by',
             css: 'img[src *="img/flags/by.png"],.fffx {'
-                +flagCSS+'width:16px;height:12px}' +
-                '.ic-flag-BY::before, \
-                 .ic-flag-BY img, img.fffx {\
-                      width: 16px; \
-                      height: 12px; \
-                      clip: auto !important; \
-                      left: 0 !important; \
-                      top: auto !important; \
-                      right: 0 !important; \
-              -webkit-transform:translateY(1px);\
-                 -moz-transform:translateY(1px);\
-                      transform:translateY(1px);\
-                      '+ flagCSS +'\
+            +flagCSS+'width:16px;height:12px}' +
+            '.ic-flag-BY::before, \
+             .ic-flag-BY img, img.fffx {\
+                  width: 16px; \
+                  height: 12px; \
+                  clip: auto !important; \
+                  left: 0 !important; \
+                  top: auto !important; \
+                  right: 0 !important; \
+          -webkit-transform:translateY(1px);\
+             -moz-transform:translateY(1px);\
+                  transform:translateY(1px);\
+                  '+ flagCSS +'\
               }\
               .ic-flag-BY::before {\
                     content: "" !important\
@@ -808,8 +850,8 @@ box-shadow:inset 0 0 0 1px #333,inset 0 0 0 2px rgba(255,255,255,.6); \
         },
         { addr: 'pac.by',
             css: '.by_l_by,.by_l {width:16px} .by_l_by img,.by_l img{display:none;}' +
-                '.by_l_by a::before, .by_l a::before{'+flagCSS+'width:16px;height:12px;display:block}' +
-                '.by_l_by a::after,.by_l a::after{width:16px;height:9px;display:block;content:"";'+ reflectionDownCSS +'}'
+            '.by_l_by a::before, .by_l a::before{'+flagCSS+'width:16px;height:12px;display:block}' +
+            '.by_l_by a::after,.by_l a::after{width:16px;height:9px;display:block;content:"";'+ reflectionDownCSS +'}'
         },
         { addr: 'postcrossing.com',
             css: '.flag.flag-BY {'+ flagCSS +'width:16px;height:12px;}'
@@ -819,103 +861,21 @@ box-shadow:inset 0 0 0 1px #333,inset 0 0 0 2px rgba(255,255,255,.6); \
     var addCSS = function(CSS) {
         var styleEl = window.document.createElement('style');
         var styles  = window.document.createTextNode(CSS);
-        styleEl.setAttribute('class', 'Correct-Flag');
+        styleEl.setAttribute('title', 'Correct Flag');
         styleEl.appendChild(styles);
         window.document.head && window.document.head.appendChild(styleEl);
     };
 
-    var FixForFireFox = function(site){
-
-        /*
-         * get style.Correct-Flag,
-         * get all selectors,
-         * querySelectorAll the selectors,
-         * filter the result for images only,
-         * and only the ones to which our flag styles got applied
-         * add a fffx class to them and set src to a transparent gif
-         *
-         * */
-
-        var styles = document.querySelectorAll('style.Correct-Flag');
-
-        if (styles.length) {
-            Array.prototype.forEach.call(styles, function(stylesheet){
-                Array.prototype.forEach.call(stylesheet.sheet.cssRules, function(rule, i, rulelist){
-
-                    var elements = document.querySelectorAll(rule.selectorText);
-                    if (elements.length) {
-                        Array.prototype.forEach.call(elements, function(elt){
-                            if (elt.nodeName.toUpperCase() == "IMG") {
-                                if(window.getComputedStyle(elt, null).getPropertyValue("font-family") === 'Zyvie-Bielarus') {
-                                    if(!elt.classList.contains('fffx')) {
-                                        elt.classList.add('fffx');
-                                        elt.dataset.origsrc = elt.src;
-                                        elt.src = transparentGIF;
-                                    }
-                                }
-                            }
-                        })
-                    }
-                })
-            })
-        }
-
-        if (site.isAsyncSite) {
-            // todo periodically check for new images and replace them
-        }
-    };
-
-    var browserNeedsFix = function() {
-        return  window.navigator &&
-            window.navigator.userAgent &&
-            window.navigator.userAgent.indexOf('Firefox') != -1
-    }
-
-    var testCSSContentNotPseudoElSupport = function () {
-
-        var imgdata = 'data:image/gif;base64,R0lGODlhAQABAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAABAAEAAAICVAEAOw==';
-        var img = new Image();
-        img.src = imgdata;
-        img.setAttribute('style', 'content:""');
-        return img.width === 0;
-    }
-
-    window.correctflagext = {
-        CSSAdded: false,
-        dzieShto: dzieShto,
-        addCSS: addCSS,
-        testCSSContentNotPseudoElSupport: testCSSContentNotPseudoElSupport,
-        FixForFireFox: FixForFireFox,
-        browserNeedsFix : browserNeedsFix
-    };
-
-    if (document.head) {
-        for (var i = 0, il = dzieShto.length, site; i < il, site = dzieShto[i]; i++ ) {
-            if (new RegExp(site.addr + '$','i').test(document.location.host)){
-                if (site.css){
-                    if (window.correctflagext.browserNeedsFix()){
-                        FixForFireFox(site)
-                    }
-                    addCSS(site.css);
-                    window.correctflagext.CSSAdded = true;
-                }
-            }
-        }
-    }
-
-})();
-
-window.addEventListener('DOMContentLoaded', function() {
-    var dzieShto = window.correctflagext && window.correctflagext.dzieShto;
     for (var i = 0, il = dzieShto.length, site; i < il, site = dzieShto[i]; i++ ) {
-        if (new RegExp(site.addr + '$','i').test(document.location.host)){
-            if (site.css && !window.correctflagext.CSSAdded){
-                window.correctflagext.addCSS(site.css)
-            }
 
-            if (window.correctflagext.browserNeedsFix()){
-                window.correctflagext.FixForFireFox(site)
+        if (new RegExp(site.addr + '$','i').test(document.location.host)){
+            if (site.css){
+                addCSS(site.css)
             }
+            site.images = site.images.map(function (img) {
+                return '*://*/*' + img ;
+            });
+
             if (site.files){
                 for (var k=0,newPic; k < site.files.length, newPic = site.files[k]; k++) {
                     var orig = window.document.images;
@@ -932,5 +892,4 @@ window.addEventListener('DOMContentLoaded', function() {
             }
         }
     }
-    //delete window.correctflagext;
 }, false);
