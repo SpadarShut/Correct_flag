@@ -18,7 +18,6 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/sciah.extension.oex" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/sciah.extension.oex.old" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chrome/chrome.zip" afterPath="$PROJECT_DIR$/chrome/chrome.zip" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
     </list>
     <ignored path="sciah.extension.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -103,8 +102,8 @@
       <file leaf-file-name="manifest.json" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/chrome/manifest.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.35971224">
-              <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
+            <state vertical-scroll-proportion="0.7553957">
+              <caret line="21" column="17" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -471,7 +470,13 @@
       <option name="project" value="LOCAL" />
       <updated>1451257451851</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="remove .idea from repo">
+      <created>1451257573963</created>
+      <option name="number" value="00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1451257573963</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TodoView">
@@ -569,7 +574,8 @@
     <MESSAGE value="implement generating flags based on options" />
     <MESSAGE value="fix image matching, css not injecting 2+ times, make kvitki.by &amp; theprintful work with new replacement technique" />
     <MESSAGE value="move encoded images to image files" />
-    <option name="LAST_COMMIT_MESSAGE" value="move encoded images to image files" />
+    <MESSAGE value="remove .idea from repo" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove .idea from repo" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1009,8 +1015,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/chrome/manifest.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35971224">
-          <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.7553957">
+          <caret line="21" column="17" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
           <folding />
         </state>
       </provider>
