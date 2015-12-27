@@ -38,24 +38,15 @@ function boxShadow (param) {
         ';
 }
 
-var sciahSphereSrc = 'data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%0D%0A%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20viewBox%3D%2212.65%2025.65%2050%2050%22%3E%0D%0A%3Cfilter%20id%3D%22AI_GaussianBlur_2%22%3E%0D%0A%09%3CfeGaussianBlur%20%20stdDeviation%3D%222%22%3E%3C%2FfeGaussianBlur%3E%0D%0A%3C%2Ffilter%3E%0D%0A%3Cfilter%20id%3D%22AI_GaussianBlur_1%22%3E%0D%0A%09%3CfeGaussianBlur%20%20stdDeviation%3D%221%22%3E%3C%2FfeGaussianBlur%3E%0D%0A%3C%2Ffilter%3E%0D%0A%3Cdefs%3E%0D%0A%09%3Ccircle%20id%3D%22e2_%22%20cx%3D%2237.65%22%20cy%3D%2250.65%22%20r%3D%2225%22%2F%3E%0D%0A%3C%2Fdefs%3E%0D%0A%3CclipPath%20id%3D%22e3_%22%3E%0D%0A%09%3Cuse%20xlink%3Ahref%3D%22%23e2_%22%20%20overflow%3D%22visible%22%2F%3E%0D%0A%3C%2FclipPath%3E%0D%0A%3Crect%20x%3D%220.275%22%20y%3D%2225.15%22%20clip-path%3D%22url(%23e3_)%22%20fill%3D%22%23FFF%22%20width%3D%2272.25%22%20height%3D%2251.125%22%2F%3E%0D%0A%3Crect%20x%3D%220.275%22%20y%3D%2240.4%22%20clip-path%3D%22url(%23e3_)%22%20fill%3D%22%23E21313%22%20width%3D%2272.25%22%20height%3D%2220.625%22%2F%3E%0D%0A%3CradialGradient%20id%3D%22e6_%22%20cx%3D%2237.6499%22%20cy%3D%2250.6499%22%20r%3D%2225%22%20gradientUnits%3D%22userSpaceOnUse%22%3E%0D%0A%09%3Cstop%20%20offset%3D%220.897%22%20style%3D%22stop-color%3A%23FFF%3Bstop-opacity%3A0%22%2F%3E%0D%0A%09%3Cstop%20%20offset%3D%220.9124%22%20style%3D%22stop-color%3A%23FCFCFC%3Bstop-opacity%3A0.0238%22%2F%3E%0D%0A%09%3Cstop%20%20offset%3D%220.9243%22%20style%3D%22stop-color%3A%23F2F2F2%3Bstop-opacity%3A0.0421%22%2F%3E%0D%0A%09%3Cstop%20%20offset%3D%220.9351%22%20style%3D%22stop-color%3A%23E2E2E2%3Bstop-opacity%3A0.0587%22%2F%3E%0D%0A%09%3Cstop%20%20offset%3D%220.9452%22%20style%3D%22stop-color%3A%23CACACA%3Bstop-opacity%3A0.0743%22%2F%3E%0D%0A%09%3Cstop%20%20offset%3D%220.9548%22%20style%3D%22stop-color%3A%23ACACAC%3Bstop-opacity%3A0.0891%22%2F%3E%0D%0A%09%3Cstop%20%20offset%3D%220.964%22%20style%3D%22stop-color%3A%23878787%3Bstop-opacity%3A0.1033%22%2F%3E%0D%0A%09%3Cstop%20%20offset%3D%220.973%22%20style%3D%22stop-color%3A%235B5B5B%3Bstop-opacity%3A0.1171%22%2F%3E%0D%0A%09%3Cstop%20%20offset%3D%220.9815%22%20style%3D%22stop-color%3A%232A2A2A%3Bstop-opacity%3A0.1302%22%2F%3E%0D%0A%09%3Cstop%20%20offset%3D%220.9879%22%20style%3D%22stop-color%3A%23000%3Bstop-opacity%3A0.14%22%2F%3E%0D%0A%3C%2FradialGradient%3E%0D%0A%3Ccircle%20clip-path%3D%22url(%23e3_)%22%20fill%3D%22url(%23e6_)%22%20cx%3D%2237.65%22%20cy%3D%2250.65%22%20r%3D%2225%22%2F%3E%0D%0A%3Cg%20opacity%3D%220.44%22%20clip-path%3D%22url(%23e3_)%22%20filter%3D%22url(%23AI_GaussianBlur_2)%22%3E%0D%0A%09%3Cellipse%20fill%3D%22none%22%20stroke%3D%22%237FBED9%22%20stroke-width%3D%222%22%20stroke-miterlimit%3D%2210%22%20cx%3D%2237.65%22%20cy%3D%2248.9%22%20rx%3D%2225%22%20ry%3D%2223.25%22%2F%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20opacity%3D%220.2%22%20clip-path%3D%22url(%23e3_)%22%20filter%3D%22url(%23AI_GaussianBlur_2)%22%3E%0D%0A%09%3Ccircle%20fill%3D%22none%22%20stroke%3D%22%23000%22%20stroke-width%3D%222%22%20stroke-miterlimit%3D%2210%22%20cx%3D%2237.65%22%20cy%3D%2237.65%22%20r%3D%2230.375%22%2F%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20clip-path%3D%22url(%23e3_)%22%20filter%3D%22url(%23AI_GaussianBlur_1)%22%3E%0D%0A%09%3CradialGradient%20id%3D%22e10_%22%20cx%3D%2237.6499%22%20cy%3D%2263.5249%22%20r%3D%2237.8758%22%20gradientUnits%3D%22userSpaceOnUse%22%3E%0D%0A%09%09%3Cstop%20%20offset%3D%220.1916%22%20style%3D%22stop-color%3A%23FFF%3Bstop-opacity%3A0%22%2F%3E%0D%0A%09%09%3Cstop%20%20offset%3D%221%22%20style%3D%22stop-color%3A%23FFF%22%2F%3E%0D%0A%09%3C%2FradialGradient%3E%0D%0A%09%3Cellipse%20fill%3D%22url(%23e10_)%22%20cx%3D%2237.9%22%20cy%3D%2239.025%22%20rx%3D%2217.125%22%20ry%3D%2211.75%22%2F%3E%0D%0A%3C%2Fg%3E%0D%0A%3CradialGradient%20id%3D%22e12_%22%20cx%3D%2269.9272%22%20cy%3D%2238.165%22%20r%3D%2214.1967%22%20gradientUnits%3D%22userSpaceOnUse%22%3E%0D%0A%09%3Cstop%20%20offset%3D%220.1916%22%20style%3D%22stop-color%3A%23FFF%3Bstop-opacity%3A0%22%2F%3E%0D%0A%09%3Cstop%20%20offset%3D%221%22%20style%3D%22stop-color%3A%23FFF%3Bstop-opacity%3A0.45%22%2F%3E%0D%0A%3C%2FradialGradient%3E%0D%0A%3Cpath%20clip-path%3D%22url(%23e3_)%22%20fill%3D%22url(%23e12_)%22%20d%3D%22M60.525%2C49.431c-0.037%2C3.375%2C1.445%2C2.885%2C1.625%2C0.219%0D%0A%09c0.5-7.406-4.292-12.333-4.292-12.333S60.619%2C40.9%2C60.525%2C49.431z%22%2F%3E%0D%0A%3C%2Fsvg%3E';
+var sciahSphereSrc = chrome.extension.getURL('res/sciahSphere.svg') ;
 
 var gradientCSS = '\
-		background:\
-     -o-linear-gradient(transparent, transparent 32%, rgba(204,18,18,.95) 32%,  rgba(204,18,18,.95) 68%, transparent 68%, transparent),\
-     -o-linear-gradient(-45deg, rgba(198,198,198,0.43) 0%, rgba(204,204,204,0.01) 21%,rgba(213,213,213,0.37) 55%,rgba(221,221,221,0) 83%,rgba(226,226,226,0.42) 100%) !important;\
-		background:-moz-linear-gradient(transparent, transparent 32%, rgba(204,18,18,.95) 32%,  rgba(204,18,18,.95) 67%, transparent 67%, transparent),\
-   -moz-linear-gradient(-45deg, rgba(198,198,198,0.43) 0%, rgba(204,204,204,0.01) 21%,rgba(213,213,213,0.37) 55%,rgba(221,221,221,0) 83%,rgba(226,226,226,0.42) 100%) !important;\
 		background:\
         linear-gradient(transparent, transparent 32%, rgba(204,18,18,.95) 32%,  rgba(204,18,18,.95) 68%, transparent 68%, transparent),\
         linear-gradient(-45deg, rgba(198,198,198,0.43) 0%, rgba(204,204,204,0.01) 21%,rgba(213,213,213,0.37) 55%,rgba(221,221,221,0) 83%,rgba(226,226,226,0.42) 100%) !important;\
 		background-color:#fff !important;';
 
 var reflectionDownCSS = '\
-			background: \
-		-moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,0.67) 33%, rgba(204,18,18,0.66) 34%, rgba(204,18,18,0.32) 68%, rgba(255,255,255,0.31) 69%, rgba(255,255,255,0) 100%); \
-			background:\
- 		-o-linear-gradient(top, rgba(255,255,255,.5) 0%,rgba(255,255,255,0.25) 30%,rgba(204,18,18,0.25) 30%,rgba(204,18,18,0.15) 62%,rgba(255,255,255,0.23) 62%,rgba(255,255,255,0) 100%); \
 			background:\
  			linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,0.67) 33%,rgba(204,18,18,0.66) 34%,rgba(204,18,18,0.32) 68%,rgba(255,255,255,0.31) 69%,rgba(255,255,255,0) 100%); ';
 
@@ -460,7 +451,8 @@ a[href="/community/members/location/Belarus"]{margin-left:.5em;}'
     css: 'img[src $="flags/17.gif"],img[src $="flags/by.gif"],.fffx{'+
     flagCSS+';height:22px;width:32px;' +
     'box-shadow:inset 0 0 0 1px rgba(0,0,0,.7);}' +
-    'img[src $="flags/by.gif"] {width:24px;height:15px;}'
+    'img[src $="flags/by.gif"] {width:24px;height:15px;}',
+    images: [{i: 'logo_new_by.gif', replacer: chrome.extension.getURL('res/rutracker_logo_by.png') }]
   },
   { addr: 'eventot.com',
     css:'.flag.flag-by {'+flagCSS+'}'
@@ -682,19 +674,19 @@ box-shadow:inset 0 0 0 1px #333,inset 0 0 0 2px rgba(255,255,255,.6); \
 
 /**
  *
- * @param prm
+ * @param params
  *   Parameters for the generated image. If it's a string - it will be passed on as the URL of new image.
- *   If prm is an object it will be passed to getSVGFlagURL to generate a necessary image.
+ *   If params is an object it will be passed to getSVGFlagURL to generate a necessary image.
  * @returns {string}
  */
-function flagURL (prm) {
+function flagURL (params) {
   var newImg = '';
 
-  if (typeof prm === 'string' && prm.length) {
-    newImg = prm;
+  if (params && params.replacer) {
+    newImg = params.replacer;
   }
   else {
-    newImg = getSVGFlagURL(prm);
+    newImg = getSVGFlagURL(params);
   }
   return newImg;
 }

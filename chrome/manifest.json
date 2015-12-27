@@ -21,5 +21,9 @@
     "webRequestBlocking",
     "http://*/*",
     "https://*/*"
+  ],
+  "web_accessible_resources": [
+    "res/rutracker_logo_by.png",
+    "res/sciahSphere.svg"
   ]
 }
