@@ -59,85 +59,12 @@ var reflectionDownCSS = '\
 			background:\
  			linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,0.67) 33%,rgba(204,18,18,0.66) 34%,rgba(204,18,18,0.32) 68%,rgba(255,255,255,0.31) 69%,rgba(255,255,255,0) 100%); ';
 
-var transparentGIF = "data:image/gif;base64,R0lGODlhAQABAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAABAAEAAAICVAEAOw==";
-
 var flagCSS = '\
         content:"";\
         display:inline-block;\
         border-radius:1px;\
         '+ boxShadow() +'\
 		'+ gradientCSS;
-
-
-function getReplacerFlag (prm) {
-
-  var mimetypes = {
-    'gif':  'image/gif',
-    'png':  'image/png',
-    'jpeg': 'image/jpeg',
-    'jpg':  'image/jpeg',
-    'svg':  'image/svg+xml',
-    'webp': 'image/webp'
-  };
-
-  var mime = mimetypes['svg'];
-  var newImg = '';
-
-  // if it's new img URL use it
-  if (typeof prm === 'string' && prm.length) {
-    newImg = prm;
-    var fileext = prm.match(new RegExp('\.([a-zA-Z]+)$','i'));
-    if (fileext) {
-      mime = mimetypes[fileext[1]];
-    } else {
-      console.error('wrong image url', prm);
-      return;
-    }
-  }
-  // if it's an object pass it to svg generating function
-  else {
-    newImg = getSVGFlag(prm);
-  }
-  return newImg;
-}
-
-function getSVGFlag (prm) {
-
-  var flagTpl = '\
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 16" width="24" preserveAspectRatio="none">\
-      <defs>\
-        <clipPath id="clip">\
-          <rect id="cliprect" fill="none" width="24" height="16" rx="0"/>\
-        </clipPath>\
-        <linearGradient id="gradient" gradientUnits="userSpaceOnUse" x1="0.0898" y1="-2.271" x2="25.0163" y2="19.2252">\
-          <stop offset="0.1484" stop-color="#F1F0EC"/>\
-          <stop offset="0.2196" stop-color="#FEFDF9"/>\
-          <stop offset="0.3429" stop-color="#FCFBF7"/>\
-          <stop offset="0.3872" stop-color="#f5f4f0"/>\
-          <stop offset="0.4116" stop-color="#f2f1ed"/>\
-          <stop offset="0.4662" stop-color="#FEFDF9"/>\
-          <stop offset="0.6008" stop-color="#FBFAF6"/>\
-          <stop offset="0.6929" stop-color="#F2F1ED"/>\
-          <stop offset="0.7722" stop-color="#E3E2DE"/>\
-          <stop offset="0.8439" stop-color="#CDCCC9"/>\
-          <stop offset="0.8739" stop-color="#c9c8c5"/>\
-        </linearGradient>\
-      </defs>\
-      <g clip-path="url(#clip)">\
-        <rect fill="url(#gradient)" width="24" height="16"/>\
-        <rect fill="#E21313" y="5" width="24" height="6"/>\
-        <rect id="contour" stroke="#000" stroke-width="2px" opacity="0.10" fill="none" width="24" height="16" vector-effect="non-scaling-stroke"/>\
-      </g>\
-    </svg>\
-    ';
-
-  var SVGParent = window.document.createElement('div');
-  SVGParent.innerHTML = flagTpl;
-  // here will be SVG manipulations
-  var url = 'data:image/svg+xml,' + encodeURIComponent(SVGParent.firstElementChild.outerHTML);
-  return url;
-}
-
 
 var dzieShto = [
   {
@@ -320,11 +247,11 @@ var dzieShto = [
   },
   {
     addr: 'battlefield.com',
-    css:'img[src $="/flags/by.gif"],.fffx{ '+ flagCSS +';width:16px;height: 12px !important; '+ boxShadow(0.3) +'}'
+    css:'img[src $="/flags/by.gif"],.fffx{ '+ flagCSS +';width: 16px;height: 12px !important; '+ boxShadow(0.3) +'}'
   },
   {
     addr: 'joma.by',
-    css:'img[src $="/images/by.png"],.fffx{ '+ flagCSS +';width:16px;height: 12px !important;vertical-align: middle;}'
+    css:'img[src $="/images/by.png"],.fffx{ '+ flagCSS +';width: 16px;height: 12px !important;vertical-align: middle;}'
   },
   {
     addr: 'myscore.ru',
@@ -399,7 +326,7 @@ var dzieShto = [
     css:  'img[src $="flag/BY.png"]:not(.fakeclassforspecificity),.fffx:not(.fakeclassforspecificity) {'+
     + flagCSS +'; \
           height: 12px; \
-          width:18px;\
+          width: 18px;\
           border:0\
           '+ boxShadow(0.5) +'\
         }\
@@ -460,13 +387,13 @@ var dzieShto = [
 				 html body .skype_pnh_container span[style ="background-position:-909px 1px !important;"] {background:none !important;position:relative !important;} \
 				 html body .skype_pnh_container span[style *="background-position: -909px"]::after, \
 				 html body .skype_pnh_container span[style ="background-position:-909px 1px !important;"]::after \
-				 {'+flagCSS+'height:12px; width:16px; position:absolute; left:0; top:0;}'
+				 {'+flagCSS+'height:12px; width: 16px; position:absolute; left:0; top:0;}'
   },
   { addr: '(my\.)?opera.com',
     css: '[style *= "flags/BY.png"]::before, img[src $= "flags/BY.png"], .f-BY::before{ '+ flagCSS +';height:12px}\
 		  [style *= "flags/BY.png"]{background-image:none !important;position:relative;}\
 		  [style *= "flags/BY.png"]::before{' +
-    'width:16px;height:12px;position:absolute;top:6px;right:3px;content:"";' +
+    'width: 16px;height:12px;position:absolute;top:6px;right:3px;content:"";' +
     'box-shadow:inset 0 0 0 1px rgba(0,0,0,.3);}\
 a[href="/community/members/location/Belarus"]{margin-left:.5em;}'
   },
@@ -495,7 +422,7 @@ a[href="/community/members/location/Belarus"]{margin-left:.5em;}'
 				    position:relative; \
 				    top:1px;\
 				    '+ flagCSS +'\
-				    width:16px;\
+				    width: 16px;\
 				    height:12px !important;\
 				    padding: 0 ! important; \
 				} \
@@ -512,7 +439,7 @@ a[href="/community/members/location/Belarus"]{margin-left:.5em;}'
 						margin-right:3px\
 				}\
 				.b-keyboard__lang-by .b-keyboard__lang-ic, \
-				img[src *="b-country-flag_size-16_by.png"] {'+ flagCSS +'width:16px;height:12px;} ' +
+				img[src *="b-country-flag_size-16_by.png"] {'+ flagCSS +'width: 16px;height:12px;} ' +
     '.b-country-flag_size-16_by,' +
     '.b-country-flag_size-24_by, ' +
     '.b-country-flag_size-32_by, ' +
@@ -558,19 +485,20 @@ a[href="/community/members/location/Belarus"]{margin-left:.5em;}'
   },
   { addr: 'kvitki.by',
     css:'img[src $="lang_by.gif"], ' +
-    'img[src $="lang_by_ov.gif"],.fffx {'+flagCSS+';width:16px;height:12px;} ' +
+    'img[src $="lang_by_ov.gif"],.fffx {'+flagCSS+';width: 16px;height:12px;} ' +
     'img[src $="lang_by_ov.gif"]{opacity: .6}',
     images: [
       {i: 'lang_by.gif', r: ''},
       {i: 'http://www.kvitki.by/public/by/media/images/ico/lang_by_ov.gif', r: ''},
       {i: 'http://www.kvitki.by/public/by/media/images/ico/lang_by.gif', r: ''},
-      {i: 'http://www.kvitki.by/public/by/media/images/ico/lang_en.gif', r: 'http://www.kvitki.by/public/by/media/images/ico/lang_en.gif'},
+      {i: 'http://www.kvitki.by/public/by/media/images/ico/lang_en.gif',
+        r: 'http://www.kvitki.by/public/by/media/images/ico/lang_en.gif'},
       {i: 'lang_by_ov.gif', r: ''}
     ]
   },
   { addr: 'cybergames.by',
-    css:'img[src $="flags/by.gif"],.fffx {'+flagCSS+'width:18px;height:12px;}' +
-    'img[src $="flags/by_large.png"],.fffx {'+flagCSS+'width:180px;height:90px;' +
+    css:'img[src $="flags/by.gif"],.fffx {'+flagCSS+'width: 18px;height:12px;}' +
+    'img[src $="flags/by_large.png"],.fffx {'+flagCSS+'width: 180px;height:90px;' +
     'box-shadow:inset 0 0 1px 1px rgba(0,0,0,.3);}'
   },
   { addr: 'audience.by',
@@ -607,20 +535,20 @@ a[href="/community/members/location/Belarus"]{margin-left:.5em;}'
 			   .country_flag[style *="/by.png"] {background-image: url("'+sciahSphereSrc+'") !important; opacity:.5;}'
   },
   { addr: 'greencard.by',
-    css:'img[src $="flags/by.gif"],.fffx {'+flagCSS+'width:16px; height:12px}'
+    css:'img[src $="flags/by.gif"],.fffx {'+flagCSS+'width: 16px; height:12px}'
   },
   { addr: 'grodnonews.by',
     css:'img[src $="images/by.gif"],.fffx {'+flagCSS+'width:17px; height:13px}'
   },
   { addr: 'techlabs.by',
     css:'img[src $="flag-by.gif"],.fffx {'+flagCSS+
-    'width:18px;height:12px;' +
+    'width: 18px;height:12px;' +
     '-webkit-box-shadow:inset 0 0 0 1px rgba(0,0,0,.7);' +
     '-moz-box-shadow:inset 0 0 0 1px rgba(0,0,0,.7);' +
     'box-shadow:inset 0 0 0 1px rgba(0,0,0,.7);}'
   },
   { addr: 'parta.by',
-    css:'img[src $="icons/flag_by.gif"],.fffx {'+flagCSS+'width:18px;height:12px;' +
+    css:'img[src $="icons/flag_by.gif"],.fffx {'+flagCSS+'width: 18px;height:12px;' +
     '-webkit-box-shadow:inset 0 0 0 1px rgba(0,0,0,.4);' +
     '-moz-box-shadow:inset 0 0 0 1px rgba(0,0,0,.4);' +
     'box-shadow:inset 0 0 0 1px rgba(0,0,0,.4);}'
@@ -641,7 +569,7 @@ a[href="/community/members/location/Belarus"]{margin-left:.5em;}'
   },
   { addr: 'autoline(\-eu)?.*',
     css: '[style *="flags/langs/by.gif"] {position:relative;background:none !important} \
-				[style *="flags/langs/by.gif"]::before {'+flagCSS+'width:18px;height:13px;position:absolute;left:0;top:3px;}\
+				[style *="flags/langs/by.gif"]::before {'+flagCSS+'width: 18px;height:13px;position:absolute;left:0;top:3px;}\
 				img[src $="flag/flag_by.png"],.fffx {'+flagCSS+'width:24px;height:19px}'
   },
   { addr: 'library.gsu.by',
@@ -649,41 +577,35 @@ a[href="/community/members/location/Belarus"]{margin-left:.5em;}'
   },
   { addr: '((pl|en)\.)?brestintourist.*',
     css: 'img[src $="lang/by.png"],.fffx{'+flagCSS+'width:25px;height:18px;margin:0 0 3px;' +
-    '-webkit-box-shadow:inset 0 0 0 1px rgba(0,0,0,.7);' +
-    '   -moz-box-shadow:inset 0 0 0 1px rgba(0,0,0,.7);' +
     '        box-shadow:inset 0 0 0 1px rgba(0,0,0,.7);}\
 .item_by a{position:relative}\
 .item_by a:after{content:"";display:block;position:absolute;left:-34px;top:-3px;' +
     'width:25px;height:25px;background:url("'+sciahSphereSrc+'") no-repeat}'
   },
   { addr: 'navitel.*',
-    css:'img[src $="global/by.png"],.fffx {'+flagCSS+'width:18px;height:13px;' +
-    '-webkit-box-shadow:inset 0 0 0 1px rgba(0,0,0,.15), 1px 1px 2px  rgba(0,0,0,.4);' +
-    '   -moz-box-shadow:inset 0 0 0 1px rgba(0,0,0,.15), 1px 1px 2px  rgba(0,0,0,.4);' +
-    '        box-shadow:inset 0 0 0 1px rgba(0,0,0,.15), 1px 1px 2px  rgba(0,0,0,.4);}'
+    css:'img[src $="global/by.png"],.fffx {'+flagCSS+'width: 18px;height:13px;' +
+    'box-shadow:inset 0 0 0 1px rgba(0,0,0,.15), 1px 1px 2px  rgba(0,0,0,.4);}'
   },
   { addr: 'world-geographics.com',
     css:'img[src $="flags/BY.png"],.fffx{'+flagCSS+'height:18px;border-radius:1.5px;' +
-    '-webkit-box-shadow:inset 0 0 0 1px rgba(0,0,0,.04),inset 0 -1px 0  rgba(0,0,0,.15);' +
-    '   -moz-box-shadow:inset 0 0 0 1px rgba(0,0,0,.04),inset 0 -1px 0  rgba(0,0,0,.15);' +
-    '        box-shadow:inset 0 0 0 1px rgba(0,0,0,.04),inset 0 -1px 0  rgba(0,0,0,.15);}'+
+    'box-shadow:inset 0 0 0 1px rgba(0,0,0,.04),inset 0 -1px 0  rgba(0,0,0,.15);}'+
     'img[src $="flags/BY.png"]:not(".flagsmall") {width:48px;height:42px;}'
   },
 
   { addr: 'sportlemon.tv',
-    css:'img[src $="flags/by.gif"],.fffx{'+flagCSS+'width:16px;height:12px;}'
+    css:'img[src $="flags/by.gif"],.fffx{'+flagCSS+'width: 16px;height:12px;}'
   },
   { addr: 'allsport-live.ru',
-    css: 'td[width="30"][height="20"] img[src $="flags/flag_belarus.png"],.fffx {'+flagCSS+'width:16px !important;height:12px !important;}' +
+    css: 'td[width="30"][height="20"] img[src $="flags/flag_belarus.png"],.fffx {'+flagCSS+'width: 16px !important;height:12px !important;}' +
     '#fsbody .fl_31, .fl_31 { background:none !important;}' +
-    '.fl_31:before{'+flagCSS+'width:16px;height:12px;margin:0 8px -1px -24px;}'
+    '.fl_31:before{'+flagCSS+'width: 16px;height:12px;margin:0 8px -1px -24px;}'
   },
   { addr: 'livescore.in',
     css: '#fsbody .fl_31, .fl_31 { background:none !important;} ' +
-    '.fl_31:before{'+flagCSS+'width:16px; height:12px; vertical-align:top;} ul.menu-left .fl_31:before { margin:0 8px -1px -24px; vertical-align:text-top}'
+    '.fl_31:before{'+flagCSS+'width: 16px; height:12px; vertical-align:top;} ul.menu-left .fl_31:before { margin:0 8px -1px -24px; vertical-align:text-top}'
   },
   { addr: 'livetv.ru',
-    css:'img[src $="national/by.gif"],img[src $="img/flags/24.png"],.fffx{'+flagCSS+'width:16px;height:12px;}\
+    css:'img[src $="national/by.gif"],img[src $="img/flags/24.png"],.fffx{'+flagCSS+'width: 16px;height:12px;}\
 				img[src $="fullsize/1372.gif"], img[src $="fullsize/1373.gif"], img[src $="fullsize/1374.gif"], img[src $="fullsize/1375.gif"], \
 				img[src $="fullsize/1376.gif"], img[src $="fullsize/1377.gif"], img[src $="fullsize/1378.gif"], img[src $="fullsize/1379.gif"], \
 				img[src $="fullsize/1380.gif"], img[src $="fullsize/1381.gif"], img[src $="fullsize/1382.gif"], img[src $="fullsize/1383.gif"], \
@@ -735,7 +657,7 @@ box-shadow:inset 0 0 0 1px #333,inset 0 0 0 2px rgba(255,255,255,.6); \
 				img[src $="teams/18/1384.gif"], img[src $="teams/18/1385.gif"], img[src $="teams/18/1386.gif"], img[src $="teams/18/1387.gif"], \
 				img[src $="teams/18/1388.gif"], img[src $="teams/18/1389.gif"], img[src $="teams/18/1390.gif"], img[src $="teams/18/1391.gif"], \
  				img[src $="teams/18/1392.gif"]\
-					{width:18px;height:18px;}\
+					{width: 18px;height:18px;}\
  				img[width="65"]{width:65px !important;height:65px !important;}'
   },
   { addr: 'fantasy.premierleague.com',
@@ -746,13 +668,11 @@ box-shadow:inset 0 0 0 1px #333,inset 0 0 0 2px rgba(255,255,255,.6); \
     + flagCSS +
     'width:14px;' +
     'height:12px;'+
-    '-webkit-box-shadow:inset 0 0 0 1px rgba(0,0,0,.1), 0 1px 2px rgba(0,0,0,.1);' +
-    '   -moz-box-shadow:inset 0 0 0 1px rgba(0,0,0,.1), 0 1px 2px rgba(0,0,0,.1);' +
-    '        box-shadow:inset 0 0 0 1px rgba(0,0,0,.1), 0 1px 2px rgba(0,0,0,.1);}'
+    'box-shadow:inset 0 0 0 1px rgba(0,0,0,.1), 0 1px 2px rgba(0,0,0,.1);}'
   },
   { addr: 'goals.by',
     css: 'img[src *="img/flags/by.png"],.fffx {'
-    +flagCSS+'width:16px;height:12px}' +
+    +flagCSS+'width: 16px;height:12px}' +
     '.ic-flag-BY::before, \
      .ic-flag-BY img, img.fffx {\
           width: 16px; \
@@ -772,22 +692,126 @@ box-shadow:inset 0 0 0 1px #333,inset 0 0 0 2px rgba(255,255,255,.6); \
               .ic-flag-r.ic-flag::before { left: auto !important; right: 0 !important}'
   },
   { addr: 'pac.by',
-    css: '.by_l_by,.by_l {width:16px} .by_l_by img,.by_l img{display:none;}' +
-    '.by_l_by a::before, .by_l a::before{'+flagCSS+'width:16px;height:12px;display:block}' +
-    '.by_l_by a::after,.by_l a::after{width:16px;height:9px;display:block;content:"";'+ reflectionDownCSS +'}'
+    css: '.by_l_by,.by_l {width: 16px} .by_l_by img,.by_l img{display:none;}' +
+    '.by_l_by a::before, .by_l a::before{'+flagCSS+'width: 16px;height:12px;display:block}' +
+    '.by_l_by a::after,.by_l a::after{width: 16px;height:9px;display:block;content:"";'+ reflectionDownCSS +'}'
   },
   { addr: 'postcrossing.com',
-    css: '.flag.flag-BY {'+ flagCSS +'width:16px;height:12px;}'
+    css: '.flag.flag-BY {'+ flagCSS +'width: 16px;height:12px;}'
   },
   { addr: 'localhost',
-    css: 'body {background: #eee}',
+    css: 'body {background: #eee000}',
     images: [
-      {i:'zachod-nad-balotam.png', r: {}}
+      { i:'zachod-nad-balotam.png',
+        r: {}
+      }
     ]
   }
 ];
 
-// END old injected
+// END dzieShto
+
+/**
+ *
+ * @param prm
+ *   Parameters for the generated image. If it's a string - it will be passed on as the URL of new image.
+ *   If prm is an object it will be passed to getSVGFlag to generate a necessary image.
+ * @returns {string}
+ */
+function getReplacerFlag (prm) {
+  var newImg = '';
+  if (typeof prm === 'string' && prm.length) { newImg = prm; }
+  else { newImg = getSVGFlag(prm); }
+  return newImg;
+}
+/**
+ * @param img Object Parameters for the replacer image
+ *
+ * img properties:
+ *
+ * img.w
+ * img.h
+ * img.rx
+ * img.contour
+ * img.gradient
+ *
+ * @returns {string}
+ */
+function getSVGFlag (img) {
+  img.w = img.w || 32; // default image width
+  img.h = img.h || 16; // default image height
+
+  var flagTpl = '\
+    <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">\
+      <defs>\
+        <clipPath id="clip">\
+          <rect id="cliprect" fill="none" width="100%" height="100%" rx="0"/>\
+        </clipPath>\
+        <linearGradient id="gradient" gradientUnits="userSpaceOnUse" x1="0.0898" y1="-2.271" x2="25.0163" y2="19.2252">\
+          <stop offset="0.1484" stop-color="#F1F0EC"/>\
+          <stop offset="0.2196" stop-color="#FEFDF9"/>\
+          <stop offset="0.3429" stop-color="#FCFBF7"/>\
+          <stop offset="0.3872" stop-color="#f5f4f0"/>\
+          <stop offset="0.4116" stop-color="#f2f1ed"/>\
+          <stop offset="0.4662" stop-color="#FEFDF9"/>\
+          <stop offset="0.6008" stop-color="#FBFAF6"/>\
+          <stop offset="0.6929" stop-color="#F2F1ED"/>\
+          <stop offset="0.7722" stop-color="#E3E2DE"/>\
+          <stop offset="0.8439" stop-color="#CDCCC9"/>\
+          <stop offset="0.8739" stop-color="#c9c8c5"/>\
+        </linearGradient>\
+      </defs>\
+      <g clip-path="url(#clip)">\
+        <rect id="base" fill="url(#gradient)" width="100%" height="100%"/>\
+        <rect id="red" fill="#E21313" y="33.3333333%" width="100%" height="33.3333333%"/>\
+        <rect id="contour" stroke="#000" stroke-width="2px" opacity="0.07" fill="none" width="100%" height="100%" vector-effect="non-scaling-stroke"/>\
+      </g>\
+    </svg>\
+    ';
+
+  var SVGNS = 'http://www.w3.org/2000/svg';
+  var SVGParent = window.document.createElement('div');
+  SVGParent.innerHTML = flagTpl;
+  var SVG = SVGParent.firstElementChild;
+  var cliprect = SVG.querySelector('#cliprect');
+  var gradient = SVG.querySelector('#gradient');
+  var base = SVG.querySelector('#base');
+  var contour = SVG.querySelector('#contour');
+
+
+  // Set size
+  if (img.w == 'auto') {
+    // stretch to full width
+    SVG.setAttribute('viewBox', '0 0 32 16');
+    SVG.setAttributeNS(SVGNS, 'width', '100%')
+  }
+  else {
+    // set dimensions if needed
+    SVG.setAttribute('viewBox', '0 0 ' + img.w + ' ' + img.h);
+    SVG.setAttributeNS(SVGNS, 'width', img.w)
+  }
+
+  // set img radius
+  if (img.rx) {
+    cliprect.setAttribute('rx', img.rx);
+    base.setAttribute('rx', img.rx);
+    contour.setAttribute('rx', img.rx);
+  }
+
+  if (img.contour) {
+    if (img.contour == 'none') {
+      contour.style.display = 'none';
+    }
+    // todo: process different contours
+  }
+  if (img.gradient == 'none') {
+    base.setAttribute('fill', '#fff');
+  }
+
+  var url = 'data:image/svg+xml,' + encodeURIComponent(SVG.outerHTML);
+  console.log(SVG.outerHTML);
+  return url;
+}
 
 function serveCSS () {
   // Listen for CSS requests
@@ -811,6 +835,7 @@ function setupFilters (){
     if (site.images) {
       site.images.forEach(function (img) {
 
+        // todo: handle case when images are from domain another than the site
         // turn image into URL pattern if it's not a URL already
         if (img.i.indexOf('://') == -1) {
           img.i = '*://'+ site.addr +'/*' + img.i + '*';
@@ -820,7 +845,7 @@ function setupFilters (){
         chrome.webRequest.onBeforeRequest.addListener(
           function() {
             var url = getReplacerFlag(img);
-            console.log('Woohoo! replacing flag', url, arguments);
+//            console.log('Woohoo! replacing flag', url, arguments);
             return {redirectUrl: url}
           },
           {types: ['image'], urls: [img.i] },
