@@ -75,11 +75,6 @@ var dzieShto = [
     '.country-selector .belarus:before, .country-selector .BY:before {' + flagCSS +'width: 22px;height:16px;margin: 3px 0 0 5px;display: block}'
   },
   {
-    addr: 'secret.ly',
-    css: '' +
-    '.id-country-by{'+ flagCSS+' } '
-  },
-  {
     addr: 'pressball.by',
     css: '' +
     'img[src *="online_games/teams/th_belarus.jpg"],.fffx {'+ flagCSS+'width: 200px; height: 130px } '+
@@ -707,6 +702,7 @@ function flagURL (params) {
  * img.contour
  * img.gradient
  * img.emboss
+ * img.red
  *
  * @returns {string}
  */
