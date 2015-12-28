@@ -84,13 +84,6 @@ var dzieShto = [
     '.euro-football .country img[src *="images/countries/belarus.png"] { height:12px}'
   },
   {
-    addr: 'iihfworlds2014.com',
-    css: '' +
-    'img[src *="images/umbraco/by.png"],img[src *="flags/16x11/BLR.png"] {  width: 16px; height: 12px;'+ flagCSS+' } '+
-    'img[src *="flags/30x22/BLR.png"], img[src *="/media/182946/belarus.png"] { width: 30px; height: 22px;'+ flagCSS +'} ' +
-    '#teams .team-overview h1 img[src *="/media/182946/belarus.png"], #teams .team-overview h1 img.fff {border: 0; margin-top: 2px}'
-  },
-  {
     addr: 'mail.ru',
     css: '.phonePrefix[style *="country_icons/by.png"], ' +
     '.form__phone-prefix__prefix[style *="country_icons/by.png"] { background: none !important;}'+
