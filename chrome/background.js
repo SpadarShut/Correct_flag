@@ -448,11 +448,17 @@ a[href="/community/members/location/Belarus"]{margin-left:.5em;}'
 				.ffi_by {height:13px;margin-top: 1px;}'
   },
   { addr: 'rutracker.org',
-    css: 'img[src $="flags/17.gif"],img[src $="flags/by.gif"],.fffx{'+
-    flagCSS+';height:22px;width:32px;' +
-    'box-shadow:inset 0 0 0 1px rgba(0,0,0,.7);}' +
-    'img[src $="flags/by.gif"] {width:24px;height:15px;}',
-    images: [{i: 'logo_new_by.gif', replacer: chrome.extension.getURL('res/rutracker_logo_by.png') }]
+    images: [
+      {i: 'flags/by.gif', contour: 1, w: 24, h: 15 },
+      {i: 'flags/17.gif', contour: 1, w: 32, h: 20 },
+      {i: 'flags/lang_by.png', w: 40, h: 20, contour: 0 },
+      {i: 'logo_new_by.gif', replacer: chrome.extension.getURL('res/rutracker_logo_by.png') },
+    ],
+    sample: [
+      {url: 'http://rutracker.org/forum/profile.php?mode=viewprofile&u=21923338', notes: 'See user flag. You must be logged in'},
+      {url: 'https://by.rutracker.org/forum/index.php', notes: 'Logo must be white-red-white'},
+      {url: 'https://ua.rutracker.org/forum/', notes: 'In footer'},
+    ]
   },
   { addr: 'eventot.com',
     css:'.flag.flag-by {'+flagCSS+'}'
@@ -709,31 +715,31 @@ function getSVGFlagURL (img) {
   img.w = img.w || 32; // default image width
   img.h = img.h || 16; // default image height
 
-  var flagTpl = '\
-    <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">\
-      <clipPath id="clip">\
-        <rect id="cliprect" fill="none" width="100%" height="100%" rx="0"/>\
-      </clipPath>\
-      <linearGradient id="gradient" gradientUnits="userSpaceOnUse" x1="0.0898" y1="-2.271" x2="25.0163" y2="19.2252">\
-        <stop offset="0.1484" stop-color="#F1F0EC"/>\
-        <stop offset="0.2196" stop-color="#FEFDF9"/>\
-        <stop offset="0.3429" stop-color="#FCFBF7"/>\
-        <stop offset="0.3872" stop-color="#f5f4f0"/>\
-        <stop offset="0.4116" stop-color="#f2f1ed"/>\
-        <stop offset="0.4662" stop-color="#FEFDF9"/>\
-        <stop offset="0.6008" stop-color="#FBFAF6"/>\
-        <stop offset="0.6929" stop-color="#F2F1ED"/>\
-        <stop offset="0.7722" stop-color="#E3E2DE"/>\
-        <stop offset="0.8439" stop-color="#CDCCC9"/>\
-        <stop offset="0.8739" stop-color="#c9c8c5"/>\
-      </linearGradient>\
-      <g clip-path="url(#clip)">\
-        <rect id="base" fill="#fff" width="100%" height="100%"/>\
-        <rect id="red" fill="#E21313" y="33.3333333%" width="100%" height="33.3333333%"/>\
-        <line id="emboss" opacity="0.18" stroke-width="5" stroke="#fff" x1="0" y1="0" x2="0" y2="100%"/>\
-        <rect id="contour" opacity="0.1" stroke-width="2" stroke="#000" fill="none" width="100%" height="100%" vector-effect="non-scaling-stroke"/>\
-      </g>\
-    </svg>\
+  var flagTpl = '\n\
+    <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">\n\
+      <clipPath id="clip">\n\
+        <rect id="cliprect" fill="none" width="100%" height="100%" rx="0"/>\n\
+      </clipPath>\n\
+      <linearGradient id="gradient" gradientUnits="userSpaceOnUse" x1="0.0898" y1="-2.271" x2="25.0163" y2="19.2252">\n\
+        <stop offset="0.1484" stop-color="#F1F0EC"/>\n\
+        <stop offset="0.2196" stop-color="#FEFDF9"/>\n\
+        <stop offset="0.3429" stop-color="#FCFBF7"/>\n\
+        <stop offset="0.3872" stop-color="#f5f4f0"/>\n\
+        <stop offset="0.4116" stop-color="#f2f1ed"/>\n\
+        <stop offset="0.4662" stop-color="#FEFDF9"/>\n\
+        <stop offset="0.6008" stop-color="#FBFAF6"/>\n\
+        <stop offset="0.6929" stop-color="#F2F1ED"/>\n\
+        <stop offset="0.7722" stop-color="#E3E2DE"/>\n\
+        <stop offset="0.8439" stop-color="#CDCCC9"/>\n\
+        <stop offset="0.8739" stop-color="#c9c8c5"/>\n\
+      </linearGradient>\n\
+      <g clip-path="url(#clip)">\n\
+        <rect id="base" fill="#fff" width="100%" height="100%"/>\n\
+        <rect id="red" fill="#E21313" y="33.3333333%" width="100%" height="33.3333333%"/>\n\
+        <line id="emboss" opacity="0.18" stroke-width="4" stroke="#fff" x1="0" y1="0" x2="0" y2="100%" vector-effect="non-scaling-stroke"/>\n\
+        <rect id="contour" opacity="0.1" stroke-width="2" stroke="#000" fill="none" width="100%" height="100%" vector-effect="non-scaling-stroke"/>\n\
+      </g>\n\
+    </svg>\n\
     ';
 
   var SVGNS = 'http://www.w3.org/2000/svg';
@@ -743,7 +749,7 @@ function getSVGFlagURL (img) {
   var cliprect = SVG.querySelector('#cliprect');
   var base = SVG.querySelector('#base');
   var red = SVG.querySelector('#red');
-  var emboss = SVG.querySelector('#cemboss');
+  var emboss = SVG.querySelector('#emboss');
   var gradient = SVG.querySelector('#gradient');
   var contour = SVG.querySelector('#contour');
 
@@ -757,7 +763,8 @@ function getSVGFlagURL (img) {
   else {
     // set dimensions if needed
     SVG.setAttribute('viewBox', '0 0 ' + img.w + ' ' + img.h);
-    SVG.setAttributeNS(SVGNS, 'width', img.w)
+    SVG.setAttribute( 'width', img.w);
+    SVG.setAttribute( 'height', img.h);
   }
 
   // set img radius
@@ -767,11 +774,13 @@ function getSVGFlagURL (img) {
     contour.setAttribute('rx', img.rx);
   }
 
-  if (img.contour) {
+  if (img.hasOwnProperty('contour')) {
     if (img.contour == 'none') {
       contour.style.display = 'none';
     }
-    // todo: process different contours
+    if (typeof img.contour === 'number') {
+      contour.setAttribute('opacity', img.contour);
+    }
   }
 
   // Show/hide gradient
