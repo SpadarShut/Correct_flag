@@ -55,50 +55,26 @@ var flagCSS = '\
 		'+ gradientCSS;
 
 var dzieShto = [
-  {
-    addr: 'theprintful.com',
-    css: '.flag.by { ' + flagBGI(null, true) + '}',
-    sample: [{url: 'https://www.theprintful.com/', notes: 'From Belarusian IP' }],
+
+    // All sites
+    // ---------
+
+  { addr: '.*',
+    css: ' html body .skype_pnh_container span[style *="background-position: -909px"], \
+				 html body .skype_pnh_container span[style ="background-position:-909px 1px !important;"] {background:none !important;position:relative !important;} \
+				 html body .skype_pnh_container span[style *="background-position: -909px"]::after, \
+				 html body .skype_pnh_container span[style ="background-position:-909px 1px !important;"]::after \
+				 {'+flagCSS+'height:12px; width: 16px; position:absolute; left:0; top:0;}' +
+    '' +
+    '/* Lib for tel input https://github.com/jackocnr/intl-tel-input */' +
+    '.iti-flag.by { \
+      background: linear-gradient(to bottom, #fff, #fff 33.333333%, #E21313 33.33333%, #E21313 66.66666%, #fff 66.666%);\
+    }'
   },
-  {
-    addr: 'behance\.net|adobe\.com',
-    //css: '.iti-flag.by {'+ flagBGI() + '}'
-    // .iti-flag.by is covered by .* entry. Keeping behance/adobe here for stats.
-    sample: [{
-      url: 'https://adobeid-na1.services.adobe.com/renga-idprovider/pages/login.do',
-      notes: 'Page where it asks for mobile phone number after logging in'
-    }]
-  },
-  {
-    addr: 'paypal.com',
-    css: '' +
-    '.country.belarus, ' +
-    ' .country.BY {' +
-      flagBGI({r: 1, red: '#EA6A6E', emboss: 0.1 }, true) +
-      'background-position: 5px 3px !important;' +
-      'background-size: 22px 16px; !important' +
-    '}',
-    images : [{i: 'icon/icon_BY_22x14.gif', w: 22, h: 14}],
-    sample: [{
-      url:'https://www.paypal.com/by/webapps/mpp/home',
-      notes: 'In footer, and in country selector which is opened by clicking it'
-    }, {
-      url: 'https://www.paypal.com/by/signup/account',
-      notes: 'In footer '
-    }, {
-      url: '',
-      notes: 'icon/icon_BY_22x14.gif ??? dont remember '
-    }]
-  },
-  {
-    addr: 'pressball.by',
-    css: '' +
-    'img[src *="online_games/teams/th_belarus.jpg"],.fffx {'+ flagCSS+'width: 200px; height: 130px } '+
-    'img[src *="online_games/teams/th_blr1.jpg"],img[src *="online_games/teams/th_blr2.jpg"],img[src *="online_games/teams/th_blr4.jpg"] {'+ flagCSS+' } '+
-    '#rbl_onl a img[src *="online_games/teams/th_blr"], #rbl_onl span img {height: 130px}'+
-    'img[src *="images/countries/belarus.png"] {'+ flagCSS+'  height:14px; width: 14px}' +
-    '.euro-football .country img[src *="images/countries/belarus.png"] { height:12px}'
-  },
+
+    // Sites popular in Belarus
+    // ------------------------
+
   {
     addr: 'mail.ru',
     css: '.phonePrefix[style *="country_icons/by.png"], ' +
@@ -110,20 +86,268 @@ var dzieShto = [
     '[style *="background-image: url(/res120/pic/sport/team/d1/600.png#120x120)"] { background-image: url("'+ sciahSphereSrc +'") !important; -moz-background-size: 94px 94px; background-size: 94px 94px;}'
   },
   {
+    addr: 'telegraf.by',
+    css:'.flag-BYR { '+ flagCSS + 'height: 12px !important}'
+  },
+  {
+    addr: 'belpost.by',
+    css:'img[src $="/i/blr.jpg"],.fffx{ '+ flagCSS +';width:24px;height: 15px !important;margin-top:-1px; '+ boxShadow(0.2) +'}'
+  },
+  {
+    addr: 'vk.com|vkontakte.ru',
+    css:'.lang_box_row {position: relative;} .lang_box_row[style *="images/lang_flags/2.gif"]{ background-image: none !important}' +
+    '.lang_box_row[style *="images/lang_flags/2.gif"]:before {'+ flagCSS +
+    'width: 34px;' +
+    'height: 26px;' +
+    'position: absolute; left: 10px; top: 50%; margin-top: -13px;'+
+    ' }'
+  },
+  {
+    addr: 'gismeteo.(by|ru|ua|lt|com)',
+    css:  'body #menu li.sprite .flag span.by {'+ flagCSS + boxShadow(0.25) +' height: 12px; background-position: 0 0, 0 0 !important; position: relative; top: 1px;}'
+  },
+  {
+    addr: 'slando.by',
+    css:  'img[src $="flags/by.png"],.fffx {'+ flagCSS +'; height: 12px; width: 16px;}'
+  },
+  { addr: 'yandex\..*',
+    css:  '.b-country-flag_size-16_by, .country-flag_size-16_by {'+ flagCSS +'} \
+				 img[src $="b-foot__lang__by.png"],\
+				 .b-langs__flag_lang_by, .langs__flag_lang_by, \
+				 .b-mail-icon_lang-be, .mail-icon_lang-be { \
+				    position:relative; \
+				    top:1px;\
+				    '+ flagCSS +'\
+				    width: 16px;\
+				    height:12px !important;\
+				    padding: 0 ! important; \
+				} \
+				.b-mail-dropdown__item_with-icon .b-mail-icon.b-mail-icon_lang-be {\
+                    background:'+  gradientCSS +'\
+                    margin: -6px 0 0 7px ;\
+                }\
+				.b-keyboard__lang-by .b-keyboard__lang-ic { \
+						' + gradientCSS +'\
+						width:14px;\
+						border:0;\
+						position:relative;\
+						height:11px;\
+						margin-right:3px\
+				}\
+				.b-keyboard__lang-by .b-keyboard__lang-ic, \
+				img[src *="b-country-flag_size-16_by.png"] {'+ flagCSS +'width: 16px;height:12px;} ' +
+    '.b-country-flag_size-16_by,' +
+    '.b-country-flag_size-24_by, ' +
+    '.b-country-flag_size-32_by, ' +
+    '.b-country-flag_size-48_by {'+ flagCSS +'}' +
+    '.b-country-flag_size-16_by { padding: 12px 0 0 16px; }' +
+
+    '.b-country-flag_size-48_by.event__rival_pos_l, ' +
+    '.b-country-flag_size-48_by.event__rival_pos_r {height:37px; width:48px; top: 40px; bottom: auto; padding: 0 }'+
+
+    '.b-country-flag_size-24_by.event__rival_pos_l, ' +
+    '.b-country-flag_size-24_by.event__rival_pos_r {background-size: 24px 18px; width: 24px;height: 18px; top: 22px; bottom: auto; padding: 0}'
+  },
+  { addr: 'rutracker.org',
+    images: [
+      {i: 'flags/by.gif', contour: 1, w: 24, h: 15 },
+      {i: 'flags/17.gif', contour: 1, w: 32, h: 20 },
+      {i: 'flags/lang_by.png', w: 40, h: 20, contour: 0 },
+      {i: 'logo_new_by.gif', replacer: chrome.extension.getURL('res/rutracker_logo_by.png') },
+    ],
+    sample: [
+      {url: 'http://rutracker.org/forum/profile.php?mode=viewprofile&u=21923338', notes: 'See user flag. You must be logged in'},
+      {url: 'https://by.rutracker.org/forum/index.php', notes: 'Logo must be white-red-white'},
+      {url: 'https://ua.rutracker.org/forum/', notes: 'In footer'},
+    ]
+  },
+  { addr: 'skyscanner\.*',
+    css:'img[src $="flag/small/by.png"], .fffx {'+flagCSS+';width: 16px; height:12px;}' +
+    '#culture-info #current-user-country img[title=Belarus]{margin-top: 2px }'
+  },
+  { addr: 'kinopoisk.ru',
+    css:'.flag69 * {'+flagCSS+'; height:12px}\
+		       .flag.flag69 {height: 12px} \
+		       .tenItems .flags {height: auto !important}\
+		       .movieFlags .flag69 * {height: 10px}\
+			   .country_flag[style *="/by.png"] {background-image: url("'+sciahSphereSrc+'") !important; opacity:.5;}'
+  },
+  { addr: 'kvitki.by',
+    images: [
+      { i: 'lang_by.gif', w: 16, h: 12 },
+      { i: 'lang_by_ov.gif', w: 16, h: 12, red: '#888' },
+    ],
+    sample: [{ url: 'http://www.kvitki.by/', 'notes': 'In header icon + hover'}]
+  },
+
+
+    // Sports sites
+    // ------------
+
+  {
+    addr: 'pressball.by',
+    css: '' +
+    'img[src *="online_games/teams/th_belarus.jpg"],.fffx {'+ flagCSS+'width: 200px; height: 130px } '+
+    'img[src *="online_games/teams/th_blr1.jpg"],img[src *="online_games/teams/th_blr2.jpg"],img[src *="online_games/teams/th_blr4.jpg"] {'+ flagCSS+' } '+
+    '#rbl_onl a img[src *="online_games/teams/th_blr"], #rbl_onl span img {height: 130px}'+
+    'img[src *="images/countries/belarus.png"] {'+ flagCSS+'  height:14px; width: 14px}' +
+    '.euro-football .country img[src *="images/countries/belarus.png"] { height:12px}'
+  },
+  {
+    addr: 'pefl.ru',
+    css:'img[src $="/flags/18.gif"],.fffx{ '+ flagCSS +'; display: inline-block !important } ' +
+    'img[src $="/flags/18.gif"][width="30"]{ height: 20px; vertical-align: middle}'
+  },
+  {
+    addr: 'sports.ru',
+    css:'.flag-s.flag-1302,.fffx{ '+ flagCSS +' }' +
+    '.flag-circle.f-belarus {'+ flagCSS +' border-radius: 50%; '+ boxShadow("inset 0 0 9px rgba(0,0,0,.2)")+'}' +
+    'img[src *="73017810/1317751561.637227_34.jpg"]{' + boxShadow('inset 0 0 6px rgba(0,0,0,.4)') +'content:"";background:50% no-repeat url("'+sciahSphereSrc+'"); background-size: 48px 48px; border-radius: 50%;}'
+  },
+  {
+    addr: 'sportpanorama.by',
+    css:'img[src $="/flags/1.jpg"],.fffx{ '+ flagCSS +'; display: inline-block !important; width: 16px; height: 11px; '+ boxShadow(0.3) +'}'
+  },
+  {
+    addr: 'myscore.ru',
+    css:'.flag.fl_31,.fffx{ ' +
+    flagCSS +
+    'content: normal; ' +
+    'background-position: 0 50%, 0 50% !important; ' +
+    'background-size: 16px 12px,  16px 12px !important; ' +
+    'background-repeat: no-repeat, no-repeat !important;' +
+    '}' +
+    '.header .flag.fl_31 { background: none !important; box-shadow: none !important;vertical-align: middle}'+
+    '.header .flag.fl_31:before { ' +
+    flagCSS +
+    'width: 16px;' +
+    'height: 12px;' +
+    'margin: 0 8px -1px -24px;'+
+    '}'+
+    '#fs .flag, #fsmenu .flag, #main .flag.fl_31 { height: 12px !important }' +
+    'img[src *="/res/image/data/rN9xhjRc-I7KbpC8c.png"], .fffx {'+ flagCSS +' height: 25px; margin-top: 12px}'
+  },
+  {
+    addr: 'championat.com',
+    css:'img[src $="cflags/by.gif"],.fffx{ '+ flagCSS +'; display: inline-block !important; width: 16px; height: 12px;}'
+  },
+  {
+    addr: 'dinamo-minsk.by',
+    css:'img[src $="_8_0x0.jpg"][title="Беларусь"], ' +
+    'img[src $="/51/~568_8_0x0.jpg"],.fffx {'+ flagCSS +'; display: inline-block !important; width: 33px; height: 18px; '+ boxShadow(0.2) +'}'
+  },
+  {
+    addr: 'pbliga.com',
+    css:'img[src *="flags/flag_17.png"],.fffx{ '+ flagCSS +'; width: 22px; height: 18px; vertical-align: middle; '+ boxShadow("inset 0 0 0 1px rgba(0,0,0,0.25), inset -5px 0 10px rgba(255,255,255,.4)") +'}' +
+    'img[src *="flags/blr.gif"][title],.fffx[title]{ '+ flagCSS +'width: 16px; height: 12px;'+ boxShadow("inset 0 0 0 1px rgba(0,0,0,0.25), inset -5px 0 10px rgba(255,255,255,.4)") + '}'
+  },
+  {
+    addr: 'football.by',
+    css:'img[src *= "stat/getimage.php?flagid=1"], .fffx { '+ flagCSS + ' width: 19px; height: 12px;}'
+  },
+  {
+    addr: 'sportbox.ru',
+    css:'img[src *="land/by.png"], .fffx { '+ flagCSS + '}'
+  },
+  {
+    addr: 'soccer.ru',
+    css:'img[src *="/images/flag/15.gif"], .fffx{ '+ flagCSS +'; '+ boxShadow(0.28) +' height: 15px; vertical-align: middle; position: static !important}'
+  },
+  {
+    addr: 'transfermarkt.de',
+    css:'.sprite_land_18{ '+ flagCSS +'; '+ boxShadow(0.28) +' height: 12px}'
+  },
+  {
+    addr: 'soccerstand.com',
+    css:'.flag_small_all.f57{ '+ flagCSS +'; '+ boxShadow(0.18) +'}'
+  },
+  { addr: 'sportlemon.tv',
+    css:'img[src $="flags/by.gif"],.fffx{'+flagCSS+'width: 16px;height:12px;}'
+  },
+  { addr: 'allsport-live.ru',
+    css: 'td[width="30"][height="20"] img[src $="flags/flag_belarus.png"],.fffx {'+flagCSS+'width: 16px !important;height:12px !important;}' +
+    '#fsbody .fl_31, .fl_31 { background:none !important;}' +
+    '.fl_31:before{'+flagCSS+'width: 16px;height:12px;margin:0 8px -1px -24px;}'
+  },
+  { addr: 'livescore.in',
+    css: '#fsbody .fl_31, .fl_31 { background:none !important;} ' +
+    '.fl_31:before{'+flagCSS+'width: 16px; height:12px; vertical-align:top;} ul.menu-left .fl_31:before { margin:0 8px -1px -24px; vertical-align:text-top}'
+  },
+  { addr: 'livetv.ru',
+    css:'img[src $="national/by.gif"],img[src $="img/flags/24.png"],.fffx{'+flagCSS+'width: 16px;height:12px;}\
+				img[src $="fullsize/1372.gif"], img[src $="fullsize/1373.gif"], img[src $="fullsize/1374.gif"], img[src $="fullsize/1375.gif"], \
+				img[src $="fullsize/1376.gif"], img[src $="fullsize/1377.gif"], img[src $="fullsize/1378.gif"], img[src $="fullsize/1379.gif"], \
+				img[src $="fullsize/1380.gif"], img[src $="fullsize/1381.gif"], img[src $="fullsize/1382.gif"], img[src $="fullsize/1383.gif"], \
+				img[src $="fullsize/1384.gif"], img[src $="fullsize/1385.gif"], img[src $="fullsize/1386.gif"], img[src $="fullsize/1387.gif"], \
+				img[src $="fullsize/1388.gif"], img[src $="fullsize/1389.gif"], img[src $="fullsize/1390.gif"], img[src $="fullsize/1391.gif"], \
+ 				img[src $="fullsize/1392.gif"],\
+				img[src $="teams/1372.gif"], img[src $="teams/1373.gif"], img[src $="teams/1374.gif"], img[src $="teams/1375.gif"], \
+				img[src $="teams/1376.gif"], img[src $="teams/1377.gif"], img[src $="teams/1378.gif"], img[src $="teams/1379.gif"], \
+				img[src $="teams/1380.gif"], img[src $="teams/1381.gif"], img[src $="teams/1382.gif"], img[src $="teams/1383.gif"], \
+				img[src $="teams/1384.gif"], img[src $="teams/1385.gif"], img[src $="teams/1386.gif"], img[src $="teams/1387.gif"], \
+				img[src $="teams/1388.gif"], img[src $="teams/1389.gif"], img[src $="teams/1390.gif"], img[src $="teams/1391.gif"], \
+ 				img[src $="teams/18/1392.gif"],\
+				img[src $="teams/18/1372.gif"], img[src $="teams/18/1373.gif"], img[src $="teams/18/1374.gif"], img[src $="teams/18/1375.gif"], \
+				img[src $="teams/18/1376.gif"], img[src $="teams/18/1377.gif"], img[src $="teams/18/1378.gif"], img[src $="teams/18/1379.gif"], \
+				img[src $="teams/18/1380.gif"], img[src $="teams/18/1381.gif"], img[src $="teams/18/1382.gif"], img[src $="teams/18/1383.gif"], \
+				img[src $="teams/18/1384.gif"], img[src $="teams/18/1385.gif"], img[src $="teams/18/1386.gif"], img[src $="teams/18/1387.gif"], \
+				img[src $="teams/18/1388.gif"], img[src $="teams/18/1389.gif"], img[src $="teams/18/1390.gif"], img[src $="teams/18/1391.gif"], \
+ 				img[src $="teams/18/1392.gif"],.fffx\
+  					{\
+	content:"";display:inline-block;width:49px;height:49px;\
+	background:\
+ repeating-linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, rgba(255,255,255,.25) 1px,rgba(255,255,255,.25) 2px), \
+ linear-gradient(-45deg,transparent, transparent 30%, rgba(204,18,18,.95) 30%,  rgba(204,18,18,.95) 70%, transparent 70%, transparent), \
+ linear-gradient(-45deg, rgba(198,198,198,0.43) 0%,rgba(204,204,204,0.01) 21%,rgba(213,213,213,0.37) 55%,rgba(221,221,221,0) 83%,rgba(226,226,226,0.42) 100%); \
+box-shadow:inset 0 0 0 1px #333,inset 0 0 0 2px rgba(255,255,255,.6); \
+					}\
+				img[src $="teams/1372.gif"], img[src $="teams/1373.gif"], img[src $="teams/1374.gif"], img[src $="teams/1375.gif"], \
+				img[src $="teams/1376.gif"], img[src $="teams/1377.gif"], img[src $="teams/1378.gif"], img[src $="teams/1379.gif"], \
+				img[src $="teams/1380.gif"], img[src $="teams/1381.gif"], img[src $="teams/1382.gif"], img[src $="teams/1383.gif"], \
+				img[src $="teams/1384.gif"], img[src $="teams/1385.gif"], img[src $="teams/1386.gif"], img[src $="teams/1387.gif"], \
+				img[src $="teams/1388.gif"], img[src $="teams/1389.gif"], img[src $="teams/1390.gif"], img[src $="teams/1391.gif"], \
+ 				img[src $="teams/1392.gif"]\
+					{width:36px;height:36px}\
+				img[src $="teams/18/1372.gif"], img[src $="teams/18/1373.gif"], img[src $="teams/18/1374.gif"], img[src $="teams/18/1375.gif"], \
+				img[src $="teams/18/1376.gif"], img[src $="teams/18/1377.gif"], img[src $="teams/18/1378.gif"], img[src $="teams/18/1379.gif"], \
+				img[src $="teams/18/1380.gif"], img[src $="teams/18/1381.gif"], img[src $="teams/18/1382.gif"], img[src $="teams/18/1383.gif"], \
+				img[src $="teams/18/1384.gif"], img[src $="teams/18/1385.gif"], img[src $="teams/18/1386.gif"], img[src $="teams/18/1387.gif"], \
+				img[src $="teams/18/1388.gif"], img[src $="teams/18/1389.gif"], img[src $="teams/18/1390.gif"], img[src $="teams/18/1391.gif"], \
+ 				img[src $="teams/18/1392.gif"]\
+					{width: 18px;height:18px;}\
+ 				img[width="65"]{width:65px !important;height:65px !important;}'
+  },
+  { addr: 'fantasy.premierleague.com',
+    css: 'img[src $="static/img/flags/BY.gif"],.fffx{'+flagCSS+'width:64px;height32px;}'
+  },
+  { addr: 'goals.by',
+    css: 'img[src *="img/flags/by.png"],.fffx {'
+    +flagCSS+'width: 16px;height:12px}' +
+    '.ic-flag-BY::before, \
+     .ic-flag-BY img, img.fffx {\
+          width: 16px; \
+          height: 12px; \
+          clip: auto !important; \
+          left: 0 !important; \
+          top: auto !important; \
+          right: 0 !important; \
+          transform:translateY(1px);\
+          '+ flagCSS +'\
+              }\
+              .ic-flag-BY::before {\
+                    content: "" !important\
+              }\
+              .ic-flag-r.ic-flag::before { left: auto !important; right: 0 !important}'
+  },
+  {
     addr: 'tribuna.com',
     css: '.flag-1302 { '+ flagCSS + boxShadow('inset 0 0 1px rgba(0,0,0,1), inset 0 0 0 2px rgba(255,265,255,.25)') +'; border-radius: 2px}'
   },
-  {
-    addr: 'codeforces\.com|codeforces\.ru',
-    css: '.standings-flag[src *="flags-16/by.png"], .fffx{ '+ flagCSS + boxShadow('inset 0 0 1px rgba(0,0,0,.45), 0 1px 3px rgba(0,0,0,.2)') +' height: 12px; width: 16px; border-radius:2px;}'
-  },
-  {
-    addr: 'budist.ru',
-    css:'.flag[style *="background-image"][style *="img/flags/by.png"]:before{ '+ flagCSS +' height: 12px; width: 100%; position: relative; top: 50%; margin-top: -6px}' +
-    '.flag[style *="background-image"][style *="img/flags/by.png"]{ background: none !important}' +
-    'img[src *="/img/flags/by.png"], .fffx{ '+ flagCSS + boxShadow(0.2) +' height: 12px; display: inline-block !important; padding: 0 !important}',
-    isAsyncSite: true
-  },
+
+
+    // International popular sites
+    // ---------------------------
+
   {
     addr: 'google.com',
     css:'.talk-flag[style *="background-position: 0px -1100px"], .i18n-phone-flag[style *="background-position: 0px -1100px"]{ '+
@@ -132,13 +356,38 @@ var dzieShto = [
     '._GAf-_countryFlag-_BY {'+ flagCSS +'; height: 12px}'
   },
   {
-    //todo: this doesn't work
-    addr: 'xperteleven.com',
-    css:'img[src *="flags/BY.gif"], .fffx{ '+ sciahSphereSrc +' opacity: .5; height: 14px; width: 15px; }'
+    addr: 'behance\.net|adobe\.com',
+    // .iti-flag.by is covered by .* entry. Keeping behance/adobe here for stats.
+    //css: '.iti-flag.by {'+ flagBGI() + '}'
+    sample: [{
+      url: 'https://adobeid-na1.services.adobe.com/renga-idprovider/pages/login.do',
+      notes: 'Page where it asks for mobile phone number after logging in'
+    }]
   },
   {
-    addr: 'catholic.by',
-    css:'img[src *="/flag-by2.gif"], .fffx{ '+ flagCSS +'; '+ boxShadow(0.28) + '; opacity: .5; height: 15px;}'
+    addr: 'paypal.com',
+    css: '' +
+    '.country.belarus, ' +
+    ' .country.BY {' +
+    flagBGI({r: 1, red: '#EA6A6E', emboss: 0.1 }, true) +
+    'background-position: 5px 3px !important;' +
+    'background-size: 22px 16px; !important' +
+    '}',
+    images : [{i: 'icon/icon_BY_22x14.gif', w: 22, h: 14}],
+    sample: [{
+      url:'https://www.paypal.com/by/webapps/mpp/home',
+      notes: 'In footer, and in country selector which is opened by clicking it'
+    }, {
+      url: 'https://www.paypal.com/by/signup/account',
+      notes: 'In footer '
+    }, {
+      url: '',
+      notes: 'icon/icon_BY_22x14.gif ??? dont remember where i saw it '
+    }]
+  },
+  {
+    addr: 'timeanddate.com',
+    css:'img[src *= "gfx/fl/"][src *= "/by.png"], .fffx { '+ flagCSS + '}'
   },
   {
     addr: 'erepublik.com',
@@ -172,6 +421,50 @@ var dzieShto = [
     '.flag[src *="Belarus"], .flag[data-origsrc *="Belarus"] {padding:0; margin-right: 5px}' +
     '#battle_listing img[src *="Belarus"],#battle_listing img [data-origsrc *="Belarus"]{ height: 18px } '
   },
+  { addr: 'postcrossing.com',
+    css: '.flag.flag-BY {'+ flagCSS +'width: 16px;height:12px;}'
+  },
+  { addr: 'wikipedia.org',
+    files: [
+      { src:'*Coat_of_arms_of_Belarus.svg(.png)?',
+        newSrc: 'http://upload.wikimedia.org/wikipedia/commons/9/9c/Coat_of_Arms_of_Belarus_(1991).svg'
+      }
+    ],
+    css:'img[src $="data:image/svg+xml"].thumbborder{border:0 !important;}\
+				img[src *="Flag_of_Belarus.svg"],.fffx{border:0 !important;'+ flagCSS+'}  \
+				img[src *="Coat_of_Arms_of_Belarus_(1991).svg"][width ="80"]{ width:70px }  \
+		  '
+  },
+
+
+    // Rest
+    // ----
+  {
+    addr: 'theprintful.com',
+    css: '.flag.by { ' + flagBGI(null, true) + '}',
+    sample: [{url: 'https://www.theprintful.com/', notes: 'From Belarusian IP' }],
+  },
+
+  {
+    addr: 'codeforces\.com|codeforces\.ru',
+    css: '.standings-flag[src *="flags-16/by.png"], .fffx{ '+ flagCSS + boxShadow('inset 0 0 1px rgba(0,0,0,.45), 0 1px 3px rgba(0,0,0,.2)') +' height: 12px; width: 16px; border-radius:2px;}'
+  },
+  {
+    addr: 'budist.ru',
+    css:'.flag[style *="background-image"][style *="img/flags/by.png"]:before{ '+ flagCSS +' height: 12px; width: 100%; position: relative; top: 50%; margin-top: -6px}' +
+    '.flag[style *="background-image"][style *="img/flags/by.png"]{ background: none !important}' +
+    'img[src *="/img/flags/by.png"], .fffx{ '+ flagCSS + boxShadow(0.2) +' height: 12px; display: inline-block !important; padding: 0 !important}',
+    isAsyncSite: true
+  },
+  {
+    //todo: this doesn't work
+    addr: 'xperteleven.com',
+    css:'img[src *="flags/BY.gif"], .fffx{ '+ sciahSphereSrc +' opacity: .5; height: 14px; width: 15px; }'
+  },
+  {
+    addr: 'catholic.by',
+    css:'img[src *="/flag-by2.gif"], .fffx{ '+ flagCSS +'; '+ boxShadow(0.28) + '; opacity: .5; height: 15px;}'
+  },
   {
     addr: 'kinozal.tv',
     css:' img[src *="/pic/f/10.gif"], .fffx{'+ flagCSS + ' width: 14px; height: 12px}'
@@ -189,36 +482,8 @@ var dzieShto = [
     css:'img[src *= "flags/by.png"], .fffx { '+ flagCSS + ' width: 16px; height: 12px}'
   },
   {
-    addr: 'timeanddate.com',
-    css:'img[src *= "gfx/fl/"][src *= "/by.png"], .fffx { '+ flagCSS + '}'
-  },
-  {
     addr: 'myjob.by',
     css:'img[src *= "flags/15x10/by.gif"], .fffx { '+ flagCSS + ' width: 15px; height: 12px;}'
-  },
-  {
-    addr: 'football.by',
-    css:'img[src *= "stat/getimage.php?flagid=1"], .fffx { '+ flagCSS + ' width: 19px; height: 12px;}'
-  },
-  {
-    addr: 'telegraf.by',
-    css:'.flag-BYR { '+ flagCSS + 'height: 12px !important}'
-  },
-  {
-    addr: 'sportbox.ru',
-    css:'img[src *="land/by.png"], .fffx { '+ flagCSS + '}'
-  },
-  {
-    addr: 'soccer.ru',
-    css:'img[src *="/images/flag/15.gif"], .fffx{ '+ flagCSS +'; '+ boxShadow(0.28) +' height: 15px; vertical-align: middle; position: static !important}'
-  },
-  {
-    addr: 'transfermarkt.de',
-    css:'.sprite_land_18{ '+ flagCSS +'; '+ boxShadow(0.28) +' height: 12px}'
-  },
-  {
-    addr: 'soccerstand.com',
-    css:'.flag_small_all.f57{ '+ flagCSS +'; '+ boxShadow(0.18) +'}'
   },
   {
     addr: 'ibbhotel.by',
@@ -229,17 +494,8 @@ var dzieShto = [
     css:'img[src $="icons/russian.gif"],.fffx{ '+ flagCSS +'; width: 16px; height: 12px; vertical-align: top; '+ boxShadow(0.18) +'}'
   },
   {
-    addr: 'pbliga.com',
-    css:'img[src *="flags/flag_17.png"],.fffx{ '+ flagCSS +'; width: 22px; height: 18px; vertical-align: middle; '+ boxShadow("inset 0 0 0 1px rgba(0,0,0,0.25), inset -5px 0 10px rgba(255,255,255,.4)") +'}' +
-    'img[src *="flags/blr.gif"][title],.fffx[title]{ '+ flagCSS +'width: 16px; height: 12px;'+ boxShadow("inset 0 0 0 1px rgba(0,0,0,0.25), inset -5px 0 10px rgba(255,255,255,.4)") + '}'
-  },
-  {
     addr: 'tamby.info',
     css:'img[src $="images/strany/belarus.png"],.fffx{ '+ flagCSS +'; '+ boxShadow(0.15) +'}'
-  },
-  {
-    addr: 'belpost.by',
-    css:'img[src $="/i/blr.jpg"],.fffx{ '+ flagCSS +';width:24px;height: 15px !important;margin-top:-1px; '+ boxShadow(0.2) +'}'
   },
   {
     addr: 'battlefield.com',
@@ -250,72 +506,12 @@ var dzieShto = [
     css:'img[src $="/images/by.png"],.fffx{ '+ flagCSS +';width: 16px;height: 12px !important;vertical-align: middle;}'
   },
   {
-    addr: 'myscore.ru',
-    css:'.flag.fl_31,.fffx{ ' +
-    flagCSS +
-    'content: normal; ' +
-    'background-position: 0 50%, 0 50% !important; ' +
-    'background-size: 16px 12px,  16px 12px !important; ' +
-    'background-repeat: no-repeat, no-repeat !important;' +
-    '}' +
-    '.header .flag.fl_31 { background: none !important; box-shadow: none !important;vertical-align: middle}'+
-    '.header .flag.fl_31:before { ' +
-    flagCSS +
-    'width: 16px;' +
-    'height: 12px;' +
-    'margin: 0 8px -1px -24px;'+
-    '}'+
-    '#fs .flag, #fsmenu .flag, #main .flag.fl_31 { height: 12px !important }' +
-    'img[src *="/res/image/data/rN9xhjRc-I7KbpC8c.png"], .fffx {'+ flagCSS +' height: 25px; margin-top: 12px}'
-  },
-  {
-    addr: 'championat.com',
-    css:'img[src $="cflags/by.gif"],.fffx{ '+ flagCSS +'; display: inline-block !important; width: 16px; height: 12px;}'
-  },
-  {
-    addr: 'dinamo-minsk.by',
-    css:'img[src $="_8_0x0.jpg"][title="Беларусь"], ' +
-    'img[src $="/51/~568_8_0x0.jpg"],.fffx {'+ flagCSS +'; display: inline-block !important; width: 33px; height: 18px; '+ boxShadow(0.2) +'}'
-  },
-  {
     addr: 'exist.by',
     css:'img[src $="/flags/by.gif"],.fffx{ '+ flagCSS +'; display: inline-block !important; width: 16px; height: 11px; '+ boxShadow(0.99) +'}'
   },
   {
-    addr: 'sportpanorama.by',
-    css:'img[src $="/flags/1.jpg"],.fffx{ '+ flagCSS +'; display: inline-block !important; width: 16px; height: 11px; '+ boxShadow(0.3) +'}'
-  },
-  {
-    addr: 'pefl.ru',
-    css:'img[src $="/flags/18.gif"],.fffx{ '+ flagCSS +'; display: inline-block !important } ' +
-    'img[src $="/flags/18.gif"][width="30"]{ height: 20px; vertical-align: middle}'
-  },
-  {
-    addr: 'sports.ru',
-    css:'.flag-s.flag-1302,.fffx{ '+ flagCSS +' }' +
-    '.flag-circle.f-belarus {'+ flagCSS +' border-radius: 50%; '+ boxShadow("inset 0 0 9px rgba(0,0,0,.2)")+'}' +
-    'img[src *="73017810/1317751561.637227_34.jpg"]{' + boxShadow('inset 0 0 6px rgba(0,0,0,.4)') +'content:"";background:50% no-repeat url("'+sciahSphereSrc+'"); background-size: 48px 48px; border-radius: 50%;}'
-  },
-  {
     addr: 'busuu.com',
     css:'img.flag[src $="/flags/by.gif"],.fffx{ '+ flagCSS +'; display: inline-block !important }'
-  },
-  {
-    addr: 'vk.com|vkontakte.ru',
-    css:'.lang_box_row {position: relative;} .lang_box_row[style *="images/lang_flags/2.gif"]{ background-image: none !important}' +
-    '.lang_box_row[style *="images/lang_flags/2.gif"]:before {'+ flagCSS +
-    'width: 34px;' +
-    'height: 26px;' +
-    'position: absolute; left: 10px; top: 50%; margin-top: -13px;'+
-    ' }'
-  },
-  {
-    addr: 'gismeteo.(by|ru|ua|lt|com)',
-    css:  'body #menu li.sprite .flag span.by {'+ flagCSS + boxShadow(0.25) +' height: 12px; background-position: 0 0, 0 0 !important; position: relative; top: 1px;}'
-  },
-  {
-    addr: 'slando.by',
-    css:  'img[src $="flags/by.png"],.fffx {'+ flagCSS +'; height: 12px; width: 16px;}'
   },
   {
     addr: 'samsungapps.com',
@@ -377,18 +573,6 @@ var dzieShto = [
     addr: "rfe.by",
     css: 'img[src $="lang_by.gif"]{'+ flagCSS+'; width: 15px; height: 11px; vertical-align: top}'
   },
-  { addr: '.*',
-    css: ' html body .skype_pnh_container span[style *="background-position: -909px"], \
-				 html body .skype_pnh_container span[style ="background-position:-909px 1px !important;"] {background:none !important;position:relative !important;} \
-				 html body .skype_pnh_container span[style *="background-position: -909px"]::after, \
-				 html body .skype_pnh_container span[style ="background-position:-909px 1px !important;"]::after \
-				 {'+flagCSS+'height:12px; width: 16px; position:absolute; left:0; top:0;}' +
-    '' +
-    '/* Lib for tel input https://github.com/jackocnr/intl-tel-input */' +
-    '.iti-flag.by { \
-      background: linear-gradient(to bottom, #fff, #fff 33.333333%, #E21313 33.33333%, #E21313 66.66666%, #fff 66.666%);\
-    }'
-  },
   { addr: '(my\.)?opera\.com',
     css: '[style *= "flags/BY.png"]::before, img[src $= "flags/BY.png"], .f-BY::before{ '+ flagCSS +';height:12px}\
 		  [style *= "flags/BY.png"]{background-image:none !important;position:relative;}\
@@ -400,81 +584,15 @@ a[href="/community/members/location/Belarus"]{margin-left:.5em;}'
   { addr: 'sovrep.gov.by',
     css: 'img[src $="top_01.jpg"],.fffx{'+flagCSS+';width:190px;height:108px;margin:0;border-left:1px solid #c24621}'
   },
-  { addr: 'wikipedia.org',
-    files: [
-      { src:'*Coat_of_arms_of_Belarus.svg(.png)?',
-        newSrc: 'http://upload.wikimedia.org/wikipedia/commons/9/9c/Coat_of_Arms_of_Belarus_(1991).svg'
-      }
-    ],
-    css:'img[src $="data:image/svg+xml"].thumbborder{border:0 !important;}\
-				img[src *="Flag_of_Belarus.svg"],.fffx{border:0 !important;'+ flagCSS+'}  \
-				img[src *="Coat_of_Arms_of_Belarus_(1991).svg"][width ="80"]{ width:70px }  \
-		  '
-  },
   { addr: 'un.org',
     css: 'img[src $="belarus.gif"],.fffx{'+ flagCSS +'width:22px;height:13px;border:0 !important;}'
-  },
-  { addr: 'yandex\..*',
-    css:  '.b-country-flag_size-16_by, .country-flag_size-16_by {'+ flagCSS +'} \
-				 img[src $="b-foot__lang__by.png"],\
-				 .b-langs__flag_lang_by, .langs__flag_lang_by, \
-				 .b-mail-icon_lang-be, .mail-icon_lang-be { \
-				    position:relative; \
-				    top:1px;\
-				    '+ flagCSS +'\
-				    width: 16px;\
-				    height:12px !important;\
-				    padding: 0 ! important; \
-				} \
-				.b-mail-dropdown__item_with-icon .b-mail-icon.b-mail-icon_lang-be {\
-                    background:'+  gradientCSS +'\
-                    margin: -6px 0 0 7px ;\
-                }\
-				.b-keyboard__lang-by .b-keyboard__lang-ic { \
-						' + gradientCSS +'\
-						width:14px;\
-						border:0;\
-						position:relative;\
-						height:11px;\
-						margin-right:3px\
-				}\
-				.b-keyboard__lang-by .b-keyboard__lang-ic, \
-				img[src *="b-country-flag_size-16_by.png"] {'+ flagCSS +'width: 16px;height:12px;} ' +
-    '.b-country-flag_size-16_by,' +
-    '.b-country-flag_size-24_by, ' +
-    '.b-country-flag_size-32_by, ' +
-    '.b-country-flag_size-48_by {'+ flagCSS +'}' +
-    '.b-country-flag_size-16_by { padding: 12px 0 0 16px; }' +
-
-    '.b-country-flag_size-48_by.event__rival_pos_l, ' +
-    '.b-country-flag_size-48_by.event__rival_pos_r {height:37px; width:48px; top: 40px; bottom: auto; padding: 0 }'+
-
-    '.b-country-flag_size-24_by.event__rival_pos_l, ' +
-    '.b-country-flag_size-24_by.event__rival_pos_r {background-size: 24px 18px; width: 24px;height: 18px; top: 22px; bottom: auto; padding: 0}'
   },
   { addr: 'godaddy.com',
     css: 'div[style *="/country_flags_sml/by.gif"],.ffi_by{'+ flagCSS+'}\
 				.ffi_by {height:13px;margin-top: 1px;}'
   },
-  { addr: 'rutracker.org',
-    images: [
-      {i: 'flags/by.gif', contour: 1, w: 24, h: 15 },
-      {i: 'flags/17.gif', contour: 1, w: 32, h: 20 },
-      {i: 'flags/lang_by.png', w: 40, h: 20, contour: 0 },
-      {i: 'logo_new_by.gif', replacer: chrome.extension.getURL('res/rutracker_logo_by.png') },
-    ],
-    sample: [
-      {url: 'http://rutracker.org/forum/profile.php?mode=viewprofile&u=21923338', notes: 'See user flag. You must be logged in'},
-      {url: 'https://by.rutracker.org/forum/index.php', notes: 'Logo must be white-red-white'},
-      {url: 'https://ua.rutracker.org/forum/', notes: 'In footer'},
-    ]
-  },
   { addr: 'eventot.com',
     css:'.flag.flag-by {'+flagCSS+'}'
-  },
-  { addr: 'skyscanner\.*',
-    css:'img[src $="flag/small/by.png"], .fffx {'+flagCSS+';width: 16px; height:12px;}' +
-    '#culture-info #current-user-country img[title=Belarus]{margin-top: 2px }'
   },
   { addr: 'tb.by',
     css:'img[src $="img/bel.png"], .fffx {'+flagCSS+';width: 15px; height:10px} '
@@ -482,13 +600,7 @@ a[href="/community/members/location/Belarus"]{margin-left:.5em;}'
   { addr: 'ecolines.by',
     css:'img[src $="flag-by.gif"], .fffx {'+flagCSS+';} '
   },
-  { addr: 'kvitki.by',
-    images: [
-      { i: 'lang_by.gif', w: 16, h: 12 },
-      { i: 'lang_by_ov.gif', w: 16, h: 12, red: '#888' },
-    ],
-    sample: [{ url: 'http://www.kvitki.by/', 'notes': 'In header icon + hover'}]
-  },
+
   { addr: 'cybergames.by',
     css:'img[src $="flags/by.gif"],.fffx {'+flagCSS+'width: 18px;height:12px;}' +
     'img[src $="flags/by_large.png"],.fffx {'+flagCSS+'width: 180px;height:90px;' +
@@ -511,13 +623,6 @@ a[href="/community/members/location/Belarus"]{margin-left:.5em;}'
     css:'img[src $="/img/by.gif"] {content:"";height:50px;width:50px;display:inline-block;background:url("'+ sciahSphereSrc +'") no-repeat} '},
   { addr:'prazdnik.by',
     css:''
-  },
-  { addr: 'kinopoisk.ru',
-    css:'.flag69 * {'+flagCSS+'; height:12px}\
-		       .flag.flag69 {height: 12px} \
-		       .tenItems .flags {height: auto !important}\
-		       .movieFlags .flag69 * {height: 10px}\
-			   .country_flag[style *="/by.png"] {background-image: url("'+sciahSphereSrc+'") !important; opacity:.5;}'
   },
   { addr: 'greencard.by',
     css:'img[src $="flags/by.gif"],.fffx {'+flagCSS+'width: 16px; height:12px}'
@@ -572,66 +677,6 @@ a[href="/community/members/location/Belarus"]{margin-left:.5em;}'
     'box-shadow:inset 0 0 0 1px rgba(0,0,0,.04),inset 0 -1px 0  rgba(0,0,0,.15);}'+
     'img[src $="flags/BY.png"]:not(".flagsmall") {width:48px;height:42px;}'
   },
-
-  { addr: 'sportlemon.tv',
-    css:'img[src $="flags/by.gif"],.fffx{'+flagCSS+'width: 16px;height:12px;}'
-  },
-  { addr: 'allsport-live.ru',
-    css: 'td[width="30"][height="20"] img[src $="flags/flag_belarus.png"],.fffx {'+flagCSS+'width: 16px !important;height:12px !important;}' +
-    '#fsbody .fl_31, .fl_31 { background:none !important;}' +
-    '.fl_31:before{'+flagCSS+'width: 16px;height:12px;margin:0 8px -1px -24px;}'
-  },
-  { addr: 'livescore.in',
-    css: '#fsbody .fl_31, .fl_31 { background:none !important;} ' +
-    '.fl_31:before{'+flagCSS+'width: 16px; height:12px; vertical-align:top;} ul.menu-left .fl_31:before { margin:0 8px -1px -24px; vertical-align:text-top}'
-  },
-  { addr: 'livetv.ru',
-    css:'img[src $="national/by.gif"],img[src $="img/flags/24.png"],.fffx{'+flagCSS+'width: 16px;height:12px;}\
-				img[src $="fullsize/1372.gif"], img[src $="fullsize/1373.gif"], img[src $="fullsize/1374.gif"], img[src $="fullsize/1375.gif"], \
-				img[src $="fullsize/1376.gif"], img[src $="fullsize/1377.gif"], img[src $="fullsize/1378.gif"], img[src $="fullsize/1379.gif"], \
-				img[src $="fullsize/1380.gif"], img[src $="fullsize/1381.gif"], img[src $="fullsize/1382.gif"], img[src $="fullsize/1383.gif"], \
-				img[src $="fullsize/1384.gif"], img[src $="fullsize/1385.gif"], img[src $="fullsize/1386.gif"], img[src $="fullsize/1387.gif"], \
-				img[src $="fullsize/1388.gif"], img[src $="fullsize/1389.gif"], img[src $="fullsize/1390.gif"], img[src $="fullsize/1391.gif"], \
- 				img[src $="fullsize/1392.gif"],\
-				img[src $="teams/1372.gif"], img[src $="teams/1373.gif"], img[src $="teams/1374.gif"], img[src $="teams/1375.gif"], \
-				img[src $="teams/1376.gif"], img[src $="teams/1377.gif"], img[src $="teams/1378.gif"], img[src $="teams/1379.gif"], \
-				img[src $="teams/1380.gif"], img[src $="teams/1381.gif"], img[src $="teams/1382.gif"], img[src $="teams/1383.gif"], \
-				img[src $="teams/1384.gif"], img[src $="teams/1385.gif"], img[src $="teams/1386.gif"], img[src $="teams/1387.gif"], \
-				img[src $="teams/1388.gif"], img[src $="teams/1389.gif"], img[src $="teams/1390.gif"], img[src $="teams/1391.gif"], \
- 				img[src $="teams/18/1392.gif"],\
-				img[src $="teams/18/1372.gif"], img[src $="teams/18/1373.gif"], img[src $="teams/18/1374.gif"], img[src $="teams/18/1375.gif"], \
-				img[src $="teams/18/1376.gif"], img[src $="teams/18/1377.gif"], img[src $="teams/18/1378.gif"], img[src $="teams/18/1379.gif"], \
-				img[src $="teams/18/1380.gif"], img[src $="teams/18/1381.gif"], img[src $="teams/18/1382.gif"], img[src $="teams/18/1383.gif"], \
-				img[src $="teams/18/1384.gif"], img[src $="teams/18/1385.gif"], img[src $="teams/18/1386.gif"], img[src $="teams/18/1387.gif"], \
-				img[src $="teams/18/1388.gif"], img[src $="teams/18/1389.gif"], img[src $="teams/18/1390.gif"], img[src $="teams/18/1391.gif"], \
- 				img[src $="teams/18/1392.gif"],.fffx\
-  					{\
-	content:"";display:inline-block;width:49px;height:49px;\
-	background:\
- repeating-linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, rgba(255,255,255,.25) 1px,rgba(255,255,255,.25) 2px), \
- linear-gradient(-45deg,transparent, transparent 30%, rgba(204,18,18,.95) 30%,  rgba(204,18,18,.95) 70%, transparent 70%, transparent), \
- linear-gradient(-45deg, rgba(198,198,198,0.43) 0%,rgba(204,204,204,0.01) 21%,rgba(213,213,213,0.37) 55%,rgba(221,221,221,0) 83%,rgba(226,226,226,0.42) 100%); \
-box-shadow:inset 0 0 0 1px #333,inset 0 0 0 2px rgba(255,255,255,.6); \
-					}\
-				img[src $="teams/1372.gif"], img[src $="teams/1373.gif"], img[src $="teams/1374.gif"], img[src $="teams/1375.gif"], \
-				img[src $="teams/1376.gif"], img[src $="teams/1377.gif"], img[src $="teams/1378.gif"], img[src $="teams/1379.gif"], \
-				img[src $="teams/1380.gif"], img[src $="teams/1381.gif"], img[src $="teams/1382.gif"], img[src $="teams/1383.gif"], \
-				img[src $="teams/1384.gif"], img[src $="teams/1385.gif"], img[src $="teams/1386.gif"], img[src $="teams/1387.gif"], \
-				img[src $="teams/1388.gif"], img[src $="teams/1389.gif"], img[src $="teams/1390.gif"], img[src $="teams/1391.gif"], \
- 				img[src $="teams/1392.gif"]\
-					{width:36px;height:36px}\
-				img[src $="teams/18/1372.gif"], img[src $="teams/18/1373.gif"], img[src $="teams/18/1374.gif"], img[src $="teams/18/1375.gif"], \
-				img[src $="teams/18/1376.gif"], img[src $="teams/18/1377.gif"], img[src $="teams/18/1378.gif"], img[src $="teams/18/1379.gif"], \
-				img[src $="teams/18/1380.gif"], img[src $="teams/18/1381.gif"], img[src $="teams/18/1382.gif"], img[src $="teams/18/1383.gif"], \
-				img[src $="teams/18/1384.gif"], img[src $="teams/18/1385.gif"], img[src $="teams/18/1386.gif"], img[src $="teams/18/1387.gif"], \
-				img[src $="teams/18/1388.gif"], img[src $="teams/18/1389.gif"], img[src $="teams/18/1390.gif"], img[src $="teams/18/1391.gif"], \
- 				img[src $="teams/18/1392.gif"]\
-					{width: 18px;height:18px;}\
- 				img[width="65"]{width:65px !important;height:65px !important;}'
-  },
-  { addr: 'fantasy.premierleague.com',
-    css: 'img[src $="static/img/flags/BY.gif"],.fffx{'+flagCSS+'width:64px;height32px;}'
-  },
   { addr: 'adsl.by',
     css: 'img[src $="flags/Belarus.png"],.fffx{'
     + flagCSS +
@@ -639,32 +684,10 @@ box-shadow:inset 0 0 0 1px #333,inset 0 0 0 2px rgba(255,255,255,.6); \
     'height:12px;'+
     'box-shadow:inset 0 0 0 1px rgba(0,0,0,.1), 0 1px 2px rgba(0,0,0,.1);}'
   },
-  { addr: 'goals.by',
-    css: 'img[src *="img/flags/by.png"],.fffx {'
-    +flagCSS+'width: 16px;height:12px}' +
-    '.ic-flag-BY::before, \
-     .ic-flag-BY img, img.fffx {\
-          width: 16px; \
-          height: 12px; \
-          clip: auto !important; \
-          left: 0 !important; \
-          top: auto !important; \
-          right: 0 !important; \
-          transform:translateY(1px);\
-          '+ flagCSS +'\
-              }\
-              .ic-flag-BY::before {\
-                    content: "" !important\
-              }\
-              .ic-flag-r.ic-flag::before { left: auto !important; right: 0 !important}'
-  },
   { addr: 'pac.by',
     css: '.by_l_by,.by_l {width: 16px} .by_l_by img,.by_l img{display:none;}' +
     '.by_l_by a::before, .by_l a::before{'+flagCSS+'width: 16px;height:12px;display:block}' +
     '.by_l_by a::after,.by_l a::after{width: 16px;height:9px;display:block;content:"";'+ reflectionDownCSS +'}'
-  },
-  { addr: 'postcrossing.com',
-    css: '.flag.flag-BY {'+ flagCSS +'width: 16px;height:12px;}'
   },
   { addr: 'localhost',
     images: [
