@@ -51,28 +51,44 @@ var reflectionDownCSS = '\
  			linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,0.67) 33%,rgba(204,18,18,0.66) 34%,rgba(204,18,18,0.32) 68%,rgba(255,255,255,0.31) 69%,rgba(255,255,255,0) 100%); ';
 
 var flagCSS = '\
-        content:"";\
-        display:inline-block;\
-        border-radius:1px;\
-        '+ boxShadow() +'\
+    '+ boxShadow() +'\
 		'+ gradientCSS;
 
 var dzieShto = [
   {
     addr: 'theprintful.com',
-    css: '.flag.by { background-image: url("' + flagURL() + '") !important ;}',
+    css: '.flag.by { ' + flagBGI(null, true) + '}',
     sample: [{url: 'https://www.theprintful.com/', notes: 'From Belarusian IP' }],
   },
   {
-    addr: 'behance.net|adobe.com',
-    css: '.iti-flag.by {'+ flagCSS+ ' box-shadow:none; border-radius: 0; }'
+    addr: 'behance\.net|adobe\.com',
+    //css: '.iti-flag.by {'+ flagBGI() + '}'
+    // .iti-flag.by is covered by .* entry. Keeping behance/adobe here for stats.
+    sample: [{
+      url: 'https://adobeid-na1.services.adobe.com/renga-idprovider/pages/login.do',
+      notes: 'Page where it asks for mobile phone number after logging in'
+    }]
   },
   {
     addr: 'paypal.com',
     css: '' +
-    'img[src *="icon/icon_BY_22x14.gif"],.fffx{'+ flagCSS+'width: 22px;height: 16px;padding:0 !important;margin:3px 3px 1px 10px }' +
-    '.country-selector .belarus, .country-selector .BY {background: none;}'+
-    '.country-selector .belarus:before, .country-selector .BY:before {' + flagCSS +'width: 22px;height:16px;margin: 3px 0 0 5px;display: block}'
+    '.country.belarus, ' +
+    ' .country.BY {' +
+      flagBGI({r: 1, red: '#EA6A6E', emboss: 0.1 }, true) +
+      'background-position: 5px 3px !important;' +
+      'background-size: 22px 16px; !important' +
+    '}',
+    images : [{i: 'icon/icon_BY_22x14.gif', w: 22, h: 14}],
+    sample: [{
+      url:'https://www.paypal.com/by/webapps/mpp/home',
+      notes: 'In footer, and in country selector which is opened by clicking it'
+    }, {
+      url: 'https://www.paypal.com/by/signup/account',
+      notes: 'In footer '
+    }, {
+      url: '',
+      notes: 'icon/icon_BY_22x14.gif ??? dont remember '
+    }]
   },
   {
     addr: 'pressball.by',
@@ -366,9 +382,14 @@ var dzieShto = [
 				 html body .skype_pnh_container span[style ="background-position:-909px 1px !important;"] {background:none !important;position:relative !important;} \
 				 html body .skype_pnh_container span[style *="background-position: -909px"]::after, \
 				 html body .skype_pnh_container span[style ="background-position:-909px 1px !important;"]::after \
-				 {'+flagCSS+'height:12px; width: 16px; position:absolute; left:0; top:0;}'
+				 {'+flagCSS+'height:12px; width: 16px; position:absolute; left:0; top:0;}' +
+    '' +
+    '/* Lib for tel input https://github.com/jackocnr/intl-tel-input */' +
+    '.iti-flag.by { \
+      background: linear-gradient(to bottom, #fff, #fff 33.333333%, #E21313 33.33333%, #E21313 66.66666%, #fff 66.666%);\
+    }'
   },
-  { addr: '(my\.)?opera.com',
+  { addr: '(my\.)?opera\.com',
     css: '[style *= "flags/BY.png"]::before, img[src $= "flags/BY.png"], .f-BY::before{ '+ flagCSS +';height:12px}\
 		  [style *= "flags/BY.png"]{background-image:none !important;position:relative;}\
 		  [style *= "flags/BY.png"]::before{' +
@@ -653,6 +674,20 @@ box-shadow:inset 0 0 0 1px #333,inset 0 0 0 2px rgba(255,255,255,.6); \
 ];
 // END dzieShto
 
+
+/**
+ * Return flag as a CSS background-image property
+ * @param params
+ * @param important boolean Appends !important to the rule if it is true
+ * @returns {string}
+ */
+function flagBGI(params, important) {
+  var imp = '';
+  if (important) {
+    imp = ' !important'
+  }
+  return 'background-image: url("'+ flagURL(params) +'")'+ imp + ';'
+}
 /**
  *
  * @param params
@@ -676,13 +711,13 @@ function flagURL (params) {
  *
  * img properties:
  *
- * img.w
- * img.h
- * img.rx
- * img.contour
- * img.gradient
- * img.emboss
- * img.red
+ * @property {number} img.w
+ * @property {number} img.h
+ * @property {number} img.rx
+ * @property img.contour
+ * @property img.gradient
+ * @property img.emboss
+ * @property {string} img.red
  *
  * @returns {string}
  */
@@ -769,6 +804,9 @@ function getSVGFlagURL (img) {
   // Emboss effect
   if (img.emboss === false || img.emboss === 0) {
     emboss.setAttribute('opacity', 0);
+  }
+  else if (typeof img.emboss == 'number') {
+    emboss.setAttribute('opacity', img.emboss);
   }
 
   if (img.red) {
