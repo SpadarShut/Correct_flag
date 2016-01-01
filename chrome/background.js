@@ -75,41 +75,6 @@ var dzieShto = [
     // Sites popular in Belarus
     // ------------------------
 
-  {
-    addr: 'mail.ru',
-    css: '.phonePrefix[style *="country_icons/by.png"], ' +
-    '.form__phone-prefix__prefix[style *="country_icons/by.png"] { background: none !important;}'+
-    '.phonePrefix[style *="country_icons/by.png"]:before, ' +
-    '.form__phone-prefix__prefix[style *="country_icons/by.png"]:before { ' +
-    'width: 16px; height: 12px;position: absolute; left: 0; top: 2px; '+  flagCSS   +'}' +
-    'img[src *="/img/country/flag16x11/by.png"] {height: 12px;'+ flagCSS+'}' +
-    '[style *="background-image: url(/res120/pic/sport/team/d1/600.png#120x120)"] { background-image: url("'+ sciahSphereSrc +'") !important; -moz-background-size: 94px 94px; background-size: 94px 94px;}'
-  },
-  {
-    addr: 'telegraf.by',
-    css:'.flag-BYR { '+ flagCSS + 'height: 12px !important}'
-  },
-  {
-    addr: 'belpost.by',
-    css:'img[src $="/i/blr.jpg"],.fffx{ '+ flagCSS +';width:24px;height: 15px !important;margin-top:-1px; '+ boxShadow(0.2) +'}'
-  },
-  {
-    addr: 'vk.com|vkontakte.ru',
-    css:'.lang_box_row {position: relative;} .lang_box_row[style *="images/lang_flags/2.gif"]{ background-image: none !important}' +
-    '.lang_box_row[style *="images/lang_flags/2.gif"]:before {'+ flagCSS +
-    'width: 34px;' +
-    'height: 26px;' +
-    'position: absolute; left: 10px; top: 50%; margin-top: -13px;'+
-    ' }'
-  },
-  {
-    addr: 'gismeteo.(by|ru|ua|lt|com)',
-    css:  'body #menu li.sprite .flag span.by {'+ flagCSS + boxShadow(0.25) +' height: 12px; background-position: 0 0, 0 0 !important; position: relative; top: 1px;}'
-  },
-  {
-    addr: 'slando.by',
-    css:  'img[src $="flags/by.png"],.fffx {'+ flagCSS +'; height: 12px; width: 16px;}'
-  },
   { addr: 'yandex\..*',
     css:  '.b-country-flag_size-16_by, .country-flag_size-16_by {'+ flagCSS +'} \
 				 img[src $="b-foot__lang__by.png"],\
@@ -178,6 +143,32 @@ var dzieShto = [
       { i: 'lang_by_ov.gif', w: 16, h: 12, red: '#888' },
     ],
     sample: [{ url: 'http://www.kvitki.by/', 'notes': 'In header icon + hover'}]
+  },
+  {
+    addr: 'mail.ru',
+    css: '.phonePrefix[style *="country_icons/by.png"], ' +
+    '.form__phone-prefix__prefix[style *="country_icons/by.png"] { background: none !important;}'+
+    '.phonePrefix[style *="country_icons/by.png"]:before, ' +
+    '.form__phone-prefix__prefix[style *="country_icons/by.png"]:before { ' +
+    'width: 16px; height: 12px;position: absolute; left: 0; top: 2px; '+  flagCSS   +'}' +
+    'img[src *="/img/country/flag16x11/by.png"] {height: 12px;'+ flagCSS+'}' +
+    '[style *="background-image: url(/res120/pic/sport/team/d1/600.png#120x120)"] { background-image: url("'+ sciahSphereSrc +'") !important; -moz-background-size: 94px 94px; background-size: 94px 94px;}'
+  },
+  {
+    addr: 'telegraf.by',
+    css:'.flag-BYR { '+ flagCSS + 'height: 12px !important}'
+  },
+  {
+    addr: 'belpost.by',
+    css:'img[src $="/i/blr.jpg"],.fffx{ '+ flagCSS +';width:24px;height: 15px !important;margin-top:-1px; '+ boxShadow(0.2) +'}'
+  },
+  {
+    addr: 'gismeteo.(by|ru|ua|lt|com)',
+    css:  'body #menu li.sprite .flag span.by {'+ flagCSS + boxShadow(0.25) +' height: 12px; background-position: 0 0, 0 0 !important; position: relative; top: 1px;}'
+  },
+  {
+    addr: 'slando.by',
+    css:  'img[src $="flags/by.png"],.fffx {'+ flagCSS +'; height: 12px; width: 16px;}'
   },
 
 
