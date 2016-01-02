@@ -135,15 +135,11 @@ var dzieShto = [
     ]
   },
   { addr: 'skyscanner\.*',
-    css:'img[src $="flag/small/by.png"], .fffx {'+flagCSS+';width: 16px; height:12px;}' +
-    '#culture-info #current-user-country img[title=Belarus]{margin-top: 2px }'
-  },
-  { addr: 'kinopoisk.ru',
-    css:'.flag69 * {'+flagCSS+'; height:12px}\
-		       .flag.flag69 {height: 12px} \
-		       .tenItems .flags {height: auto !important}\
-		       .movieFlags .flag69 * {height: 10px}\
-			   .country_flag[style *="/by.png"] {background-image: url("'+sciahSphereSrc+'") !important; opacity:.5;}'
+    images: [
+      {i: '*://*/*header/by.png', w: 50, h: 38, contour: 0 },
+      {i: '*://*/*header/BY.png', w: 50, h: 38, contour: 0 }
+    ],
+    sample: [{url: 'http://www.skyscanner.net/', notes: 'In header from BRL IP. Also click it for dialog anf hamburger menu'}]
   },
   { addr: 'kvitki.by',
     images: [
@@ -151,6 +147,13 @@ var dzieShto = [
       { i: 'lang_by_ov.gif', w: 16, h: 12, red: '#888' },
     ],
     sample: [{ url: 'http://www.kvitki.by/', 'notes': 'In header icon + hover'}]
+  },
+  { addr: 'kinopoisk.ru',
+    css:'.flag69 * {'+flagCSS+'; height:12px}\
+		       .flag.flag69 {height: 12px} \
+		       .tenItems .flags {height: auto !important}\
+		       .movieFlags .flag69 * {height: 10px}\
+			   .country_flag[style *="/by.png"] {background-image: url("'+sciahSphereSrc+'") !important; opacity:.5;}'
   },
   {
     addr: 'mail.ru',
