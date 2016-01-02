@@ -40,19 +40,17 @@ function boxShadow (param) {
 
 var sciahSphereSrc = chrome.extension.getURL('res/sciahSphere.svg') ;
 
-var gradientCSS = '\
-		background:\
-        linear-gradient(transparent, transparent 32%, rgba(204,18,18,.95) 32%,  rgba(204,18,18,.95) 68%, transparent 68%, transparent),\
-        linear-gradient(-45deg, rgba(198,198,198,0.43) 0%, rgba(204,204,204,0.01) 21%,rgba(213,213,213,0.37) 55%,rgba(221,221,221,0) 83%,rgba(226,226,226,0.42) 100%) !important;\
-		background-color:#fff !important;';
+//var gradientCSS = '\
+//		background:\
+//        linear-gradient(transparent, transparent 32%, rgba(204,18,18,.95) 32%,  rgba(204,18,18,.95) 68%, transparent 68%, transparent),\
+//        linear-gradient(-45deg, rgba(198,198,198,0.43) 0%, rgba(204,204,204,0.01) 21%,rgba(213,213,213,0.37) 55%,rgba(221,221,221,0) 83%,rgba(226,226,226,0.42) 100%) !important;\
+//		background-color:#fff !important;';
 
 var reflectionDownCSS = '\
 			background:\
  			linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,0.67) 33%,rgba(204,18,18,0.66) 34%,rgba(204,18,18,0.32) 68%,rgba(255,255,255,0.31) 69%,rgba(255,255,255,0) 100%); ';
 
-var flagCSS = '\
-    '+ boxShadow() +'\
-		'+ gradientCSS;
+var flagCSS = flagBGI();
 
 var dzieShto = [
 
@@ -75,43 +73,53 @@ var dzieShto = [
     // Sites popular in Belarus
     // ------------------------
 
-  { addr: 'yandex\..*',
-    css:  '.b-country-flag_size-16_by, .country-flag_size-16_by {'+ flagCSS +'} \
-				 img[src $="b-foot__lang__by.png"],\
-				 .b-langs__flag_lang_by, .langs__flag_lang_by, \
-				 .b-mail-icon_lang-be, .mail-icon_lang-be { \
-				    position:relative; \
-				    top:1px;\
-				    '+ flagCSS +'\
-				    width: 16px;\
-				    height:12px !important;\
-				    padding: 0 ! important; \
-				} \
-				.b-mail-dropdown__item_with-icon .b-mail-icon.b-mail-icon_lang-be {\
-                    background:'+  gradientCSS +'\
-                    margin: -6px 0 0 7px ;\
-                }\
-				.b-keyboard__lang-by .b-keyboard__lang-ic { \
-						' + gradientCSS +'\
-						width:14px;\
-						border:0;\
-						position:relative;\
-						height:11px;\
-						margin-right:3px\
-				}\
-				.b-keyboard__lang-by .b-keyboard__lang-ic, \
-				img[src *="b-country-flag_size-16_by.png"] {'+ flagCSS +'width: 16px;height:12px;} ' +
-    '.b-country-flag_size-16_by,' +
-    '.b-country-flag_size-24_by, ' +
-    '.b-country-flag_size-32_by, ' +
-    '.b-country-flag_size-48_by {'+ flagCSS +'}' +
-    '.b-country-flag_size-16_by { padding: 12px 0 0 16px; }' +
+  { addr: 'yandex.',
+    images: [
+      {i: '*://*/*/ftG_g5PBLY3vNpbeycqToQ3F5y8.gif', w: 16, h: 11},
+      {i: '*://*/*/b-country-flag_size-16_by', w: 16, h: 11},
+      {i: '*://*/*/b-country-flag_size-16_by', w: 24, h: 18},
+      {i: '*://*/*/b-country-flag_size-16_by', w: 32, h: 22},
+      {i: '*://*/*/b-country-flag_size-16_by', w: 48, h: 37}
+    ],
+    css:  ' \
+      /* Mail Settins - Language in sidebar */\
+      .b-mail-dropdown__item__content[data-params="lang=be"] .b-mail-icon_lang-be {\
+          display: none;\
+      }\
+      .b-mail-dropdown__item__content[data-params="lang=be"]:before {\
+        content: "";\
+        display: inline-block;\
+        position: absolute;\
+        top: 7px;\
+        left: 7px;\
+        width: 16px;\
+        height: 12px;\
+        '+ flagBGI() +'\
+      }\
+      \
+      /* Keyboard on search homepage */\
+      .b-keyboard__lang-by .b-keyboard__lang-ic { \
+          '+ flagBGI({outline: 0.2, w: 'auto'}) +'\
+          background-position: 0 0 !important;\
+          background-size: 16px 12px;\
+          height:12px;\
+      }',
+    sample: [
+      {url: 'https://www.yandex.by/', notes: 'Click keyboard in search field, select belarusian in dropdow kbd'},
+      {url: 'https://mail.yandex.by/?uid=225165401&login=sp-shut#setup/other', notes: ' Mail Settins - Language in sidebar, also in footer'}
+    ]
 
-    '.b-country-flag_size-48_by.event__rival_pos_l, ' +
-    '.b-country-flag_size-48_by.event__rival_pos_r {height:37px; width:48px; top: 40px; bottom: auto; padding: 0 }'+
-
-    '.b-country-flag_size-24_by.event__rival_pos_l, ' +
-    '.b-country-flag_size-24_by.event__rival_pos_r {background-size: 24px 18px; width: 24px;height: 18px; top: 22px; bottom: auto; padding: 0}'
+      //
+      //'.b-country-flag_size-16_by,' +
+      //'.b-country-flag_size-24_by, ' +
+      //'.b-country-flag_size-32_by, ' +
+      //'.b-country-flag_size-48_by {'+
+      //    flagCSS
+      //+ '}' +
+      //
+      //'.b-country-flag_size-16_by { ' +
+      //    'padding: 12px 0 0 16px;' +
+      //' }' +
   },
   { addr: 'rutracker.org',
     images: [
@@ -839,17 +847,20 @@ function setupFilters (){
     if (site.images) {
       site.images.forEach(function (img) {
 
-        // todo: handle case when images are from domain another than the site
         // turn image into URL pattern if it's not a URL already
         img.globs = [];
 
+        // if it's filename without protocol
         if (img.i.indexOf('://') == -1) {
           img.globs.push('*://'+ site.addr +'/*' + img.i + '*');
           img.globs.push('*://*.'+ site.addr +'/*' + img.i + '*'); // www and subdomains
         }
+        // if it's a glob or url
         else {
           img.globs.push(img.i);
         }
+
+//        console.log(img.globs);
 
         //onBeforeRequest || onBeforeSendHeaders
         chrome.webRequest.onBeforeRequest.addListener(
