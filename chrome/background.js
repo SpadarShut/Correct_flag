@@ -193,10 +193,6 @@ var dzieShto = [
     '[style *="background-image: url(/res120/pic/sport/team/d1/600.png#120x120)"] { background-image: url("'+ sciahSphereSrc +'") !important; -moz-background-size: 94px 94px; background-size: 94px 94px;}'
   },
   {
-    addr: 'telegraf.by',
-    css:'.flag-BYR { '+ flagCSS + 'height: 12px !important}'
-  },
-  {
     addr: 'belpost.by',
     css:'img[src $="/i/blr.jpg"],.fffx{ '+ flagCSS +';width:24px;height: 15px !important;margin-top:-1px; '+ boxShadow(0.2) +'}'
   },
