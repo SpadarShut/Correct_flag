@@ -194,7 +194,8 @@ var dzieShto = [
   },
   {
     addr: 'belpost.by',
-    css:'img[src $="/i/blr.jpg"],.fffx{ '+ flagCSS +';width:24px;height: 15px !important;margin-top:-1px; '+ boxShadow(0.2) +'}'
+    images: [{i: 'i/blr.jpg', w: 25, h: 13, outline: 0.2}],
+    sample: [{'url': 'http://belpost.by/', notes: 'In header'}]
   },
   {
     addr: 'gismeteo.(by|ru|ua|lt|com)',
