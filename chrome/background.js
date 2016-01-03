@@ -59,21 +59,23 @@ var dzieShto = [
 
   { addr: '.*',
     css: ' /* Skype ckick-to-call plugin */\
-      html body .skype_pnh_container span[style *="background-position: -909px"], \
-      html body .skype_pnh_container span[style ="background-position:-909px 1px !important;"] {\
+    html body .skype_pnh_container span[style *="background-position: -909px"], \
+    html body .skype_pnh_container span[style ="background-position:-909px 1px !important;"] {\
         background: none !important;\
         position: relative !important;\
-      } \
-     html body .skype_pnh_container span[style *="background-position: -909px"]::after, \
-     html body .skype_pnh_container span[style ="background-position:-909px 1px !important;"]::after {'+
+    }\
+    html body .skype_pnh_container span[style *="background-position: -909px"]::after, \
+    html body .skype_pnh_container span[style ="background-position:-909px 1px !important;"]::after {'+
+        'position: absolute;' +
+        'content: ""' +
         flagCSS +
         'height: 12px;' +
         'width: 16px;' +
-        'position: absolute;' +
         'left: 0;' +
         'top: 0;' +
-      '}' +
-    '' +
+    '}' +
+
+
     '/* Lib for tel input https://github.com/jackocnr/intl-tel-input */' +
     '.iti-flag.by { \
       background: linear-gradient(to bottom, #fff, #fff 33.333333%, #E21313 33.33333%, #E21313 66.66666%, #fff 66.666%);\
@@ -159,11 +161,26 @@ var dzieShto = [
     sample: [{ url: 'http://www.kvitki.by/', 'notes': 'In header icon + hover'}]
   },
   { addr: 'kinopoisk.ru',
-    css:'.flag69 * {'+flagCSS+'; height:12px}\
-		       .flag.flag69 {height: 12px} \
-		       .tenItems .flags {height: auto !important}\
-		       .movieFlags .flag69 * {height: 10px}\
-			   .country_flag[style *="/by.png"] {background-image: url("'+sciahSphereSrc+'") !important; opacity:.5;}'
+    css: '' +
+    '.flag69 * {'+
+      flagCSS+'; \
+      height: 12px;\
+      background-position: 0 0;\
+    }\
+    .flag.flag69 {\
+      height: 12px\
+    } \
+    .tenItems .flags {\
+        height: auto !important\
+    }\
+    .movieFlags .flag69 * {\
+        height: 10px\
+    }\
+    .country_flag[style *="/by.png"] {\
+        background-image: url("'+ sciahSphereSrc +'") !important;\
+        opacity:.5;\
+    }',
+    sample: [{url: 'http://www.kinopoisk.ru/lists/m_act%5Bcountry%5D/69/', notes: 'On map and in every search list item'}]
   },
   {
     addr: 'mail.ru',
