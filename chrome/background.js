@@ -722,11 +722,6 @@ a[href="/community/members/location/Belarus"]{margin-left:.5em;}'
     css: '.by_l_by,.by_l {width: 16px} .by_l_by img,.by_l img{display:none;}' +
     '.by_l_by a::before, .by_l a::before{'+flagCSS+'width: 16px;height:12px;display:block}' +
     '.by_l_by a::after,.by_l a::after{width: 16px;height:9px;display:block;content:"";'+ reflectionDownCSS +'}'
-  },
-  { addr: 'localhost',
-    images: [
-      { i:'zachod-nad-balotam.png' }
-    ]
   }
 ];
 // END dzieShto
