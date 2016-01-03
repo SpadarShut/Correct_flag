@@ -396,7 +396,12 @@ box-shadow:inset 0 0 0 1px #333,inset 0 0 0 2px rgba(255,255,255,.6); \
         flagBGI({red: '#ED5050'}) +
         'background-position: 0 0;' +
         'background-size: 20px 12px;' +
-    '}'
+    '}',
+    images: [{i: '*://*/*/country/s/by.gif', w: 20, h: 10, red: '#E36060'}],
+    sample: [
+      { url: 'http://www.aliexpress.com/item/Pagonya-Flag-90x150cm-100D-Polyester-Belarus-Belarusian-flag-Country-Flags-and-Banners-For-Home-Decoration/32238574521.html',
+        notes: 'Scroll to Transaction History & Feedback, see people from Belarus'
+      }]
   },
   {
     addr: 'paypal.com',
