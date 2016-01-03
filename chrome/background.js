@@ -58,11 +58,21 @@ var dzieShto = [
     // ---------
 
   { addr: '.*',
-    css: ' html body .skype_pnh_container span[style *="background-position: -909px"], \
-				 html body .skype_pnh_container span[style ="background-position:-909px 1px !important;"] {background:none !important;position:relative !important;} \
-				 html body .skype_pnh_container span[style *="background-position: -909px"]::after, \
-				 html body .skype_pnh_container span[style ="background-position:-909px 1px !important;"]::after \
-				 {'+flagCSS+'height:12px; width: 16px; position:absolute; left:0; top:0;}' +
+    css: ' /* Skype ckick-to-call plugin */\
+      html body .skype_pnh_container span[style *="background-position: -909px"], \
+      html body .skype_pnh_container span[style ="background-position:-909px 1px !important;"] {\
+        background: none !important;\
+        position: relative !important;\
+      } \
+     html body .skype_pnh_container span[style *="background-position: -909px"]::after, \
+     html body .skype_pnh_container span[style ="background-position:-909px 1px !important;"]::after {'+
+        flagCSS +
+        'height: 12px;' +
+        'width: 16px;' +
+        'position: absolute;' +
+        'left: 0;' +
+        'top: 0;' +
+      '}' +
     '' +
     '/* Lib for tel input https://github.com/jackocnr/intl-tel-input */' +
     '.iti-flag.by { \
@@ -77,9 +87,9 @@ var dzieShto = [
     images: [
       {i: '*://*/*/ftG_g5PBLY3vNpbeycqToQ3F5y8.gif', w: 16, h: 11},
       {i: '*://*/*/b-country-flag_size-16_by', w: 16, h: 11},
-      {i: '*://*/*/b-country-flag_size-16_by', w: 24, h: 18},
-      {i: '*://*/*/b-country-flag_size-16_by', w: 32, h: 22},
-      {i: '*://*/*/b-country-flag_size-16_by', w: 48, h: 37}
+      {i: '*://*/*/b-country-flag_size-24_by', w: 24, h: 18},
+      {i: '*://*/*/b-country-flag_size-32_by', w: 32, h: 22},
+      {i: '*://*/*/b-country-flag_size-48_by', w: 48, h: 37}
     ],
     css:  ' \
       /* Mail Settins - Language in sidebar */\
@@ -105,7 +115,7 @@ var dzieShto = [
           height:12px;\
       }',
     sample: [
-      {url: 'https://www.yandex.by/', notes: 'Click keyboard in search field, select belarusian in dropdow kbd'},
+      {url: 'https://www.yandex.by/', notes: 'Click keyboard in search field, select Belarusian in dropdow kbd'},
       {url: 'https://mail.yandex.by/?uid=225165401&login=sp-shut#setup/other', notes: ' Mail Settins - Language in sidebar, also in footer'}
     ]
 
@@ -367,13 +377,21 @@ box-shadow:inset 0 0 0 1px #333,inset 0 0 0 2px rgba(255,255,255,.6); \
     }]
   },
   {
+    addr: 'aliexpress.com',
+    css: '.css_flag.css_by {' +
+        flagBGI({red: '#ED5050'}) +
+        'background-position: 0 0;' +
+        'background-size: 20px 12px;' +
+    '}'
+  },
+  {
     addr: 'paypal.com',
     css: '' +
-    '.country.belarus, ' +
-    ' .country.BY {' +
-    flagBGI({r: 1, red: '#EA6A6E', emboss: 0.1 }, true) +
-    'background-position: 5px 3px !important;' +
-    'background-size: 22px 16px; !important' +
+    '.country.belarus,' +
+    '.country.BY {' +
+        flagBGI({r: 1, red: '#EA6A6E', emboss: 0.1 }, true) +
+        'background-position: 5px 3px !important;' +
+        'background-size: 22px 16px; !important' +
     '}',
     images : [{i: 'icon/icon_BY_22x14.gif', w: 22, h: 14}],
     sample: [{
@@ -709,9 +727,9 @@ a[href="/community/members/location/Belarus"]{margin-left:.5em;}'
 function flagBGI(params, important) {
   var imp = '';
   if (important) {
-    imp = ' !important'
+    imp = ' !important';
   }
-  return 'background-image: url("'+ flagURL(params) +'")'+ imp + ';'
+  return 'background-image: url("'+ flagURL(params) +'")'+ imp +';';
 }
 /**
  *
@@ -729,6 +747,7 @@ function flagURL (params) {
   else {
     newImg = getSVGFlagURL(params);
   }
+
   return newImg;
 }
 /**
@@ -839,7 +858,6 @@ function getSVGFlagURL (img) {
   }
 
   var url = 'data:image/svg+xml,' + encodeURIComponent(SVG.outerHTML);
-  //console.log(SVG.outerHTML);
   return url;
 }
 
@@ -862,8 +880,6 @@ function setupFilters (){
         else {
           img.globs.push(img.i);
         }
-
-//        console.log(img.globs);
 
         //onBeforeRequest || onBeforeSendHeaders
         chrome.webRequest.onBeforeRequest.addListener(
