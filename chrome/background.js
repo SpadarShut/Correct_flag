@@ -161,7 +161,7 @@ var dzieShto = [
     sample: [{ url: 'http://www.kvitki.by/', 'notes': 'In header icon + hover'}]
   },
   { addr: 'kinopoisk.ru',
-    css: '' +
+    css:
     '.flag69 * {'+
       flagCSS+'; \
       height: 12px;\
@@ -184,13 +184,29 @@ var dzieShto = [
   },
   {
     addr: 'mail.ru',
-    css: '.phonePrefix[style *="country_icons/by.png"], ' +
-    '.form__phone-prefix__prefix[style *="country_icons/by.png"] { background: none !important;}'+
+    css:
+    '.phonePrefix[style *="country_icons/by.png"], ' +
+    '.form__phone-prefix__prefix[style *="country_icons/by.png"] { ' +
+        'background: none !important;' +
+    '}'+
     '.phonePrefix[style *="country_icons/by.png"]:before, ' +
     '.form__phone-prefix__prefix[style *="country_icons/by.png"]:before { ' +
-    'width: 16px; height: 12px;position: absolute; left: 0; top: 2px; '+  flagCSS   +'}' +
-    'img[src *="/img/country/flag16x11/by.png"] {height: 12px;'+ flagCSS+'}' +
-    '[style *="background-image: url(/res120/pic/sport/team/d1/600.png#120x120)"] { background-image: url("'+ sciahSphereSrc +'") !important; -moz-background-size: 94px 94px; background-size: 94px 94px;}'
+        'width: 16px; ' +
+        'height: 12px;' +
+        'position: absolute; ' +
+        'left: 0; ' +
+        'top: 2px; '+
+        flagCSS +
+    '}' +
+    'img[src *="/img/country/flag16x11/by.png"] {' +
+        'height: 12px;'+
+        flagCSS +
+    '}' +
+    '[style *="background-image: url(/res120/pic/sport/team/d1/600.png#120x120)"] { ' +
+        'background-image: url("'+ sciahSphereSrc +'") !important; ' +
+        '-moz-background-size: 94px 94px; ' +
+        'background-size: 94px 94px;' +
+    '}'
   },
   {
     addr: 'belpost.by',
@@ -204,6 +220,10 @@ var dzieShto = [
   {
     addr: 'slando.by',
     css:  'img[src $="flags/by.png"],.fffx {'+ flagCSS +'; height: 12px; width: 16px;}'
+  },
+  {
+    addr: 'vandrouki.',
+    images: [{i: '*://*/Belarus.png', w: 17, h: 10}]
   },
 
 
@@ -376,10 +396,19 @@ box-shadow:inset 0 0 0 1px #333,inset 0 0 0 2px rgba(255,255,255,.6); \
 
   {
     addr: 'google.com',
-    css:'.talk-flag[style *="background-position: 0px -1100px"], .i18n-phone-flag[style *="background-position: 0px -1100px"]{ '+
-    flagCSS +' background-position: 0 0; height: 12px; }' +
-    '.aYU-aYX-aD2[style *="background-position"][style *="-1100px"] { '+ flagCSS +' height: 12px; }' +
-    '._GAf-_countryFlag-_BY {'+ flagCSS +'; height: 12px}'
+    css:
+    '.talk-flag[style *="background-position: 0px -1100px"], ' +
+    '.i18n-phone-flag[style *="background-position: 0px -1100px"],' +
+    '.aYU-aYX-aD2[style *="background-position"][style *="-1100px"] { '+
+      flagCSS +
+      'background-position: 0 0 !important; ' +
+      'height: 12px; ' +
+    '}' +
+    '._GAf-_countryFlag-_BY {'+
+        flagCSS +
+        'height: 12px' +
+    '}',
+    sample: [{url:'https://accounts.google.com/SignUp?service=mail&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&ltmpl=default', notes: 'In phone box enter +375 '}]
   },
   {
     addr: 'behance\.net|adobe\.com',
