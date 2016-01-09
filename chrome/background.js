@@ -247,7 +247,8 @@ var dzieShto = [
   },
   {
     addr: 'sportpanorama.by',
-    css:'img[src $="/flags/1.jpg"],.fffx{ '+ flagCSS +'; display: inline-block !important; width: 16px; height: 11px; '+ boxShadow(0.3) +'}'
+    images: [{i: '/flags/1.jpg', w: 16, h: 11, contour: 0.15, emboss: 0.27 }],
+    sample: [{url: 'http://sportpanorama.by/themes/49/table/', notes: 'See table'}]
   },
   {
     addr: 'myscore.ru',

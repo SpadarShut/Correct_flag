@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/chrome/background.js" description="function getSVGFlagURL (img) {" line="807" />
+    <bookmark url="file://$PROJECT_DIR$/chrome/background.js" description="function getSVGFlagURL (img) {" line="808" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="431396d7-2f55-4654-8aa5-2c1ff63200d1" name="neverrr" comment="remove mail.ru, add pressball.by, pefl.ru, sports.ru.&#10;add ability to offset flag on canvas">
+    <list default="true" id="431396d7-2f55-4654-8aa5-2c1ff63200d1" name="neverrr" comment="remove slando.by">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chrome/background.js" afterPath="$PROJECT_DIR$/chrome/background.js" />
     </list>
@@ -52,23 +52,23 @@
       <file leaf-file-name="background.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/chrome/background.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.47603834">
-              <caret line="203" column="4" selection-start-line="203" selection-start-column="4" selection-end-line="203" selection-end-column="4" />
+            <state vertical-scroll-proportion="0.428115">
+              <caret line="250" column="80" selection-start-line="250" selection-start-column="80" selection-end-line="250" selection-end-column="80" />
               <folding>
                 <element signature="n#!!block;n#boxShadow#0" expanded="false" />
-                <element signature="e#36770#36953#0" expanded="false" />
+                <element signature="e#36792#36975#0" expanded="false" />
                 <element signature="n#!!block;n#serveCSS#0" expanded="false" />
-                <marker date="1452362780000" expanded="true" signature="32234:32238" placeholder="..." />
-                <marker date="1452362780000" expanded="true" signature="32234:34302" placeholder="..." />
-                <marker date="1452362780000" expanded="true" signature="32238:33647" placeholder="..." />
-                <marker date="1452362780000" expanded="true" signature="32264:32364" placeholder="..." />
-                <marker date="1452362780000" expanded="true" signature="32485:33128" placeholder="..." />
-                <marker date="1452362780000" expanded="true" signature="33203:33300" placeholder="..." />
-                <marker date="1452362780000" expanded="true" signature="33203:33457" placeholder="..." />
-                <marker date="1452362780000" expanded="true" signature="33203:33542" placeholder="..." />
-                <marker date="1452362780000" expanded="true" signature="33203:33643" placeholder="..." />
-                <marker date="1452362780000" expanded="true" signature="33742:34288" placeholder="..." />
-                <marker date="1452362780000" expanded="true" signature="33794:34274" placeholder="..." />
+                <marker date="1452363174000" expanded="true" signature="32256:32260" placeholder="..." />
+                <marker date="1452363174000" expanded="true" signature="32256:34324" placeholder="..." />
+                <marker date="1452363174000" expanded="true" signature="32260:33669" placeholder="..." />
+                <marker date="1452363174000" expanded="true" signature="32286:32386" placeholder="..." />
+                <marker date="1452363174000" expanded="true" signature="32507:33150" placeholder="..." />
+                <marker date="1452363174000" expanded="true" signature="33225:33322" placeholder="..." />
+                <marker date="1452363174000" expanded="true" signature="33225:33479" placeholder="..." />
+                <marker date="1452363174000" expanded="true" signature="33225:33564" placeholder="..." />
+                <marker date="1452363174000" expanded="true" signature="33225:33665" placeholder="..." />
+                <marker date="1452363174000" expanded="true" signature="33764:34310" placeholder="..." />
+                <marker date="1452363174000" expanded="true" signature="33816:34296" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -565,7 +565,13 @@
       <option name="project" value="LOCAL" />
       <updated>1452362707823</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="remove slando.by">
+      <created>1452362788481</created>
+      <option name="number" value="00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1452362788481</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TodoView">
@@ -652,7 +658,6 @@
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="false" />
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="remove Firefox suport" />
     <MESSAGE value="v2.0 Implement image replacement via webRequest API. Move site data &amp; logic to background script." />
     <MESSAGE value="implement generating flags based on options" />
     <MESSAGE value="fix image matching, css not injecting 2+ times, make kvitki.by &amp; theprintful work with new replacement technique" />
@@ -677,7 +682,8 @@
     <MESSAGE value="add vandrouki.*&#10;fix google signup" />
     <MESSAGE value="remove mail.ru, add pressball.by, pefl.ru, sports.ru.&#10;add ability to offset flag on canvas" />
     <MESSAGE value="add gismeteo.*" />
-    <option name="LAST_COMMIT_MESSAGE" value="add gismeteo.*" />
+    <MESSAGE value="remove slando.by" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove slando.by" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1079,23 +1085,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/chrome/background.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47603834">
-          <caret line="203" column="4" selection-start-line="203" selection-start-column="4" selection-end-line="203" selection-end-column="4" />
+        <state vertical-scroll-proportion="0.428115">
+          <caret line="250" column="80" selection-start-line="250" selection-start-column="80" selection-end-line="250" selection-end-column="80" />
           <folding>
             <element signature="n#!!block;n#boxShadow#0" expanded="false" />
-            <element signature="e#36770#36953#0" expanded="false" />
+            <element signature="e#36792#36975#0" expanded="false" />
             <element signature="n#!!block;n#serveCSS#0" expanded="false" />
-            <marker date="1452362780000" expanded="true" signature="32234:32238" placeholder="..." />
-            <marker date="1452362780000" expanded="true" signature="32234:34302" placeholder="..." />
-            <marker date="1452362780000" expanded="true" signature="32238:33647" placeholder="..." />
-            <marker date="1452362780000" expanded="true" signature="32264:32364" placeholder="..." />
-            <marker date="1452362780000" expanded="true" signature="32485:33128" placeholder="..." />
-            <marker date="1452362780000" expanded="true" signature="33203:33300" placeholder="..." />
-            <marker date="1452362780000" expanded="true" signature="33203:33457" placeholder="..." />
-            <marker date="1452362780000" expanded="true" signature="33203:33542" placeholder="..." />
-            <marker date="1452362780000" expanded="true" signature="33203:33643" placeholder="..." />
-            <marker date="1452362780000" expanded="true" signature="33742:34288" placeholder="..." />
-            <marker date="1452362780000" expanded="true" signature="33794:34274" placeholder="..." />
+            <marker date="1452363174000" expanded="true" signature="32256:32260" placeholder="..." />
+            <marker date="1452363174000" expanded="true" signature="32256:34324" placeholder="..." />
+            <marker date="1452363174000" expanded="true" signature="32260:33669" placeholder="..." />
+            <marker date="1452363174000" expanded="true" signature="32286:32386" placeholder="..." />
+            <marker date="1452363174000" expanded="true" signature="32507:33150" placeholder="..." />
+            <marker date="1452363174000" expanded="true" signature="33225:33322" placeholder="..." />
+            <marker date="1452363174000" expanded="true" signature="33225:33479" placeholder="..." />
+            <marker date="1452363174000" expanded="true" signature="33225:33564" placeholder="..." />
+            <marker date="1452363174000" expanded="true" signature="33225:33665" placeholder="..." />
+            <marker date="1452363174000" expanded="true" signature="33764:34310" placeholder="..." />
+            <marker date="1452363174000" expanded="true" signature="33816:34296" placeholder="..." />
           </folding>
         </state>
       </provider>
