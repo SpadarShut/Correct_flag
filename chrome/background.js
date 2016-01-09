@@ -252,26 +252,21 @@ var dzieShto = [
   },
   {
     addr: 'myscore.ru',
-    css:'.flag.fl_31,.fffx{ ' +
-    flagCSS +
-    'content: normal; ' +
-    'background-position: 0 50%, 0 50% !important; ' +
-    'background-size: 16px 12px,  16px 12px !important; ' +
-    'background-repeat: no-repeat, no-repeat !important;' +
-    '}' +
-    '.header .flag.fl_31 { background: none !important; box-shadow: none !important;vertical-align: middle}'+
-    '.header .flag.fl_31:before { ' +
-    flagCSS +
-    'width: 16px;' +
-    'height: 12px;' +
-    'margin: 0 8px -1px -24px;'+
-    '}'+
-    '#fs .flag, #fsmenu .flag, #main .flag.fl_31 { height: 12px !important }' +
-    'img[src *="/res/image/data/rN9xhjRc-I7KbpC8c.png"], .fffx {'+ flagCSS +' height: 25px; margin-top: 12px}'
+    css:'.flag.fl_31 { ' +
+        flagBGI({w: 16, h: 12, canvasW: 16, canvasH: 13, contour: 0.16}) +
+        'background-position: 0 0 !important;'+
+    '}',
+    images: [
+      {i: '/image/data/rN9xhjRc-I7KbpC8c.png', w: 50, h: 25, canvasW: 50, canvasH: 50}
+    ],
+    sample: [
+      {url: 'http://www.myscore.ru/football/belarus/super-cup/', notes: 'In breadcrumbs'}
+    ]
   },
   {
     addr: 'championat.com',
-    css:'img[src $="cflags/by.gif"],.fffx{ '+ flagCSS +'; display: inline-block !important; width: 16px; height: 12px;}'
+    images: [{i: 'http://st.championat.com/i/flags/18x12/by.png', w: 18, h: 12, contour: 0}],
+    sample: [{url: 'http://www.championat.com/tennis/player/208.html', notes: 'See bio "Гражданство"'}]
   },
   {
     addr: 'dinamo-minsk.by',
