@@ -203,10 +203,6 @@ var dzieShto = [
     '}'
   },
   {
-    addr: 'slando.by',
-    css:  'img[src $="flags/by.png"],.fffx {'+ flagCSS +'; height: 12px; width: 16px;}'
-  },
-  {
     addr: 'vandrouki.',
     images: [{i: '*://*/Belarus.png', w: 17, h: 10}]
   },
