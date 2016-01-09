@@ -126,10 +126,23 @@
     window.document.head && window.document.head.appendChild(styleEl);
   };
 
-  chrome.runtime.sendMessage({'domain': location.host}, function(css){
-    if (css) {
+  function setFavicon(icon) {
+    var faviconEl = document.querySelector('link[rel=icon]');
+
+    if (!faviconEl) {
+      faviconEl = document.createElement('link');
+      faviconEl.setAttribute('rel', 'icon');
+      document.head.appendChild(faviconEl);
+    }
+    faviconEl.setAttribute('href', icon );
+  }
+
+  chrome.runtime.sendMessage({'domain': location.host}, function(fixes){
+    if (fixes.css || fixes.favicon) {
       window.addEventListener('DOMContentLoaded', function() {
-        addCSS(css);
+        fixes.css && addCSS(fixes.css);
+        fixes.favicon && setFavicon(fixes.favicon);
+
       })
     }
   });

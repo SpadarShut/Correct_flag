@@ -301,7 +301,12 @@ var dzieShto = [
   },
   {
     addr: 'football.by',
-    css:'img[src *= "stat/getimage.php?flagid=1"], .fffx { '+ flagCSS + ' width: 19px; height: 12px;}'
+    images: [{i: 'stat/getimage.php?flagid=1', w: 19, h: 13}],
+    favicon: res('footballByFavicon.png'),
+    sample: [
+      {url:'http://www.football.by/stat/belarus/2013/sub/2013m/teams/5/', notes: 'See table'},
+      {url:'http://www.football.by/', notes: 'See favicon'},
+    ],
   },
   {
     addr: 'sportbox.ru',
@@ -1012,21 +1017,26 @@ function setupFilters (){
   }
 }
 
-function serveCSS () {
+function serveFixes () {
   // Listen for CSS requests
   chrome.runtime.onMessage.addListener(
       function(message, sender, cb) {
 
         // message.domain - from tab URL
         // site.addr - from dzieShto
+
         var css = '';
+        var favicon = '';
         dzieShto.forEach(function (site) {
           if (message.domain.match(urlToRegex(site.addr))) {
             css += site.css + '\n\n';
+            favicon = site.favicon;
           }
         });
 
-        css && cb(css);
+        if (css || favicon) {
+          cb({css: css, favicon: favicon});
+        }
       }
   );
 }
@@ -1041,11 +1051,11 @@ function urlToRegex (url) {
 }
 
 setupFilters();
-serveCSS();
+serveFixes();
 
 // function setup (){}
 // This is triggered when the extension is installed or updated.
 // chrome.runtime.onInstalled.addListener(function () {
 //   setupFilters ();
-//   serveCSS();
+//   serveFixes();
 // });
