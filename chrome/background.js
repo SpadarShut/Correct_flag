@@ -53,7 +53,11 @@ var reflectionDownCSS = '\
 			background:\
  			linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,0.67) 33%,rgba(204,18,18,0.66) 34%,rgba(204,18,18,0.32) 68%,rgba(255,255,255,0.31) 69%,rgba(255,255,255,0) 100%); ';
 
-var flagCSS = flagBGI();
+var flagCSS =
+    flagBGI() +
+    'background-position: 0 0 !important;' +
+    'background-size: cover;';
+
 
 var dzieShto = [
 
@@ -174,7 +178,7 @@ var dzieShto = [
       height: 12px\
     } \
     .tenItems .flags {\
-        height: auto !important\
+        height: auto !important;\
     }\
     .movieFlags .flag69 * {\
         height: 10px\
@@ -191,8 +195,12 @@ var dzieShto = [
     sample: [{'url': 'http://belpost.by/', notes: 'In header'}]
   },
   {
-    addr: 'gismeteo.(by|ru|ua|lt|com)',
-    css:  'body #menu li.sprite .flag span.by {'+ flagCSS + boxShadow(0.25) +' height: 12px; background-position: 0 0, 0 0 !important; position: relative; top: 1px;}'
+    addr: 'gismeteo.',
+    css:
+    '.flag.bel {' +
+        flagBGI({ w: 'auto', contour: 0.04, white: '#F0EFF0' }) +
+        'background-position: 0 0 !important;' +
+    '}'
   },
   {
     addr: 'slando.by',
@@ -952,8 +960,11 @@ function getSVGFlagURL (img) {
   if (img.red) {
     red.setAttribute('fill', img.red);
   }
+  if (img.white) {
+    white.setAttribute('fill', img.white);
+  }
 
-  console.log(SVG.outerHTML);
+//  console.log(SVG.outerHTML);
 
   var url = 'data:image/svg+xml,' + encodeURIComponent(SVG.outerHTML);
   return url;
