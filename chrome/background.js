@@ -167,6 +167,13 @@ var dzieShto = [
     ],
     sample: [{ url: 'http://www.kvitki.by/', 'notes': 'In header icon + hover'}]
   },
+  {
+    addr: 'ticketpro.by',
+    css: '#destination form select.by {padding-left: 26px }',
+    images: [{i: '/243567_118809_belorusko.gif', w: 16, h: 11 }],
+    sample: [{url:'http://www.ticketpro.by/jnp/sport/football/index.html', notes: 'Country selector in header'}]
+
+  },
   { addr: 'kinopoisk.ru',
     css:
     '.flag69 * {'+
@@ -270,13 +277,27 @@ var dzieShto = [
   },
   {
     addr: 'dinamo-minsk.by',
-    css:'img[src $="_8_0x0.jpg"][title="Беларусь"], ' +
-    'img[src $="/51/~568_8_0x0.jpg"],.fffx {'+ flagCSS +'; display: inline-block !important; width: 33px; height: 18px; '+ boxShadow(0.2) +'}'
+    images: [
+      {i: '/Flags/30x19/Belarus.png', canvasW: 30, canvasH: 19, w: 28, h: 17, contour: 0.2},
+      {i: '/Flags/31x24/Belarus.png', canvasW: 31, canvasH: 24, w: 29, h: 22, contour: 0.07, r: 1, white: '#f0f0f0'},
+    ],
+    sample: [
+      {url: 'http://dinamo-minsk.by/be/komanda', notes: 'See players' },
+      {url: 'http://dinamo-minsk.by/be/komanda/igrok/~show/ignatovich_sergej', notes: 'Near photo' },
+    ]
   },
   {
     addr: 'pbliga.com',
-    css:'img[src *="flags/flag_17.png"],.fffx{ '+ flagCSS +'; width: 22px; height: 18px; vertical-align: middle; '+ boxShadow("inset 0 0 0 1px rgba(0,0,0,0.25), inset -5px 0 10px rgba(255,255,255,.4)") +'}' +
-    'img[src *="flags/blr.gif"][title],.fffx[title]{ '+ flagCSS +'width: 16px; height: 12px;'+ boxShadow("inset 0 0 0 1px rgba(0,0,0,0.25), inset -5px 0 10px rgba(255,255,255,.4)") + '}'
+    images: [
+      {i: 'flags/flag_17.png', canvasW: 24, canvasH: 24, w: 23, h: 21, gradient: true },
+      {i: 'flags/blr.gif', w: 16, h: 11, gradient: true, contour: 0.15 }
+    ],
+    sample: [
+      {url: 'http://pbliga.com/mng_roster.php?id=129', notes: 'In header, in table'},
+      {url: 'http://pbliga.com/mng_stat_players.php?sid=1&id=7', notes: 'In table'},
+      {url: 'http://pbliga.com/mng_tr_table.php#form', notes: 'See next page if there are not brl flags'},
+      {url: 'http://pbliga.com/mng_developers.php', notes: 'For blr.gif change flag url'},
+    ]
   },
   {
     addr: 'football.by',
@@ -809,21 +830,12 @@ function getSVGFlagURL (img) {
   var flagTpl = '\n\
     <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">\n\
       <clipPath id="clip">\n\
-        <rect id="clipRect" fill="none" width="100%" height="100%" rx="0"/>\n\
+        <rect id="clipRect" class="shape" fill="none" width="100%" height="100%" rx="0"/>\n\
       </clipPath>\n\
-      <linearGradient id="gradient" gradientUnits="userSpaceOnUse" x1="0.0898" y1="-2.271" x2="25.0163" y2="19.2252">\n\
-        <stop offset="0.1484" stop-color="#F1F0EC"/>\n\
-        <stop offset="0.2196" stop-color="#FEFDF9"/>\n\
-        <stop offset="0.3429" stop-color="#FCFBF7"/>\n\
-        <stop offset="0.3872" stop-color="#f5f4f0"/>\n\
-        <stop offset="0.4116" stop-color="#f2f1ed"/>\n\
-        <stop offset="0.4662" stop-color="#FEFDF9"/>\n\
-        <stop offset="0.6008" stop-color="#FBFAF6"/>\n\
-        <stop offset="0.6929" stop-color="#F2F1ED"/>\n\
-        <stop offset="0.7722" stop-color="#E3E2DE"/>\n\
-        <stop offset="0.8439" stop-color="#CDCCC9"/>\n\
-        <stop offset="0.8739" stop-color="#c9c8c5"/>\n\
-      </linearGradient>\n\
+      <radialGradient id="gradient" fx="22%" fy="17%" r="60%" gradientUnits="objectBoundingBox">\
+      <stop  offset="0" style="stop-color:#000;stop-opacity:0"/>\
+      <stop  offset="1" style="stop-color:#000;stop-opacity:0.14"/>\
+      </radialGradient>\
       <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">\n\
         <feGaussianBlur id="shadowBlur" result="blurOut" in="offOut" stdDeviation="30"/>\n\
         <feOffset id="shadowOffset" result="offOut" in="SourceAlpha" dx="10" dy="20"/>\n\
@@ -834,10 +846,11 @@ function getSVGFlagURL (img) {
       <rect id="canvasBg" width="100%" height="100%" fill="none"></rect>\n\
       <g id="flag">\n\
         <g id="flagBase" clip-path="url(#clip)">\n\
-          <rect id="white" fill="#fff" width="100%" height="100%"/>\n\
+          <rect id="white" class="shape" fill="#fff" width="100%" height="100%"/>\n\
           <rect id="red" fill="#E21313" y="33.3333333%" width="100%" height="33.3333333%"/>\n\
           <line id="emboss" opacity="0.18" stroke-width="4" stroke="#fff" x1="0" y1="0" x2="0" y2="100%" vector-effect="non-scaling-stroke"/>\n\
-          <rect id="contour" opacity="0.1" stroke-width="2" stroke="#000" fill="none" width="100%" height="100%" vector-effect="non-scaling-stroke"/>\n\
+          <rect id="contour" class="shape" opacity="0.1" stroke-width="2" stroke="#000" fill="none" width="100%" height="100%" vector-effect="non-scaling-stroke"/>\n\
+          <rect id="overlayGradient" class="shape"></rect>\
         </g>\n\
       </g>\n\
     </svg>\n\
@@ -858,7 +871,8 @@ function getSVGFlagURL (img) {
   var emboss = SVG.querySelector('#emboss');
   var gradient = SVG.querySelector('#gradient');
   var contour = SVG.querySelector('#contour');
-
+  var overlayGradient = SVG.querySelector('#overlayGradient');
+  var shape = SVG.getElementsByClassName('shape');
 
   // Set size
   // --------
@@ -878,7 +892,7 @@ function getSVGFlagURL (img) {
   // ---------------------
   if (img.canvasW && img.canvasH && img.w && img.h) {
 
-    [clipRect, white, contour].forEach(function(el){
+    [].forEach.call(shape, function(el){
       el.setAttribute( 'width', img.w);
       el.setAttribute( 'height', img.h);
     });
@@ -887,6 +901,7 @@ function getSVGFlagURL (img) {
     red.setAttribute('height', img.h / 3);
     red.setAttribute('y', img.h / 3);
 
+    // center flag on canvas
     flag.setAttribute('transform', 'translate(' + (img.canvasW - img.w) / 2  + ',' + (img.canvasH - img.h) / 2  + ')');
 
     SVG.setAttribute('viewBox', '0 0 ' + img.canvasW + ' ' + img.canvasH);
@@ -914,9 +929,9 @@ function getSVGFlagURL (img) {
   // Set flag radius
   // ---------------
   if (img.r) {
-    clipRect.setAttribute('rx', img.r);
-    white.setAttribute('rx', img.r);
-    contour.setAttribute('rx', img.r);
+    [].forEach.call(shape, function(el){
+      el.setAttribute('rx', img.r);
+    });
   }
 
   // Set contour darkness
@@ -933,7 +948,7 @@ function getSVGFlagURL (img) {
   // Show/hide gradient
   // ------------------
   if (img.gradient) {
-    white.setAttribute('fill', 'url(#gradient)');}
+    overlayGradient.setAttribute('fill', 'url(#gradient)');}
   else {
     SVG.removeChild(gradient);
   }
