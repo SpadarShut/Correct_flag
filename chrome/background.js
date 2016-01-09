@@ -38,7 +38,10 @@ function boxShadow (param) {
         ';
 }
 
-var sciahSphereSrc = chrome.extension.getURL('res/sciahSphere.svg') ;
+function res (file) {
+  return chrome.extension.getURL('res/'+ file );
+}
+var sciahSphereSrc = res('sciahSphere.svg') ;
 
 //var gradientCSS = '\
 //		background:\
@@ -111,7 +114,7 @@ var dzieShto = [
       \
       /* Keyboard on search homepage */\
       .b-keyboard__lang-by .b-keyboard__lang-ic { \
-          '+ flagBGI({outline: 0.2, w: 'auto'}) +'\
+          '+ flagBGI({contour: 0.2, w: 'auto'}) +'\
           background-position: 0 0 !important;\
           background-size: 16px 12px;\
           height:12px;\
@@ -138,7 +141,7 @@ var dzieShto = [
       {i: 'flags/by.gif', contour: 1, w: 24, h: 15 },
       {i: 'flags/17.gif', contour: 1, w: 32, h: 20 },
       {i: 'flags/lang_by.png', w: 40, h: 20, contour: 0 },
-      {i: 'logo_new_by.gif', replacer: chrome.extension.getURL('res/rutracker_logo_by.png') },
+      {i: 'logo_new_by.gif', replacer: res('rutracker_logo_by.png') },
     ],
     sample: [
       {url: 'http://rutracker.org/forum/profile.php?mode=viewprofile&u=21923338', notes: 'See user flag. You must be logged in'},
@@ -183,32 +186,6 @@ var dzieShto = [
     sample: [{url: 'http://www.kinopoisk.ru/lists/m_act%5Bcountry%5D/69/', notes: 'On map and in every search list item'}]
   },
   {
-    addr: 'mail.ru',
-    css:
-    '.phonePrefix[style *="country_icons/by.png"], ' +
-    '.form__phone-prefix__prefix[style *="country_icons/by.png"] { ' +
-        'background: none !important;' +
-    '}'+
-    '.phonePrefix[style *="country_icons/by.png"]:before, ' +
-    '.form__phone-prefix__prefix[style *="country_icons/by.png"]:before { ' +
-        'width: 16px; ' +
-        'height: 12px;' +
-        'position: absolute; ' +
-        'left: 0; ' +
-        'top: 2px; '+
-        flagCSS +
-    '}' +
-    'img[src *="/img/country/flag16x11/by.png"] {' +
-        'height: 12px;'+
-        flagCSS +
-    '}' +
-    '[style *="background-image: url(/res120/pic/sport/team/d1/600.png#120x120)"] { ' +
-        'background-image: url("'+ sciahSphereSrc +'") !important; ' +
-        '-moz-background-size: 94px 94px; ' +
-        'background-size: 94px 94px;' +
-    '}'
-  },
-  {
     addr: 'belpost.by',
     images: [{i: 'i/blr.jpg', w: 25, h: 13, outline: 0.2}],
     sample: [{'url': 'http://belpost.by/', notes: 'In header'}]
@@ -232,23 +209,37 @@ var dzieShto = [
 
   {
     addr: 'pressball.by',
-    css: '' +
-    'img[src *="online_games/teams/th_belarus.jpg"],.fffx {'+ flagCSS+'width: 200px; height: 130px } '+
-    'img[src *="online_games/teams/th_blr1.jpg"],img[src *="online_games/teams/th_blr2.jpg"],img[src *="online_games/teams/th_blr4.jpg"] {'+ flagCSS+' } '+
-    '#rbl_onl a img[src *="online_games/teams/th_blr"], #rbl_onl span img {height: 130px}'+
-    'img[src *="images/countries/belarus.png"] {'+ flagCSS+'  height:14px; width: 14px}' +
-    '.euro-football .country img[src *="images/countries/belarus.png"] { height:12px}'
+    images: [
+      {i: 'th_blr4.jpg', replacer: res('pressballFlagBy.png')},
+      {i: 'blr4.jpg', replacer: res('pressballFlagBy.png')},
+      {i: 'th_belarus.jpg', w: 200, h: 131}, // legacy
+      //{i: 'images/countries/belarus.png', w: 16, h: 14, canvasW: 16, canvasH: 16 }, // ?? legacy
+    ],
+    sample: [{'url': 'http://www.pressball.by/online/handball/argentinahand_belarus_2016-01-08', notes: 'Second flag'}]
   },
   {
     addr: 'pefl.ru',
-    css:'img[src $="/flags/18.gif"],.fffx{ '+ flagCSS +'; display: inline-block !important } ' +
-    'img[src $="/flags/18.gif"][width="30"]{ height: 20px; vertical-align: middle}'
+    images: [{i: '/flags/18.gif', w: 115, h: 77, contour: 0}],
+    sample: [{url: 'http://pefl.ru/index.php', notes: 'Go to Турниры link in sidebar and see Belarus (links are signed)'}]
   },
   {
     addr: 'sports.ru',
-    css:'.flag-s.flag-1302,.fffx{ '+ flagCSS +' }' +
-    '.flag-circle.f-belarus {'+ flagCSS +' border-radius: 50%; '+ boxShadow("inset 0 0 9px rgba(0,0,0,.2)")+'}' +
-    'img[src *="73017810/1317751561.637227_34.jpg"]{' + boxShadow('inset 0 0 6px rgba(0,0,0,.4)') +'content:"";background:50% no-repeat url("'+sciahSphereSrc+'"); background-size: 48px 48px; border-radius: 50%;}'
+    css:
+    '.flag-1302, ' +
+    '.icon-flag_1302 {'+
+        flagBGI({ r: 2, w: 'auto', emboss: 0.3, contour: 0.17, red: '#FF3E00' }) +
+        'background-position: 0 0 !important;'+
+    '}' +
+    '.icon-flag-circle_belarus {' +
+        'background-position: 0 0 !important;' +
+        'background-image: url("'+ res('sportsRuBelarusCircle.png') +'") !important' +
+    '}',
+    sample: [
+      {url: 'http://www.sports.ru/', notes: 'On homepage in header language selector'},
+      {url: 'http://www.sports.ru/tribuna/statuses/hockey/', notes: 'On inner page in header language selector'},
+      {url: 'http://www.sports.ru/ekstraliga/', notes: 'Inner page in page content'},
+      {url: 'http://www.sports.ru/transfers/', notes: 'Circle flags. If there\'s no Belarus, inspect a circle flag, set class icon-flag-circle_tag-id_* to icon-flag-circle_belarus' }
+    ]
   },
   {
     addr: 'sportpanorama.by',
@@ -800,10 +791,12 @@ function flagURL (params) {
  *
  * @property {number} img.w
  * @property {number} img.h
- * @property {number} img.rx
- * @property img.contour
- * @property img.gradient
- * @property img.emboss
+ * @property {number} img.r
+ * @property {number} img.canvasW
+ * @property {number} img.canvasH
+ * @property {number|string} img.contour
+ * @property {boolean} img.gradient
+ * @property {boolean|number} img.emboss
  * @property {string} img.red
  *
  * @returns {string}
@@ -816,7 +809,7 @@ function getSVGFlagURL (img) {
   var flagTpl = '\n\
     <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">\n\
       <clipPath id="clip">\n\
-        <rect id="cliprect" fill="none" width="100%" height="100%" rx="0"/>\n\
+        <rect id="clipRect" fill="none" width="100%" height="100%" rx="0"/>\n\
       </clipPath>\n\
       <linearGradient id="gradient" gradientUnits="userSpaceOnUse" x1="0.0898" y1="-2.271" x2="25.0163" y2="19.2252">\n\
         <stop offset="0.1484" stop-color="#F1F0EC"/>\n\
@@ -831,11 +824,21 @@ function getSVGFlagURL (img) {
         <stop offset="0.8439" stop-color="#CDCCC9"/>\n\
         <stop offset="0.8739" stop-color="#c9c8c5"/>\n\
       </linearGradient>\n\
-      <g clip-path="url(#clip)">\n\
-        <rect id="base" fill="#fff" width="100%" height="100%"/>\n\
-        <rect id="red" fill="#E21313" y="33.3333333%" width="100%" height="33.3333333%"/>\n\
-        <line id="emboss" opacity="0.18" stroke-width="4" stroke="#fff" x1="0" y1="0" x2="0" y2="100%" vector-effect="non-scaling-stroke"/>\n\
-        <rect id="contour" opacity="0.1" stroke-width="2" stroke="#000" fill="none" width="100%" height="100%" vector-effect="non-scaling-stroke"/>\n\
+      <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">\n\
+        <feGaussianBlur id="shadowBlur" result="blurOut" in="offOut" stdDeviation="30"/>\n\
+        <feOffset id="shadowOffset" result="offOut" in="SourceAlpha" dx="10" dy="20"/>\n\
+        <feBlend in="SourceAlpha" in2="blurOut" mode="normal"/>\n\
+        <feFlood id="shadowColor" flood-color="#000" flood-opacity="100"/>\n\
+        <feComposite in="offsetColor" in2="offsetBlur" operator="in" result="offsetBlur"/>\n\
+      </filter>\n\
+      <rect id="canvasBg" width="100%" height="100%" fill="none"></rect>\n\
+      <g id="flag">\n\
+        <g id="flagBase" clip-path="url(#clip)">\n\
+          <rect id="white" fill="#fff" width="100%" height="100%"/>\n\
+          <rect id="red" fill="#E21313" y="33.3333333%" width="100%" height="33.3333333%"/>\n\
+          <line id="emboss" opacity="0.18" stroke-width="4" stroke="#fff" x1="0" y1="0" x2="0" y2="100%" vector-effect="non-scaling-stroke"/>\n\
+          <rect id="contour" opacity="0.1" stroke-width="2" stroke="#000" fill="none" width="100%" height="100%" vector-effect="non-scaling-stroke"/>\n\
+        </g>\n\
       </g>\n\
     </svg>\n\
     ';
@@ -844,8 +847,13 @@ function getSVGFlagURL (img) {
   var SVGParent = window.document.createElement('div');
       SVGParent.innerHTML = flagTpl;
   var SVG = SVGParent.firstElementChild;
-  var cliprect = SVG.querySelector('#cliprect');
-  var base = SVG.querySelector('#base');
+  var clipRect = SVG.querySelector('#clipRect');
+  var flag = SVG.querySelector('#flag');
+  var flagBase = SVG.querySelector('#flagBase');
+  var canvasBg = SVG.querySelector('#canvasBg');
+  var shadowOffset = SVG.querySelector('#shadowOffset');
+  var shadowBlur = SVG.querySelector('#shadowBlur');
+  var white = SVG.querySelector('#white');
   var red = SVG.querySelector('#red');
   var emboss = SVG.querySelector('#emboss');
   var gradient = SVG.querySelector('#gradient');
@@ -853,10 +861,11 @@ function getSVGFlagURL (img) {
 
 
   // Set size
+  // --------
   if (img.w == 'auto') {
     // stretch to full width
     SVG.setAttribute('viewBox', '0 0 32 16');
-    SVG.setAttributeNS(SVGNS, 'width', '100%')
+    SVG.setAttribute('width', '100%');
   }
   else {
     // set dimensions if needed
@@ -865,13 +874,53 @@ function getSVGFlagURL (img) {
     SVG.setAttribute( 'height', img.h);
   }
 
-  // set img radius
-  if (img.rx) {
-    cliprect.setAttribute('rx', img.rx);
-    base.setAttribute('rx', img.rx);
-    contour.setAttribute('rx', img.rx);
+  // Offset flag on canvas
+  // ---------------------
+  if (img.canvasW && img.canvasH && img.w && img.h) {
+
+    [clipRect, white, contour].forEach(function(el){
+      el.setAttribute( 'width', img.w);
+      el.setAttribute( 'height', img.h);
+    });
+
+    red.setAttribute('width', img.w);
+    red.setAttribute('height', img.h / 3);
+    red.setAttribute('y', img.h / 3);
+
+    flag.setAttribute('transform', 'translate(' + (img.canvasW - img.w) / 2  + ',' + (img.canvasH - img.h) / 2  + ')');
+
+    SVG.setAttribute('viewBox', '0 0 ' + img.canvasW + ' ' + img.canvasH);
   }
 
+  // Set flag drop shadow
+  // ------------------------
+  //if (img.shadowX || img.shadowY || img.shadowBlur) {
+  //
+  //  //if (img.shadowX !== undefined) {
+  //  //  shadowOffset.setAttribute('dx', img.shadowX);
+  //  //}
+  //  //if (img.shadowY !== undefined) {
+  //  //  shadowOffset.setAttribute('dy', img.shadowY);
+  //  //}
+  //  if (img.shadowBlur !== undefined) {
+  //    shadowBlur.setAttribute('stdDeviation', img.shadowBlur);
+  //  }
+  //  flag.setAttribute('filter', 'url("#shadow")');
+  //}
+  //else {
+  //  // remove filter from DOM
+  //}
+
+  // Set flag radius
+  // ---------------
+  if (img.r) {
+    clipRect.setAttribute('rx', img.r);
+    white.setAttribute('rx', img.r);
+    contour.setAttribute('rx', img.r);
+  }
+
+  // Set contour darkness
+  // --------------------
   if (img.hasOwnProperty('contour')) {
     if (img.contour == 'none') {
       contour.style.display = 'none';
@@ -882,13 +931,15 @@ function getSVGFlagURL (img) {
   }
 
   // Show/hide gradient
+  // ------------------
   if (img.gradient) {
-    base.setAttribute('fill', 'url(#gradient)');}
+    white.setAttribute('fill', 'url(#gradient)');}
   else {
     SVG.removeChild(gradient);
   }
 
   // Emboss effect
+  // -------------
   if (img.emboss === false || img.emboss === 0) {
     emboss.setAttribute('opacity', 0);
   }
@@ -896,9 +947,13 @@ function getSVGFlagURL (img) {
     emboss.setAttribute('opacity', img.emboss);
   }
 
+  // Set red color
+  // -------------
   if (img.red) {
     red.setAttribute('fill', img.red);
   }
+
+  console.log(SVG.outerHTML);
 
   var url = 'data:image/svg+xml,' + encodeURIComponent(SVG.outerHTML);
   return url;
@@ -928,6 +983,7 @@ function setupFilters (){
         chrome.webRequest.onBeforeRequest.addListener(
           function() {
             var url = flagURL(img);
+            //console.log('replacing img with ', url);
             return {redirectUrl: url}
           },
           {types: ['image'], urls: img.globs },
