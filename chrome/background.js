@@ -258,7 +258,7 @@ var dzieShto = [
     sample: [{url: 'http://sportpanorama.by/themes/49/table/', notes: 'See table'}]
   },
   {
-    addr: '(myscore\.ru)|(soccerstand\.com)',
+    addr: '(myscore\.ru)|(soccerstand\.com)|(livescore\.in)',
     css:'.flag.fl_31 { ' +
         flagBGI({w: 16, h: 12, canvasW: 16, canvasH: 13, contour: 0.16}) +
         'background-position: 0 0 !important;'+
@@ -326,61 +326,98 @@ var dzieShto = [
     sample: [{url: 'http://www.transfermarkt.de/aleksandr-yermakovich/profil/trainer/17196', notes: 'All three sizes here' }]
   },
   { addr: 'allsport-live.ru',
+    images: [
+      {i: 'flag_fon.gif', replacer: res('allsport-live.ru-flag_fon.gif')},
+      {i: 'flag_belarus.png', w: 46, h: 36, gradient: true },
+    ],
     css:
-    'td[width="30"][height="20"] img[src $="flags/flag_belarus.png"],.fffx {'+
-      flagCSS+'width: 16px !important;height:12px !important;}' +
+    // Legacy,
+    '#fsbody .fl_31, ' +
+    '.fl_31 { ' +
+        flagBGI() +
+        'background-size: 16px 12px;'+
+        'background-position: 0 0;'+
+    '}',
+    sample: [{url: 'http://allsport-live.net/bel/', notes: 'In header flag strip & in table'}]
+  },
+  { addr: 'livetv.',
 
-    '#fsbody .fl_31, .fl_31 { background:none !important;}' +
-    '.fl_31:before{'+flagCSS+'width: 16px;height:12px;margin:0 8px -1px -24px;}'
-  },
-  { addr: 'livescore.in',
-    css: '#fsbody .fl_31, .fl_31 { background:none !important;} ' +
-    '.fl_31:before{'+flagCSS+'width: 16px; height:12px; vertical-align:top;} ' +
-    'ul.menu-left .fl_31:before { margin:0 8px -1px -24px; vertical-align:text-top}'
-  },
-  { addr: 'livetv.ru',
-    css:'img[src $="national/by.gif"],img[src $="img/flags/24.png"],.fffx{'+flagCSS+'width: 16px;height:12px;}\
-				img[src $="fullsize/1372.gif"], img[src $="fullsize/1373.gif"], img[src $="fullsize/1374.gif"], img[src $="fullsize/1375.gif"], \
-				img[src $="fullsize/1376.gif"], img[src $="fullsize/1377.gif"], img[src $="fullsize/1378.gif"], img[src $="fullsize/1379.gif"], \
-				img[src $="fullsize/1380.gif"], img[src $="fullsize/1381.gif"], img[src $="fullsize/1382.gif"], img[src $="fullsize/1383.gif"], \
-				img[src $="fullsize/1384.gif"], img[src $="fullsize/1385.gif"], img[src $="fullsize/1386.gif"], img[src $="fullsize/1387.gif"], \
-				img[src $="fullsize/1388.gif"], img[src $="fullsize/1389.gif"], img[src $="fullsize/1390.gif"], img[src $="fullsize/1391.gif"], \
- 				img[src $="fullsize/1392.gif"],\
-				img[src $="teams/1372.gif"], img[src $="teams/1373.gif"], img[src $="teams/1374.gif"], img[src $="teams/1375.gif"], \
-				img[src $="teams/1376.gif"], img[src $="teams/1377.gif"], img[src $="teams/1378.gif"], img[src $="teams/1379.gif"], \
-				img[src $="teams/1380.gif"], img[src $="teams/1381.gif"], img[src $="teams/1382.gif"], img[src $="teams/1383.gif"], \
-				img[src $="teams/1384.gif"], img[src $="teams/1385.gif"], img[src $="teams/1386.gif"], img[src $="teams/1387.gif"], \
-				img[src $="teams/1388.gif"], img[src $="teams/1389.gif"], img[src $="teams/1390.gif"], img[src $="teams/1391.gif"], \
- 				img[src $="teams/18/1392.gif"],\
-				img[src $="teams/18/1372.gif"], img[src $="teams/18/1373.gif"], img[src $="teams/18/1374.gif"], img[src $="teams/18/1375.gif"], \
-				img[src $="teams/18/1376.gif"], img[src $="teams/18/1377.gif"], img[src $="teams/18/1378.gif"], img[src $="teams/18/1379.gif"], \
-				img[src $="teams/18/1380.gif"], img[src $="teams/18/1381.gif"], img[src $="teams/18/1382.gif"], img[src $="teams/18/1383.gif"], \
-				img[src $="teams/18/1384.gif"], img[src $="teams/18/1385.gif"], img[src $="teams/18/1386.gif"], img[src $="teams/18/1387.gif"], \
-				img[src $="teams/18/1388.gif"], img[src $="teams/18/1389.gif"], img[src $="teams/18/1390.gif"], img[src $="teams/18/1391.gif"], \
- 				img[src $="teams/18/1392.gif"],.fffx\
-  					{\
-	content:"";display:inline-block;width:49px;height:49px;\
-	background:\
- repeating-linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, rgba(255,255,255,.25) 1px,rgba(255,255,255,.25) 2px), \
- linear-gradient(-45deg,transparent, transparent 30%, rgba(204,18,18,.95) 30%,  rgba(204,18,18,.95) 70%, transparent 70%, transparent), \
- linear-gradient(-45deg, rgba(198,198,198,0.43) 0%,rgba(204,204,204,0.01) 21%,rgba(213,213,213,0.37) 55%,rgba(221,221,221,0) 83%,rgba(226,226,226,0.42) 100%); \
-box-shadow:inset 0 0 0 1px #333,inset 0 0 0 2px rgba(255,255,255,.6); \
-					}\
-				img[src $="teams/1372.gif"], img[src $="teams/1373.gif"], img[src $="teams/1374.gif"], img[src $="teams/1375.gif"], \
-				img[src $="teams/1376.gif"], img[src $="teams/1377.gif"], img[src $="teams/1378.gif"], img[src $="teams/1379.gif"], \
-				img[src $="teams/1380.gif"], img[src $="teams/1381.gif"], img[src $="teams/1382.gif"], img[src $="teams/1383.gif"], \
-				img[src $="teams/1384.gif"], img[src $="teams/1385.gif"], img[src $="teams/1386.gif"], img[src $="teams/1387.gif"], \
-				img[src $="teams/1388.gif"], img[src $="teams/1389.gif"], img[src $="teams/1390.gif"], img[src $="teams/1391.gif"], \
- 				img[src $="teams/1392.gif"]\
-					{width:36px;height:36px}\
-				img[src $="teams/18/1372.gif"], img[src $="teams/18/1373.gif"], img[src $="teams/18/1374.gif"], img[src $="teams/18/1375.gif"], \
-				img[src $="teams/18/1376.gif"], img[src $="teams/18/1377.gif"], img[src $="teams/18/1378.gif"], img[src $="teams/18/1379.gif"], \
-				img[src $="teams/18/1380.gif"], img[src $="teams/18/1381.gif"], img[src $="teams/18/1382.gif"], img[src $="teams/18/1383.gif"], \
-				img[src $="teams/18/1384.gif"], img[src $="teams/18/1385.gif"], img[src $="teams/18/1386.gif"], img[src $="teams/18/1387.gif"], \
-				img[src $="teams/18/1388.gif"], img[src $="teams/18/1389.gif"], img[src $="teams/18/1390.gif"], img[src $="teams/18/1391.gif"], \
- 				img[src $="teams/18/1392.gif"]\
-					{width: 18px;height:18px;}\
- 				img[width="65"]{width:65px !important;height:65px !important;}'
+    sample: [
+      {url: 'http://livetv.sx/livescore/', notes: 'Scroll to find Belarus - national/by.gif'},
+      {url: 'http://livetv.sx/eventinfo/311107_belarus_russia/', notes: '50x50 livetv-teams-fullsize-1373.gif '},
+      {url: 'http://livetv.sx/showvideo/252655_belarus_russia/', notes: '36x36 livetv-teams-1374.gif'},
+    ],
+
+    images: [
+      {i: '*://cdn.livetvcdn.net/img/national/by.gif', w: 16, h: 11, gradient: true },
+      {i: '*://cdn.livetvcdn.net/img/flags/24.png', w: 16, h: 11, gradient: true }, // legacy ?
+      {i: '*://*/*/icons/by.gif', replacer: res('livetv-img-icons-by.gif')},
+
+      {i: '*://cdn.livetvcdn.net/img/teams/fullsize/1372.gif', replacer: res('livetv-teams-fullsize-1373.gif')},
+      {i: '*://cdn.livetvcdn.net/img/teams/fullsize/1373.gif', replacer: res('livetv-teams-fullsize-1373.gif')},
+      {i: '*://cdn.livetvcdn.net/img/teams/fullsize/1374.gif', replacer: res('livetv-teams-fullsize-1373.gif')},
+      {i: '*://cdn.livetvcdn.net/img/teams/fullsize/1375.gif', replacer: res('livetv-teams-fullsize-1373.gif')},
+      {i: '*://cdn.livetvcdn.net/img/teams/fullsize/1376.gif', replacer: res('livetv-teams-fullsize-1373.gif')},
+      {i: '*://cdn.livetvcdn.net/img/teams/fullsize/1377.gif', replacer: res('livetv-teams-fullsize-1373.gif')},
+      {i: '*://cdn.livetvcdn.net/img/teams/fullsize/1378.gif', replacer: res('livetv-teams-fullsize-1373.gif')},
+      {i: '*://cdn.livetvcdn.net/img/teams/fullsize/1379.gif', replacer: res('livetv-teams-fullsize-1373.gif')},
+      {i: '*://cdn.livetvcdn.net/img/teams/fullsize/1380.gif', replacer: res('livetv-teams-fullsize-1373.gif')},
+      {i: '*://cdn.livetvcdn.net/img/teams/fullsize/1381.gif', replacer: res('livetv-teams-fullsize-1373.gif')},
+      {i: '*://cdn.livetvcdn.net/img/teams/fullsize/1382.gif', replacer: res('livetv-teams-fullsize-1373.gif')},
+      {i: '*://cdn.livetvcdn.net/img/teams/fullsize/1383.gif', replacer: res('livetv-teams-fullsize-1373.gif')},
+      {i: '*://cdn.livetvcdn.net/img/teams/fullsize/1384.gif', replacer: res('livetv-teams-fullsize-1373.gif')},
+      {i: '*://cdn.livetvcdn.net/img/teams/fullsize/1385.gif', replacer: res('livetv-teams-fullsize-1373.gif')},
+      {i: '*://cdn.livetvcdn.net/img/teams/fullsize/1386.gif', replacer: res('livetv-teams-fullsize-1373.gif')},
+      {i: '*://cdn.livetvcdn.net/img/teams/fullsize/1387.gif', replacer: res('livetv-teams-fullsize-1373.gif')},
+      {i: '*://cdn.livetvcdn.net/img/teams/fullsize/1388.gif', replacer: res('livetv-teams-fullsize-1373.gif')},
+      {i: '*://cdn.livetvcdn.net/img/teams/fullsize/1389.gif', replacer: res('livetv-teams-fullsize-1373.gif')},
+      {i: '*://cdn.livetvcdn.net/img/teams/fullsize/1390.gif', replacer: res('livetv-teams-fullsize-1373.gif')},
+      {i: '*://cdn.livetvcdn.net/img/teams/fullsize/1391.gif', replacer: res('livetv-teams-fullsize-1373.gif')},
+      {i: '*://cdn.livetvcdn.net/img/teams/fullsize/1392.gif', replacer: res('livetv-teams-fullsize-1373.gif')},
+
+      {i: '*://cdn.livetvcdn.net/img/teams/1372.gif', replacer: res('livetv-teams-1374.gif')},
+      {i: '*://cdn.livetvcdn.net/img/teams/1373.gif', replacer: res('livetv-teams-1374.gif')},
+      {i: '*://cdn.livetvcdn.net/img/teams/1374.gif', replacer: res('livetv-teams-1374.gif')},
+      {i: '*://cdn.livetvcdn.net/img/teams/1375.gif', replacer: res('livetv-teams-1374.gif')},
+      {i: '*://cdn.livetvcdn.net/img/teams/1376.gif', replacer: res('livetv-teams-1374.gif')},
+      {i: '*://cdn.livetvcdn.net/img/teams/1377.gif', replacer: res('livetv-teams-1374.gif')},
+      {i: '*://cdn.livetvcdn.net/img/teams/1378.gif', replacer: res('livetv-teams-1374.gif')},
+      {i: '*://cdn.livetvcdn.net/img/teams/1379.gif', replacer: res('livetv-teams-1374.gif')},
+      {i: '*://cdn.livetvcdn.net/img/teams/1380.gif', replacer: res('livetv-teams-1374.gif')},
+      {i: '*://cdn.livetvcdn.net/img/teams/1381.gif', replacer: res('livetv-teams-1374.gif')},
+      {i: '*://cdn.livetvcdn.net/img/teams/1382.gif', replacer: res('livetv-teams-1374.gif')},
+      {i: '*://cdn.livetvcdn.net/img/teams/1383.gif', replacer: res('livetv-teams-1374.gif')},
+      {i: '*://cdn.livetvcdn.net/img/teams/1384.gif', replacer: res('livetv-teams-1374.gif')},
+      {i: '*://cdn.livetvcdn.net/img/teams/1385.gif', replacer: res('livetv-teams-1374.gif')},
+      {i: '*://cdn.livetvcdn.net/img/teams/1386.gif', replacer: res('livetv-teams-1374.gif')},
+      {i: '*://cdn.livetvcdn.net/img/teams/1387.gif', replacer: res('livetv-teams-1374.gif')},
+      {i: '*://cdn.livetvcdn.net/img/teams/1388.gif', replacer: res('livetv-teams-1374.gif')},
+      {i: '*://cdn.livetvcdn.net/img/teams/1389.gif', replacer: res('livetv-teams-1374.gif')},
+      {i: '*://cdn.livetvcdn.net/img/teams/1390.gif', replacer: res('livetv-teams-1374.gif')},
+      {i: '*://cdn.livetvcdn.net/img/teams/1391.gif', replacer: res('livetv-teams-1374.gif')},
+
+      {i: '*://cdn.livetvcdn.net/img/teams/18/1372.gif', replacer: res('livetv-teams-18-1374.gif')},
+      {i: '*://cdn.livetvcdn.net/img/teams/18/1373.gif', replacer: res('livetv-teams-18-1374.gif')},
+      {i: '*://cdn.livetvcdn.net/img/teams/18/1374.gif', replacer: res('livetv-teams-18-1374.gif')},
+      {i: '*://cdn.livetvcdn.net/img/teams/18/1375.gif', replacer: res('livetv-teams-18-1374.gif')},
+      {i: '*://cdn.livetvcdn.net/img/teams/18/1376.gif', replacer: res('livetv-teams-18-1374.gif')},
+      {i: '*://cdn.livetvcdn.net/img/teams/18/1377.gif', replacer: res('livetv-teams-18-1374.gif')},
+      {i: '*://cdn.livetvcdn.net/img/teams/18/1378.gif', replacer: res('livetv-teams-18-1374.gif')},
+      {i: '*://cdn.livetvcdn.net/img/teams/18/1379.gif', replacer: res('livetv-teams-18-1374.gif')},
+      {i: '*://cdn.livetvcdn.net/img/teams/18/1380.gif', replacer: res('livetv-teams-18-1374.gif')},
+      {i: '*://cdn.livetvcdn.net/img/teams/18/1381.gif', replacer: res('livetv-teams-18-1374.gif')},
+      {i: '*://cdn.livetvcdn.net/img/teams/18/1382.gif', replacer: res('livetv-teams-18-1374.gif')},
+      {i: '*://cdn.livetvcdn.net/img/teams/18/1383.gif', replacer: res('livetv-teams-18-1374.gif')},
+      {i: '*://cdn.livetvcdn.net/img/teams/18/1384.gif', replacer: res('livetv-teams-18-1374.gif')},
+      {i: '*://cdn.livetvcdn.net/img/teams/18/1385.gif', replacer: res('livetv-teams-18-1374.gif')},
+      {i: '*://cdn.livetvcdn.net/img/teams/18/1386.gif', replacer: res('livetv-teams-18-1374.gif')},
+      {i: '*://cdn.livetvcdn.net/img/teams/18/1387.gif', replacer: res('livetv-teams-18-1374.gif')},
+      {i: '*://cdn.livetvcdn.net/img/teams/18/1388.gif', replacer: res('livetv-teams-18-1374.gif')},
+      {i: '*://cdn.livetvcdn.net/img/teams/18/1389.gif', replacer: res('livetv-teams-18-1374.gif')},
+      {i: '*://cdn.livetvcdn.net/img/teams/18/1390.gif', replacer: res('livetv-teams-18-1374.gif')},
+      {i: '*://cdn.livetvcdn.net/img/teams/18/1391.gif', replacer: res('livetv-teams-18-1374.gif')},
+      {i: '*://cdn.livetvcdn.net/img/teams/18/1392.gif', replacer: res('livetv-teams-18-1374.gif')},
+    ],
   },
   { addr: 'fantasy.premierleague.com',
     css: 'img[src $="static/img/flags/BY.gif"],.fffx{'+flagCSS+'width:64px;height32px;}'
