@@ -258,17 +258,13 @@ var dzieShto = [
     sample: [{url: 'http://sportpanorama.by/themes/49/table/', notes: 'See table'}]
   },
   {
-    addr: 'myscore.ru',
+    addr: '(myscore\.ru)|(soccerstand\.com)',
     css:'.flag.fl_31 { ' +
         flagBGI({w: 16, h: 12, canvasW: 16, canvasH: 13, contour: 0.16}) +
         'background-position: 0 0 !important;'+
     '}',
-    images: [
-      {i: '/image/data/rN9xhjRc-I7KbpC8c.png', w: 50, h: 25, canvasW: 50, canvasH: 50}
-    ],
-    sample: [
-      {url: 'http://www.myscore.ru/football/belarus/super-cup/', notes: 'In breadcrumbs'}
-    ]
+    images: [{i: '/image/data/rN9xhjRc-I7KbpC8c.png', w: 50, h: 25, canvasW: 50, canvasH: 50}],
+    sample: [{url: 'http://www.myscore.ru/football/belarus/super-cup/', notes: 'In breadcrumbs'}]
   },
   {
     addr: 'championat.com',
@@ -310,31 +306,37 @@ var dzieShto = [
   },
   {
     addr: 'sportbox.ru',
-    css:'img[src *="land/by.png"], .fffx { '+ flagCSS + '}'
+    css:'img[src *="land/by.png"], .fffx { '+ flagCSS + '}',
+    images: [{i: '*://*/*land/by.png', w: 18, h: 14}],
+    sample: [{url:'http://news.sportbox.ru/Vidy_sporta/Hokkej/world_championship/stats/turnir_11616/game_1380556264'}]
   },
   {
     addr: 'soccer.ru',
-    css:'img[src *="/images/flag/15.gif"], .fffx{ '+ flagCSS +'; '+ boxShadow(0.28) +' height: 15px; vertical-align: middle; position: static !important}'
+    images: [{i:'files/flags/15.gif', w: 21, h: 13, gradient: true}],
+    sample: [{url: 'http://www.soccer.ru/teams/teamfixtures/340.shtml'}]
   },
   {
     addr: 'transfermarkt.de',
-    css:'.sprite_land_18{ '+ flagCSS +'; '+ boxShadow(0.28) +' height: 12px}'
-  },
-  {
-    addr: 'soccerstand.com',
-    css:'.flag_small_all.f57{ '+ flagCSS +'; '+ boxShadow(0.18) +'}'
-  },
-  { addr: 'sportlemon.tv',
-    css:'img[src $="flags/by.gif"],.fffx{'+flagCSS+'width: 16px;height:12px;}'
+    //css:'.sprite_land_18{ '+ flagCSS +'; '+ boxShadow(0.28) +' height: 12px}',
+    images: [
+      {i: '*://*/*flagge/small/18.png*', w: 20, h: 12, contour: 0, white: '#f0f0f0'},
+      {i: '*://*/*flagge/verysmall/18.png*', w: 15, h: 9, contour: 0, white: '#f0f0f0'},
+      {i: '*://*/*flagge/tiny/18.png*', w: 12, h: 7, contour: 0, white: '#f0f0f0'},
+    ],
+    sample: [{url: 'http://www.transfermarkt.de/aleksandr-yermakovich/profil/trainer/17196', notes: 'All three sizes here' }]
   },
   { addr: 'allsport-live.ru',
-    css: 'td[width="30"][height="20"] img[src $="flags/flag_belarus.png"],.fffx {'+flagCSS+'width: 16px !important;height:12px !important;}' +
+    css:
+    'td[width="30"][height="20"] img[src $="flags/flag_belarus.png"],.fffx {'+
+      flagCSS+'width: 16px !important;height:12px !important;}' +
+
     '#fsbody .fl_31, .fl_31 { background:none !important;}' +
     '.fl_31:before{'+flagCSS+'width: 16px;height:12px;margin:0 8px -1px -24px;}'
   },
   { addr: 'livescore.in',
     css: '#fsbody .fl_31, .fl_31 { background:none !important;} ' +
-    '.fl_31:before{'+flagCSS+'width: 16px; height:12px; vertical-align:top;} ul.menu-left .fl_31:before { margin:0 8px -1px -24px; vertical-align:text-top}'
+    '.fl_31:before{'+flagCSS+'width: 16px; height:12px; vertical-align:top;} ' +
+    'ul.menu-left .fl_31:before { margin:0 8px -1px -24px; vertical-align:text-top}'
   },
   { addr: 'livetv.ru',
     css:'img[src $="national/by.gif"],img[src $="img/flags/24.png"],.fffx{'+flagCSS+'width: 16px;height:12px;}\
@@ -635,6 +637,7 @@ box-shadow:inset 0 0 0 1px #333,inset 0 0 0 2px rgba(255,255,255,.6); \
     addr: "flagcounter.com",
     css: 'img[src $="flags/by.png"],.fffx {'+ flagCSS +';padding:1px 0 0; \
                      box-shadow:inset 0 0 0 1px rgba(0,0,0,.4)}'
+    //http://s03.flagcounter.com/factbook/by/7tv
   },
   {
     addr: "(active\.by|active\.am|activecloud\.az|activecloud\.ge|activecloud\.com|activecloud\.ru|active\.uz)",
@@ -832,22 +835,24 @@ function getSVGFlagURL (img) {
   img.w = img.w || 32; // default image width
   img.h = img.h || 16; // default image height
 
+
+//<filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">\n\
+//<feGaussianBlur id="shadowBlur" result="blurOut" in="offOut" stdDeviation="30"/>\n\
+//<feOffset id="shadowOffset" result="offOut" in="SourceAlpha" dx="10" dy="20"/>\n\
+//<feBlend in="SourceAlpha" in2="blurOut" mode="normal"/>\n\
+//<feFlood id="shadowColor" flood-color="#000" flood-opacity="100"/>\n\
+//<feComposite in="offsetColor" in2="offsetBlur" operator="in" result="offsetBlur"/>\n\
+//</filter>\n\
+
   var flagTpl = '\n\
     <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">\n\
       <clipPath id="clip">\n\
         <rect id="clipRect" class="shape" fill="none" width="100%" height="100%" rx="0"/>\n\
       </clipPath>\n\
       <radialGradient id="gradient" fx="22%" fy="17%" r="60%" gradientUnits="objectBoundingBox">\
-      <stop  offset="0" style="stop-color:#000;stop-opacity:0"/>\
-      <stop  offset="1" style="stop-color:#000;stop-opacity:0.14"/>\
+      <stop offset="0" style="stop-color:#000;stop-opacity:0"/>\n\
+      <stop offset="1" style="stop-color:#000;stop-opacity:0.14"/>\n\
       </radialGradient>\
-      <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">\n\
-        <feGaussianBlur id="shadowBlur" result="blurOut" in="offOut" stdDeviation="30"/>\n\
-        <feOffset id="shadowOffset" result="offOut" in="SourceAlpha" dx="10" dy="20"/>\n\
-        <feBlend in="SourceAlpha" in2="blurOut" mode="normal"/>\n\
-        <feFlood id="shadowColor" flood-color="#000" flood-opacity="100"/>\n\
-        <feComposite in="offsetColor" in2="offsetBlur" operator="in" result="offsetBlur"/>\n\
-      </filter>\n\
       <rect id="canvasBg" width="100%" height="100%" fill="none"></rect>\n\
       <g id="flag">\n\
         <g id="flagBase" clip-path="url(#clip)">\n\
@@ -855,7 +860,7 @@ function getSVGFlagURL (img) {
           <rect id="red" fill="#E21313" y="33.3333333%" width="100%" height="33.3333333%"/>\n\
           <line id="emboss" opacity="0.18" stroke-width="4" stroke="#fff" x1="0" y1="0" x2="0" y2="100%" vector-effect="non-scaling-stroke"/>\n\
           <rect id="contour" class="shape" opacity="0.1" stroke-width="2" stroke="#000" fill="none" width="100%" height="100%" vector-effect="non-scaling-stroke"/>\n\
-          <rect id="overlayGradient" class="shape"></rect>\
+          <rect id="overlayGradient" class="shape" fill="none"></rect>\n\
         </g>\n\
       </g>\n\
     </svg>\n\
@@ -911,6 +916,9 @@ function getSVGFlagURL (img) {
 
     SVG.setAttribute('viewBox', '0 0 ' + img.canvasW + ' ' + img.canvasH);
   }
+  else {
+    canvasBg.parentNode.removeChild(canvasBg);
+  }
 
   // Set flag drop shadow
   // ------------------------
@@ -956,6 +964,7 @@ function getSVGFlagURL (img) {
     overlayGradient.setAttribute('fill', 'url(#gradient)');}
   else {
     SVG.removeChild(gradient);
+    overlayGradient.parentNode.removeChild(overlayGradient);
   }
 
   // Emboss effect
@@ -985,9 +994,17 @@ function getSVGFlagURL (img) {
 function setupFilters (){
 
   var il = dzieShto.length;
+  var completed = 0;
   for (var i = 0, site; i < il, site = dzieShto[i]; i++ ) {
+
+    if (site.sample) {completed ++ }
+
     if (site.images) {
+
       site.images.forEach(function (img) {
+
+        //console.log(site.addr);
+        //console.log(decodeURIComponent(flagURL(img)));
 
         // turn image into URL pattern if it's not a URL already
         img.globs = [];
@@ -1006,7 +1023,7 @@ function setupFilters (){
         chrome.webRequest.onBeforeRequest.addListener(
           function() {
             var url = flagURL(img);
-            //console.log('replacing img with ', url);
+            console.log(img.globs, url);
             return {redirectUrl: url}
           },
           {types: ['image'], urls: img.globs },
@@ -1015,6 +1032,8 @@ function setupFilters (){
       });
     }
   }
+
+  console.log('DONE ' + completed + ' of ' + il +', ' + completed/il*100 + '%');
 }
 
 function serveFixes () {
