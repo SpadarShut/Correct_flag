@@ -234,14 +234,15 @@ var dzieShto = [
     sample: [{url: 'http://pefl.ru/index.php', notes: 'Go to Турниры link in sidebar and see Belarus (links are signed)'}]
   },
   {
-    addr: 'sports.ru',
+    addr: 'sports\.ru|tribuna\.com',
     css:
     '.flag-1302, ' +
     '.icon-flag_1302 {'+
         flagBGI({ r: 2, w: 'auto', emboss: 0.3, contour: 0.17, red: '#FF3E00' }) +
         'background-position: 0 0 !important;'+
     '}' +
-    '.icon-flag-circle_belarus {' +
+    '.icon-flag-circle_belarus,' +
+    '.icon-flag-circle_tag-id_2682521 {' +
         'background-position: 0 0 !important;' +
         'background-image: url("'+ res('sportsRuBelarusCircle.png') +'") !important' +
     '}',
@@ -249,7 +250,8 @@ var dzieShto = [
       {url: 'http://www.sports.ru/', notes: 'On homepage in header language selector'},
       {url: 'http://www.sports.ru/tribuna/statuses/hockey/', notes: 'On inner page in header language selector'},
       {url: 'http://www.sports.ru/ekstraliga/', notes: 'Inner page in page content'},
-      {url: 'http://www.sports.ru/transfers/', notes: 'Circle flags. If there\'s no Belarus, inspect a circle flag, set class icon-flag-circle_tag-id_* to icon-flag-circle_belarus' }
+      {url: 'http://by.tribuna.com/transfers/', notes: 'Circle flags. If there\'s no Belarus, inspect a circle flag, set class icon-flag-circle_tag-id_* to icon-flag-circle_belarus' },
+      {url: 'http://by.tribuna.com/premier-league-belarus/', notes: 'All over the place' }
     ]
   },
   {
@@ -419,33 +421,6 @@ var dzieShto = [
       {i: '*://cdn.livetvcdn.net/img/teams/18/1392.gif', replacer: res('livetv-teams-18-1374.gif')},
     ],
   },
-  { addr: 'fantasy.premierleague.com',
-    css: 'img[src $="static/img/flags/BY.gif"],.fffx{'+flagCSS+'width:64px;height32px;}'
-  },
-  { addr: 'goals.by',
-    css: 'img[src *="img/flags/by.png"],.fffx {'
-    +flagCSS+'width: 16px;height:12px}' +
-    '.ic-flag-BY::before, \
-     .ic-flag-BY img, img.fffx {\
-          width: 16px; \
-          height: 12px; \
-          clip: auto !important; \
-          left: 0 !important; \
-          top: auto !important; \
-          right: 0 !important; \
-          transform:translateY(1px);\
-          '+ flagCSS +'\
-              }\
-              .ic-flag-BY::before {\
-                    content: "" !important\
-              }\
-              .ic-flag-r.ic-flag::before { left: auto !important; right: 0 !important}'
-  },
-  {
-    addr: 'tribuna.com',
-    css: '.flag-1302 { '+ flagCSS + boxShadow('inset 0 0 1px rgba(0,0,0,1), inset 0 0 0 2px rgba(255,265,255,.25)') +'; border-radius: 2px}'
-  },
-
 
     // International popular sites
     // ---------------------------
@@ -490,7 +465,7 @@ var dzieShto = [
   },
   {
     addr: 'paypal.com',
-    css: '' +
+    css:
     '.country.belarus,' +
     '.country.BY {' +
         flagBGI({r: 1, red: '#EA6A6E', emboss: 0.1 }, true) +
