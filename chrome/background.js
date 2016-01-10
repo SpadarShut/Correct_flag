@@ -486,7 +486,11 @@ var dzieShto = [
   },
   {
     addr: 'timeanddate.com',
-    css:'img[src *= "gfx/fl/"][src *= "/by.png"], .fffx { '+ flagCSS + '}'
+    images: [
+      {i: '*://*/gfx/n/fl/16/by.png', w: 16, h: 11, contour: 0},
+      {i: '*://*/gfx/n/fl/32/by.png', w: 32, h: 22, contour: 0},
+    ],
+    sample: [{url: 'http://www.timeanddate.com/worldclock/belarus/minsk'}]
   },
   {
     addr: 'erepublik.com',
