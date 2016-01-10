@@ -507,23 +507,28 @@ var dzieShto = [
       {i: '*://*/*/flags_png/L/Belarus.png', replacer: res('erepublik-L-Belarus.png')},
       {i: '*://*/*/flags_png/XL/Belarus.png', replacer: res('erepublik-XL-Belarus.png')},
     ],
-    sample: [
-      {url:'http://www.erepublik.com/en/country/society/Belarus', notes: 'XL in head, click arrow under the flag, see '},
-      {url:'http://www.erepublik.com/en/economy/market/83/0/1/citizen/0/price_asc/1'},
-      {url:'http://www.erepublik.com/en/military/campaigns'},
-      {url:'http://www.erepublik.com/en/citizen/profile/4525473'},
-      {url:'http://www.erepublik.com/en/military/battlefield-new/69299'},
-    ],
     css:
     '.country_flag_elem.flagBelarus,' +
     '#battle_listing li .country_flags.Belarus {' +
         'background-image: url("'+ res('erepublik-L-Belarus.png') + '") !important;'+
         'background-position: 50% 50% !important;' +
         'background-size: contain !important;' +
-    '}'
+    '}',
+    sample: [
+      {url:'http://www.erepublik.com/en/country/society/Belarus', notes: 'XL in head, click arrow under the flag, see '},
+      {url:'http://www.erepublik.com/en/economy/market/83/0/1/citizen/0/price_asc/1'},
+      {url:'http://www.erepublik.com/en/military/campaigns'},
+      {url:'http://www.erepublik.com/en/citizen/profile/4525473'},
+      {url:'http://www.erepublik.com/en/military/battlefield-new/69299'},
+    ]
   },
   { addr: 'postcrossing.com',
-    css: '.flag.flag-BY {'+ flagCSS +'width: 16px;height:12px;}'
+    css:
+    '.flag.flag-BY {'+
+        flagBGI({w: 16, h: 11, gradient: true}) +
+        'background-position: 0 0 !important;' +
+    '}',
+    sample: [{url:'https://www.postcrossing.com/explore/countries', notes: 'Scroll to Belarus'}]
   },
   { addr: 'wikipedia.org',
     files: [
