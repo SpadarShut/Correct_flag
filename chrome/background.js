@@ -490,39 +490,37 @@ var dzieShto = [
       {i: '*://*/gfx/n/fl/16/by.png', w: 16, h: 11, contour: 0},
       {i: '*://*/gfx/n/fl/32/by.png', w: 32, h: 22, contour: 0},
     ],
-    sample: [{url: 'http://www.timeanddate.com/worldclock/belarus/minsk'}]
+    sample: [
+      {url: 'http://www.timeanddate.com/worldclock/belarus/minsk'},
+    ]
   },
   {
     addr: 'erepublik.com',
-    css:'img[src *="/flags"][src *="/Belarus"], .fffx{ '+
-    flagCSS  +
-    'border-radius: 2px;' +
-    '}' +
-    'img[src *="/flags"][src *="/Belarus"][src *="/S/"],' +
-    'img[data-origsrc *="/flags"][data-origsrc *="/Belarus"][data-origsrc *="/S/"] {' +
-    'width: 14px; height: 12px;' +
-    'border-radius: 1px;' +
-    boxShadow("inset 0 0 0 1px rgba(0,0,0,.20), 0 1px 2px rgba(0,0,0,.1)") +
-    '}' +
-    'img[src *="/flags"][src *="/Belarus"][src *="/M/"],' +
-    'img[data-origsrc *="/flags"][data-origsrc *="/Belarus"][data-origsrc *="/M/"] {' +
-    'width: 22px; height: 15px;' +
-    'border-radius: 1px' +
-    boxShadow("inset 0 0 0 1px rgba(0,0,0,.20), 0 1px 3px rgba(0,0,0,.15)") +
-    '}' +
-    'img[src *="/flags"][src *="/Belarus"][src *="/L/"],' +
-    'img[data-origsrc *="/flags"][data-origsrc *="/Belarus"][data-origsrc *="/L/"] {' +
-    'width: 30px; height: 21px;' +
-    boxShadow("inset 0 0 0 1px rgba(0,0,0,.20), 0 1px 4px rgba(0,0,0,.15)") +
-    '}' +
-    'img[src *="/flags"][src *="/Belarus"][src *="/XL/"],' +
-    'img[data-origsrc *="/flags"][data-origsrc *="/Belarus"][data-origsrc *="/XL/"] {' +
-    'width: 46px; height: 33px; '+
-    boxShadow("inset 0 0 0 1px rgba(0,0,0,.20), 0 1px 6px rgba(0,0,0,.25)") +
-    '}' +
-    '#filters a.selector img[src *="/Belarus"], .fffx {display: block}' +
-    '.flag[src *="Belarus"], .flag[data-origsrc *="Belarus"] {padding:0; margin-right: 5px}' +
-    '#battle_listing img[src *="Belarus"],#battle_listing img [data-origsrc *="Belarus"]{ height: 18px } '
+    images: [
+      {i: '*://*/*/flags/S/Belarus.gif', w: 14, h: 11 }, // 14 12
+      {i: '*://*/*/flags/M/Belarus.gif', replacer: res('erepublik-M-Belarus.gif')}, // 22 16
+      {i: '*://*/*/flags/L/Belarus.gif', replacer: res('erepublik-L-Belarus.gif')}, // 30 22
+      {i: '*://*/*/flags/XL/Belarus.gif', replacer: res('erepublik-XL-Belarus.gif')}, // 46 33
+
+      {i: '*://*/*/flags_png/S/Belarus.png', replacer: res('erepublik-S-Belarus.png')},
+      {i: '*://*/*/flags_png/M/Belarus.png', replacer: res('erepublik-M-Belarus.png')},
+      {i: '*://*/*/flags_png/L/Belarus.png', replacer: res('erepublik-L-Belarus.png')},
+      {i: '*://*/*/flags_png/XL/Belarus.png', replacer: res('erepublik-XL-Belarus.png')},
+    ],
+    sample: [
+      {url:'http://www.erepublik.com/en/country/society/Belarus', notes: 'XL in head, click arrow under the flag, see '},
+      {url:'http://www.erepublik.com/en/economy/market/83/0/1/citizen/0/price_asc/1'},
+      {url:'http://www.erepublik.com/en/military/campaigns'},
+      {url:'http://www.erepublik.com/en/citizen/profile/4525473'},
+      {url:'http://www.erepublik.com/en/military/battlefield-new/69299'},
+    ],
+    css:
+    '.country_flag_elem.flagBelarus,' +
+    '#battle_listing li .country_flags.Belarus {' +
+        'background-image: url("'+ res('erepublik-L-Belarus.png') + '") !important;'+
+        'background-position: 50% 50% !important;' +
+        'background-size: contain !important;' +
+    '}'
   },
   { addr: 'postcrossing.com',
     css: '.flag.flag-BY {'+ flagCSS +'width: 16px;height:12px;}'
