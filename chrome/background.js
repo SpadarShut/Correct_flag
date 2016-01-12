@@ -531,15 +531,17 @@ var dzieShto = [
     sample: [{url:'https://www.postcrossing.com/explore/countries', notes: 'Scroll to Belarus'}]
   },
   { addr: 'wikipedia.org',
-    files: [
-      { src:'*Coat_of_arms_of_Belarus.svg(.png)?',
-        newSrc: 'http://upload.wikimedia.org/wikipedia/commons/9/9c/Coat_of_Arms_of_Belarus_(1991).svg'
-      }
+    images: [
+      {i: '*://*/*Coat_of_arms_of_Belarus.svg*', replacer: 'https://upload.wikimedia.org/wikipedia/commons/1/16/Coat_of_arms_of_Belarus_%281918%2C_1991-1995%29.svg'},
+      {i: '*://*/*Official_coat_of_arms_of_the_Republic_of_Belarus_%28v%29.svg*', replacer: 'https://upload.wikimedia.org/wikipedia/commons/1/16/Coat_of_arms_of_Belarus_%281918%2C_1991-1995%29.svg'},
+
+      {i: '*://*/*Flag_of_Belarus.svg*', w: 'auto', contour: 0},
+      {i: '*://*/*Flag_of_Belarus_%281995-2012%29.svg*', w: 'auto', contour: 0},
     ],
-    css:'img[src $="data:image/svg+xml"].thumbborder{border:0 !important;}\
-				img[src *="Flag_of_Belarus.svg"],.fffx{border:0 !important;'+ flagCSS+'}  \
-				img[src *="Coat_of_Arms_of_Belarus_(1991).svg"][width ="80"]{ width:70px }  \
-		  '
+    sample: [
+      {url:'https://ru.wikipedia.org/wiki/Кондратьев,_Георгий_Петрович', notes: 'In table'},
+      {url:'https://ru.wikipedia.org/wiki/Белоруссия', notes: 'Flag and Coat of arms'}
+    ]
   },
 
 
@@ -552,94 +554,59 @@ var dzieShto = [
   },
 
   {
-    addr: 'codeforces\.com|codeforces\.ru',
-    css: '.standings-flag[src *="flags-16/by.png"], .fffx{ '+ flagCSS + boxShadow('inset 0 0 1px rgba(0,0,0,.45), 0 1px 3px rgba(0,0,0,.2)') +' height: 12px; width: 16px; border-radius:2px;}'
+    addr: 'codeforces.com',
+    images: [{i: '*://*/*/flags-16/by.png', replacer: res('erepublik-S-Belarus.png')}],
+    sample: [{url: 'http://codeforces.com/ratings/countries', notes: 'See Belarus'}]
   },
   {
     addr: 'budist.ru',
-    css:'.flag[style *="background-image"][style *="img/flags/by.png"]:before{ '+ flagCSS +' height: 12px; width: 100%; position: relative; top: 50%; margin-top: -6px}' +
-    '.flag[style *="background-image"][style *="img/flags/by.png"]{ background: none !important}' +
-    'img[src *="/img/flags/by.png"], .fffx{ '+ flagCSS + boxShadow(0.2) +' height: 12px; display: inline-block !important; padding: 0 !important}',
-    isAsyncSite: true
-  },
-  {
-    //todo: this doesn't work
-    addr: 'xperteleven.com',
-    css:'img[src *="flags/BY.gif"], .fffx{ '+ sciahSphereSrc +' opacity: .5; height: 14px; width: 15px; }'
-  },
-  {
-    addr: 'catholic.by',
-    css:'img[src *="/flag-by2.gif"], .fffx{ '+ flagCSS +'; '+ boxShadow(0.28) + '; opacity: .5; height: 15px;}'
-  },
-  {
-    addr: 'kinozal.tv',
-    css:' img[src *="/pic/f/10.gif"], .fffx{'+ flagCSS + ' width: 14px; height: 12px}'
-  },
-  {
-    addr: 'transinfo.by',
-    css:' img[src *="country/BY.gif"], .fffx{'+ flagCSS + ' border: 0 !important}'
-  },
-  {
-    addr: 'meteo-europ.com',
-    css:'.country.country-by { '+ flagCSS + ' height: 20px}'
+    images: [{i: 'img/flags/by.png', w: 16, h: 11, gradient: true}],
+    sample: [{url: 'http://budist.ru/user740343/'}]
   },
   {
     addr: 'greyorder.su',
-    css:'img[src *= "flags/by.png"], .fffx { '+ flagCSS + ' width: 16px; height: 12px}'
-  },
-  {
-    addr: 'myjob.by',
-    css:'img[src *= "flags/15x10/by.gif"], .fffx { '+ flagCSS + ' width: 15px; height: 12px;}'
-  },
-  {
-    addr: 'ibbhotel.by',
-    css:'img[src *="/images/flag_by.gif"], .fffx{ '+ flagCSS + boxShadow(0.28) +'}'
-  },
-  {
-    addr: 'ibb.by',
-    css:'img[src $="icons/russian.gif"],.fffx{ '+ flagCSS +'; width: 16px; height: 12px; vertical-align: top; '+ boxShadow(0.18) +'}'
+    images: [{i:'flags/by.png', w: 16, h: 11 }],
+    sample: [{url: '?', notes: 'Legacy'}]
   },
   {
     addr: 'tamby.info',
-    css:'img[src $="images/strany/belarus.png"],.fffx{ '+ flagCSS +'; '+ boxShadow(0.15) +'}'
+    images: [
+      {i: 'images/flag/belarus_small_flag.gif', w: 200, h: 100, contour: 0 },
+      {i: 'images/strany/belarus.png', replacer: res('erepublik-XL-Belarus.png') },
+    ],
+    sample: [
+      {url: 'http://tamby.info/', notes: 'Flags block'},
+      {url: 'http://www.tamby.info/tv-online/tv-belarusi.htm', notes: 'In sidebar, in heading'},
+    ]
   },
   {
     addr: 'battlefield.com',
-    css:'img[src $="/flags/by.gif"],.fffx{ '+ flagCSS +';width: 16px;height: 12px !important; '+ boxShadow(0.3) +'}'
+    images: [
+      {i: '*://*.battlefield.com/public/common/flags/by.gif', w: 16, h: 11, gradient: true},
+      {i: '*://eaassets-a.akamaihd.net/bl-cdn/*/flags/by.gif', w: 16, h: 12, gradient: true}
+    ],
+    sample: [{url:'http://battlelog.battlefield.com/bf4/ru/forum/threadview/2832654624707075687/', notes: 'See Volozar'}]
   },
   {
     addr: 'joma.by',
-    css:'img[src $="/images/by.png"],.fffx{ '+ flagCSS +';width: 16px;height: 12px !important;vertical-align: middle;}'
-  },
-  {
-    addr: 'exist.by',
-    css:'img[src $="/flags/by.gif"],.fffx{ '+ flagCSS +'; display: inline-block !important; width: 16px; height: 11px; '+ boxShadow(0.99) +'}'
-  },
-  {
-    addr: 'busuu.com',
-    css:'img.flag[src $="/flags/by.gif"],.fffx{ '+ flagCSS +'; display: inline-block !important }'
-  },
-  {
-    addr: 'samsungapps.com',
-    css:  'img[src $="flag/BY.png"]:not(.fakeclassforspecificity),.fffx:not(.fakeclassforspecificity) {'+
-    + flagCSS +'; \
-          height: 12px; \
-          width: 18px;\
-          border:0\
-          '+ boxShadow(0.5) +'\
-        }\
-        a.country img {\
-          margin-bottom:-2px;\
-          '+ boxShadow(0) +
-    '}'
+    css:
+    '.bel i { '+
+        flagBGI({w:16, h: 12, gradient: true}) +
+        'background-position: 50% 1px;' +
+        'background-size: 16px 11px;' +
+        'background-repeat: no-repeat;' +
+    '}',
+    sample: [{url: 'http://joma.by/', notes: 'In header'}]
   },
   {
     addr: 'freeads.by',
-    css: 'img[src $="flag_header_freeads.by.gif"] {content:"";background:50% no-repeat url("'+sciahSphereSrc+'"); background-size: 35px 35px;}\
-                  img[src $="flags/flag_icon_freeads.by.gif"],.fffx {'+
-    flagCSS +'\
-                      '+ boxShadow(0.65) +
-    '}'
+    images: [
+        { i:'flags/flag_icon_freeads.by.gif', w: 18, h: 12, contour: 1, gradient: true },
+        { i:'flag_header_freeads.by.gif', replacer: res('freeads.by-flag_header_freeads.by.png') }
+    ],
+    sample: [
+        { url:'http://www.freeads.by/', notes: ''},
+    ]
   },
   {
     addr: "go.hrw.com",
@@ -680,14 +647,6 @@ var dzieShto = [
     addr: "rfe.by",
     css: 'img[src $="lang_by.gif"]{'+ flagCSS+'; width: 15px; height: 11px; vertical-align: top}'
   },
-  { addr: '(my\.)?opera\.com',
-    css: '[style *= "flags/BY.png"]::before, img[src $= "flags/BY.png"], .f-BY::before{ '+ flagCSS +';height:12px}\
-		  [style *= "flags/BY.png"]{background-image:none !important;position:relative;}\
-		  [style *= "flags/BY.png"]::before{' +
-    'width: 16px;height:12px;position:absolute;top:6px;right:3px;content:"";' +
-    'box-shadow:inset 0 0 0 1px rgba(0,0,0,.3);}\
-a[href="/community/members/location/Belarus"]{margin-left:.5em;}'
-  },
   { addr: 'sovrep.gov.by',
     css: 'img[src $="top_01.jpg"],.fffx{'+flagCSS+';width:190px;height:108px;margin:0;border-left:1px solid #c24621}'
   },
@@ -700,9 +659,6 @@ a[href="/community/members/location/Belarus"]{margin-left:.5em;}'
   },
   { addr: 'eventot.com',
     css:'.flag.flag-by {'+flagCSS+'}'
-  },
-  { addr: 'tb.by',
-    css:'img[src $="img/bel.png"], .fffx {'+flagCSS+';width: 15px; height:10px} '
   },
   { addr: 'ecolines.by',
     css:'img[src $="flag-by.gif"], .fffx {'+flagCSS+';} '
@@ -868,10 +824,12 @@ function getSVGFlagURL (img) {
       <clipPath id="clip">\n\
         <rect id="clipRect" class="shape" fill="none" width="100%" height="100%" rx="0"/>\n\
       </clipPath>\n\
-      <radialGradient id="gradient" fx="22%" fy="17%" r="60%" gradientUnits="objectBoundingBox">\
-      <stop offset="0" style="stop-color:#000;stop-opacity:0"/>\n\
-      <stop offset="1" style="stop-color:#000;stop-opacity:0.14"/>\n\
-      </radialGradient>\
+      <radialGradient id="gradient" fx="22%" fy="14%" r="80%" gradientUnits="objectBoundingBox">\
+        <stop offset="0" style="stop-color:#000;stop-opacity:0"/>\n\
+        <stop offset="0.2" style="stop-color:#000;stop-opacity:0"/>\n\
+        <stop offset="0.6" style="stop-color:#000;stop-opacity:0.06"/>\n\
+        <stop offset="1" style="stop-color:#000;stop-opacity:0.10"/>\n\
+      </radialGradient>\n\
       <rect id="canvasBg" width="100%" height="100%" fill="none"></rect>\n\
       <g id="flag">\n\
         <g id="flagBase" clip-path="url(#clip)">\n\
@@ -879,7 +837,7 @@ function getSVGFlagURL (img) {
           <rect id="red" fill="#E21313" y="33.3333333%" width="100%" height="33.3333333%"/>\n\
           <line id="emboss" opacity="0.18" stroke-width="4" stroke="#fff" x1="0" y1="0" x2="0" y2="100%" vector-effect="non-scaling-stroke"/>\n\
           <rect id="contour" class="shape" opacity="0.1" stroke-width="2" stroke="#000" fill="none" width="100%" height="100%" vector-effect="non-scaling-stroke"/>\n\
-          <rect id="overlayGradient" class="shape" fill="none"></rect>\n\
+          <rect id="overlayGradient" class="shape" fill="none" width="100%" height="100%"></rect>\n\
         </g>\n\
       </g>\n\
     </svg>\n\
@@ -980,7 +938,8 @@ function getSVGFlagURL (img) {
   // Show/hide gradient
   // ------------------
   if (img.gradient) {
-    overlayGradient.setAttribute('fill', 'url(#gradient)');}
+    overlayGradient.setAttribute('fill', 'url(#gradient)');
+  }
   else {
     SVG.removeChild(gradient);
     overlayGradient.parentNode.removeChild(overlayGradient);
@@ -1004,7 +963,9 @@ function getSVGFlagURL (img) {
     white.setAttribute('fill', img.white);
   }
 
-//  console.log(SVG.outerHTML);
+if (img.gradient){
+  console.log(SVG.outerHTML);
+}
 
   var url = 'data:image/svg+xml,' + encodeURIComponent(SVG.outerHTML);
   return url;
