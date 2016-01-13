@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/chrome/background.js" description="function getSVGFlagURL (img) {" line="812" />
+    <bookmark url="file://$PROJECT_DIR$/chrome/background.js" description="function getSVGFlagURL (img) {" line="802" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="431396d7-2f55-4654-8aa5-2c1ff63200d1" name="neverrr" comment="add myscore.ru, championat.com">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/chrome/options.html" />
+    <list default="true" id="431396d7-2f55-4654-8aa5-2c1ff63200d1" name="neverrr" comment="add internetworldststs.com, flagcounter.com, active.by/activecloud.ru,1c-bitrix.ru&#10;remove go.hrw.com">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chrome/background.js" afterPath="$PROJECT_DIR$/chrome/background.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chrome/manifest.json" afterPath="$PROJECT_DIR$/chrome/manifest.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chrome/sciah.js" afterPath="$PROJECT_DIR$/chrome/sciah.js" />
     </list>
     <ignored path="sciah.extension.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,19 +40,19 @@
       <file leaf-file-name="background.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/chrome/background.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.13432837">
-              <caret line="744" column="49" selection-start-line="744" selection-start-column="49" selection-end-line="744" selection-end-column="49" />
+            <state vertical-scroll-proportion="0.25870648">
+              <caret line="688" column="4" selection-start-line="688" selection-start-column="4" selection-end-line="688" selection-end-column="4" />
               <folding>
                 <element signature="n#!!block;n#boxShadow#0" expanded="false" />
-                <marker date="1452676301000" expanded="true" signature="34219:35562" placeholder="..." />
-                <marker date="1452676301000" expanded="true" signature="34249:34363" placeholder="..." />
-                <marker date="1452676301000" expanded="true" signature="34463:34774" placeholder="..." />
-                <marker date="1452676301000" expanded="false" signature="34498:34528" placeholder="..." />
-                <marker date="1452676301000" expanded="false" signature="34569:34599" placeholder="..." />
-                <marker date="1452676301000" expanded="false" signature="34640:34673" placeholder="..." />
-                <marker date="1452676301000" expanded="false" signature="34712:34745" placeholder="..." />
-                <marker date="1452676301000" expanded="true" signature="34873:35548" placeholder="..." />
-                <marker date="1452676301000" expanded="true" signature="34925:35534" placeholder="..." />
+                <marker date="1452719206000" expanded="true" signature="33559:34902" placeholder="..." />
+                <marker date="1452719206000" expanded="true" signature="33589:33703" placeholder="..." />
+                <marker date="1452719206000" expanded="true" signature="33803:34114" placeholder="..." />
+                <marker date="1452719206000" expanded="false" signature="33838:33868" placeholder="..." />
+                <marker date="1452719206000" expanded="false" signature="33909:33939" placeholder="..." />
+                <marker date="1452719206000" expanded="false" signature="33980:34013" placeholder="..." />
+                <marker date="1452719206000" expanded="false" signature="34052:34085" placeholder="..." />
+                <marker date="1452719206000" expanded="true" signature="34213:34888" placeholder="..." />
+                <marker date="1452719206000" expanded="true" signature="34265:34874" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -169,10 +166,10 @@
         <option value="$PROJECT_DIR$/chrome/web_accessible_resources/sciahSphere.svg" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/gradient.svg" />
-        <option value="$PROJECT_DIR$/chrome/background.js" />
         <option value="$PROJECT_DIR$/chrome/sciah.js" />
         <option value="$PROJECT_DIR$/chrome/options.html" />
         <option value="$PROJECT_DIR$/chrome/manifest.json" />
+        <option value="$PROJECT_DIR$/chrome/background.js" />
       </list>
     </option>
   </component>
@@ -645,7 +642,19 @@
       <option name="project" value="LOCAL" />
       <updated>1452617130659</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="add internetworldststs.com, flagcounter.com, active.by/activecloud.ru,1c-bitrix.ru&#10;remove go.hrw.com">
+      <created>1452708241027</created>
+      <option name="number" value="00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1452708241027</updated>
+    </task>
+    <task id="LOCAL-00047" summary="add rfe.by, ranking.by,&#10;remove sovrep.gov.by, un.org, godaddy.com, eventot.com, ecolines.by,  cybergames.by, audience.by&#10;fix flag size with canvas size params">
+      <created>1452718044592</created>
+      <option name="number" value="00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1452718044592</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TodoView">
@@ -668,9 +677,11 @@
       <window_info id="Regex Tester" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890856" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32743362" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6120944" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21959943" sideWeight="0.3791774" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27876106" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -680,12 +691,10 @@
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969433" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Heroku" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="JsTestDriver Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35250738" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -732,8 +741,6 @@
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="false" />
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="group sites" />
-    <MESSAGE value="remove vk.com" />
     <MESSAGE value="update styles for yandex.&#10;replace css gradient with SVG" />
     <MESSAGE value="fis skyscanner" />
     <MESSAGE value="add aliexpress" />
@@ -757,7 +764,9 @@
     <MESSAGE value="add timeanddate.com, erepublik.com" />
     <MESSAGE value="tweak postcrossing.com" />
     <MESSAGE value="add wikipedia.org, codeforces.com, budist.ru, greyorder.su, tamby.info, battlefield.com,joma.by, freeads.by&#10;remove myjob.by, ibbhotel.by, ibb.by, exist.by, busuu.com, samsungapps.com, opera.com, tb.by&#10;fix gradient on flags" />
-    <option name="LAST_COMMIT_MESSAGE" value="add wikipedia.org, codeforces.com, budist.ru, greyorder.su, tamby.info, battlefield.com,joma.by, freeads.by&#10;remove myjob.by, ibbhotel.by, ibb.by, exist.by, busuu.com, samsungapps.com, opera.com, tb.by&#10;fix gradient on flags" />
+    <MESSAGE value="add internetworldststs.com, flagcounter.com, active.by/activecloud.ru,1c-bitrix.ru&#10;remove go.hrw.com" />
+    <MESSAGE value="add rfe.by, ranking.by,&#10;remove sovrep.gov.by, un.org, godaddy.com, eventot.com, ecolines.by,  cybergames.by, audience.by&#10;fix flag size with canvas size params" />
+    <option name="LAST_COMMIT_MESSAGE" value="add rfe.by, ranking.by,&#10;remove sovrep.gov.by, un.org, godaddy.com, eventot.com, ecolines.by,  cybergames.by, audience.by&#10;fix flag size with canvas size params" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1138,19 +1147,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/chrome/background.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.13432837">
-          <caret line="744" column="49" selection-start-line="744" selection-start-column="49" selection-end-line="744" selection-end-column="49" />
+        <state vertical-scroll-proportion="0.25870648">
+          <caret line="688" column="4" selection-start-line="688" selection-start-column="4" selection-end-line="688" selection-end-column="4" />
           <folding>
             <element signature="n#!!block;n#boxShadow#0" expanded="false" />
-            <marker date="1452676301000" expanded="true" signature="34219:35562" placeholder="..." />
-            <marker date="1452676301000" expanded="true" signature="34249:34363" placeholder="..." />
-            <marker date="1452676301000" expanded="true" signature="34463:34774" placeholder="..." />
-            <marker date="1452676301000" expanded="false" signature="34498:34528" placeholder="..." />
-            <marker date="1452676301000" expanded="false" signature="34569:34599" placeholder="..." />
-            <marker date="1452676301000" expanded="false" signature="34640:34673" placeholder="..." />
-            <marker date="1452676301000" expanded="false" signature="34712:34745" placeholder="..." />
-            <marker date="1452676301000" expanded="true" signature="34873:35548" placeholder="..." />
-            <marker date="1452676301000" expanded="true" signature="34925:35534" placeholder="..." />
+            <marker date="1452719206000" expanded="true" signature="33559:34902" placeholder="..." />
+            <marker date="1452719206000" expanded="true" signature="33589:33703" placeholder="..." />
+            <marker date="1452719206000" expanded="true" signature="33803:34114" placeholder="..." />
+            <marker date="1452719206000" expanded="false" signature="33838:33868" placeholder="..." />
+            <marker date="1452719206000" expanded="false" signature="33909:33939" placeholder="..." />
+            <marker date="1452719206000" expanded="false" signature="33980:34013" placeholder="..." />
+            <marker date="1452719206000" expanded="false" signature="34052:34085" placeholder="..." />
+            <marker date="1452719206000" expanded="true" signature="34213:34888" placeholder="..." />
+            <marker date="1452719206000" expanded="true" signature="34265:34874" placeholder="..." />
           </folding>
         </state>
       </provider>

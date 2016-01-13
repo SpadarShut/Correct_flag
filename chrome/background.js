@@ -672,19 +672,20 @@ var dzieShto = [
     ]
   },
   { addr: 'paei.by',
-    css:'img[src $="by.gif"],.fffx {'+flagCSS+'width:39px;height:26px;}'
+    images: [
+        { i:'App_Themes/default/images/by.gif', w: 39, h: 26, contour: 0, white: '#D2D2D2' },
+    ],
+    sample: [
+        { url:'http://paei.by/be-BY/default.aspx', notes: ''},
+    ]
   },
-  { addr: 'advocates.by',
-    css:'img[src $="langs/by.gif"],.fffx {'+flagCSS+'width:22px;height:16px;}'
-  },
-
   { addr: 'barsu.by',
-    css:'img[src $="Images/by.gif"],.fffx {'+flagCSS+'width:28px;height:21px;margin-bottom:5px}'
-  },
-  { addr: 'prazdnik.?by(\.ru)?',
-    css:'img[src $="/img/by.gif"] {content:"";height:50px;width:50px;display:inline-block;background:url("'+ sciahSphereSrc +'") no-repeat} '},
-  { addr:'prazdnik.by',
-    css:''
+    images: [
+        { i:'img/Belarus-24.png', w: 22, h: 15, canvasW: 24, canvasH: 24, contour: 0 },
+    ],
+    sample: [
+        { url:'http://barsu.by/', notes: 'Header'},
+    ]
   },
   { addr: 'greencard.by',
     css:'img[src $="flags/by.gif"],.fffx {'+flagCSS+'width: 16px; height:12px}'
@@ -964,11 +965,11 @@ function getSVGFlagURL (img) {
     white.setAttribute('fill', img.white);
   }
 
-if (img.canvasW){
-  console.log(img.canvasW + 'x' + img.canvasH);
-  console.log(img.w + 'x' + img.h);
-  console.log(SVG.outerHTML);
-}
+  //if (img.canvasW){
+  //  console.log(img.canvasW + 'x' + img.canvasH);
+  //  console.log(img.w + 'x' + img.h);
+  //  console.log(SVG.outerHTML);
+  //}
 
   var url = 'data:image/svg+xml,' + encodeURIComponent(SVG.outerHTML);
   return url;
