@@ -609,39 +609,49 @@ var dzieShto = [
     ]
   },
   {
-    addr: "go.hrw.com",
-    css: 'img[src $="flags/belarus.gif"],.fffx {'+ flagCSS +'; \
-           box-shadow:inset 0 0 0 1px rgba(0,0,0,.9);\
-            width: 200px; height: 100px;}'
-  },
-  {
     addr: "internetworldstats.com",
-    css: 'img[src $="images/belarusia.jpg"],.fffx {'+ flagCSS +'; \
-                     box-shadow:inset 0 0 0 1px rgba(0,0,0,.9)}'
+    images: [
+        { i:'images/belarusia.jpg', w: 164, h: 82, contour: 0 },
+    ],
+    sample: [
+        { url:'http://www.internetworldstats.com/europa2.htm#by', notes: 'Scroll to Belarus'},
+    ]
   },
   {
     addr: "flagcounter.com",
-    css: 'img[src $="flags/by.png"],.fffx {'+ flagCSS +';padding:1px 0 0; \
-                     box-shadow:inset 0 0 0 1px rgba(0,0,0,.4)}'
-    //http://s03.flagcounter.com/factbook/by/7tv
+    images: [
+        { i:'*://cdn.boardhost.com/flags/by.png', w: 16, h: 11, gradient: true },
+        { i:'*://*/*/flags_128x128/by.png', w: 114, h: 84, gradient: true },
+    ],
+    sample: [
+        { url:'http://s03.flagcounter.com/factbook/by/7tv', notes: 'dropdown, and large one'},
+    ] 
   },
   {
     addr: "(active\.by|active\.am|activecloud\.az|activecloud\.ge|activecloud\.com|activecloud\.ru|active\.uz)",
-    css: '.by > img, .ru-by > img,' +
+    css:
+    '.by > img, .ru-by > img,' +
     '.content .selector .selBar .cont ul.flags li.by a i,' +
     ' li.lang a.by i,' +
-    'i.by,.fffx  {'+ flagCSS +'}'
-  },
-  {
-    addr: "(free\-torrents\.org|nnm\-club\.ru)",
-    css: 'img[src $="images/flags/belarus.gif"],.fffx{'+ flagCSS +'; width:32px; height:20px;\
-                     box-shadow:inset 0 0 0 1px rgba(0,0,0,.6)}'
+    'i.by  {'+
+        flagBGI({w: 16, h:11, gradient: true}, true) +
+        'background-position: 0 0 !important; ' +
+    '}',
+    sample: [
+        { url:'http://www.active.am/', notes: 'In menu'},
+        { url:'http://www.active.by/', notes: 'In menu'},
+        { url:'http://www.activecloud.ge/', notes: 'In menu'},
+        { url:'http://www.active.uz/', notes: 'In menu'},
+    ]
   },
   {
     addr: "1c-bitrix.ru",
-    css: 'img[src $="icons/Flag_Belarus.png"],.fffx{'+ flagCSS +';\
-           box-shadow:inset 0 0 0 1px rgba(0,0,0,.2), 0 0 3px rgba(0,0,0,.2)}\
-            img[src $="icons/belarus.jpg"],.fffx{'+ flagCSS +'; border:0; padding:0px; margin-left:.4em}'
+    images: [
+        { i:'images/fsb_2014_country_ico_21.png', w: 54, h: 54, r: 27  },
+    ],
+    sample: [
+        { url:'http://www.1c-bitrix.ru/about/seminars/fc/index.php#city_5990', notes: 'Country selector'},
+    ]
   },
   {
     addr: "rfe.by",
