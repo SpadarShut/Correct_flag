@@ -655,32 +655,21 @@ var dzieShto = [
   },
   {
     addr: "rfe.by",
-    css: 'img[src $="lang_by.gif"]{'+ flagCSS+'; width: 15px; height: 11px; vertical-align: top}'
+    images: [
+        { i:'templates/_ares/images/lang_by.gif', w: 16, h: 11, gradient: true },
+    ],
+    sample: [
+        { url:'http://www.rfe.by/', notes: 'In menu'},
+    ]
   },
-  { addr: 'sovrep.gov.by',
-    css: 'img[src $="top_01.jpg"],.fffx{'+flagCSS+';width:190px;height:108px;margin:0;border-left:1px solid #c24621}'
-  },
-  { addr: 'un.org',
-    css: 'img[src $="belarus.gif"],.fffx{'+ flagCSS +'width:22px;height:13px;border:0 !important;}'
-  },
-  { addr: 'godaddy.com',
-    css: 'div[style *="/country_flags_sml/by.gif"],.ffi_by{'+ flagCSS+'}\
-				.ffi_by {height:13px;margin-top: 1px;}'
-  },
-  { addr: 'eventot.com',
-    css:'.flag.flag-by {'+flagCSS+'}'
-  },
-  { addr: 'ecolines.by',
-    css:'img[src $="flag-by.gif"], .fffx {'+flagCSS+';} '
-  },
-
-  { addr: 'cybergames.by',
-    css:'img[src $="flags/by.gif"],.fffx {'+flagCSS+'width: 18px;height:12px;}' +
-    'img[src $="flags/by_large.png"],.fffx {'+flagCSS+'width: 180px;height:90px;' +
-    'box-shadow:inset 0 0 1px 1px rgba(0,0,0,.3);}'
-  },
-  { addr: 'audience.by',
-    css:'img[src $="flags/by.gif"],.fffx {'+flagCSS+'width:23px;height:15px;}'
+  { addr: 'ranking.by',
+    images: [
+        { i:'img/flags/by_wyb2.gif', w: 28, h: 17, canvasW: 34, canvasH: 25, red: '#E13F63' },
+        { i:'img/flags/by_wyb.gif', w: 28, h: 17, canvasW: 34, canvasH: 25 },
+    ],
+    sample: [
+        { url:'http://ranking.by/', notes: 'Header + open dropdown menu'},
+    ]
   },
   { addr: 'paei.by',
     css:'img[src $="by.gif"],.fffx {'+flagCSS+'width:39px;height:26px;}'
@@ -902,6 +891,8 @@ function getSVGFlagURL (img) {
     flag.setAttribute('transform', 'translate(' + (img.canvasW - img.w) / 2  + ',' + (img.canvasH - img.h) / 2  + ')');
 
     SVG.setAttribute('viewBox', '0 0 ' + img.canvasW + ' ' + img.canvasH);
+    SVG.setAttribute( 'width', img.canvasW);
+    SVG.setAttribute( 'height', img.canvasH);
   }
   else {
     canvasBg.parentNode.removeChild(canvasBg);
@@ -973,7 +964,9 @@ function getSVGFlagURL (img) {
     white.setAttribute('fill', img.white);
   }
 
-if (img.gradient){
+if (img.canvasW){
+  console.log(img.canvasW + 'x' + img.canvasH);
+  console.log(img.w + 'x' + img.h);
   console.log(SVG.outerHTML);
 }
 
