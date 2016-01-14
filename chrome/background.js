@@ -3,13 +3,13 @@
  *  Logic:
  *  - BG script knows all domains to work on: it can replace images using
  *   webRequest API and compile css to be injected in pages.
- *  - Injected script on document start sends a msg to BG for css, and on
+ *  - Injected script on document start sends a msg to BG for css and favicons, and on
  *   DOMContentLoaded injects it
  *
  * BG:
- *  - setup url filters
- *  - listen for messages
- *  - on message: see domain, pick CSS from dzieShto send response
+ *  - sets up url filters
+ *  - listens for messages from pages
+ *  - on message: see domain, pick CSS from dzieShto, send response
  *
  *
  *  INJECTED:
@@ -19,39 +19,10 @@
  * */
 
 
-function boxShadow (param) {
-
-  var darkness = 0.15;
-  var shadow = '';
-
-  if (typeof param === 'number') {
-    darkness = param;
-  }
-  if (typeof param === 'string') {
-    shadow = param
-  }
-
-  shadow = shadow || 'inset 0 0 0 1px rgba(0,0,0,'+ darkness +')';
-
-  return '\
-            box-shadow: '+ shadow + ';\
-        ';
-}
-
 function res (file) {
   return chrome.extension.getURL('res/'+ file );
 }
-var sciahSphereSrc = res('sciahSphere.svg') ;
-
-//var gradientCSS = '\
-//		background:\
-//        linear-gradient(transparent, transparent 32%, rgba(204,18,18,.95) 32%,  rgba(204,18,18,.95) 68%, transparent 68%, transparent),\
-//        linear-gradient(-45deg, rgba(198,198,198,0.43) 0%, rgba(204,204,204,0.01) 21%,rgba(213,213,213,0.37) 55%,rgba(221,221,221,0) 83%,rgba(226,226,226,0.42) 100%) !important;\
-//		background-color:#fff !important;';
-
-var reflectionDownCSS = '\
-			background:\
- 			linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,0.67) 33%,rgba(204,18,18,0.66) 34%,rgba(204,18,18,0.32) 68%,rgba(255,255,255,0.31) 69%,rgba(255,255,255,0) 100%); ';
+var pahoniaURL = 'https://upload.wikimedia.org/wikipedia/commons/1/16/Coat_of_arms_of_Belarus_%281918%2C_1991-1995%29.svg';
 
 var flagCSS =
     flagBGI() +
@@ -118,14 +89,20 @@ var dzieShto = [
       \
       /* Keyboard on search homepage */\
       .b-keyboard__lang-by .b-keyboard__lang-ic { \
-          '+ flagBGI({contour: 0.2, w: 'auto'}) +'\
+          '+ flagBGI({outline: 0.2, w: 'auto'}) +'\
           background-position: 0 0 !important;\
           background-size: 16px 12px;\
           height:12px;\
-      }',
+      }\
+      /* Metrika countries */\
+      .icon__country_id_149 {' +
+        flagBGI({w: 16, h: 11, gradient: true, outline: 0.05}) +
+      '}'
+    ,
     sample: [
       {url: 'https://www.yandex.by/', notes: 'Click keyboard in search field, select Belarusian in dropdow kbd'},
-      {url: 'https://mail.yandex.by/?uid=225165401&login=sp-shut#setup/other', notes: ' Mail Settins - Language in sidebar, also in footer'}
+      {url: 'https://mail.yandex.by/?uid=225165401&login=sp-shut#setup/other', notes: ' Mail Settins - Language in sidebar, also in footer'},
+      {url: 'https://metrika.yandex.ru/stat/geo?selected_rows=Od%2FJ%2F9%2Cz%2BIcaA%2C9nRiZj%2CvkYaDN%2Cd1vFww&id=24050107', notes: 'Metrika, '}
     ]
 
       //
@@ -142,9 +119,9 @@ var dzieShto = [
   },
   { addr: 'rutracker.org',
     images: [
-      {i: 'flags/by.gif', contour: 1, w: 24, h: 15 },
-      {i: 'flags/17.gif', contour: 1, w: 32, h: 20 },
-      {i: 'flags/lang_by.png', w: 40, h: 20, contour: 0 },
+      {i: 'flags/by.gif', outline: 1, w: 24, h: 15 },
+      {i: 'flags/17.gif', outline: 1, w: 32, h: 20 },
+      {i: 'flags/lang_by.png', w: 40, h: 20, outline: 0 },
       {i: 'logo_new_by.gif', replacer: res('rutracker_logo_by.png') },
     ],
     sample: [
@@ -155,8 +132,8 @@ var dzieShto = [
   },
   { addr: 'skyscanner\.*',
     images: [
-      {i: '*://*/*header/by.png', w: 50, h: 38, contour: 0 },
-      {i: '*://*/*header/BY.png', w: 50, h: 38, contour: 0 }
+      {i: '*://*/*header/by.png', w: 50, h: 38, outline: 0 },
+      {i: '*://*/*header/BY.png', w: 50, h: 38, outline: 0 }
     ],
     sample: [{url: 'http://www.skyscanner.net/', notes: 'In header from BRL IP. Also click it for dialog anf hamburger menu'}]
   },
@@ -191,7 +168,7 @@ var dzieShto = [
         height: 10px\
     }\
     .country_flag[style *="/by.png"] {\
-        background-image: url("'+ sciahSphereSrc +'") !important;\
+        background-image: url("'+ res('sciahSphere.svg') +'") !important;\
         opacity:.5;\
     }',
     sample: [{url: 'http://www.kinopoisk.ru/lists/m_act%5Bcountry%5D/69/', notes: 'On map and in every search list item'}]
@@ -205,13 +182,19 @@ var dzieShto = [
     addr: 'gismeteo.',
     css:
     '.flag.bel {' +
-        flagBGI({ w: 'auto', contour: 0.04, white: '#F0EFF0' }) +
+        flagBGI({ w: 'auto', outline: 0.04, white: '#F0EFF0' }) +
         'background-position: 0 0 !important;' +
-    '}'
+    '}',
+    sample: [
+        { url:'tourism.gismeteo.ru', notes: 'Flags block'},
+    ]
   },
   {
     addr: 'vandrouki.',
-    images: [{i: '*://*/Belarus.png', w: 17, h: 10}]
+    images: [{i: '*://*/Belarus.png', w: 17, h: 10}],
+    sample: [
+        { url:'http://vandrouki.by/', notes: 'In footer'},
+    ]
   },
 
 
@@ -230,7 +213,7 @@ var dzieShto = [
   },
   {
     addr: 'pefl.ru',
-    images: [{i: '/flags/18.gif', w: 115, h: 77, contour: 0}],
+    images: [{i: '/flags/18.gif', w: 115, h: 77, outline: 0}],
     sample: [{url: 'http://pefl.ru/index.php', notes: 'Go to Турниры link in sidebar and see Belarus (links are signed)'}]
   },
   {
@@ -238,7 +221,7 @@ var dzieShto = [
     css:
     '.flag-1302, ' +
     '.icon-flag_1302 {'+
-        flagBGI({ r: 2, w: 'auto', emboss: 0.3, contour: 0.17, red: '#FF3E00' }) +
+        flagBGI({ r: 2, w: 'auto', emboss: 0.3, outline: 0.17, red: '#FF3E00' }) +
         'background-position: 0 0 !important;'+
     '}' +
     '.icon-flag-circle_belarus,' +
@@ -256,13 +239,13 @@ var dzieShto = [
   },
   {
     addr: 'sportpanorama.by',
-    images: [{i: '/flags/1.jpg', w: 16, h: 11, contour: 0.15, emboss: 0.27 }],
+    images: [{i: '/flags/1.jpg', w: 16, h: 11, outline: 0.15, emboss: 0.27 }],
     sample: [{url: 'http://sportpanorama.by/themes/49/table/', notes: 'See table'}]
   },
   {
     addr: '(myscore\.ru)|(soccerstand\.com)|(livescore\.in)',
     css:'.flag.fl_31 { ' +
-        flagBGI({w: 16, h: 12, canvasW: 16, canvasH: 13, contour: 0.16}) +
+        flagBGI({w: 16, h: 12, canvasW: 16, canvasH: 13, outline: 0.16}) +
         'background-position: 0 0 !important;'+
     '}',
     images: [{i: '/image/data/rN9xhjRc-I7KbpC8c.png', w: 50, h: 25, canvasW: 50, canvasH: 50}],
@@ -270,14 +253,14 @@ var dzieShto = [
   },
   {
     addr: 'championat.com',
-    images: [{i: 'http://st.championat.com/i/flags/18x12/by.png', w: 18, h: 12, contour: 0}],
+    images: [{i: 'http://st.championat.com/i/flags/18x12/by.png', w: 18, h: 12, outline: 0}],
     sample: [{url: 'http://www.championat.com/tennis/player/208.html', notes: 'See bio "Гражданство"'}]
   },
   {
     addr: 'dinamo-minsk.by',
     images: [
-      {i: '/Flags/30x19/Belarus.png', canvasW: 30, canvasH: 19, w: 28, h: 17, contour: 0.2},
-      {i: '/Flags/31x24/Belarus.png', canvasW: 31, canvasH: 24, w: 29, h: 22, contour: 0.07, r: 1, white: '#f0f0f0'},
+      {i: '/Flags/30x19/Belarus.png', canvasW: 30, canvasH: 19, w: 28, h: 17, outline: 0.2},
+      {i: '/Flags/31x24/Belarus.png', canvasW: 31, canvasH: 24, w: 29, h: 22, outline: 0.07, r: 1, white: '#f0f0f0'},
     ],
     sample: [
       {url: 'http://dinamo-minsk.by/be/komanda', notes: 'See players' },
@@ -288,7 +271,7 @@ var dzieShto = [
     addr: 'pbliga.com',
     images: [
       {i: 'flags/flag_17.png', canvasW: 24, canvasH: 24, w: 23, h: 21, gradient: true },
-      {i: 'flags/blr.gif', w: 16, h: 11, gradient: true, contour: 0.15 }
+      {i: 'flags/blr.gif', w: 16, h: 11, gradient: true, outline: 0.15 }
     ],
     sample: [
       {url: 'http://pbliga.com/mng_roster.php?id=129', notes: 'In header, in table'},
@@ -321,9 +304,9 @@ var dzieShto = [
     addr: 'transfermarkt.de',
     //css:'.sprite_land_18{ '+ flagCSS +'; '+ boxShadow(0.28) +' height: 12px}',
     images: [
-      {i: '*://*/*flagge/small/18.png*', w: 20, h: 12, contour: 0, white: '#f0f0f0'},
-      {i: '*://*/*flagge/verysmall/18.png*', w: 15, h: 9, contour: 0, white: '#f0f0f0'},
-      {i: '*://*/*flagge/tiny/18.png*', w: 12, h: 7, contour: 0, white: '#f0f0f0'},
+      {i: '*://*/*flagge/small/18.png*', w: 20, h: 12, outline: 0, white: '#f0f0f0'},
+      {i: '*://*/*flagge/verysmall/18.png*', w: 15, h: 9, outline: 0, white: '#f0f0f0'},
+      {i: '*://*/*flagge/tiny/18.png*', w: 12, h: 7, outline: 0, white: '#f0f0f0'},
     ],
     sample: [{url: 'http://www.transfermarkt.de/aleksandr-yermakovich/profil/trainer/17196', notes: 'All three sizes here' }]
   },
@@ -487,8 +470,8 @@ var dzieShto = [
   {
     addr: 'timeanddate.com',
     images: [
-      {i: '*://*/gfx/n/fl/16/by.png', w: 16, h: 11, contour: 0},
-      {i: '*://*/gfx/n/fl/32/by.png', w: 32, h: 22, contour: 0},
+      {i: '*://*/gfx/n/fl/16/by.png', w: 16, h: 11, outline: 0},
+      {i: '*://*/gfx/n/fl/32/by.png', w: 32, h: 22, outline: 0},
     ],
     sample: [
       {url: 'http://www.timeanddate.com/worldclock/belarus/minsk'},
@@ -532,11 +515,11 @@ var dzieShto = [
   },
   { addr: 'wikipedia.org',
     images: [
-      {i: '*://*/*Coat_of_arms_of_Belarus.svg*', replacer: 'https://upload.wikimedia.org/wikipedia/commons/1/16/Coat_of_arms_of_Belarus_%281918%2C_1991-1995%29.svg'},
-      {i: '*://*/*Official_coat_of_arms_of_the_Republic_of_Belarus_%28v%29.svg*', replacer: 'https://upload.wikimedia.org/wikipedia/commons/1/16/Coat_of_arms_of_Belarus_%281918%2C_1991-1995%29.svg'},
+      {i: '*://*/*Coat_of_arms_of_Belarus.svg*', replacer: pahoniaURL},
+      {i: '*://*/*Official_coat_of_arms_of_the_Republic_of_Belarus_%28v%29.svg*', replacer: pahoniaURL},
 
-      {i: '*://*/*Flag_of_Belarus.svg*', w: 'auto', contour: 0},
-      {i: '*://*/*Flag_of_Belarus_%281995-2012%29.svg*', w: 'auto', contour: 0},
+      {i: '*://*/*Flag_of_Belarus.svg*', w: 'auto', outline: 0},
+      {i: '*://*/*Flag_of_Belarus_%281995-2012%29.svg*', w: 'auto', outline: 0},
     ],
     sample: [
       {url:'https://ru.wikipedia.org/wiki/Кондратьев,_Георгий_Петрович', notes: 'In table'},
@@ -571,7 +554,7 @@ var dzieShto = [
   {
     addr: 'tamby.info',
     images: [
-      {i: 'images/flag/belarus_small_flag.gif', w: 200, h: 100, contour: 0 },
+      {i: 'images/flag/belarus_small_flag.gif', w: 200, h: 100, outline: 0 },
       {i: 'images/strany/belarus.png', replacer: res('erepublik-XL-Belarus.png') },
     ],
     sample: [
@@ -601,21 +584,15 @@ var dzieShto = [
   {
     addr: 'freeads.by',
     images: [
-        { i:'flags/flag_icon_freeads.by.gif', w: 18, h: 12, contour: 1, gradient: true },
+        { i:'flags/flag_icon_freeads.by.gif', w: 18, h: 12, outline: 1, gradient: true },
         { i:'flag_header_freeads.by.gif', replacer: res('freeads.by-flag_header_freeads.by.png') }
     ],
-    sample: [
-        { url:'http://www.freeads.by/', notes: ''},
-    ]
+    sample: [{ url:'http://www.freeads.by/', notes: ''}]
   },
   {
     addr: "internetworldstats.com",
-    images: [
-        { i:'images/belarusia.jpg', w: 164, h: 82, contour: 0 },
-    ],
-    sample: [
-        { url:'http://www.internetworldstats.com/europa2.htm#by', notes: 'Scroll to Belarus'},
-    ]
+    images: [{ i:'images/belarusia.jpg', w: 164, h: 82, outline: 0 }],
+    sample: [{ url:'http://www.internetworldstats.com/europa2.htm#by', notes: 'Scroll to Belarus'}]
   },
   {
     addr: "flagcounter.com",
@@ -623,9 +600,7 @@ var dzieShto = [
         { i:'*://cdn.boardhost.com/flags/by.png', w: 16, h: 11, gradient: true },
         { i:'*://*/*/flags_128x128/by.png', w: 114, h: 84, gradient: true },
     ],
-    sample: [
-        { url:'http://s03.flagcounter.com/factbook/by/7tv', notes: 'dropdown, and large one'},
-    ] 
+    sample: [{ url:'http://s03.flagcounter.com/factbook/by/7tv', notes: 'dropdown, and large one'}]
   },
   {
     addr: "(active\.by|active\.am|activecloud\.az|activecloud\.ge|activecloud\.com|activecloud\.ru|active\.uz)",
@@ -646,112 +621,173 @@ var dzieShto = [
   },
   {
     addr: "1c-bitrix.ru",
-    images: [
-        { i:'images/fsb_2014_country_ico_21.png', w: 54, h: 54, r: 27  },
-    ],
-    sample: [
-        { url:'http://www.1c-bitrix.ru/about/seminars/fc/index.php#city_5990', notes: 'Country selector'},
-    ]
+    images: [{ i:'images/fsb_2014_country_ico_21.png', w: 54, h: 54, r: 27  }],
+    sample: [{ url:'http://www.1c-bitrix.ru/about/seminars/fc/index.php#city_5990', notes: 'Country selector'}]
   },
   {
     addr: "rfe.by",
     images: [
         { i:'templates/_ares/images/lang_by.gif', w: 16, h: 11, gradient: true },
     ],
-    sample: [
-        { url:'http://www.rfe.by/', notes: 'In menu'},
-    ]
+    sample: [{ url:'http://www.rfe.by/', notes: 'In menu'}]
   },
   { addr: 'ranking.by',
     images: [
         { i:'img/flags/by_wyb2.gif', w: 28, h: 17, canvasW: 34, canvasH: 25, red: '#E13F63' },
         { i:'img/flags/by_wyb.gif', w: 28, h: 17, canvasW: 34, canvasH: 25 },
     ],
-    sample: [
-        { url:'http://ranking.by/', notes: 'Header + open dropdown menu'},
-    ]
+    sample: [{ url:'http://ranking.by/', notes: 'Header + open dropdown menu'}]
   },
   { addr: 'paei.by',
-    images: [
-        { i:'App_Themes/default/images/by.gif', w: 39, h: 26, contour: 0, white: '#D2D2D2' },
-    ],
-    sample: [
-        { url:'http://paei.by/be-BY/default.aspx', notes: ''},
-    ]
+    images: [{ i:'App_Themes/default/images/by.gif', w: 39, h: 26, outline: 0, white: '#D2D2D2' }],
+    sample: [{ url:'http://paei.by/be-BY/default.aspx', notes: ''}]
   },
   { addr: 'barsu.by',
-    images: [
-        { i:'img/Belarus-24.png', w: 22, h: 15, canvasW: 24, canvasH: 24, contour: 0 },
-    ],
-    sample: [
-        { url:'http://barsu.by/', notes: 'Header'},
-    ]
+    images: [{ i:'img/Belarus-24.png', w: 22, h: 15, canvasW: 24, canvasH: 24, outline: 0 }],
+    sample: [{ url:'http://barsu.by/', notes: 'Header'}]
   },
   { addr: 'greencard.by',
-    css:'img[src $="flags/by.gif"],.fffx {'+flagCSS+'width: 16px; height:12px}'
-  },
-  { addr: 'grodnonews.by',
-    css:'img[src $="images/by.gif"],.fffx {'+flagCSS+'width:17px; height:13px}'
+    images: [{ i:'flags/by.gif', w: 16, h: 11, gradient: true }],
+    sample: [{ url:'http://greencard.by/', notes: ''}]
   },
   { addr: 'techlabs.by',
-    css:'img[src $="flag-by.gif"],.fffx {'+flagCSS+
-    'width: 18px;height:12px;' +
-    'box-shadow:inset 0 0 0 1px rgba(0,0,0,.7);}'
+    images: [{ i:'frontend/images/flag-by.gif', w: 18, h: 12, outline: 1, gradient: true }],
+    sample: [{ url:'http://www.techlabs.by/', notes: 'Side menu'}]
+  },
+  { addr: 'techlabs.ua',
+    images: [{ i:'frontend/images/flag_by.gif', w: 18, h: 12, outline: '#868186', gradient: true, red: '#FD4848' }],
+    sample: [{ url:'http://www.techlabs.ua/', notes: 'Side menu'}]
   },
   { addr: 'parta.by',
-    css:'img[src $="icons/flag_by.gif"],.fffx {'+flagCSS+'width: 18px;height:12px;' +
-    'box-shadow:inset 0 0 0 1px rgba(0,0,0,.4);}'
-  },
-  { addr: 'fotoclub.by',
-    css:'img[src $="icons/flag-by.png"],.fffx {'+flagCSS+'width:40px;height:25px}'
-  },
-  { addr: 'mypet.by',
-    css:'img[src $="16x12/by.png"],.fffx {'+flagCSS+'width:17px;height:12px;}' +
-    '.small_container img.flag{padding:0;margin:3px 7px 0 0;}',
-    files: [
-      { src: "50x50/by.png",
-        newSrc: sciahSphereSrc,
-        width:"50",
-        height: "50"
-      }
+    images: [
+        { i:'resources/icons/flag_by.gif', w: 18, h: 12, red: '#C62643', white: '#F9F9F9', gradient: true, outline: 0 },
+    ],
+    sample: [
+        { url:'http://www.parta.by/', notes: ''},
     ]
   },
-  { addr: 'autoline(\-eu)?.*',
-    css: '[style *="flags/langs/by.gif"] {position:relative;background:none !important} \
-				[style *="flags/langs/by.gif"]::before {'+flagCSS+'width: 18px;height:13px;position:absolute;left:0;top:3px;}\
-				img[src $="flag/flag_by.png"],.fffx {'+flagCSS+'width:24px;height:19px}'
+  { addr: '(portal-)?fotoclub.(ru|org\.ua|kz)',
+    images: [
+        { i:'*://*/*-images/icons/flag-by.png', w: 40, h: 25, outline: 0.05, emboss: 0 },
+    ],
+    sample: [
+        { url:'http://fotoclub.by/', notes: ''},
+        { url:'http://www.portal-fotoclub.ru/', notes: ''},
+        { url:'http://www.fotoclub.org.ua/', notes: ''},
+        { url:'http://www.photoclub.kz/', notes: ''},
+    ]
   },
-  { addr: 'library.gsu.by',
-    css:'img[src $="img/by.png"],.fffx {'+flagCSS+'width:24px;height:14px;margin-bottom:1px}'
+  { addr: 'mypet.by',
+    images: [
+        { i:'images/flags/16x12/by.png', w: 16, h: 12, gradient: true},
+        { i:'images/flags/50x50/by.png', replacer: res('sciahSphere.svg')},
+    ],
+    css:'img[src $="50x50/by.png"]{'+
+        'width: 50px;' +
+        'height: 50px;' +
+        'box-sizing: border-box;' +
+        'padding: 2px;' +
+    '}',
+    sample: [
+      { url:'http://mypet.by/pitomnik/Yaks-Vonavi', notes: 'Sphere & small'},
+    ]
   },
-  { addr: '((pl|en)\.)?brestintourist.*',
-    css: 'img[src $="lang/by.png"],.fffx{'+flagCSS+'width:25px;height:18px;margin:0 0 3px;' +
-    '        box-shadow:inset 0 0 0 1px rgba(0,0,0,.7);}\
-.item_by a{position:relative}\
-.item_by a:after{content:"";display:block;position:absolute;left:-34px;top:-3px;' +
-    'width:25px;height:25px;background:url("'+sciahSphereSrc+'") no-repeat}'
+  { addr: 'autoline(-?(eu|ba|nl|bg|arabic|tm|market))?(\.(com|co))?.*',
+    images: [
+        { i:'*://*/*flags/ids-png/by.png', w: 16, h: 11, gradient: true },
+    ],
+    css:
+    '.spr-fl.spr-fl-by {' +
+        flagBGI({w: 16, h: 11, gradient: true}) +
+        'background-position: 0 0 !important;' +
+    '}',
+    sample: [
+        { url:'http://autoline.by/', notes: 'Open menu'},
+    ]
   },
-  { addr: 'navitel.*',
-    css:'img[src $="global/by.png"],.fffx {'+flagCSS+'width: 18px;height:13px;' +
-    'box-shadow:inset 0 0 0 1px rgba(0,0,0,.15), 1px 1px 2px  rgba(0,0,0,.4);}'
+  { addr: 'brestintourist.by',
+    images: [
+        { i:'media/mod_languages/images/be.gif', w: 18, h: 12, gradient: true, outline: 0 },
+    ],
+    sample: [
+        { url:'http://brestintourist.by/', notes: ''},
+    ]
   },
-  { addr: 'world-geographics.com',
-    css:'img[src $="flags/BY.png"],.fffx{'+flagCSS+'height:18px;border-radius:1.5px;' +
-    'box-shadow:inset 0 0 0 1px rgba(0,0,0,.04),inset 0 -1px 0  rgba(0,0,0,.15);}'+
-    'img[src $="flags/BY.png"]:not(".flagsmall") {width:48px;height:42px;}'
+  { addr: 'utiaconsult.odessa.ua',
+    images: [
+        { i:'media/mod_languages/images/be.gif', w: 18, h: 12, gradient: true, outline: 0 },
+    ],
+    sample: [
+        { url:'http://brestintourist.by/', notes: ''},
+    ]
   },
-  { addr: 'adsl.by',
-    css: 'img[src $="flags/Belarus.png"],.fffx{'
-    + flagCSS +
-    'width:14px;' +
-    'height:12px;'+
-    'box-shadow:inset 0 0 0 1px rgba(0,0,0,.1), 0 1px 2px rgba(0,0,0,.1);}'
+  { addr: 'yoox.com',
+    images: [
+        { i:'*://*/*yoox90/layout/flags/BY.jpg', w: 20, h: 13, },
+    ],
+    css:
+    '.spriteNaxBY {' +
+        flagBGI({w: 20, h: 13}, true) +
+        'background-position: 0 0 !important;'+
+    '}',
+    sample: [
+        { url: 'http://www.yoox.com/by/', notes: 'From Belarusian IP, + open lang menu'},
+    ]
   },
-  { addr: 'pac.by',
-    css: '.by_l_by,.by_l {width: 16px} .by_l_by img,.by_l img{display:none;}' +
-    '.by_l_by a::before, .by_l a::before{'+flagCSS+'width: 16px;height:12px;display:block}' +
-    '.by_l_by a::after,.by_l a::after{width: 16px;height:9px;display:block;content:"";'+ reflectionDownCSS +'}'
-  }
+
+    { addr: 'utiaconsult.odessa.ua',
+    images: [
+        { i:'images/stories/vizi/belarus.jpg', w: 150, h: 76, },
+        { i:'belarus-flag.gif', w: 1181, h: 788 },
+        { i:'images/stories/vizi/belarus2.jpg', replacer: 'https://upload.wikimedia.org/wikipedia/commons/1/16/Coat_of_arms_of_Belarus_%281918%2C_1991-1995%29.svg' },
+    ],
+    css: 'img[src *="vizi/belarus2.jpg"] {' +
+        'width: 100px;' +
+    '}',
+    sample: [{ url: 'http://utiaconsult.odessa.ua/?p=96', notes: ''}]
+    },
+    
+    { addr: 'alfacomponent.com',
+    images: [
+        { i:'images/flag_by.gif', w: 120, h: 60 },
+        { i:'images/where_to_buy.gif', replacer: res('alfacomponent.com-where_to_buy.gif') },
+    ],
+    sample: [{ url: 'http://www.alfacomponent.com/where_to_buy.php', notes: 'In header and in page content'},]
+    },
+
+    { addr: 'oblastyrb.narod.ru',
+    images: [
+        { i:'Ger.gif', replacer: pahoniaURL },
+        { i:'fla.gif', w: 235, h: 120 },
+        { i:'images/where_to_buy.gif', replacer: res('alfacomponent.com-where_to_buy.gif') },
+    ],
+    sample: [{ url: 'http://oblastyrb.narod.ru/vitebsk.htm', notes: 'In header flag & CoA'},]
+    },
+    
+    { addr: 'vedaj.by',
+    images: [{ i:'media/mod_languages/images/be.gif', w: 30, h: 14, red: '#FFA4A4', outline: '#DEDBDE', r: 1 },],
+    sample: [{ url: 'http://vedaj.by/', notes: 'In header'},]
+    },
+
+    { addr: 'vlib.by',
+    images: [{ i:'media/mod_falang/images/by.png', w: 30, h: 24, canvasW: 32, canvasH: 32 , gradient: true, r: 2 },],
+    sample: [{ url: 'http://vlib.by/index.php/by/', notes: 'In header'},]
+    },
+
+    {addr: 'megogo.net',
+      css:
+      '.flag.flag-by {' +
+          flagBGI({w: 18, h: 12, outline: 0, red: '#D52B1E', emboss: 0}) +
+          'background-position: 0 0; '+
+      '}',
+      sample: [{ url: 'http://megogo.net/by', notes: 'Lang menu'}]
+    },
+    
+    { addr: 'seorank.by',
+    images: [{ i:'*://sypexgeo.net/img/flags/by.png', replacer: res('sypexgeo-by.png') },],
+    sample: [{ url: 'http://seorank.by/doorwood.by', notes: 'Scroll down to map'}]
+    },
+
 ];
 // END dzieShto
 
@@ -798,7 +834,7 @@ function flagURL (params) {
  * @property {number} img.r
  * @property {number} img.canvasW
  * @property {number} img.canvasH
- * @property {number|string} img.contour
+ * @property {number|string} img.outline
  * @property {boolean} img.gradient
  * @property {boolean|number} img.emboss
  * @property {string} img.red
@@ -836,7 +872,7 @@ function getSVGFlagURL (img) {
           <rect id="white" class="shape" fill="#fff" width="100%" height="100%"/>\n\
           <rect id="red" fill="#E21313" y="33.3333333%" width="100%" height="33.3333333%"/>\n\
           <line id="emboss" opacity="0.18" stroke-width="4" stroke="#fff" x1="0" y1="0" x2="0" y2="100%" vector-effect="non-scaling-stroke"/>\n\
-          <rect id="contour" class="shape" opacity="0.1" stroke-width="2" stroke="#000" fill="none" width="100%" height="100%" vector-effect="non-scaling-stroke"/>\n\
+          <rect id="outline" class="shape" opacity="0.1" stroke-width="2" stroke="#000" fill="none" width="100%" height="100%" vector-effect="non-scaling-stroke"/>\n\
           <rect id="overlayGradient" class="shape" fill="none" width="100%" height="100%"></rect>\n\
         </g>\n\
       </g>\n\
@@ -857,7 +893,7 @@ function getSVGFlagURL (img) {
   var red = SVG.querySelector('#red');
   var emboss = SVG.querySelector('#emboss');
   var gradient = SVG.querySelector('#gradient');
-  var contour = SVG.querySelector('#contour');
+  var outline = SVG.querySelector('#outline');
   var overlayGradient = SVG.querySelector('#overlayGradient');
   var shape = SVG.getElementsByClassName('shape');
 
@@ -926,14 +962,18 @@ function getSVGFlagURL (img) {
     });
   }
 
-  // Set contour darkness
+  // Set outline darkness
   // --------------------
-  if (img.hasOwnProperty('contour')) {
-    if (img.contour == 'none') {
-      contour.style.display = 'none';
+  if (img.hasOwnProperty('outline')) {
+    if (img.outline == 'none') {
+      outline.style.display = 'none';
     }
-    if (typeof img.contour === 'number') {
-      contour.setAttribute('opacity', img.contour);
+    if (typeof img.outline === 'number') {
+      outline.setAttribute('opacity', img.outline);
+    }
+    if (typeof img.outline === 'string') {
+      outline.setAttribute('opacity', 1);
+      outline.setAttribute('stroke', img.outline);
     }
   }
 
@@ -982,6 +1022,9 @@ function setupFilters (){
   for (var i = 0, site; i < il, site = dzieShto[i]; i++ ) {
 
     if (site.sample) {completed ++ }
+    else {
+      console.log(site.addr);
+    }
 
     if (site.images) {
 
@@ -1032,7 +1075,9 @@ function serveFixes () {
         var favicon = '';
         dzieShto.forEach(function (site) {
           if (message.domain.match(urlToRegex(site.addr))) {
-            css += site.css + '\n\n';
+            if (site.css) {
+              css += site.css + '\n\n';
+            }
             favicon = site.favicon;
           }
         });
