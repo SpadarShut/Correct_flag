@@ -63,6 +63,13 @@ var dzieShto = [
     // Sites popular in Belarus
     // ------------------------
 
+  { addr: 'vk.com',
+    images: [
+      { i:'D83CDDE7D83CDDFE_2x.png', replacer: res('D83CDDE7D83CDDFE_2x-bcb.png') },
+      { i:'D83CDDE7D83CDDFE.png', replacer: res('D83CDDE7D83CDDFE-bcb.png') },
+    ],
+    sample: [{ url: 'https://vk.com/im?sel=16073387', notes: 'Must be logged in. Open smiley menu in the comment form and scroll it to the bottom '}]
+  },
   { addr: 'yandex.',
     images: [
       {i: '*://*/*/ftG_g5PBLY3vNpbeycqToQ3F5y8.gif', w: 16, h: 11},
@@ -404,6 +411,14 @@ var dzieShto = [
       {i: '*://cdn.livetvcdn.net/img/teams/18/1392.gif', replacer: res('livetv-teams-18-1374.gif')},
     ],
   },
+
+    { addr: 'wildstat.ru',
+    images: [
+        { i:'img/flag/BLR.png', w: 20, h: 10, outline: 0 },
+        { i:'img/flag/middle/BLR.png', w: 60, h: 30, outline: 0, emboss: 0 },
+    ],
+    sample: [{ url: 'http://wildstat.ru/p/28', notes: 'Sidebar + page content'}]
+    },
 
     // International popular sites
     // ---------------------------
@@ -787,6 +802,20 @@ var dzieShto = [
     images: [{ i:'*://sypexgeo.net/img/flags/by.png', replacer: res('sypexgeo-by.png') },],
     sample: [{ url: 'http://seorank.by/doorwood.by', notes: 'Scroll down to map'}]
     },
+
+    { addr: 'equatorial.by',
+    images: [{ i:'equatorial.by/files/belarus_001.gif', w: 448, h: 299, emboss: 0},],
+    sample: [{ url: 'http://equatorial.by/node/55', notes: ''}]
+    },
+    
+    { addr: 'rp5.by',
+      css: '.be.imgflag {' +
+          flagBGI({w: 13, h: 9, gradient: true, r: 1}) +
+          'background-position: 0 0;' +
+      '}',
+      sample: [{ url: 'http://rp5.by/', notes: 'Click Language button'}]
+    },
+
 
 ];
 // END dzieShto
