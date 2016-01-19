@@ -1,9 +1,9 @@
 ﻿{
   "name": "Правільны сцяг",
-  "version": "2.0",
+  "version": "2.0.18012016",
   "manifest_version": 2,
   "description": "Замяняе значкі з чырвона-зялёным сцягам на бел-чырвона-белы нябесны вольны смелы. Паведамляйце пра сцягі сюды: http://goo.gl/4GrGg",
-  "icons": { "16": "icon-16.png", "48": "icon-48.png", "128": "icon-128.png" },
+  "icons": {  "96": "icon-96.png", "256": "icon-256.png" },
   "content_scripts": [
     {
 	  "matches": ["http://*/*", "https://*/*"],
@@ -43,11 +43,13 @@
     "res/freeads.by-flag_header_freeads.by.png",
     "res/alfacomponent.com-where_to_buy.gif",
     "res/sypexgeo-by.png",
+    "res/D83CDDE7D83CDDFE_2x-bcb.png",
+    "res/D83CDDE7D83CDDFE-bcb.png",
     "res/sciahSphere.svg"
   ],
   "options_ui": {
     // Required.
-    "page": "options.html"//,
+    "page": "options/options.html"//,
     // Recommended.
     //"chrome_style": true
   }
