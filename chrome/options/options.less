@@ -7,16 +7,16 @@
 body {
   font: 14px/@base-line-height sans-serif;
   margin: 0;
-  padding: 30px 0;
-  height: 100%;
   color: #485157;
-  overflow-y: auto;
+
+  .browser-opera & {
+    padding: 30px 10px;
+  }
 }
 html {
   background: url('pattern.svg') no-repeat 50% 50%;
   background-size: cover;
-  height: 100%;
-  overflow: hidden;
+  background-attachment: fixed;
 }
 h1, h2, h3, p, ul {
   margin-top: 0;
@@ -27,10 +27,13 @@ h1 {
   font-size: 22px;
 }
 h2 {
-  margin-top: 2.5rem;
   margin-bottom: 0.9rem;
   font-weight: bold;
   font-size: 20px;
+
+  &:not(:first-child) {
+    margin-top: 2.5rem;
+  }
 }
 a {
   color: #47ADEE;
@@ -49,13 +52,12 @@ ul {
 }
 
 .page {
-  max-width: 650px;
+  width: 650px;
   min-height: ~'calc(100vh - 60px)';
   margin: 0 auto;
   padding: @base-spacing;
   background: #fff;
   box-shadow:  0 0 0 5px rgba(0,0,0,0.07);
-  border-radius: 2px;
 }
 
 // Header
@@ -63,6 +65,10 @@ ul {
   display: flex;
   align-items: center;
   margin-bottom: 40px;
+
+  .browser-chrome & {
+    display: none;
+  }
 }
 .header-logo {
   margin-right: @base-spacing - 5px;
@@ -72,7 +78,7 @@ ul {
 .page-title {
   font-size: 40px;
   line-height: 1;
-  margin: 0 0 13px;
+  margin: 0 0 11  px;
   text-indent: -0.07em;
 }
 .header-subtitle {
@@ -88,7 +94,7 @@ ul {
   border-radius: 3px;
   margin-bottom: 10px;
   font: inherit;
-  transition: .3s;
+  transition: border-color .1s, background-color .1s;
   resize: vertical;
   background: #fafafa;
 

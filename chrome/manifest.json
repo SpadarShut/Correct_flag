@@ -1,6 +1,10 @@
 ﻿{
   "name": "Правільны сцяг",
-  "version": "2.18012016",
+  "version": "2.0.18012016",
+  "developer": {
+    "name": "Spadar Shut",
+    "url": "https://www.facebook.com/spadarshut"
+  },
   "manifest_version": 2,
   "description": "Замяняе значкі з чырвона-зялёным сцягам на бел-чырвона-белы нябесны вольны смелы. Паведамляйце пра сцягі сюды: http://goo.gl/4GrGg",
   "icons": {  "96": "icon-96.png", "256": "icon-256.png" },
@@ -49,8 +53,8 @@
   ],
   "options_ui": {
     // Required.
-    "page": "options/options.html"//,
+    "page": "options/options.html",
     // Recommended.
-    //"chrome_style": true
+    "chrome_style": false
   }
 }
