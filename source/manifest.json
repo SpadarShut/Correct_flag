@@ -1,0 +1,60 @@
+﻿{
+  "name": "Правільны сцяг",
+  "version": "2.0.18012016",
+  "developer": {
+    "name": "Spadar Shut",
+    "url": "https://www.facebook.com/spadarshut"
+  },
+  "manifest_version": 2,
+  "description": "Замяняе значкі з чырвона-зялёным сцягам на бел-чырвона-белы нябесны вольны смелы. Паведамляйце пра сцягі сюды: http://goo.gl/4GrGg",
+  "icons": {  "96": "icon-96.png", "256": "icon-256.png" },
+  "content_scripts": [
+    {
+	  "matches": ["http://*/*", "https://*/*"],
+      "js": ["sciah.js"],
+      "all_frames": true,
+	  "run_at": "document_start"
+    }
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  },
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "web_accessible_resources": [
+    "res/rutracker_logo_by.png",
+    "res/pressballFlagBy.png",
+    "res/sportsRuBelarusCircle.png",
+    "res/footballByFavicon.png",
+    "res/allsport-live.ru-flag_fon.gif",
+    "res/livetv-img-icons-by.gif",
+    "res/livetv-teams-18-1374.gif",
+    "res/livetv-teams-1374.gif",
+    "res/livetv-teams-fullsize-1373.gif",
+    "res/erepublik-S-Belarus.gif",
+    "res/erepublik-S-Belarus.png",
+    "res/erepublik-M-Belarus.gif",
+    "res/erepublik-M-Belarus.png",
+    "res/erepublik-L-Belarus.gif",
+    "res/erepublik-L-Belarus.png",
+    "res/erepublik-XL-Belarus.png",
+    "res/erepublik-XL-Belarus.gif",
+    "res/freeads.by-flag_header_freeads.by.png",
+    "res/alfacomponent.com-where_to_buy.gif",
+    "res/sypexgeo-by.png",
+    "res/D83CDDE7D83CDDFE_2x-bcb.png",
+    "res/D83CDDE7D83CDDFE-bcb.png",
+    "res/sciahSphere.svg"
+  ],
+  "options_ui": {
+    // Required.
+    "page": "options/options.html",
+    // Recommended.
+    "chrome_style": false
+  }
+}
