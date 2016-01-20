@@ -1051,9 +1051,9 @@ function setupFilters (){
   for (var i = 0, site; i < il, site = dzieShto[i]; i++ ) {
 
     if (site.sample) {completed ++ }
-    else {
-      console.log(site.addr);
-    }
+    //else {
+    //  console.log(site.addr);
+    //}
 
     if (site.images) {
 
@@ -1079,7 +1079,7 @@ function setupFilters (){
         chrome.webRequest.onBeforeRequest.addListener(
           function() {
             var url = flagURL(img);
-            console.log(img.globs, url);
+            //console.log(img.globs, url);
             return {redirectUrl: url}
           },
           {types: ['image'], urls: img.globs },
@@ -1089,7 +1089,16 @@ function setupFilters (){
     }
   }
 
-  console.log('DONE ' + completed + ' of ' + il +', ' + completed/il*100 + '%');
+  //console.log('DONE ' + completed + ' of ' + il +', ' + completed/il*100 + '%');
+}
+
+function getTestingData () {
+  var out = dzieShto.map(function (site) {
+    return {
+      addr: site.addr,
+      sample: site.sample
+    }
+  })
 }
 
 function serveFixes () {
