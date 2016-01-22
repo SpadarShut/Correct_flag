@@ -1,0 +1,26 @@
+{
+  "name": "correct-flag",
+  "version": "2.0.0",
+  "description": "Chrome extension to change Belarusian flag to white-red-white",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SpadarShut/Correct_flag.git"
+  },
+  "author": "SpadarShut",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SpadarShut/Correct_flag/issues"
+  },
+  "homepage": "https://github.com/SpadarShut/Correct_flag#readme",
+  "devDependencies": {
+    "del": "^2.2.0",
+    "gulp-less": "^3.0.5",
+    "gulp-watch": "^4.3.5",
+    "gulp-zip": "^3.1.0",
+    "less": "^2.5.3"
+  }
+}
