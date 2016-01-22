@@ -1,0 +1,2 @@
+
+(new Sciah()).init();
