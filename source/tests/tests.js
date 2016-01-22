@@ -1,6 +1,5 @@
 
-chrome.runtime.sendMessage('gimmeTests', function(data){
-  console.log(data);
+  var data = (new Sciah()).getSiteData();
 
   var list = document.querySelector('#list');
   var listContents = '';
@@ -25,5 +24,3 @@ chrome.runtime.sendMessage('gimmeTests', function(data){
   });
 
   list.innerHTML = listContents;
-
-});
