@@ -11,13 +11,13 @@
   "content_scripts": [
     {
 	  "matches": ["http://*/*", "https://*/*"],
-      "js": ["sciah.js"],
+      "js": ["content.js"],
       "all_frames": true,
 	  "run_at": "document_start"
     }
   ],
   "background": {
-    "scripts": ["background.js"],
+    "scripts": ["background.js", "background-init.js"],
     "persistent": true
   },
   "permissions": [

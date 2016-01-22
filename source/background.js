@@ -23,7 +23,12 @@ var Sciah = function() {
 
 
   function res (file) {
-    return chrome.extension.getURL('res/'+ file );
+    if (chrome && chrome.extension && chrome.extension.getURL) {
+      return chrome.extension.getURL('res/'+ file );
+    }
+    else {
+      return '../res/' + file;
+    }
   }
   var pahoniaURL = 'https://upload.wikimedia.org/wikipedia/commons/1/16/Coat_of_arms_of_Belarus_%281918%2C_1991-1995%29.svg';
 
@@ -148,7 +153,7 @@ var Sciah = function() {
         {i: '*://*/*header/by.png', w: 50, h: 38, outline: 0 },
         {i: '*://*/*header/BY.png', w: 50, h: 38, outline: 0 }
       ],
-      sample: [{url: 'http://www.skyscanner.net/', notes: 'In header from BRL IP. Also click it for dialog anf hamburger menu'}]
+      sample: [{url: 'http://www.skyscanner.net/', notes: 'In header from BLR IP. Also click it for dialog anf hamburger menu'}]
     },
     { addr: 'kvitki.by',
       images: [
@@ -289,7 +294,7 @@ var Sciah = function() {
       sample: [
         {url: 'http://pbliga.com/mng_roster.php?id=129', notes: 'In header, in table'},
         {url: 'http://pbliga.com/mng_stat_players.php?sid=1&id=7', notes: 'In table'},
-        {url: 'http://pbliga.com/mng_tr_table.php#form', notes: 'See next page if there are not brl flags'},
+        {url: 'http://pbliga.com/mng_tr_table.php#form', notes: 'See next page if there are not BLR flags'},
         {url: 'http://pbliga.com/mng_developers.php', notes: 'For blr.gif change flag url'},
       ]
     },
@@ -310,7 +315,7 @@ var Sciah = function() {
     },
     {
       addr: 'soccer.ru',
-      images: [{i:'files/flags/15.gif', w: 21, h: 13, gradient: true}],
+      images: [{i:'files/flags/15.gif', w: 21, h: 13, gradient: 'wave', outline: 0.02, emboss: 0}],
       sample: [{url: 'http://www.soccer.ru/teams/teamfixtures/340.shtml'}]
     },
     {
@@ -875,7 +880,7 @@ var Sciah = function() {
    *
    * @returns {string}
    */
-  function getSVGFlagURL (img) {
+function getSVGFlagURL (img) {
     img = img || { w: 'auto'};
     img.w = img.w || 32; // default image width
     img.h = img.h || 16; // default image height
@@ -894,24 +899,20 @@ var Sciah = function() {
       <clipPath id="clip">\n\
         <rect id="clipRect" class="shape" fill="none" width="100%" height="100%" rx="0"/>\n\
       </clipPath>\n\
-      <radialGradient id="gradient" fx="22%" fy="14%" r="80%" gradientUnits="objectBoundingBox">\
-        <stop offset="0" style="stop-color:#000;stop-opacity:0"/>\n\
-        <stop offset="0.2" style="stop-color:#000;stop-opacity:0"/>\n\
-        <stop offset="0.6" style="stop-color:#000;stop-opacity:0.06"/>\n\
-        <stop offset="1" style="stop-color:#000;stop-opacity:0.10"/>\n\
+      <radialGradient id="gradient-simple" fx="22%" fy="14%" r="80%">\n\
+        <stop offset="0" style="stop-color: #000; stop-opacity:0"/>\n\
+        <stop offset="0.2" style="stop-color: #000; stop-opacity:0"/>\n\
+        <stop offset="0.6" style="stop-color: #000; stop-opacity:0.06"/>\n\
+        <stop offset="1" style="stop-color: #000; stop-opacity:0.10"/>\n\
       </radialGradient>\n\
-      <linearGradient id="gradient-wave" gradientUnits="userSpaceOnUse" x1="0.0898" y1="-2.271" x2="25.0163" y2="19.2252">\n\
-        <stop offset="0.1484" stop-color="#F1F0EC"/>\n\
-        <stop offset="0.2196" stop-color="#FEFDF9"/>\n\
-        <stop offset="0.3429" stop-color="#FCFBF7"/>\n\
-        <stop offset="0.3872" stop-color="#f5f4f0"/>\n\
-        <stop offset="0.4116" stop-color="#f2f1ed"/>\n\
-        <stop offset="0.4662" stop-color="#FEFDF9"/>\n\
-        <stop offset="0.6008" stop-color="#FBFAF6"/>\n\
-        <stop offset="0.6929" stop-color="#F2F1ED"/>\n\
-        <stop offset="0.7722" stop-color="#E3E2DE"/>\n\
-        <stop offset="0.8439" stop-color="#CDCCC9"/>\n\
-        <stop offset="0.8739" stop-color="#c9c8c5"/>\n\
+      <linearGradient id="gradient-wave" gradientUnits="objectBoundingBox" x1="0" y1="0" y2="0">\n\
+        <stop offset="0"    style="stop-color: #000; stop-opacity:0.15"/>\n\
+        <stop offset="0.21" style="stop-color: #000; stop-opacity:0"/>\n\
+        <stop offset="0.26" style="stop-color: #000; stop-opacity:0"/>\n\
+        <stop offset="0.48" style="stop-color: #000; stop-opacity:0.15"/>\n\
+        <stop offset="0.76" style="stop-color: #000; stop-opacity:0"/>\n\
+        <stop offset="0.79" style="stop-color: #000; stop-opacity:0"/>\n\
+        <stop offset="0.96"    style="stop-color: #000; stop-opacity:0.15"/>\n\
       </linearGradient>\n\
       <rect id="canvasBg" width="100%" height="100%" fill="none"></rect>\n\
       <g id="flag">\n\
@@ -938,7 +939,8 @@ var Sciah = function() {
     var white = SVG.querySelector('#white');
     var red = SVG.querySelector('#red');
     var emboss = SVG.querySelector('#emboss');
-    var gradient = SVG.querySelector('#gradient');
+    var gradientSimple = SVG.querySelector('#gradient-simple');
+    var gradientWave = SVG.querySelector('#gradient-wave');
     var outline = SVG.querySelector('#outline');
     var overlayGradient = SVG.querySelector('#overlayGradient');
     var shape = SVG.getElementsByClassName('shape');
@@ -978,7 +980,7 @@ var Sciah = function() {
       SVG.setAttribute( 'height', img.canvasH);
     }
     else {
-      canvasBg.parentNode.removeChild(canvasBg);
+      canvasBg.remove();
     }
 
     // Set flag drop shadow
@@ -1025,12 +1027,27 @@ var Sciah = function() {
 
     // Show/hide gradient
     // ------------------
-    if (img.gradient) {
-      overlayGradient.setAttribute('fill', 'url(#gradient)');
+    if (!img.gradient){
+      gradientSimple.remove();
+      gradientWave.remove();
     }
-    else {
-      SVG.removeChild(gradient);
-      overlayGradient.parentNode.removeChild(overlayGradient);
+    else if (img.gradient === true || img.gradient === 'simple') {
+      overlayGradient.setAttribute('fill', 'url(#gradient)');
+      gradientWave.remove();
+    }
+    else if (img.gradient === 'wave'){
+      var deg = 25;
+
+      function toRadians (angle) {
+        return angle * (Math.PI / 180);
+      }
+      var gX2 = (Math.cos(toRadians(90 - deg)) * img.h + Math.cos( toRadians(deg) ) * img.w) / img.w;
+
+      console.log(gX2);
+      gradientWave.setAttribute('gradientTransform', 'rotate('+ deg +')');
+      gradientWave.setAttribute('x2', gX2);
+      overlayGradient.setAttribute('fill', 'url(#gradient-wave)');
+      gradientSimple.remove();
     }
 
     // Emboss effect
@@ -1051,14 +1068,11 @@ var Sciah = function() {
       white.setAttribute('fill', img.white);
     }
 
-    //if (img.canvasW){
-    //  console.log(img.canvasW + 'x' + img.canvasH);
-    //  console.log(img.w + 'x' + img.h);
-    //  console.log(SVG.outerHTML);
-    //}
+    if ( img.gradient == 'wave' ) {
+      console.log(SVG.outerHTML);
+    }
 
-    var url = 'data:image/svg+xml,' + encodeURIComponent(SVG.outerHTML);
-    return url;
+    return 'data:image/svg+xml,' + encodeURIComponent(SVG.outerHTML);
   }
 
   function setupFilters (){
@@ -1142,35 +1156,15 @@ var Sciah = function() {
     return url;
   }
 
-  function serveTests () {
-
-    chrome.runtime.onMessage.addListener(
-        function(message, sender, cb) {
-          if (message == 'gimmeTests') {
-            //var testData = getTestingData();
-            cb(dzieShto);
-          }
-        }
-    );
-
-    function getTestingData () {
-      return dzieShto.map(function (site) {
-        return {
-          addr: site.addr,
-          sample: site.sample
-        }
-      });
-    }
-  }
+  this.getSiteData = function () {
+    return dzieShto;
+  };
 
   this.init = function () {
     setupFilters();
     serveFixes();
-    serveTests();
   };
 };
-
-(new Sciah()).init();
 
 
 // function setup (){}
