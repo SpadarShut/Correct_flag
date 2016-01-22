@@ -17,7 +17,7 @@
     }
   ],
   "background": {
-    "scripts": ["background.js", "background-init.js"],
+    "scripts": ["Sciah.js", "background-init.js"],
     "persistent": true
   },
   "permissions": [
