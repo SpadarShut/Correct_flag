@@ -3,7 +3,7 @@
   function addCSS(CSS) {
     var styleEl = window.document.createElement('style');
     var styles  = window.document.createTextNode(CSS);
-    styleEl.setAttribute('title', 'Correct Flag');
+    styleEl.dataset.title = 'Correct Flag';
     styleEl.appendChild(styles);
     window.document.head && window.document.head.appendChild(styleEl);
   };
