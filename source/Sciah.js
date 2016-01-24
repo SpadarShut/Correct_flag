@@ -826,14 +826,77 @@ var Sciah = function() {
       '}',
       sample: [{ url: 'http://rp5.by/', notes: 'Click Language button'}]
     },
-
+      
+      { addr: 'weather-forecast.com',
+      images: [
+          { i:'*://*.fast-meteo.com/flags/BO.gif', w: 108, h: 54, outline: 0.02, emboss: 0 },
+      ],
+      sample: [{ url: 'http://www.weather-forecast.com/locations/Minsk/forecasts/latest', notes: ''}]
+      },
+      
+      { addr: 'goethe.de',
+      images: [
+          { i:'flaggen/be-flg.gif', w: 16, h: 10, canvasW: 20, canvasH: 14, outline: 0.03, emboss: 0 },
+          { i:'flaggen/be-flg_ac.gif', w: 16, h: 10, canvasW: 20, canvasH: 14, outline: 0.03, emboss: 0  },
+          { i:'flaggen/be-flk.gif', w: 10, h: 8, outline: 0.15, emboss: 0  },
+      ],
+      css:
+        'img[src *="be-flg_ac.gif"] {' +
+          'box-shadow: inset 0 0 0 1px #808080;' +
+        '}' +
+        'img[src *="be-flk.gif"] {' +
+          'height: 8px;' +
+          'border-top: 2px solid #fff;' +
+        '}',
+      sample: [{ url: 'http://www.goethe.de/ins/by/be/min.html', notes: 'In header lang switcher and in news small flags'}]
+      },
+      
+      { addr: 'lichess.org',
+      images: [
+          { i:'*://lichess1.org/assets/images/flags/BY.png', replacer: res('erepublik-M-Belarus.png')},
+      ],
+      sample: [{ url: 'http://be.lichess.org/@/wert', notes: ''}]
+      },
+      
+      { addr: 'daroo\.*',
+      images: [
+          { i:'*://*/*images/new/flags/flag_01.png', w: 45 , h: 26, outline: 0, red: '#DA4B4C', emboss: 0 },
+      ],
+      sample: [
+        { url: 'http://daroo.by/', notes: 'In footer'},
+        { url: 'http://daroo.ru/', notes: 'In footer'},
+        { url: 'http://daroo.ua/', notes: 'In footer'},
+      ]},
+      
+      { addr: 'laststicker.ru',
+      images: [
+          { i:'i/region/small/blr.gif', w: 30, h: 20, emboss: 0 },
+      ],
+      sample: [{ url: 'http://www.laststicker.ru/users/25071/', notes: ''}]
+      },
+      
+      { addr: 'gpsies.com',
+      images: [
+          { i:'images/flags/by.png', w: 18, h: 12, gradient: true, white: '#fafafa', emboss: 0, outline: 0.1 },
+      ],
+      sample: [{ url: 'http://www.gpsies.com/mapUser.do?username=velodisco', notes: 'Right menu and in table below'}]
+      },
+      
+      { addr: 'starladder.tv',
+        css:
+        '.ico_flag.ico_flag_by{' +
+            flagBGI({w:16, h:11}, true) +
+            'background-position: 0 0;'+
+        '}',
+        sample: [{ url: 'http://dota2.starladder.tv/team/151', notes: 'In header'}]
+      },
 
   ];
 // END dzieShto
 
   /**
    * Return flag as a CSS background-image property
-   * @param params
+   * @param params Params that get passed to the flagURL function
    * @param important boolean Appends !important to the rule if it is true
    * @returns {string}
    */
@@ -1043,7 +1106,6 @@ function getSVGFlagURL (img) {
       }
       var gX2 = (Math.cos(toRadians(90 - deg)) * img.h + Math.cos( toRadians(deg) ) * img.w) / img.w;
 
-      console.log(gX2);
       gradientWave.setAttribute('gradientTransform', 'rotate('+ deg +')');
       gradientWave.setAttribute('x2', gX2);
       overlayGradient.setAttribute('fill', 'url(#gradient-wave)');
