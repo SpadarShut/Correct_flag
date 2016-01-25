@@ -33,3 +33,13 @@
   });
 
   list.innerHTML = listContents;
+
+
+  var domainsList = '';
+  data.forEach(function (site) {
+
+    if (site.addr != '.*') {
+      domainsList += '<li>' + site.addr
+    }
+  });
+  domains.innerHTML = domainsList;
