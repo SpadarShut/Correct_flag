@@ -120,7 +120,7 @@ var Sciah = function() {
       sample: [
         {url: 'https://www.yandex.by/', notes: 'Click keyboard in search field, select Belarusian in dropdow kbd'},
         {url: 'https://mail.yandex.by/?uid=225165401&login=sp-shut#setup/other', notes: ' Mail Settins - Language in sidebar, also in footer'},
-        {url: 'https://metrika.yandex.ru/stat/geo?selected_rows=Od%2FJ%2F9%2Cz%2BIcaA%2C9nRiZj%2CvkYaDN%2Cd1vFww&id=24050107', notes: 'Metrika, '}
+        {url: 'https://metrika.yandex.ru/stat/geo?selected_rows=Od%2FJ%2F9%2Cz%2BIcaA%2C9nRiZj%2CvkYaDN%2Cd1vFww&id=24050107', notes: 'Metrika'}
       ]
 
       //
@@ -153,7 +153,7 @@ var Sciah = function() {
         {i: '*://*/*header/by.png', w: 50, h: 38, outline: 0 },
         {i: '*://*/*header/BY.png', w: 50, h: 38, outline: 0 }
       ],
-      sample: [{url: 'http://www.skyscanner.net/', notes: 'In header from BLR IP. Also click it for dialog anf hamburger menu'}]
+      sample: [{url: 'http://www.skyscanner.net/', notes: 'In header from BLR IP. Also click it for dialog and hamburger menu'}]
     },
     { addr: 'kvitki.by',
       images: [
@@ -187,6 +187,7 @@ var Sciah = function() {
     }\
     .country_flag[style *="/by.png"] {\
         background-image: url("'+ res('sciahSphere.svg') +'") !important;\
+        background-size: 100% 115% !important;\
         opacity:.5;\
     }',
       sample: [{url: 'http://www.kinopoisk.ru/lists/m_act%5Bcountry%5D/69/', notes: 'On map and in every search list item'}]
@@ -257,13 +258,13 @@ var Sciah = function() {
     },
     {
       addr: 'sportpanorama.by',
-      images: [{i: '/flags/1.jpg', w: 16, h: 11, outline: 0.15, emboss: 0.27 }],
+      images: [{i: '/flags/1.jpg', w: 16, h: 11, outline: 0.15, emboss: 0.27, gradient: true }],
       sample: [{url: 'http://sportpanorama.by/themes/49/table/', notes: 'See table'}]
     },
     {
       addr: '(myscore\.ru)|(soccerstand\.com)|(livescore\.in)',
       css:'.flag.fl_31 { ' +
-      flagBGI({w: 16, h: 12, canvasW: 16, canvasH: 13, outline: 0.16}) +
+      flagBGI({w: 16, h: 12, canvasW: 16, canvasH: 13, outline: 0.16, gradient: true}) +
       'background-position: 0 0 !important;'+
       '}',
       images: [{i: '/image/data/rN9xhjRc-I7KbpC8c.png', w: 50, h: 25, canvasW: 50, canvasH: 50}],
@@ -277,7 +278,7 @@ var Sciah = function() {
     {
       addr: 'dinamo-minsk.by',
       images: [
-        {i: '/Flags/30x19/Belarus.png', canvasW: 30, canvasH: 19, w: 28, h: 17, outline: 0.2},
+        {i: '/Flags/30x19/Belarus.png', canvasW: 30, canvasH: 19, w: 28, h: 17, outline: 0.17, gradient: true},
         {i: '/Flags/31x24/Belarus.png', canvasW: 31, canvasH: 24, w: 29, h: 22, outline: 0.07, r: 1, white: '#f0f0f0'},
       ],
       sample: [
@@ -294,7 +295,7 @@ var Sciah = function() {
       sample: [
         {url: 'http://pbliga.com/mng_roster.php?id=129', notes: 'In header, in table'},
         {url: 'http://pbliga.com/mng_stat_players.php?sid=1&id=7', notes: 'In table'},
-        {url: 'http://pbliga.com/mng_tr_table.php#form', notes: 'See next page if there are not BLR flags'},
+        {url: 'http://pbliga.com/mng_tr_table.php#form', notes: 'See next page if there are no BLR flags'},
         {url: 'http://pbliga.com/mng_developers.php', notes: 'For blr.gif change flag url'},
       ]
     },
@@ -310,7 +311,7 @@ var Sciah = function() {
     {
       addr: 'sportbox.ru',
       css:'img[src *="land/by.png"], .fffx { '+ flagCSS + '}',
-      images: [{i: '*://*/*land/by.png', w: 18, h: 14}],
+      images: [{i: '*://*/*land/by.png', w: 18, h: 14, gradient: true}],
       sample: [{url:'http://news.sportbox.ru/Vidy_sporta/Hokkej/world_championship/stats/turnir_11616/game_1380556264'}]
     },
     {
@@ -425,7 +426,7 @@ var Sciah = function() {
 
     { addr: 'wildstat.ru',
       images: [
-        { i:'img/flag/BLR.png', w: 20, h: 10, outline: 0 },
+        { i:'img/flag/BLR.png', w: 20, h: 10, outline: 0.03 },
         { i:'img/flag/middle/BLR.png', w: 60, h: 30, outline: 0, emboss: 0 },
       ],
       sample: [{ url: 'http://wildstat.ru/p/28', notes: 'Sidebar + page content'}]
@@ -524,6 +525,7 @@ var Sciah = function() {
       'background-size: contain !important;' +
       '}',
       sample: [
+        {url:'', notes: 'Must be signed in'},
         {url:'http://www.erepublik.com/en/country/society/Belarus', notes: 'XL in head, click arrow under the flag, see '},
         {url:'http://www.erepublik.com/en/economy/market/83/0/1/citizen/0/price_asc/1'},
         {url:'http://www.erepublik.com/en/military/campaigns'},
@@ -584,7 +586,6 @@ var Sciah = function() {
         {i: 'images/strany/belarus.png', replacer: res('erepublik-XL-Belarus.png') },
       ],
       sample: [
-        {url: 'http://tamby.info/', notes: 'Flags block'},
         {url: 'http://www.tamby.info/tv-online/tv-belarusi.htm', notes: 'In sidebar, in heading'},
       ]
     },
@@ -610,7 +611,7 @@ var Sciah = function() {
     {
       addr: 'freeads.by',
       images: [
-        { i:'flags/flag_icon_freeads.by.gif', w: 18, h: 12, outline: 1, gradient: true },
+        { i:'flags/flag_icon_freeads.by.gif', w: 18, h: 12, outline: 1, gradient: 'wave' },
         { i:'flag_header_freeads.by.gif', replacer: res('freeads.by-flag_header_freeads.by.png') }
       ],
       sample: [{ url:'http://www.freeads.by/', notes: ''}]
@@ -629,7 +630,7 @@ var Sciah = function() {
       sample: [{ url:'http://s03.flagcounter.com/factbook/by/7tv', notes: 'dropdown, and large one'}]
     },
     {
-      addr: "(active\.by|active\.am|activecloud\.az|activecloud\.ge|activecloud\.com|activecloud\.ru|active\.uz)",
+      addr: "(active)(cloud)?\.(by|am|az|ge|com|ru|uz)",
       css:
       '.by > img, .ru-by > img,' +
       '.content .selector .selBar .cont ul.flags li.by a i,' +
@@ -653,14 +654,14 @@ var Sciah = function() {
     {
       addr: "rfe.by",
       images: [
-        { i:'templates/_ares/images/lang_by.gif', w: 16, h: 11, gradient: true },
+        { i:'templates/_ares/images/lang_by.gif', w: 16, h: 11, gradient: 'wave' },
       ],
       sample: [{ url:'http://www.rfe.by/', notes: 'In menu'}]
     },
     { addr: 'ranking.by',
       images: [
-        { i:'img/flags/by_wyb2.gif', w: 28, h: 17, canvasW: 34, canvasH: 25, red: '#E13F63' },
-        { i:'img/flags/by_wyb.gif', w: 28, h: 17, canvasW: 34, canvasH: 25 },
+        { i:'img/flags/by_wyb2.gif', w: 28, h: 17, canvasW: 34, canvasH: 25, red: '#E13F63', emboss: 0 },
+        { i:'img/flags/by_wyb.gif', w: 28, h: 17, canvasW: 34, canvasH: 25, emboss: 0 },
       ],
       sample: [{ url:'http://ranking.by/', notes: 'Header + open dropdown menu'}]
     },
@@ -669,24 +670,24 @@ var Sciah = function() {
       sample: [{ url:'http://paei.by/be-BY/default.aspx', notes: ''}]
     },
     { addr: 'barsu.by',
-      images: [{ i:'img/Belarus-24.png', w: 22, h: 15, canvasW: 24, canvasH: 24, outline: 0 }],
+      images: [{ i:'img/Belarus-24.png', w: 22, h: 15, canvasW: 24, canvasH: 24, outline: 0, emboss: 0 }],
       sample: [{ url:'http://barsu.by/', notes: 'Header'}]
     },
     { addr: 'greencard.by',
-      images: [{ i:'flags/by.gif', w: 16, h: 11, gradient: true }],
+      images: [{ i:'*://images.green-card.by/flags/by.gif', w: 16, h: 11, gradient: true }],
       sample: [{ url:'http://greencard.by/', notes: ''}]
     },
     { addr: 'techlabs.by',
-      images: [{ i:'frontend/images/flag-by.gif', w: 18, h: 12, outline: 1, gradient: true }],
+      images: [{ i:'frontend/images/flag-by.gif', w: 18, h: 12, outline: 1, gradient: 'wave' }],
       sample: [{ url:'http://www.techlabs.by/', notes: 'Side menu'}]
     },
     { addr: 'techlabs.ua',
-      images: [{ i:'frontend/images/flag_by.gif', w: 18, h: 12, outline: '#868186', gradient: true, red: '#FD4848' }],
+      images: [{ i:'frontend/images/flag_by.gif', w: 18, h: 12, outline: '#868186', gradient: 'wave', red: '#FD4848' }],
       sample: [{ url:'http://www.techlabs.ua/', notes: 'Side menu'}]
     },
     { addr: 'parta.by',
       images: [
-        { i:'resources/icons/flag_by.gif', w: 18, h: 12, red: '#C62643', white: '#F9F9F9', gradient: true, outline: 0 },
+        { i:'resources/icons/flag_by.gif', w: 18, h: 12, red: '#C62643', white: '#F9F9F9', gradient: 'wave', outline: 0 },
       ],
       sample: [
         { url:'http://www.parta.by/', notes: ''},
@@ -732,14 +733,6 @@ var Sciah = function() {
       ]
     },
     { addr: 'brestintourist.by',
-      images: [
-        { i:'media/mod_languages/images/be.gif', w: 18, h: 12, gradient: true, outline: 0 },
-      ],
-      sample: [
-        { url:'http://brestintourist.by/', notes: ''},
-      ]
-    },
-    { addr: 'utiaconsult.odessa.ua',
       images: [
         { i:'media/mod_languages/images/be.gif', w: 18, h: 12, gradient: true, outline: 0 },
       ],
@@ -890,7 +883,31 @@ var Sciah = function() {
         '}',
         sample: [{ url: 'http://dota2.starladder.tv/team/151', notes: 'In header'}]
       },
+      { addr: 'all.biz',
+        css: '[class *="g-flag_"]._by {' +
+            flagBGI({w: 'auto', white: '#fdfdfd', emboss: 0 }, true) +
+            'background-position: 0 0;'+
+        '}',
+        sample: [{ url: 'http://minsk.all.biz/odezhda-zashchitnaya-dlya-pozharnyh-bgg1043233/taksir-ooo-k18353', notes: ''}]
+      },
 
+      { addr: 'eliteprospects.com',
+      images: [
+          { i:'layout/flags/23.png', w: 14, h: 10, gradient: true, outline: 1 },
+          { i:'layout/flags_s/23.png', w: 19, h: 14, gradient: true, outline: 1 },
+          { i:'layout/flagsmedium/23.png', w: 40, h: 30, canvasW: 40, canvasH: 40, gradient: true, outline: 0.15, r: 2 },
+      ],
+      sample: [
+        { url: 'http://www.eliteprospects.com/league_home.php?leagueid=126',
+          notes: 'In header, In tables below, "Last added" image - change SRC to layout/flags/23.png'}]
+      },
+
+      { addr: 'virtualbrest.by',
+      images: [
+          { i:'img/flag/BY.png', replacer: res('erepublik-M-Belarus.png') },
+      ],
+      sample: [{ url: 'http://virtualbrest.by/news35949.php', notes: 'In comments'}]
+      },
   ];
 // END dzieShto
 
@@ -962,7 +979,7 @@ function getSVGFlagURL (img) {
       <clipPath id="clip">\n\
         <rect id="clipRect" class="shape" fill="none" width="100%" height="100%" rx="0"/>\n\
       </clipPath>\n\
-      <radialGradient id="gradient-simple" fx="22%" fy="14%" r="80%">\n\
+      <radialGradient gradientUnits="objectBoundingBox" id="gradient-simple" fx="22%" fy="14%" r="80%">\n\
         <stop offset="0" style="stop-color: #000; stop-opacity:0"/>\n\
         <stop offset="0.2" style="stop-color: #000; stop-opacity:0"/>\n\
         <stop offset="0.6" style="stop-color: #000; stop-opacity:0.06"/>\n\
@@ -1095,7 +1112,7 @@ function getSVGFlagURL (img) {
       gradientWave.remove();
     }
     else if (img.gradient === true || img.gradient === 'simple') {
-      overlayGradient.setAttribute('fill', 'url(#gradient)');
+      overlayGradient.setAttribute('fill', 'url(#gradient-simple)');
       gradientWave.remove();
     }
     else if (img.gradient === 'wave'){
@@ -1130,7 +1147,7 @@ function getSVGFlagURL (img) {
       white.setAttribute('fill', img.white);
     }
 
-    if ( img.gradient == 'wave' ) {
+    if ( img.gradient === true ) {
       console.log(SVG.outerHTML);
     }
 
