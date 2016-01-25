@@ -1148,7 +1148,7 @@ function getSVGFlagURL (img) {
     }
 
     if ( img.gradient === true ) {
-      console.log(SVG.outerHTML);
+      //console.log(SVG.outerHTML);
     }
 
     return 'data:image/svg+xml,' + encodeURIComponent(SVG.outerHTML);
