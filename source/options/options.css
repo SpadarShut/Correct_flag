@@ -72,7 +72,7 @@ ul li {
 .page-title {
   font-size: 40px;
   line-height: 1;
-  margin: 0 0 11  px;
+  margin: 0 0 11px;
   text-indent: -0.07em;
 }
 .header-subtitle {
@@ -81,7 +81,7 @@ ul li {
 }
 #share-text {
   width: 100%;
-  border: 1px solid #d8d8d8;
+  border: 1px solid #c3cad8;
   padding: 8px;
   height: 80px;
   border-radius: 3px;
@@ -89,11 +89,11 @@ ul li {
   font: inherit;
   transition: border-color 0.1s, background-color 0.1s;
   resize: vertical;
-  background: #fafafa;
+  box-shadow: inset 1px 2px 1px rgba(151, 158, 166, 0.2);
 }
 #share-text:focus {
   outline: none;
-  border-color: #a5a5a5;
+  border-color: #8593b0;
 }
 .share-btns {
   margin-bottom: 30px;
