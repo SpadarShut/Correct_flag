@@ -17,7 +17,7 @@ gulp.task('build', ['copy', 'zip']);
 gulp.task('copy', function() {
   return del('build/*').then(
       function () {
-        return gulp.src('source/**')
+        return gulp.src([ 'source/**' ])
             .pipe(gulp.dest('build/codez/'))
       }
   )
