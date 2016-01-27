@@ -908,6 +908,13 @@ var Sciah = function() {
       ],
       sample: [{ url: 'http://virtualbrest.by/news35949.php', notes: 'In comments'}]
       },
+      
+      { addr: 'censor.net.ua',
+      images: [
+          { i:'images/flags/by.png', w: 16, h: 11, gradient: true,  },
+      ],
+      sample: [{ url: 'http://censor.net.ua/user/347339', notes: 'Must be logged in from belarusian IP. See flag in header near your own username'}]
+      },
   ];
 // END dzieShto
 
