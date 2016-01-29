@@ -535,6 +535,7 @@
   },
 
 
+
   {"//": "Rest"},
 
   {
@@ -672,9 +673,7 @@
     "images": [
       { "i": "resources/icons/flag_by.gif", "w": 18, "h": 12, "red": "#C62643", "white": "#F9F9F9", "gradient": "wave", "outline": 0 }
     ],
-    "sample": [
-      { "url": "http://www.parta.by/"}
-    ]
+    "sample": [{ "url": "http://www.parta.by/"}]
   },
   { "addr": "(portal-)?fotoclub.(ru|org\\.ua|kz)",
     "images": [
@@ -726,8 +725,8 @@
     "images": [{ "i": "*://*/*yoox90/layout/flags/BY.jpg", "w": 20, "h": 13 }],
     "css": [
       ".spriteNaxBY {",
-      "%1%",
-      "background-position: 0 0 !important;",
+          "%1%",
+          "background-position: 0 0 !important;",
       "}"],
     "cssReplace": [{"%1%": {"f": "flagBGI", "arg": [{"w": 20, "h": 13}, true]}}],
     "sample": [{ "url": "http://www.yoox.com/by/", "notes": "From Belarusian IP, + open lang menu"}]
@@ -775,8 +774,8 @@
   {"addr": "megogo.net",
     "css": [
       ".flag.flag-by {",
-      "%1%",
-      "background-position: 0 0; ",
+          "%1%",
+          "background-position: 0 0; ",
       "}"],
     "cssReplace": [{"%1%": {"f": "flagBGI", "arg": {"w": 18, "h": 12, "outline": 0, "red": "#D52B1E", "emboss": 0}}}],
     "sample": [{ "url": "http://megogo.net/by", "notes": "Lang menu"}]
@@ -816,11 +815,11 @@
     ],
     "css": [
       "img[src *='be-flg_ac.gif'] {",
-      "box-shadow: inset 0 0 0 1px #808080;",
+          "box-shadow: inset 0 0 0 1px #808080;",
       "}",
       "img[src *='be-flk.gif'] {",
-      "height: 8px;",
-      "border-top: 2px solid #fff;",
+          "height: 8px;",
+          "border-top: 2px solid #fff;",
       "}"],
     "sample": [{ "url": "http://www.goethe.de/ins/by/be/min.html", "notes": "In header lang switcher and in news small flags"}]
   },
