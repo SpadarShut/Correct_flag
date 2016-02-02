@@ -1,14 +1,16 @@
 
-  var data = (new Sciah()).getSiteData();
+(new Sciah()).getSiteData(function (data) {
 
   var list = document.querySelector('#list');
   var listContents = '';
 
   data.forEach(function (site){
 
+    if (!site.addr) return;
+
     var pre = '<li>';
     var post = '</li>';
-    var host = '<h3>'+ site.addr.replace(/([\|\(\)\*\?])/g, function(a, b) {return '<span class="helper">'+ b +'</span>'}) +'</h3>';
+    var host = '<h3>'+ site.addr.replace(/([\|\(\)\*\?\\])/g, function(a, b) {return '<span class="helper">'+ b +'</span>'}) +'</h3>';
     var links = [];
     var images = []; // todo show replaced images
 
@@ -43,3 +45,4 @@
     }
   });
   domains.innerHTML = domainsList;
+});
