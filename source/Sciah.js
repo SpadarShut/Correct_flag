@@ -369,7 +369,7 @@ var Sciah = function() {
   };
 
   var _getDataSource = function () {
-    var data = 'https://raw.githubusercontent.com/SpadarShut/Correct_flag/remote-data/source/sciahData.json';
+    var data = 'https://raw.githubusercontent.com/SpadarShut/Correct_flag/master/source/sciahData.json';
     //var data = 'sciahData.json';
     return data;
   };
