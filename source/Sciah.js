@@ -23,7 +23,7 @@ var Sciah = function() {
 
 
   var self = this;
-  var dzieShto = [];
+  self.dzieShto = [];
 
   function res (file) {
     if (chrome && chrome.extension && chrome.extension.getURL) {
@@ -279,7 +279,7 @@ var Sciah = function() {
     return 'data:image/svg+xml,' + encodeURIComponent(SVG.outerHTML);
   }
 
-  function setupFilters (){
+  function setupFilters (dzieShto){
 
     var il = dzieShto.length;
     var completed = 0;
@@ -327,7 +327,7 @@ var Sciah = function() {
     //console.log('DONE ' + completed + ' of ' + il +', ' + completed/il*100 + '%');
   }
 
-  function serveFixes () {
+  function serveFixes (dzieShto) {
     // Listen for CSS requests
     chrome.runtime.onMessage.addListener(
         function(message, sender, cb) {
@@ -360,10 +360,6 @@ var Sciah = function() {
     return url;
   }
 
-  this.getSiteData = function () {
-    return dzieShto;
-  };
-
   this.cssHelpers = {
     res: res,
     pahoniaURL: 'https://upload.wikimedia.org/wikipedia/commons/1/16/Coat_of_arms_of_Belarus_%281918%2C_1991-1995%29.svg',
@@ -372,8 +368,46 @@ var Sciah = function() {
     flagURL: flagURL
   };
 
-  this.prepareDzieShto = function (data) {
+  var _getDataSource = function () {
+    var data = 'https://raw.githubusercontent.com/SpadarShut/Correct_flag/remote-data/source/sciahData.json';
+    //var data = 'sciahData.json';
+    return data;
+  };
 
+
+  this.getSiteData = function (cb) {
+    fetch(_getDataSource())
+      .then(function (response) {
+        var data;
+        //var responseClone = response.clone();
+
+        if (response.ok) {
+          return response.json().then(function (data) {
+
+            // remember last data
+            localStorage.setItem('backupData', JSON.stringify(data));
+            return data;
+          });
+        }
+        else {
+          data = localStorage.getItem('backupData');
+          if (data) {
+            return JSON.parse(data);
+          }
+          else {
+            return fetch('sciahData.json')
+              .then(function (response) {
+                return response.json();
+              });
+          }
+        }
+      })
+      .then(function (data) {
+        cb(data);
+      });
+  };
+
+  this.prepareDzieShto = function (data) {
 
     function getReplacerFnResult (fn, args) {
       var out = '';
@@ -439,6 +473,10 @@ var Sciah = function() {
         });
       }
 
+      if (site.favicon) {
+        site.favicon = getReplacerFnResult(site.favicon.f, site.favicon.arg);
+      }
+
       return site;
     });
 //    console.log(out);
@@ -446,24 +484,10 @@ var Sciah = function() {
   };
 
   this.init = function () {
-
-    fetch('sciahData.json')
-        .then(function (response) {
-          return response.json();
-        })
-        .then(function (data) {
-          dzieShto = self.prepareDzieShto(data);
-          //console.log(dzieShto);
-          setupFilters();
-          serveFixes();
-        });
-  };
+    self.getSiteData(function (data) {
+      self.dzieShto = self.prepareDzieShto(data);
+      setupFilters(data);
+      serveFixes(data);
+    })
+  }
 };
-
-
-// function setup (){}
-// This is triggered when the extension is installed or updated.
-// source.runtime.onInstalled.addListener(function () {
-//   setupFilters ();
-//   serveFixes();
-// });

@@ -140,6 +140,7 @@
       ".movieFlags .flag69 * {",
       "height: 10px",
       "}",
+      "/* TODO remove if it's not back on the site*/",
       ".country_flag[style *='/by.png'] {",
       "background-image: url('%1%') !important;",
       "background-size: 100% 115% !important;",
@@ -170,7 +171,11 @@
   {
     "addr": "vandrouki.",
     "images": [{"i": "*://*/Belarus.png", "w": 17, "h": 10}],
-    "sample": [{ "url": "http://vandrouki.by/", "notes": "In footer"}]
+    "sample": [
+      { "url": "http://vandrouki.by/", "notes": "In footer"},
+      { "url": "http://vandrouki.ru/", "notes": "In footer"},
+      { "url": "http://vandrouki.com.ua/", "notes": "In footer"}
+    ]
   },
 
 
@@ -559,7 +564,7 @@
   {
     "addr": "greyorder.su",
     "images": [{"i": "flags/by.png", "w": 16, "h": 11 }],
-    "sample": [{"url": "?", "notes": "Legacy"}]
+    "sample": [{"url": "http://greyorder.su", "notes": "?? Legacy"}]
   },
   {
     "addr": "tamby.info",
