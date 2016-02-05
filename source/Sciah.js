@@ -21,7 +21,6 @@
 
 var Sciah = function() {
 
-
   var self = this;
   self.dzieShto = [];
 
@@ -286,16 +285,10 @@ var Sciah = function() {
     for (var i = 0, site; i < il, site = dzieShto[i]; i++ ) {
 
       if (site.sample) {completed ++ }
-      //else {
-      //  console.log(site.addr);
-      //}
 
       if (site.images) {
 
         site.images.forEach(function (img) {
-
-          //console.log(site.addr);
-          //console.log(decodeURIComponent(flagURL(img)));
 
           // turn image into URL pattern if it's not a URL already
           img.globs = [];
@@ -314,7 +307,6 @@ var Sciah = function() {
           chrome.webRequest.onBeforeRequest.addListener(
               function() {
                 var url = flagURL(img);
-                //console.log(img.globs, url);
                 return {redirectUrl: url}
               },
               {types: ['image'], urls: img.globs },
@@ -323,7 +315,6 @@ var Sciah = function() {
         });
       }
     }
-
     //console.log('DONE ' + completed + ' of ' + il +', ' + completed/il*100 + '%');
   }
 
@@ -368,42 +359,35 @@ var Sciah = function() {
     flagURL: flagURL
   };
 
-  var _getDataSource = function () {
+  var getDataSource = function () {
     var data = 'https://raw.githubusercontent.com/SpadarShut/Correct_flag/master/source/sciahData.json';
     //var data = 'sciahData.json';
     return data;
   };
 
 
-  this.getSiteData = function (cb) {
-    fetch(_getDataSource())
+  this.getSiteData = function () {
+    return fetch(getDataSource())
       .then(function (response) {
-        var data;
-        //var responseClone = response.clone();
-
         if (response.ok) {
           return response.json().then(function (data) {
-
             // remember last data
-            localStorage.setItem('backupData', JSON.stringify(data));
+            localStorage.setItem('sciahData', JSON.stringify(data));
             return data;
           });
         }
+      })
+      .catch(function (err) {
+        data = localStorage.getItem('sciahData');
+        if (data) {
+          return JSON.parse(data);
+        }
         else {
-          data = localStorage.getItem('backupData');
-          if (data) {
-            return JSON.parse(data);
-          }
-          else {
-            return fetch('sciahData.json')
+          return fetch('sciahData.json')
               .then(function (response) {
                 return response.json();
               });
-          }
         }
-      })
-      .then(function (data) {
-        cb(data);
       });
   };
 
@@ -483,11 +467,27 @@ var Sciah = function() {
     return out;
   };
 
+  listenUpdateRequest = function () {
+
+    chrome.runtime.onMessage.addListener(
+      function(message, sender, cb) {
+        if (message === 'go-reload-yourself') {
+
+          // reloading extension to reset old image request filters and
+          // replace them with new ones
+          chrome.runtime.reload();
+        }
+      }
+    );
+  };
+
   this.init = function () {
-    self.getSiteData(function (data) {
-      self.dzieShto = self.prepareDzieShto(data);
-      setupFilters(data);
-      serveFixes(data);
-    })
+    self.getSiteData().then(function (data) {
+        self.dzieShto = self.prepareDzieShto(data);
+        //setupFilters(data);
+        setupFilters(data);
+        serveFixes(data);
+        listenUpdateRequest();
+      })
   }
 };

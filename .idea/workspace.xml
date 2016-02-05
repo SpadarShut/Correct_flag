@@ -1,48 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/source/background.js" description="function getSVGFlagURL (img) {" line="891" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="431396d7-2f55-4654-8aa5-2c1ff63200d1" name="neverrr" comment="rename /chrome to /source&#10;update options">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/res/erepublik-L-Belarus.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/res/erepublik-XL-Belarus.gif" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/chrome/res/erepublik-L-belarus.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/chrome/res/erepublik-XL-belarus.gif" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/chrome/background.js" afterPath="$PROJECT_DIR$/source/background.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/chrome/icon-256.png" afterPath="$PROJECT_DIR$/source/icon-256.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/chrome/icon-96.png" afterPath="$PROJECT_DIR$/source/icon-96.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/chrome/manifest.json" afterPath="$PROJECT_DIR$/source/manifest.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/chrome/options/options.css" afterPath="$PROJECT_DIR$/source/options/options.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/chrome/options/options.html" afterPath="$PROJECT_DIR$/source/options/options.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/chrome/options/options.js" afterPath="$PROJECT_DIR$/source/options/options.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/chrome/options/options.less" afterPath="$PROJECT_DIR$/source/options/options.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/chrome/options/pattern.svg" afterPath="$PROJECT_DIR$/source/options/pattern.svg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/chrome/res/D83CDDE7D83CDDFE-bcb.png" afterPath="$PROJECT_DIR$/source/res/D83CDDE7D83CDDFE-bcb.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/chrome/res/D83CDDE7D83CDDFE_2x-bcb.png" afterPath="$PROJECT_DIR$/source/res/D83CDDE7D83CDDFE_2x-bcb.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/chrome/res/alfacomponent.com-where_to_buy.gif" afterPath="$PROJECT_DIR$/source/res/alfacomponent.com-where_to_buy.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/chrome/res/allsport-live.ru-flag_fon.gif" afterPath="$PROJECT_DIR$/source/res/allsport-live.ru-flag_fon.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/chrome/res/erepublik-L-Belarus.png" afterPath="$PROJECT_DIR$/source/res/erepublik-L-Belarus.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/chrome/res/erepublik-M-Belarus.gif" afterPath="$PROJECT_DIR$/source/res/erepublik-M-Belarus.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/chrome/res/erepublik-M-Belarus.png" afterPath="$PROJECT_DIR$/source/res/erepublik-M-Belarus.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/chrome/res/erepublik-S-Belarus.png" afterPath="$PROJECT_DIR$/source/res/erepublik-S-Belarus.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/chrome/res/erepublik-XL-Belarus.png" afterPath="$PROJECT_DIR$/source/res/erepublik-XL-Belarus.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/chrome/res/footballByFavicon.png" afterPath="$PROJECT_DIR$/source/res/footballByFavicon.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/chrome/res/freeads.by-flag_header_freeads.by.png" afterPath="$PROJECT_DIR$/source/res/freeads.by-flag_header_freeads.by.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/chrome/res/livetv-img-icons-by.gif" afterPath="$PROJECT_DIR$/source/res/livetv-img-icons-by.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/chrome/res/livetv-teams-1374.gif" afterPath="$PROJECT_DIR$/source/res/livetv-teams-1374.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/chrome/res/livetv-teams-18-1374.gif" afterPath="$PROJECT_DIR$/source/res/livetv-teams-18-1374.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/chrome/res/livetv-teams-fullsize-1373.gif" afterPath="$PROJECT_DIR$/source/res/livetv-teams-fullsize-1373.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/chrome/res/pressballFlagBy.png" afterPath="$PROJECT_DIR$/source/res/pressballFlagBy.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/chrome/res/rutracker_logo_by.png" afterPath="$PROJECT_DIR$/source/res/rutracker_logo_by.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/chrome/res/sciahSphere.svg" afterPath="$PROJECT_DIR$/source/res/sciahSphere.svg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/chrome/res/sportsRuBelarusCircle.png" afterPath="$PROJECT_DIR$/source/res/sportsRuBelarusCircle.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/chrome/res/sypexgeo-by.png" afterPath="$PROJECT_DIR$/source/res/sypexgeo-by.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/chrome/sciah.js" afterPath="$PROJECT_DIR$/source/sciah.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/chrome/tests/testlinks.htm" afterPath="$PROJECT_DIR$/source/tests/testlinks.htm" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/chrome/tests/tests.js" afterPath="$PROJECT_DIR$/source/tests/tests.js" />
+    <list default="true" id="431396d7-2f55-4654-8aa5-2c1ff63200d1" name="neverrr" comment="rename background.js to Sciah.js, move bg init  to a separate file&#10;add support for wavy gradient on flags&#10;">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/sciah.extension.iml" afterPath="$PROJECT_DIR$/.idea/sciah.extension.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/Sciah.js" afterPath="$PROJECT_DIR$/source/Sciah.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/options/options.css" afterPath="$PROJECT_DIR$/source/options/options.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/options/options.html" afterPath="$PROJECT_DIR$/source/options/options.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/options/options.js" afterPath="$PROJECT_DIR$/source/options/options.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/options/options.less" afterPath="$PROJECT_DIR$/source/options/options.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/tests/tests.js" afterPath="$PROJECT_DIR$/source/tests/tests.js" />
     </list>
+    <list id="66e0b0cc-47f4-4594-8759-351e06fcd922" name="Failed commit: neverrr" comment="rename background.js to Sciah.js, move bg init  to a separate file&#10;add support for wavy gradient on flags&#10;" />
     <ignored path="sciah.extension.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -61,60 +30,66 @@
     <favorites_list name="sciah.extension" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.4">
+    <splitter split-orientation="horizontal" split-proportion="0.50878733">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="sciah.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/source/sciah.js">
+          <file leaf-file-name="content.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/source/content.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="29" selection-end-column="5" />
+                <state vertical-scroll-proportion="0.19900498">
+                  <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="background.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/source/background.js">
+          <file leaf-file-name="sciahData.json" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/source/sciahData.json">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-24.555555">
-                  <caret line="927" column="0" selection-start-line="927" selection-start-column="0" selection-end-line="927" selection-end-column="0" />
+                <state vertical-scroll-proportion="11.823529">
+                  <caret line="113" column="19" selection-start-line="113" selection-start-column="13" selection-end-line="113" selection-end-column="19" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Sciah.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/source/Sciah.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-59.555557">
+                  <caret line="371" column="26" selection-start-line="371" selection-start-column="26" selection-end-line="371" selection-end-column="26" />
                   <folding>
-                    <element signature="e#35268#35446#0" expanded="false" />
-                    <element signature="e#35636#35896#0" expanded="false" />
-                    <element signature="e#36105#36548#0" expanded="false" />
-                    <element signature="e#45577#45771#0" expanded="false" />
-                    <marker date="1453312718000" expanded="true" signature="37283:37848" placeholder="..." />
-                    <marker date="1453312718000" expanded="true" signature="37283:39395" placeholder="..." />
-                    <marker date="1453312718000" expanded="true" signature="37313:37427" placeholder="..." />
-                    <marker date="1453312718000" expanded="true" signature="37527:37838" placeholder="..." />
-                    <marker date="1453312718000" expanded="true" signature="37562:37592" placeholder="..." />
-                    <marker date="1453312718000" expanded="true" signature="37633:37663" placeholder="..." />
-                    <marker date="1453312718000" expanded="true" signature="37704:37737" placeholder="..." />
-                    <marker date="1453312718000" expanded="true" signature="37776:37809" placeholder="..." />
-                    <marker date="1453312718000" expanded="true" signature="37964:38607" placeholder="..." />
-                    <marker date="1453312718000" expanded="true" signature="38706:39381" placeholder="..." />
-                    <marker date="1453312718000" expanded="true" signature="38758:39367" placeholder="..." />
+                    <element signature="n#!!block;n#getSVGFlagURL#0;n#!!block;n#Sciah#0;n#Sciah#0;n#!!top" expanded="false" />
+                    <element signature="n#!!block;n#urlToRegex#0;n#!!block;n#Sciah#0;n#Sciah#0;n#!!top" expanded="false" />
+                    <element signature="e#11566#11844#0" expanded="false" />
+                    <element signature="e#12762#14943#0" expanded="false" />
+                    <marker date="1454684273000" expanded="true" signature="2857:4874" placeholder="..." />
+                    <marker date="1454684273000" expanded="true" signature="2887:3001" placeholder="..." />
+                    <marker date="1454684273000" expanded="true" signature="3108:3429" placeholder="..." />
+                    <marker date="1454684273000" expanded="true" signature="3145:3177" placeholder="..." />
+                    <marker date="1454684273000" expanded="true" signature="3218:3250" placeholder="..." />
+                    <marker date="1454684273000" expanded="true" signature="3291:3326" placeholder="..." />
+                    <marker date="1454684273000" expanded="true" signature="3365:3400" placeholder="..." />
+                    <marker date="1454684273000" expanded="true" signature="3529:4086" placeholder="..." />
+                    <marker date="1454684273000" expanded="true" signature="3569:3604" placeholder="..." />
+                    <marker date="1454684273000" expanded="true" signature="3646:3678" placeholder="..." />
+                    <marker date="1454684273000" expanded="true" signature="3720:3752" placeholder="..." />
+                    <marker date="1454684273000" expanded="true" signature="3794:3829" placeholder="..." />
+                    <marker date="1454684273000" expanded="true" signature="3871:3903" placeholder="..." />
+                    <marker date="1454684273000" expanded="true" signature="3945:3977" placeholder="..." />
+                    <marker date="1454684273000" expanded="true" signature="4022:4057" placeholder="..." />
+                    <marker date="1454684273000" expanded="true" signature="4185:4860" placeholder="..." />
+                    <marker date="1454684273000" expanded="true" signature="4237:4846" placeholder="..." />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="testlinks.htm" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/source/tests/testlinks.htm">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-1.1764706">
-                  <caret line="4" column="43" selection-start-line="4" selection-start-column="43" selection-end-line="4" selection-end-column="43" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="README" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/README">
+          <file leaf-file-name="background-init.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/source/background-init.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="0" column="39" selection-start-line="0" selection-start-column="39" selection-end-line="0" selection-end-column="39" />
+                  <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
                   <folding />
                 </state>
               </provider>
@@ -123,28 +98,28 @@
           <file leaf-file-name="manifest.json" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/source/manifest.json">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-1.875">
-                  <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="icons-embedded.css" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/source/options/fontello/css/icons-embedded.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-20.25">
-                  <caret line="56" column="47" selection-start-line="56" selection-start-column="47" selection-end-line="56" selection-end-column="47" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="options.html" pinned="false" current-in-tab="true">
+          <file leaf-file-name="options.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/source/options/options.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.49914238">
-                  <caret line="90" column="12" selection-start-line="90" selection-start-column="12" selection-end-line="90" selection-end-column="12" />
+                <state vertical-scroll-proportion="-20.25">
+                  <caret line="108" column="21" selection-start-line="108" selection-start-column="21" selection-end-line="108" selection-end-column="21" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="gulpfile.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/gulpfile.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="17" column="15" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
                   <folding />
                 </state>
               </provider>
@@ -157,18 +132,18 @@
           <file leaf-file-name="options.less" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/source/options/options.less">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-21.875">
-                  <caret line="80" column="18" selection-start-line="80" selection-start-column="18" selection-end-line="80" selection-end-column="18" />
+                <state vertical-scroll-proportion="-18.708334">
+                  <caret line="89" column="1" selection-start-line="89" selection-start-column="1" selection-end-line="89" selection-end-column="1" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="options.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="options.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/source/options/options.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="36" column="54" selection-start-line="36" selection-start-column="54" selection-end-line="36" selection-end-column="54" />
+                <state vertical-scroll-proportion="0.6431853">
+                  <caret line="46" column="7" selection-start-line="46" selection-start-column="7" selection-end-line="46" selection-end-column="7" />
                   <folding />
                 </state>
               </provider>
@@ -177,18 +152,8 @@
           <file leaf-file-name="tests.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/source/tests/tests.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="13" column="49" selection-start-line="13" selection-start-column="49" selection-end-line="13" selection-end-column="49" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="sciah.svg" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/sciah.svg">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.6200318">
-                  <caret line="26" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+                <state vertical-scroll-proportion="-0.5555556">
+                  <caret line="1" column="33" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
                   <folding />
                 </state>
               </provider>
@@ -214,6 +179,11 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="remote-data" />
+      </map>
+    </option>
   </component>
   <component name="GitLogSettings">
     <option name="myDateState">
@@ -226,13 +196,12 @@
         <option value="$PROJECT_DIR$/chrome/canvas.html" />
         <option value="$PROJECT_DIR$/canvas.html" />
         <option value="$PROJECT_DIR$/gfx/sciah.svg" />
-        <option value="$USER_HOME$/Projects/flag.html" />
+        <option value="$PROJECT_DIR$/../flag.html" />
         <option value="$PROJECT_DIR$/chrome/web_accessible_resources/sciahSphere.svg" />
         <option value="$PROJECT_DIR$/gradient.svg" />
         <option value="$PROJECT_DIR$/chrome/sciah.js" />
         <option value="$PROJECT_DIR$/chrome/options.html" />
         <option value="$PROJECT_DIR$/chrome/options.js" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/chrome/options/balalaika.js" />
         <option value="$PROJECT_DIR$/chrome/options/pattern.svg" />
         <option value="$PROJECT_DIR$/chrome/options/icons.css" />
@@ -247,6 +216,23 @@
         <option value="$PROJECT_DIR$/chrome/options/options.js" />
         <option value="$PROJECT_DIR$/chrome/options/options.html" />
         <option value="$PROJECT_DIR$/chrome/options/options.less" />
+        <option value="$PROJECT_DIR$/source/background.js" />
+        <option value="$PROJECT_DIR$/background-init.js" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/build/codez/tests/testlinks.htm" />
+        <option value="$PROJECT_DIR$/build/codez/manifest.json" />
+        <option value="$PROJECT_DIR$/source/manifest.json" />
+        <option value="$PROJECT_DIR$/source/sciahData.json.js" />
+        <option value="$PROJECT_DIR$/gulpfile.js" />
+        <option value="$PROJECT_DIR$/source/background-init.js" />
+        <option value="$PROJECT_DIR$/source/tests/testlinks.htm" />
+        <option value="$PROJECT_DIR$/source/sciahData.json" />
+        <option value="$PROJECT_DIR$/source/options/options.less" />
+        <option value="$PROJECT_DIR$/source/tests/tests.js" />
+        <option value="$PROJECT_DIR$/source/options/options.html" />
+        <option value="$PROJECT_DIR$/source/options/options.js" />
+        <option value="$PROJECT_DIR$/source/Sciah.js" />
+        <option value="$PROJECT_DIR$/source/content.js" />
       </list>
     </option>
   </component>
@@ -331,6 +317,42 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sciah.extension" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sciah.extension" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="source" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sciah.extension" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sciah.extension" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="source" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="options" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Favorites" />
@@ -340,7 +362,7 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="options.lastSelected" value="configurable.group.language" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/sfdc-custom-settings" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
@@ -349,19 +371,22 @@
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="SearchEverywhereHistoryKey" value="ma&#9;FILE&#9;file:///Users/spshut/Projects/sciah.extension/source/manifest.json&#10;gu&#9;FILE&#9;file:///Users/spshut/Projects/sciah.extension/gulpfile.js" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/extras" />
+      <recent name="$PROJECT_DIR$/source" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/chrome/tests" />
+      <recent name="$PROJECT_DIR$/chrome" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/source" />
       <recent name="$PROJECT_DIR$/chrome/options" />
       <recent name="$PROJECT_DIR$/chrome/res" />
       <recent name="$PROJECT_DIR$/chrome/web_accessible_resources" />
       <recent name="D:\Dropbox\sciah.extension\includes" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/chrome/tests" />
-      <recent name="$PROJECT_DIR$/chrome" />
-      <recent name="$PROJECT_DIR$/chrome/options" />
     </key>
   </component>
   <component name="RunManager">
@@ -425,180 +450,6 @@
       <created>1310063001921</created>
       <option name="number" value="Default" />
       <updated>1310063001921</updated>
-    </task>
-    <task id="LOCAL-00011" summary="move encoded images to image files">
-      <created>1451257451851</created>
-      <option name="number" value="00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1451257451851</updated>
-    </task>
-    <task id="LOCAL-00012" summary="remove .idea from repo">
-      <created>1451257573963</created>
-      <option name="number" value="00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1451257573963</updated>
-    </task>
-    <task id="LOCAL-00013" summary="remove .idea from repo">
-      <created>1451257627307</created>
-      <option name="number" value="00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1451257627307</updated>
-    </task>
-    <task id="LOCAL-00014" summary="remove .idea from repo">
-      <created>1451257690332</created>
-      <option name="number" value="00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1451257690332</updated>
-    </task>
-    <task id="LOCAL-00015" summary="remove stray files">
-      <created>1451257924959</created>
-      <option name="number" value="00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1451257924959</updated>
-    </task>
-    <task id="LOCAL-00016" summary="fix loading images from res/ folder. &#10;complete rutracker styling">
-      <created>1451274670681</created>
-      <option name="number" value="00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1451274670681</updated>
-    </task>
-    <task id="LOCAL-00017" summary="remove secret.ly">
-      <created>1451275017992</created>
-      <option name="number" value="00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1451275017992</updated>
-    </task>
-    <task id="LOCAL-00018" summary="remove iihfworlds2014.com">
-      <created>1451275063763</created>
-      <option name="number" value="00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1451275063763</updated>
-    </task>
-    <task id="LOCAL-00019" summary="cleanup css">
-      <created>1451308956221</created>
-      <option name="number" value="00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1451308956221</updated>
-    </task>
-    <task id="LOCAL-00020" summary="update adobe and paypal. add flagBGI function">
-      <created>1451675434777</created>
-      <option name="number" value="00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1451675434777</updated>
-    </task>
-    <task id="LOCAL-00021" summary="group sites">
-      <created>1451682304068</created>
-      <option name="number" value="00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1451682304068</updated>
-    </task>
-    <task id="LOCAL-00022" summary="remove vk.com">
-      <created>1451683780193</created>
-      <option name="number" value="00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1451683780193</updated>
-    </task>
-    <task id="LOCAL-00023" summary="update styles for yandex.&#10;replace css gradient with SVG">
-      <created>1451693512734</created>
-      <option name="number" value="00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1451693512735</updated>
-    </task>
-    <task id="LOCAL-00024" summary="fis skyscanner">
-      <created>1451694695771</created>
-      <option name="number" value="00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1451694695771</updated>
-    </task>
-    <task id="LOCAL-00025" summary="add aliexpress">
-      <created>1451859378152</created>
-      <option name="number" value="00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1451859378152</updated>
-    </task>
-    <task id="LOCAL-00026" summary="fix kinopoisk.ru">
-      <created>1451861627554</created>
-      <option name="number" value="00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1451861627554</updated>
-    </task>
-    <task id="LOCAL-00027" summary="remove telegraf.by">
-      <created>1451861940867</created>
-      <option name="number" value="00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1451861940867</updated>
-    </task>
-    <task id="LOCAL-00028" summary="fix belpost.by">
-      <created>1451862367009</created>
-      <option name="number" value="00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1451862367009</updated>
-    </task>
-    <task id="LOCAL-00029" summary="remove localhost from dzieShto">
-      <created>1451862734471</created>
-      <option name="number" value="00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1451862734471</updated>
-    </task>
-    <task id="LOCAL-00030" summary="add extra flag for aliexpress">
-      <created>1451863997741</created>
-      <option name="number" value="00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1451863997741</updated>
-    </task>
-    <task id="LOCAL-00031" summary="add vandrouki.*&#10;fix google signup">
-      <created>1451865747007</created>
-      <option name="number" value="00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1451865747007</updated>
-    </task>
-    <task id="LOCAL-00032" summary="remove mail.ru, add pressball.by, pefl.ru, sports.ru.&#10;add ability to offset flag on canvas">
-      <created>1452361766714</created>
-      <option name="number" value="00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1452361766714</updated>
-    </task>
-    <task id="LOCAL-00033" summary="add gismeteo.*">
-      <created>1452362707823</created>
-      <option name="number" value="00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1452362707823</updated>
-    </task>
-    <task id="LOCAL-00034" summary="remove slando.by">
-      <created>1452362788481</created>
-      <option name="number" value="00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1452362788481</updated>
-    </task>
-    <task id="LOCAL-00035" summary="add sportpanorama.by">
-      <created>1452363193486</created>
-      <option name="number" value="00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1452363193486</updated>
-    </task>
-    <task id="LOCAL-00036" summary="add myscore.ru, championat.com">
-      <created>1452364746701</created>
-      <option name="number" value="00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1452364746701</updated>
-    </task>
-    <task id="LOCAL-00037" summary="add ticketpro.by, pbliga.com, dinamo-minsk.by. change gradient to radial">
-      <created>1452377227415</created>
-      <option name="number" value="00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1452377227415</updated>
-    </task>
-    <task id="LOCAL-00038" summary="add football.by&#10;add ability to change favicons">
-      <created>1452380509928</created>
-      <option name="number" value="00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1452380509928</updated>
-    </task>
-    <task id="LOCAL-00039" summary="add soccerstand.com, sportbox.ru, soccer.ru, transfermarkt.de">
-      <created>1452431624010</created>
-      <option name="number" value="00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1452431624010</updated>
     </task>
     <task id="LOCAL-00040" summary="add livescore.in, allsport-live.ru, livetv.sx">
       <created>1452456309849</created>
@@ -720,7 +571,181 @@
       <option name="project" value="LOCAL" />
       <updated>1453312963677</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="rename /chrome to /source">
+      <created>1453313039962</created>
+      <option name="number" value="00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1453313039962</updated>
+    </task>
+    <task id="LOCAL-00061" summary="rename sciah.js content,js">
+      <created>1453466908590</created>
+      <option name="number" value="00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1453466908597</updated>
+    </task>
+    <task id="LOCAL-00062" summary="add gulpfile &amp; package.json">
+      <created>1453467194038</created>
+      <option name="number" value="00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1453467194038</updated>
+    </task>
+    <task id="LOCAL-00063" summary="make testlinks.html work without extension">
+      <created>1453467232865</created>
+      <option name="number" value="00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1453467232865</updated>
+    </task>
+    <task id="LOCAL-00064" summary="move bg init  to a separate file&#10;add support for wavy gradient on flags&#10;">
+      <created>1453469368319</created>
+      <option name="number" value="00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1453469368320</updated>
+    </task>
+    <task id="LOCAL-00065" summary="update gitignore">
+      <created>1453469395840</created>
+      <option name="number" value="00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1453469395840</updated>
+    </task>
+    <task id="LOCAL-00066" summary="remove Sciah.js">
+      <created>1453469834104</created>
+      <option name="number" value="00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1453469834104</updated>
+    </task>
+    <task id="LOCAL-00067" summary="rename bachground.js to Sciah.js">
+      <created>1453472733019</created>
+      <option name="number" value="00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1453472733019</updated>
+    </task>
+    <task id="LOCAL-00068" summary="add weather-forecast.com, goethe.de, lichess.org, daroo.by/ru/ua, laststicker.ru, gpsies.comstarladder.tv">
+      <created>1453668127389</created>
+      <option name="number" value="00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1453668127390</updated>
+    </task>
+    <task id="LOCAL-00069" summary="replace title attr with data-title to make styles work on starladder.tv">
+      <created>1453668178800</created>
+      <option name="number" value="00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1453668178800</updated>
+    </task>
+    <task id="LOCAL-00070" summary="add *.DS_Store to gitignore">
+      <created>1453668203088</created>
+      <option name="number" value="00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1453668203088</updated>
+    </task>
+    <task id="LOCAL-00071" summary="check all sites once again">
+      <created>1453729596046</created>
+      <option name="number" value="00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1453729596046</updated>
+    </task>
+    <task id="LOCAL-00072" summary="make test page look nicer">
+      <created>1453729620415</created>
+      <option name="number" value="00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1453729620415</updated>
+    </task>
+    <task id="LOCAL-00073" summary="only hover links with href in tests tage">
+      <created>1453730253996</created>
+      <option name="number" value="00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1453730253996</updated>
+    </task>
+    <task id="LOCAL-00074" summary="add list of affected sites in testlinks.htm">
+      <created>1453747223845</created>
+      <option name="number" value="00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1453747223845</updated>
+    </task>
+    <task id="LOCAL-00075" summary="comment out console.log">
+      <created>1453747237742</created>
+      <option name="number" value="00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1453747237742</updated>
+    </task>
+    <task id="LOCAL-00076" summary="update manifest">
+      <created>1453811583284</created>
+      <option name="number" value="00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1453811583284</updated>
+    </task>
+    <task id="LOCAL-00077" summary="update options page">
+      <created>1453811624986</created>
+      <option name="number" value="00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1453811624986</updated>
+    </task>
+    <task id="LOCAL-00078" summary="change wording in options page">
+      <created>1453812894996</created>
+      <option name="number" value="00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1453812894996</updated>
+    </task>
+    <task id="LOCAL-00079" summary="add icons">
+      <created>1453889693429</created>
+      <option name="number" value="00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1453889693429</updated>
+    </task>
+    <task id="LOCAL-00080" summary="edit gulpfile">
+      <created>1453889717747</created>
+      <option name="number" value="00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1453889717747</updated>
+    </task>
+    <task id="LOCAL-00081" summary="add censor.net.ua">
+      <created>1453890326880</created>
+      <option name="number" value="00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1453890326880</updated>
+    </task>
+    <task id="LOCAL-00082" summary="add sciahData.json">
+      <created>1454073962244</created>
+      <option name="number" value="00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1454073962245</updated>
+    </task>
+    <task id="LOCAL-00083" summary="json formatting">
+      <created>1454074201106</created>
+      <option name="number" value="00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1454074201107</updated>
+    </task>
+    <task id="LOCAL-00084" summary="implement preparation of json site data">
+      <created>1454154877269</created>
+      <option name="number" value="00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1454154877270</updated>
+    </task>
+    <task id="LOCAL-00085" summary="prepare json to be used in addon">
+      <created>1454447805739</created>
+      <option name="number" value="00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1454447805739</updated>
+    </task>
+    <task id="LOCAL-00086" summary="recheck test suite">
+      <created>1454447837925</created>
+      <option name="number" value="00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1454447837926</updated>
+    </task>
+    <task id="LOCAL-00087" summary="change remote data url to master branch">
+      <created>1454448071884</created>
+      <option name="number" value="00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1454448071884</updated>
+    </task>
+    <task id="LOCAL-00088" summary="change style dataTitle to classname">
+      <created>1454685475422</created>
+      <option name="number" value="00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1454685475432</updated>
+    </task>
+    <option name="localTasksCounter" value="89" />
     <servers />
   </component>
   <component name="TodoView">
@@ -734,17 +759,17 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="773" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890856" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="SvgViewer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40117994" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
-      <window_info id="Regex Tester" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890856" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32743362" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6120944" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Regex Tester" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890856" sideWeight="0.5751766" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7359882" sideWeight="0.5035318" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6106195" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890856" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22123894" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27059773" sideWeight="0.6208226" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26843658" sideWeight="0.49646822" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17770597" sideWeight="0.6208226" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35250738" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21959943" sideWeight="0.3791774" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -779,32 +804,33 @@
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="false" />
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="add sportpanorama.by" />
-    <MESSAGE value="add myscore.ru, championat.com" />
-    <MESSAGE value="add ticketpro.by, pbliga.com, dinamo-minsk.by. change gradient to radial" />
-    <MESSAGE value="add football.by&#10;add ability to change favicons" />
-    <MESSAGE value="add soccerstand.com, sportbox.ru, soccer.ru, transfermarkt.de" />
-    <MESSAGE value="add livescore.in, allsport-live.ru, livetv.sx" />
-    <MESSAGE value="remove premierleague.com, remove goals.by, add tribuna.com" />
-    <MESSAGE value="add timeanddate.com" />
-    <MESSAGE value="add timeanddate.com, erepublik.com" />
-    <MESSAGE value="tweak postcrossing.com" />
-    <MESSAGE value="add wikipedia.org, codeforces.com, budist.ru, greyorder.su, tamby.info, battlefield.com,joma.by, freeads.by&#10;remove myjob.by, ibbhotel.by, ibb.by, exist.by, busuu.com, samsungapps.com, opera.com, tb.by&#10;fix gradient on flags" />
-    <MESSAGE value="add internetworldststs.com, flagcounter.com, active.by/activecloud.ru,1c-bitrix.ru&#10;remove go.hrw.com" />
-    <MESSAGE value="add rfe.by, ranking.by,&#10;remove sovrep.gov.by, un.org, godaddy.com, eventot.com, ecolines.by,  cybergames.by, audience.by&#10;fix flag size with canvas size params" />
-    <MESSAGE value="add paei.by, barsy.by&#10;remove advocates.by, prazdnik.by" />
-    <MESSAGE value="add yandex metrika, and lots of stuff )&#10;remame contour to outline, move pahonia url to a var" />
-    <MESSAGE value="remove .idea from git" />
-    <MESSAGE value="add vk.com, wildstat.ru, equatorial.by, rp5.by" />
-    <MESSAGE value="update icons" />
-    <MESSAGE value="remove safari dir" />
-    <MESSAGE value="polish options page" />
-    <MESSAGE value="change versioning" />
-    <MESSAGE value="remove unnecessary files" />
-    <MESSAGE value="update README" />
-    <MESSAGE value="update options" />
-    <MESSAGE value="add tests page" />
-    <option name="LAST_COMMIT_MESSAGE" value="add tests page" />
+    <confirmMoveToFailedCommit value="1" />
+    <MESSAGE value="move bg init  to a separate file&#10;add support for wavy gradient on flags&#10;" />
+    <MESSAGE value="update gitignore" />
+    <MESSAGE value="remove Sciah.js" />
+    <MESSAGE value="rename bachground.js to Sciah.js" />
+    <MESSAGE value="add weather-forecast.com, goethe.de, lichess.org, daroo.by/ru/ua, laststicker.ru, gpsies.comstarladder.tv" />
+    <MESSAGE value="replace title attr with data-title to make styles work on starladder.tv" />
+    <MESSAGE value="add *.DS_Store to gitignore" />
+    <MESSAGE value="check all sites once again" />
+    <MESSAGE value="make test page look nicer" />
+    <MESSAGE value="only hover links with href in tests tage" />
+    <MESSAGE value="add list of affected sites in testlinks.htm" />
+    <MESSAGE value="comment out console.log" />
+    <MESSAGE value="update manifest" />
+    <MESSAGE value="update options page" />
+    <MESSAGE value="change wording in options page" />
+    <MESSAGE value="add icons" />
+    <MESSAGE value="edit gulpfile" />
+    <MESSAGE value="add censor.net.ua" />
+    <MESSAGE value="add sciahData.json" />
+    <MESSAGE value="json formatting" />
+    <MESSAGE value="implement preparation of json site data" />
+    <MESSAGE value="prepare json to be used in addon" />
+    <MESSAGE value="recheck test suite" />
+    <MESSAGE value="change remote data url to master branch" />
+    <MESSAGE value="change style dataTitle to classname" />
+    <option name="LAST_COMMIT_MESSAGE" value="change style dataTitle to classname" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -814,53 +840,31 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/source/options/options.less">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="5" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/tests/testlinks.htm">
+    <entry file="file://$PROJECT_DIR$/source/options/options.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/sciah.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="172" column="177" selection-start-line="172" selection-start-column="177" selection-end-line="172" selection-end-column="177" />
+          <caret line="34" column="17" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/manifest.json">
+    <entry file="file://$PROJECT_DIR$/source/tests/tests.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+          <caret line="40" column="24" selection-start-line="40" selection-start-column="24" selection-end-line="40" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="5" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/tests/testlinks.htm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/sciah.js">
+    <entry file="file://$PROJECT_DIR$/source/content.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="169" column="120" selection-start-line="169" selection-start-column="120" selection-end-line="169" selection-end-column="120" />
@@ -891,7 +895,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/sciah.js">
+    <entry file="file://$PROJECT_DIR$/source/content.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="372" column="34" selection-start-line="372" selection-start-column="34" selection-end-line="372" selection-end-column="34" />
@@ -922,7 +926,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/sciah.js">
+    <entry file="file://$PROJECT_DIR$/source/content.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="308" column="30" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -981,7 +985,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Projects/flag.html">
+    <entry file="file://$PROJECT_DIR$/../flag.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
@@ -998,24 +1002,10 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/res/erepublik-XL-Belarus.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/source/res/sciahSphere.svg">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-30.0">
           <caret line="48" column="6" selection-start-line="48" selection-start-column="6" selection-end-line="48" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1023,13 +1013,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="66" selection-start-line="0" selection-start-column="66" selection-end-line="0" selection-end-column="66" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/source/options/fontello/css/icons-embedded.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-20.25">
+        <state vertical-scroll-proportion="0.0">
           <caret line="56" column="47" selection-start-line="56" selection-start-column="47" selection-end-line="56" selection-end-column="47" />
           <folding />
         </state>
@@ -1039,7 +1028,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.64228934">
           <caret line="199" column="1" selection-start-line="199" selection-start-column="1" selection-end-line="199" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1047,102 +1035,193 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="39" selection-start-line="0" selection-start-column="39" selection-end-line="0" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/sciah.js">
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="29" selection-end-column="5" />
-          <folding />
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/tests/testlinks.htm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.1764706">
-          <caret line="4" column="43" selection-start-line="4" selection-start-column="43" selection-end-line="4" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/tests/tests.js">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="49" selection-start-line="13" selection-start-column="49" selection-end-line="13" selection-end-column="49" />
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Шчыра дзякую за вашы ахвяраванні!.txt">
+    <entry file="file://$PROJECT_DIR$/source/res/erepublik-XL-Belarus.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/res/erepublik-M-Belarus.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extras/promo-cover.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extras/promo-cover.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extras/promo-cover.svg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extras/gradient.svg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.125">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extras/Шчыра дзякую за вашы ахвяраванні!.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="33" selection-start-line="0" selection-start-column="33" selection-end-line="0" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/background.js">
+    <entry file="file://$PROJECT_DIR$/extras/sciah.svg">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-24.555555">
-          <caret line="927" column="0" selection-start-line="927" selection-start-column="0" selection-end-line="927" selection-end-column="0" />
-          <folding>
-            <element signature="e#35268#35446#0" expanded="false" />
-            <element signature="e#35636#35896#0" expanded="false" />
-            <element signature="e#36105#36548#0" expanded="false" />
-            <element signature="e#45577#45771#0" expanded="false" />
-            <marker date="1453312718000" expanded="true" signature="37283:37848" placeholder="..." />
-            <marker date="1453312718000" expanded="true" signature="37283:39395" placeholder="..." />
-            <marker date="1453312718000" expanded="true" signature="37313:37427" placeholder="..." />
-            <marker date="1453312718000" expanded="true" signature="37527:37838" placeholder="..." />
-            <marker date="1453312718000" expanded="true" signature="37562:37592" placeholder="..." />
-            <marker date="1453312718000" expanded="true" signature="37633:37663" placeholder="..." />
-            <marker date="1453312718000" expanded="true" signature="37704:37737" placeholder="..." />
-            <marker date="1453312718000" expanded="true" signature="37776:37809" placeholder="..." />
-            <marker date="1453312718000" expanded="true" signature="37964:38607" placeholder="..." />
-            <marker date="1453312718000" expanded="true" signature="38706:39381" placeholder="..." />
-            <marker date="1453312718000" expanded="true" signature="38758:39367" placeholder="..." />
-          </folding>
+        <state vertical-scroll-proportion="-2.5">
+          <caret line="4" column="29" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extras/icon-chrome-store-128.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extras/icon-512.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extras/icon-64.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/source/manifest.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.875">
-          <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/options/options.js">
+    <entry file="file://$PROJECT_DIR$/gulpfile.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="36" column="54" selection-start-line="36" selection-start-column="54" selection-end-line="36" selection-end-column="54" />
+          <caret line="17" column="15" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/background-init.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/source/options/options.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-21.875">
-          <caret line="80" column="18" selection-start-line="80" selection-start-column="18" selection-end-line="80" selection-end-column="18" />
+        <state vertical-scroll-proportion="-18.708334">
+          <caret line="89" column="1" selection-start-line="89" selection-start-column="1" selection-end-line="89" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sciah.svg">
+    <entry file="file://$PROJECT_DIR$/source/tests/tests.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6200318">
-          <caret line="26" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+        <state vertical-scroll-proportion="-0.5555556">
+          <caret line="1" column="33" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/tests/testlinks.htm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4021739">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/sciahData.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="11.823529">
+          <caret line="113" column="19" selection-start-line="113" selection-start-column="13" selection-end-line="113" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/source/options/options.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49914238">
-          <caret line="90" column="12" selection-start-line="90" selection-start-column="12" selection-end-line="90" selection-end-column="12" />
+        <state vertical-scroll-proportion="-20.25">
+          <caret line="108" column="21" selection-start-line="108" selection-start-column="21" selection-end-line="108" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/options/options.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6431853">
+          <caret line="46" column="7" selection-start-line="46" selection-start-column="7" selection-end-line="46" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/Sciah.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-59.555557">
+          <caret line="371" column="26" selection-start-line="371" selection-start-column="26" selection-end-line="371" selection-end-column="26" />
+          <folding>
+            <element signature="n#!!block;n#getSVGFlagURL#0;n#!!block;n#Sciah#0;n#Sciah#0;n#!!top" expanded="false" />
+            <element signature="n#!!block;n#urlToRegex#0;n#!!block;n#Sciah#0;n#Sciah#0;n#!!top" expanded="false" />
+            <element signature="e#11566#11844#0" expanded="false" />
+            <element signature="e#12762#14943#0" expanded="false" />
+            <marker date="1454684273000" expanded="true" signature="2857:4874" placeholder="..." />
+            <marker date="1454684273000" expanded="true" signature="2887:3001" placeholder="..." />
+            <marker date="1454684273000" expanded="true" signature="3108:3429" placeholder="..." />
+            <marker date="1454684273000" expanded="true" signature="3145:3177" placeholder="..." />
+            <marker date="1454684273000" expanded="true" signature="3218:3250" placeholder="..." />
+            <marker date="1454684273000" expanded="true" signature="3291:3326" placeholder="..." />
+            <marker date="1454684273000" expanded="true" signature="3365:3400" placeholder="..." />
+            <marker date="1454684273000" expanded="true" signature="3529:4086" placeholder="..." />
+            <marker date="1454684273000" expanded="true" signature="3569:3604" placeholder="..." />
+            <marker date="1454684273000" expanded="true" signature="3646:3678" placeholder="..." />
+            <marker date="1454684273000" expanded="true" signature="3720:3752" placeholder="..." />
+            <marker date="1454684273000" expanded="true" signature="3794:3829" placeholder="..." />
+            <marker date="1454684273000" expanded="true" signature="3871:3903" placeholder="..." />
+            <marker date="1454684273000" expanded="true" signature="3945:3977" placeholder="..." />
+            <marker date="1454684273000" expanded="true" signature="4022:4057" placeholder="..." />
+            <marker date="1454684273000" expanded="true" signature="4185:4860" placeholder="..." />
+            <marker date="1454684273000" expanded="true" signature="4237:4846" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/content.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.19900498">
+          <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
           <folding />
         </state>
       </provider>
