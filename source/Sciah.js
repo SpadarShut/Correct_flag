@@ -360,8 +360,8 @@ var Sciah = function() {
   };
 
   var getDataSource = function () {
-    var data = 'https://raw.githubusercontent.com/SpadarShut/Correct_flag/master/source/sciahData.json';
-    //var data = 'sciahData.json';
+    var data = 'https://raw.githubusercontent.com/SpadarShut/Correct_flag/master/source/sciah-data.json';
+    //var data = 'sciah-data.json';
     return data;
   };
 
@@ -372,21 +372,23 @@ var Sciah = function() {
         if (response.ok) {
           return response.json().then(function (data) {
             // remember last data
-            localStorage.setItem('sciahData', JSON.stringify(data));
+            localStorage.setItem('sciah-data', JSON.stringify(data));
             return data;
           });
         }
+        else {
+          throw new Error(response.statusText);
+        }
       })
       .catch(function (err) {
-        data = localStorage.getItem('sciahData');
+        data = localStorage.getItem('sciah-data');
         if (data) {
           return JSON.parse(data);
         }
         else {
-          return fetch('sciahData.json')
-              .then(function (response) {
-                return response.json();
-              });
+          return fetch('sciah-data.json').then(function (response) {
+              return response.json();
+            });
         }
       });
   };
@@ -409,7 +411,6 @@ var Sciah = function() {
       }
       return out;
     }
-
     var out = data.map(function (site) {
 
       // Join CSS array into a string
@@ -463,16 +464,14 @@ var Sciah = function() {
 
       return site;
     });
-//    console.log(out);
     return out;
   };
 
   listenUpdateRequest = function () {
 
     chrome.runtime.onMessage.addListener(
-      function(message, sender, cb) {
+      function(message) {
         if (message === 'go-reload-yourself') {
-
           // reloading extension to reset old image request filters and
           // replace them with new ones
           chrome.runtime.reload();
@@ -484,7 +483,6 @@ var Sciah = function() {
   this.init = function () {
     self.getSiteData().then(function (data) {
         self.dzieShto = self.prepareDzieShto(data);
-        //setupFilters(data);
         setupFilters(data);
         serveFixes(data);
         listenUpdateRequest();
