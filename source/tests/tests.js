@@ -1,5 +1,5 @@
 
-(new Sciah()).getSiteData(function (data) {
+(new Sciah()).getSiteData().then(function (data) {
 
   var list = document.querySelector('#list');
   var listContents = '';

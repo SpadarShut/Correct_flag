@@ -79,6 +79,9 @@ ul li {
   margin: 0;
   color: #8d8d8d;
 }
+#update-status {
+  font-weight: bold;
+}
 #share-text {
   width: 100%;
   border: 1px solid #c3cad8;

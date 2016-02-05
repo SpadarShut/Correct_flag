@@ -31,9 +31,27 @@ function setRootClass() {
   }
   document.documentElement.classList.add(rootClass);
 }
+function checkForUpdates() {
+
+  var $info = $('#update-status');
+  $info.innerHTML = 'Праверка абнаўлення базы сцягоў...';
+
+  (new Sciah()).getSiteData()
+      .then(function (data) {
+        $info.innerHTML = 'У вас апошняя версія базы сцягоў';
+      })
+      .catch(function () {
+        $info.innerHTML = 'Не ўдалося праверыць абнаўленні';
+      });
+
+  // Make extension reload itself and load new data
+  window.addEventListener('beforeunload', function () {
+    chrome.runtime.sendMessage('go-reload-yourself');
+  })
+}
 
 function init (){
-  $('#ext-version').innerHTML = 'v. ' + manifest.version;
+  $('#ext-version').innerHTML = 'v. ' + manifest.version + '. ';
   $('#ext-meta-footer').innerHTML = manifest.name + ' v. ' + manifest.version;
   $('#ext-author').innerHTML = manifest.developer.name;
   $('#curr-year').innerHTML = (new Date()).getFullYear();
@@ -52,6 +70,11 @@ function init (){
   $('#share-text').addEventListener('input', function(e){
     updateLinks(e.target.value);
   });
+
+  setTimeout(function () {
+    checkForUpdates()
+  }, 700);
+
 }
 
 init();
