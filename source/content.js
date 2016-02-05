@@ -3,10 +3,10 @@
   function addCSS(CSS) {
     var styleEl = window.document.createElement('style');
     var styles  = window.document.createTextNode(CSS);
-    styleEl.dataset.title = 'Correct Flag';
+    styleEl.className = 'Correct Flag';
     styleEl.appendChild(styles);
     window.document.head && window.document.head.appendChild(styleEl);
-  };
+  }
 
   function setFavicon(icon) {
     var faviconEl = document.querySelector('link[rel=icon]');
@@ -24,7 +24,6 @@
       window.addEventListener('DOMContentLoaded', function() {
         fixes.css && addCSS(fixes.css);
         fixes.favicon && setFavicon(fixes.favicon);
-
       })
     }
   });
