@@ -113,8 +113,8 @@
   },
   { "addr": "kvitki.by",
     "images": [
-      { "i": "lang_by.gif", "w": 16, "h": 12 },
-      { "i": "lang_by_ov.gif", "w": 16, "h": 12, "red": "#888" }
+      { "i": "lang_by.gif", "w": 16, "h": 12, "gradient": true },
+      { "i": "lang_by_ov.gif", "w": 16, "h": 12, "red": "#888", "gradient": true }
     ],
     "sample": [{ "url": "http://www.kvitki.by/", "notes": "In header icon + hover"}]
   },
@@ -194,8 +194,18 @@
   },
   {
     "addr": "pefl.ru",
-    "images": [{"i": "/flags/18.gif", "w": 115, "h": 77, "outline": 0}],
-    "sample": [{"url": "http://pefl.ru/index.php", "notes": "Go to Турниры link in sidebar and see Belarus (links are signed)"}]
+    "images": [
+      {"i": "/flags/18.gif", "w": 115, "h": 77, "outline": 0},
+      {"i": "system/img/flags/full18.gif", "w": 115, "h": 77, "outline": 0},
+      {"i": "system/img/flags/mod/18.gif", "w": 30, "h": 20, "outline": 0},
+      {"i": "system/img/flags/f-by.gif", "w": 18, "h": 12, "outline": 1, "gradient": "wave", "red": "#FB0000"}
+    ],
+    "sample": [
+      {"url": "http://pefl.ru/index.php", "notes": "Go to Турниры link in sidebar and see Belarus (links are signed)"},
+      {"url": "http://pefl.ru/plug.php?p=refl&t=k&j=969&z=445eb7d1d6559cd2dad20366b57e8403"},
+      {"url": "http://pefl.ru/forums.php?m=posts&q=242324&arch=&from=0"},
+      {"url": "http://pefl.ru/plug.php?p=nation&t=k&n=i&j=18&z=19691d2e70c254df1ce6efdb5025995e"}
+    ]
   },
   {
     "addr": "sports\\.ru|tribuna\\.com",
@@ -416,6 +426,38 @@
     "sample": [{ "url": "http://wildstat.ru/p/28", "notes": "Sidebar + page content"}]
   },
 
+  { "addr": "uefa.com",
+    "images": [
+      { "i": "*://*.uefa.com/imgml/flags/50x50/BLR.png", "replacer": {"f": "res", "arg": "sciahSphere.svg"}},
+      { "i": "*://*.uefa.com/imgml/flags/18x18/BLR.png", "replacer": {"f": "res", "arg": "sciahSphere.svg"}},
+      { "i": "*://*.uefa.com/imgml/flags/18x18/blr.png", "replacer": {"f": "res", "arg": "sciahSphere.svg"}},
+      { "i": "*://*.uefa.com/imgml/flags/36x36/BLR.png", "replacer": {"f": "res", "arg": "sciahSphere.svg"}}
+    ],
+    "sample": [
+      { "url": "http://www.uefa.com/uefaeuro/season=2016/teams/index.html", "notes": ""},
+      { "url": "http://www.uefa.com/uefaeuro/season=2016/teams/team=57155/index.html", "notes": ""},
+      { "url": "http://www.uefa.com/uefaeuro/season=2016/teams/player=250011531/index.html", "notes": ""}
+    ]
+  },
+
+  { "addr": "iihf.com",
+    "images": [{ "i": "typo3temp/pics/b02f918562.jpg", "w": 44, "h": 27, "outline": 0.1, "emboss": 0 }],
+    "sample": [{ "url": "http://www.iihf.com/iihf-home/countries/belarus/"}]
+  },
+
+  { "addr": "iihfworlds2016\\.com|worldjunior2016\\.com",
+    "images": [
+      { "i": "*://*/*images/umbraco/by.png", "w": 16, "h": 11, "gradient": true },
+      { "i": "*://*/*182946/belarus.png", "w": 30, "h": 22, "gradient": true, "outline": 0.02 },
+      { "i": "*://stats.iihf.com/Hydra/flags/16x11/BLR.png", "w": 15, "h": 11, "gradient": true },
+      { "i": "*://statspdf.iihf.com/Hydra/flags/30x22/BLR.png", "w": 30, "h": 22, "gradient": true, "outline": 0, "emboss": 0 }
+    ],
+    "sample": [
+      { "url": "http://www.iihfworlds2016.com/en/games/", "notes": ""},
+      { "url": "http://www.iihfworlds2016.com/en/teams/belarus/#list", "notes": ""}
+    ]
+  },
+
 
 
   {"//": "International popular sites"},
@@ -545,7 +587,6 @@
 
   {
     "addr": "theprintful.com",
-
     "css": [ ".flag.by { %1% }"],
     "cssReplace": [{"%1%": {"f": "flagBGI", "arg": [null, true] }}],
     "sample": [{"url": "https://www.theprintful.com/", "notes": "From Belarusian IP" }]
@@ -570,10 +611,12 @@
     "addr": "tamby.info",
     "images": [
       {"i": "images/flag/belarus_small_flag.gif", "w": 200, "h": 100, "outline": 0 },
+      {"i": "images/belarus.gif", "w": 19, "h": 12, "outline": 0.2 },
       {"i": "images/strany/belarus.png", "replacer": {"f": "res", "arg": "erepublik-XL-Belarus.png"} }
     ],
     "sample": [
-      {"url": "http://www.tamby.info/tv-online/tv-belarusi.htm", "notes": "In sidebar, in heading"}
+      {"url": "http://www.tamby.info/tv-online/tv-belarusi.htm", "notes": "In sidebar, in heading"},
+      {"url": "http://www.tamby.info/sport/hokkey_chempionat-mira_2016.htm"}
     ]
   },
   {
@@ -642,9 +685,7 @@
   },
   {
     "addr": "rfe.by",
-    "images": [
-      { "i": "templates/_ares/images/lang_by.gif", "w": 16, "h": 11, "gradient": "wave" }
-    ],
+    "images": [{ "i": "templates/_ares/images/lang_by.gif", "w": 16, "h": 11, "gradient": "wave" }],
     "sample": [{ "url": "http://www.rfe.by/", "notes": "In menu"}]
   },
   { "addr": "ranking.by",
@@ -675,15 +716,11 @@
     "sample": [{ "url": "http://www.techlabs.ua/", "notes": "Side menu"}]
   },
   { "addr": "parta.by",
-    "images": [
-      { "i": "resources/icons/flag_by.gif", "w": 18, "h": 12, "red": "#C62643", "white": "#F9F9F9", "gradient": "wave", "outline": 0 }
-    ],
+    "images": [{ "i": "resources/icons/flag_by.gif", "w": 18, "h": 12, "red": "#C62643", "white": "#F9F9F9", "gradient": "wave", "outline": 0 }],
     "sample": [{ "url": "http://www.parta.by/"}]
   },
   { "addr": "(portal-)?fotoclub.(ru|org\\.ua|kz)",
-    "images": [
-      { "i": "*://*/*-images/icons/flag-by.png", "w": 40, "h": 25, "outline": 0.05, "emboss": 0 }
-    ],
+    "images": [{ "i": "*://*/*-images/icons/flag-by.png", "w": 40, "h": 25, "outline": 0.05, "emboss": 0 }],
     "sample": [
       { "url": "http://fotoclub.by/"},
       { "url": "http://www.portal-fotoclub.ru/"},
@@ -707,9 +744,7 @@
     ]
   },
   { "addr": "autoline(-?(eu|ba|nl|bg|arabic|tm|market))?(\\.(com|co))?.*",
-    "images": [
-      { "i": "*://*/*flags/ids-png/by.png", "w": 16, "h": 11, "gradient": true }
-    ],
+    "images": [{ "i": "*://*/*flags/ids-png/by.png", "w": 16, "h": 11, "gradient": true }],
     "css": [
       ".spr-fl.spr-fl-by {",
       "%1%",
@@ -719,9 +754,7 @@
     "sample": [{ "url": "http://autoline.by/", "notes": "Open menu"}]
   },
   { "addr": "brestintourist.by",
-    "images": [
-      { "i": "media/mod_languages/images/be.gif", "w": 18, "h": 12, "gradient": true, "outline": 0 }
-    ],
+    "images": [{ "i": "media/mod_languages/images/be.gif", "w": 18, "h": 12, "gradient": true, "outline": 0 }],
     "sample": [
       { "url": "http://brestintourist.by/"}
     ]
@@ -806,9 +839,7 @@
   },
 
   { "addr": "weather-forecast.com",
-    "images": [
-      { "i": "*://*.fast-meteo.com/flags/BO.gif", "w": 108, "h": 54, "outline": 0.02, "emboss": 0 }
-    ],
+    "images": [{ "i": "*://*.fast-meteo.com/flags/BO.gif", "w": 108, "h": 54, "outline": 0.02, "emboss": 0 }],
     "sample": [{ "url": "http://www.weather-forecast.com/locations/Minsk/forecasts/latest"}]
   },
 
@@ -830,16 +861,12 @@
   },
 
   { "addr": "lichess.org",
-    "images": [
-      { "i": "*://lichess1.org/assets/images/flags/BY.png", "replacer": {"f": "res", "arg": "erepublik-M-Belarus.png"}}
-    ],
+    "images": [{ "i": "*://lichess1.org/assets/images/flags/BY.png", "replacer": {"f": "res", "arg": "erepublik-M-Belarus.png"}}],
     "sample": [{ "url": "http://be.lichess.org/@/wert"}]
   },
 
   { "addr": "daroo\\.*",
-    "images": [
-      { "i": "*://*/*images/new/flags/flag_01.png", "w": 45 , "h": 26, "outline": 0, "red": "#DA4B4C", "emboss": 0 }
-    ],
+    "images": [{ "i": "*://*/*images/new/flags/flag_01.png", "w": 45 , "h": 26, "outline": 0, "red": "#DA4B4C", "emboss": 0 }],
     "sample": [
       { "url": "http://daroo.by/", "notes": "In footer"},
       { "url": "http://daroo.ru/", "notes": "In footer"},
@@ -847,16 +874,12 @@
     ]},
 
   { "addr": "laststicker.ru",
-    "images": [
-      { "i": "i/region/small/blr.gif", "w": 30, "h": 20, "emboss": 0 }
-    ],
+    "images": [{ "i": "i/region/small/blr.gif", "w": 30, "h": 20, "emboss": 0 }],
     "sample": [{ "url": "http://www.laststicker.ru/users/25071/"}]
   },
 
   { "addr": "gpsies.com",
-    "images": [
-      { "i": "images/flags/by.png", "w": 18, "h": 12, "gradient": true, "white": "#fafafa", "emboss": 0, "outline": 0.1 }
-    ],
+    "images": [{ "i": "images/flags/by.png", "w": 18, "h": 12, "gradient": true, "white": "#fafafa", "emboss": 0, "outline": 0.1 }],
     "sample": [{ "url": "http://www.gpsies.com/mapUser.do?username=velodisco", "notes": "Right menu and in table below"}]
   },
 
@@ -891,14 +914,60 @@
   },
 
   { "addr": "virtualbrest.by",
-    "images": [
-      { "i": "img/flag/BY.png", "replacer": {"f": "res", "arg": "erepublik-M-Belarus.png"} }
-    ],
+    "images": [{ "i": "img/flag/BY.png", "replacer": {"f": "res", "arg": "erepublik-M-Belarus.png"} }],
     "sample": [{ "url": "http://virtualbrest.by/news35949.php", "notes": "In comments"}]
   },
 
   { "addr": "censor.net.ua",
     "images": [{ "i": "images/flags/by.png", "w": 16, "h": 11, "gradient": true}],
     "sample": [{ "url": "http://censor.net.ua/user/347339", "notes": "Must be logged in from belarusian IP. See flag in header near your own username"}]
+  },
+
+  { "addr": "behappy.me",
+    "css": [
+      ".flag.by {",
+        "%1%",
+        "background-position: 0 0 !important;",
+        "background-size: cover !important;",
+      "}"
+    ],
+    "cssReplace": [{"%1%": {"f": "flagBGI", "arg": {"w": "auto", "emboss": 0}}}],
+    "sample": [{ "url": "https://behappy.me/generator", "notes": "In header, fromm BLR IP"}]
+  },
+
+  { "addr": "goodgame.ru",
+    "css": [
+      ".flag-by {",
+        "%1%",
+        "background-position: 0 0 !important;",
+      "}"
+    ],
+    "cssReplace": [{"%1%": {"f": "flagBGI", "arg": {"w": 16, "h": 11, "gradient": true }}}],
+    "sample": [{ "url": "http://goodgame.ru/user/167963/", "notes": ""}]
+  },
+  
+  { "addr": "iherb.com",
+    "css": [
+      ".flag-sprite.by {",
+        "background-image: url('%1%') !important;",
+        "background-size: 24px 17px !important;",
+        "background-position: 50% 50% !important;",
+        "background-repeat: no-repeat;",
+      "}"
+    ],
+    "cssReplace": [{"%1%":  {"f": "res", "arg": "belarus-crystal-48x34.png"}}],
+    "sample": [{ "url": "http://www.iherb.com/", "notes": "Top flag menu, click flag, select Belarus"}]
+  },
+  
+  
+  { "addr": "vegas\\.by|vegasmattresses\\.com",
+    "images": [
+      { "i": "*://*/*frontend/vegas/default/images/flag-by.gif", "w": 19, "h": 15, "gradient": true, "outline": 0.03, "emboss": 0 },
+      { "i": "*://www.vegas.by/geo/images/flag_belarus.png", "canvasW": 48, "canvasH": 48, "w": 46, "h": 36, "gradient": true, "emboss": 0 }
+    ],
+    "sample": [
+      { "url": "http://www.vegas.by/global", "notes": "Try from Belarusian IP and a foreign"},
+      { "url": "http://www.vegasmattresses.com/"}
+    ]
   }
 ]
