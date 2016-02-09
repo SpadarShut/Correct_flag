@@ -20,7 +20,7 @@
   }
 
   chrome.runtime.sendMessage({'domain': location.host}, function(fixes){
-    if (fixes.css || fixes.favicon) {
+    if (fixes && (fixes.css || fixes.favicon)) {
       window.addEventListener('DOMContentLoaded', function() {
         fixes.css && addCSS(fixes.css);
         fixes.favicon && setFavicon(fixes.favicon);
