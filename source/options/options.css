@@ -61,9 +61,6 @@ ul li {
   align-items: center;
   margin-bottom: 40px;
 }
-.browser-chrome .page-header {
-  display: none;
-}
 .header-logo {
   margin-right: 25px;
   align-self: flex-start;

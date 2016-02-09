@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="431396d7-2f55-4654-8aa5-2c1ff63200d1" name="neverrr" comment="rename background.js to Sciah.js, move bg init  to a separate file&#10;add support for wavy gradient on flags&#10;">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/sciah.extension.iml" afterPath="$PROJECT_DIR$/.idea/sciah.extension.iml" />
+    <list default="true" id="431396d7-2f55-4654-8aa5-2c1ff63200d1" name="neverrr" comment="implement update check when opening options page">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/Sciah.js" afterPath="$PROJECT_DIR$/source/Sciah.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gulpfile.js" afterPath="$PROJECT_DIR$/gulpfile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/options/options.css" afterPath="$PROJECT_DIR$/source/options/options.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/options/options.html" afterPath="$PROJECT_DIR$/source/options/options.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/options/options.js" afterPath="$PROJECT_DIR$/source/options/options.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/options/options.less" afterPath="$PROJECT_DIR$/source/options/options.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/tests/tests.js" afterPath="$PROJECT_DIR$/source/tests/tests.js" />
     </list>
     <list id="66e0b0cc-47f4-4594-8759-351e06fcd922" name="Failed commit: neverrr" comment="rename background.js to Sciah.js, move bg init  to a separate file&#10;add support for wavy gradient on flags&#10;" />
     <ignored path="sciah.extension.iws" />
@@ -30,24 +29,24 @@
     <favorites_list name="sciah.extension" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.50878733">
+    <splitter split-orientation="horizontal" split-proportion="0.47980613">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="content.js" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/source/content.js">
+          <file leaf-file-name="sciah-content.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/source/sciah-content.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.19900498">
-                  <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="sciahData.json" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/source/sciahData.json">
+          <file leaf-file-name="sciah-data.json" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/source/sciah-data.json">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="11.823529">
-                  <caret line="113" column="19" selection-start-line="113" selection-start-column="13" selection-end-line="113" selection-end-column="19" />
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="116" column="80" selection-start-line="116" selection-start-column="80" selection-end-line="116" selection-end-column="80" />
                   <folding />
                 </state>
               </provider>
@@ -56,30 +55,28 @@
           <file leaf-file-name="Sciah.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/source/Sciah.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-59.555557">
-                  <caret line="371" column="26" selection-start-line="371" selection-start-column="26" selection-end-line="371" selection-end-column="26" />
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="476" column="34" selection-start-line="476" selection-start-column="34" selection-end-line="476" selection-end-column="34" />
                   <folding>
                     <element signature="n#!!block;n#getSVGFlagURL#0;n#!!block;n#Sciah#0;n#Sciah#0;n#!!top" expanded="false" />
                     <element signature="n#!!block;n#urlToRegex#0;n#!!block;n#Sciah#0;n#Sciah#0;n#!!top" expanded="false" />
-                    <element signature="e#11566#11844#0" expanded="false" />
-                    <element signature="e#12762#14943#0" expanded="false" />
-                    <marker date="1454684273000" expanded="true" signature="2857:4874" placeholder="..." />
-                    <marker date="1454684273000" expanded="true" signature="2887:3001" placeholder="..." />
-                    <marker date="1454684273000" expanded="true" signature="3108:3429" placeholder="..." />
-                    <marker date="1454684273000" expanded="true" signature="3145:3177" placeholder="..." />
-                    <marker date="1454684273000" expanded="true" signature="3218:3250" placeholder="..." />
-                    <marker date="1454684273000" expanded="true" signature="3291:3326" placeholder="..." />
-                    <marker date="1454684273000" expanded="true" signature="3365:3400" placeholder="..." />
-                    <marker date="1454684273000" expanded="true" signature="3529:4086" placeholder="..." />
-                    <marker date="1454684273000" expanded="true" signature="3569:3604" placeholder="..." />
-                    <marker date="1454684273000" expanded="true" signature="3646:3678" placeholder="..." />
-                    <marker date="1454684273000" expanded="true" signature="3720:3752" placeholder="..." />
-                    <marker date="1454684273000" expanded="true" signature="3794:3829" placeholder="..." />
-                    <marker date="1454684273000" expanded="true" signature="3871:3903" placeholder="..." />
-                    <marker date="1454684273000" expanded="true" signature="3945:3977" placeholder="..." />
-                    <marker date="1454684273000" expanded="true" signature="4022:4057" placeholder="..." />
-                    <marker date="1454684273000" expanded="true" signature="4185:4860" placeholder="..." />
-                    <marker date="1454684273000" expanded="true" signature="4237:4846" placeholder="..." />
+                    <marker date="1454877264000" expanded="true" signature="2857:4874" placeholder="..." />
+                    <marker date="1454877264000" expanded="true" signature="2887:3001" placeholder="..." />
+                    <marker date="1454877264000" expanded="true" signature="3108:3429" placeholder="..." />
+                    <marker date="1454877264000" expanded="true" signature="3145:3177" placeholder="..." />
+                    <marker date="1454877264000" expanded="true" signature="3218:3250" placeholder="..." />
+                    <marker date="1454877264000" expanded="true" signature="3291:3326" placeholder="..." />
+                    <marker date="1454877264000" expanded="true" signature="3365:3400" placeholder="..." />
+                    <marker date="1454877264000" expanded="true" signature="3529:4086" placeholder="..." />
+                    <marker date="1454877264000" expanded="true" signature="3569:3604" placeholder="..." />
+                    <marker date="1454877264000" expanded="true" signature="3646:3678" placeholder="..." />
+                    <marker date="1454877264000" expanded="true" signature="3720:3752" placeholder="..." />
+                    <marker date="1454877264000" expanded="true" signature="3794:3829" placeholder="..." />
+                    <marker date="1454877264000" expanded="true" signature="3871:3903" placeholder="..." />
+                    <marker date="1454877264000" expanded="true" signature="3945:3977" placeholder="..." />
+                    <marker date="1454877264000" expanded="true" signature="4022:4057" placeholder="..." />
+                    <marker date="1454877264000" expanded="true" signature="4185:4860" placeholder="..." />
+                    <marker date="1454877264000" expanded="true" signature="4237:4846" placeholder="..." />
                   </folding>
                 </state>
               </provider>
@@ -99,17 +96,17 @@
             <entry file="file://$PROJECT_DIR$/source/manifest.json">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
+                  <caret line="51" column="9" selection-start-line="51" selection-start-column="9" selection-end-line="51" selection-end-column="9" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="options.html" pinned="false" current-in-tab="false">
+          <file leaf-file-name="options.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/source/options/options.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-20.25">
-                  <caret line="108" column="21" selection-start-line="108" selection-start-column="21" selection-end-line="108" selection-end-column="21" />
+                <state vertical-scroll-proportion="0.20627062">
+                  <caret line="53" column="14" selection-start-line="53" selection-start-column="10" selection-end-line="53" selection-end-column="14" />
                   <folding />
                 </state>
               </provider>
@@ -119,7 +116,7 @@
             <entry file="file://$PROJECT_DIR$/gulpfile.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="17" column="15" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
+                  <caret line="30" column="35" selection-start-line="30" selection-start-column="35" selection-end-line="30" selection-end-column="35" />
                   <folding />
                 </state>
               </provider>
@@ -129,21 +126,21 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="options.less" pinned="false" current-in-tab="false">
+          <file leaf-file-name="options.less" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/source/options/options.less">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-18.708334">
-                  <caret line="89" column="1" selection-start-line="89" selection-start-column="1" selection-end-line="89" selection-end-column="1" />
+                <state vertical-scroll-proportion="0.30730897">
+                  <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="options.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="options.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/source/options/options.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.6431853">
-                  <caret line="46" column="7" selection-start-line="46" selection-start-column="7" selection-end-line="46" selection-end-column="7" />
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="29" column="31" selection-start-line="29" selection-start-column="31" selection-end-line="29" selection-end-column="31" />
                   <folding />
                 </state>
               </provider>
@@ -152,7 +149,7 @@
           <file leaf-file-name="tests.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/source/tests/tests.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-0.5555556">
+                <state vertical-scroll-proportion="0.0">
                   <caret line="1" column="33" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
                   <folding />
                 </state>
@@ -221,18 +218,20 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/build/codez/tests/testlinks.htm" />
         <option value="$PROJECT_DIR$/build/codez/manifest.json" />
-        <option value="$PROJECT_DIR$/source/manifest.json" />
         <option value="$PROJECT_DIR$/source/sciahData.json.js" />
-        <option value="$PROJECT_DIR$/gulpfile.js" />
         <option value="$PROJECT_DIR$/source/background-init.js" />
         <option value="$PROJECT_DIR$/source/tests/testlinks.htm" />
         <option value="$PROJECT_DIR$/source/sciahData.json" />
-        <option value="$PROJECT_DIR$/source/options/options.less" />
         <option value="$PROJECT_DIR$/source/tests/tests.js" />
+        <option value="$PROJECT_DIR$/source/content.js" />
+        <option value="$PROJECT_DIR$/source/Sciah.js" />
+        <option value="$PROJECT_DIR$/source/manifest.json" />
+        <option value="$PROJECT_DIR$/source/sciah-data.json" />
+        <option value="$PROJECT_DIR$/gulpfile.js" />
+        <option value="$PROJECT_DIR$/source/sciah-content.js" />
         <option value="$PROJECT_DIR$/source/options/options.html" />
         <option value="$PROJECT_DIR$/source/options/options.js" />
-        <option value="$PROJECT_DIR$/source/Sciah.js" />
-        <option value="$PROJECT_DIR$/source/content.js" />
+        <option value="$PROJECT_DIR$/source/options/options.less" />
       </list>
     </option>
   </component>
@@ -274,17 +273,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -349,8 +337,37 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sciah.extension" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sciah.extension" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="source" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="options" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -450,42 +467,6 @@
       <created>1310063001921</created>
       <option name="number" value="Default" />
       <updated>1310063001921</updated>
-    </task>
-    <task id="LOCAL-00040" summary="add livescore.in, allsport-live.ru, livetv.sx">
-      <created>1452456309849</created>
-      <option name="number" value="00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1452456309849</updated>
-    </task>
-    <task id="LOCAL-00041" summary="remove premierleague.com, remove goals.by, add tribuna.com">
-      <created>1452458871103</created>
-      <option name="number" value="00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1452458871103</updated>
-    </task>
-    <task id="LOCAL-00042" summary="add timeanddate.com">
-      <created>1452459344983</created>
-      <option name="number" value="00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1452459344983</updated>
-    </task>
-    <task id="LOCAL-00043" summary="add timeanddate.com, erepublik.com">
-      <created>1452467484676</created>
-      <option name="number" value="00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1452467484676</updated>
-    </task>
-    <task id="LOCAL-00044" summary="tweak postcrossing.com">
-      <created>1452469806460</created>
-      <option name="number" value="00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1452469806460</updated>
-    </task>
-    <task id="LOCAL-00045" summary="add wikipedia.org, codeforces.com, budist.ru, greyorder.su, tamby.info, battlefield.com,joma.by, freeads.by&#10;remove myjob.by, ibbhotel.by, ibb.by, exist.by, busuu.com, samsungapps.com, opera.com, tb.by&#10;fix gradient on flags">
-      <created>1452617130659</created>
-      <option name="number" value="00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1452617130659</updated>
     </task>
     <task id="LOCAL-00046" summary="add internetworldststs.com, flagcounter.com, active.by/activecloud.ru,1c-bitrix.ru&#10;remove go.hrw.com">
       <created>1452708241027</created>
@@ -745,7 +726,43 @@
       <option name="project" value="LOCAL" />
       <updated>1454685475432</updated>
     </task>
-    <option name="localTasksCounter" value="89" />
+    <task id="LOCAL-00089" summary="implement extension reload after update check">
+      <created>1454686843005</created>
+      <option name="number" value="00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1454686843005</updated>
+    </task>
+    <task id="LOCAL-00090" summary="implement update check when opening options page">
+      <created>1454686893388</created>
+      <option name="number" value="00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1454686893388</updated>
+    </task>
+    <task id="LOCAL-00091" summary="bump minor version">
+      <created>1454688643150</created>
+      <option name="number" value="00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1454688643150</updated>
+    </task>
+    <task id="LOCAL-00092" summary="rename sciahData to sciah-data">
+      <created>1454689983878</created>
+      <option name="number" value="00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1454689983879</updated>
+    </task>
+    <task id="LOCAL-00093" summary="tweak kvitki.by, pefl.ru, tamby.info&#10;add uefa.com,iihf.com, iihfworlds2016.comm worldjunior2016.com, behappy.megoodgame.ru, iherb.com, vegas.by/vegasmatrasses.com">
+      <created>1454877477824</created>
+      <option name="number" value="00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1454877477826</updated>
+    </task>
+    <task id="LOCAL-00094" summary="fix error when callback from background comes without arguments">
+      <created>1455044787345</created>
+      <option name="number" value="00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1455044787345</updated>
+    </task>
+    <option name="localTasksCounter" value="95" />
     <servers />
   </component>
   <component name="TodoView">
@@ -761,6 +778,7 @@
     <frame x="0" y="23" width="1280" height="773" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31260097" sideWeight="0.6208226" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890856" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="SvgViewer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40117994" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
@@ -768,10 +786,8 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7359882" sideWeight="0.5035318" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6106195" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890856" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26843658" sideWeight="0.49646822" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17770597" sideWeight="0.6208226" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35250738" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21959943" sideWeight="0.3791774" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4218289" sideWeight="0.49646822" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -787,7 +803,36 @@
       <window_info id="Heroku" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="JsTestDriver Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35250738" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7359882" sideWeight="0.5035318" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Grunt" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27249357" sideWeight="0.49954668" order="17" side_tool="false" content_ui="tabs" />
+      <window_info id="Phing Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21959943" sideWeight="0.3791774" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969433" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890856" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="SvgViewer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40117994" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
+      <window_info id="Heroku" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
+      <window_info id="Regex Tester" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890856" sideWeight="0.5751766" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="JsTestDriver Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6106195" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890856" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4218289" sideWeight="0.49646822" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31260097" sideWeight="0.6208226" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35250738" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -805,12 +850,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <confirmMoveToFailedCommit value="1" />
-    <MESSAGE value="move bg init  to a separate file&#10;add support for wavy gradient on flags&#10;" />
-    <MESSAGE value="update gitignore" />
-    <MESSAGE value="remove Sciah.js" />
-    <MESSAGE value="rename bachground.js to Sciah.js" />
-    <MESSAGE value="add weather-forecast.com, goethe.de, lichess.org, daroo.by/ru/ua, laststicker.ru, gpsies.comstarladder.tv" />
-    <MESSAGE value="replace title attr with data-title to make styles work on starladder.tv" />
     <MESSAGE value="add *.DS_Store to gitignore" />
     <MESSAGE value="check all sites once again" />
     <MESSAGE value="make test page look nicer" />
@@ -830,7 +869,13 @@
     <MESSAGE value="recheck test suite" />
     <MESSAGE value="change remote data url to master branch" />
     <MESSAGE value="change style dataTitle to classname" />
-    <option name="LAST_COMMIT_MESSAGE" value="change style dataTitle to classname" />
+    <MESSAGE value="implement extension reload after update check" />
+    <MESSAGE value="implement update check when opening options page" />
+    <MESSAGE value="bump minor version" />
+    <MESSAGE value="rename sciahData to sciah-data" />
+    <MESSAGE value="tweak kvitki.by, pefl.ru, tamby.info&#10;add uefa.com,iihf.com, iihfworlds2016.comm worldjunior2016.com, behappy.megoodgame.ru, iherb.com, vegas.by/vegasmatrasses.com" />
+    <MESSAGE value="fix error when callback from background comes without arguments" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix error when callback from background comes without arguments" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -864,7 +909,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/content.js">
+    <entry file="file://$PROJECT_DIR$/source/sciah-content.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="169" column="120" selection-start-line="169" selection-start-column="120" selection-end-line="169" selection-end-column="120" />
@@ -884,7 +929,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="5" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -895,7 +939,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/content.js">
+    <entry file="file://$PROJECT_DIR$/source/sciah-content.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="372" column="34" selection-start-line="372" selection-start-column="34" selection-end-line="372" selection-end-column="34" />
@@ -915,7 +959,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="5" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -926,7 +969,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/content.js">
+    <entry file="file://$PROJECT_DIR$/source/sciah-content.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="308" column="30" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -946,7 +989,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="5" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -992,16 +1034,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/res/livetv-img-icons-by.gif">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/res/erepublik-S-Belarus.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/source/res/sciahSphere.svg">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-30.0">
@@ -1020,7 +1052,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="56" column="47" selection-start-line="56" selection-start-column="47" selection-end-line="56" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1049,7 +1080,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1116,19 +1146,56 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/manifest.json">
+    <entry file="file://$PROJECT_DIR$/source/tests/testlinks.htm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4021739">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/res/erepublik-S-Belarus.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/res/livetv-img-icons-by.gif">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/sciah-data.json">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
+          <caret line="116" column="80" selection-start-line="116" selection-start-column="80" selection-end-line="116" selection-end-column="80" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gulpfile.js">
+    <entry file="file://$PROJECT_DIR$/source/Sciah.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="15" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
-          <folding />
+          <caret line="476" column="34" selection-start-line="476" selection-start-column="34" selection-end-line="476" selection-end-column="34" />
+          <folding>
+            <element signature="n#!!block;n#getSVGFlagURL#0;n#!!block;n#Sciah#0;n#Sciah#0;n#!!top" expanded="false" />
+            <element signature="n#!!block;n#urlToRegex#0;n#!!block;n#Sciah#0;n#Sciah#0;n#!!top" expanded="false" />
+            <marker date="1454877264000" expanded="true" signature="2857:4874" placeholder="..." />
+            <marker date="1454877264000" expanded="true" signature="2887:3001" placeholder="..." />
+            <marker date="1454877264000" expanded="true" signature="3108:3429" placeholder="..." />
+            <marker date="1454877264000" expanded="true" signature="3145:3177" placeholder="..." />
+            <marker date="1454877264000" expanded="true" signature="3218:3250" placeholder="..." />
+            <marker date="1454877264000" expanded="true" signature="3291:3326" placeholder="..." />
+            <marker date="1454877264000" expanded="true" signature="3365:3400" placeholder="..." />
+            <marker date="1454877264000" expanded="true" signature="3529:4086" placeholder="..." />
+            <marker date="1454877264000" expanded="true" signature="3569:3604" placeholder="..." />
+            <marker date="1454877264000" expanded="true" signature="3646:3678" placeholder="..." />
+            <marker date="1454877264000" expanded="true" signature="3720:3752" placeholder="..." />
+            <marker date="1454877264000" expanded="true" signature="3794:3829" placeholder="..." />
+            <marker date="1454877264000" expanded="true" signature="3871:3903" placeholder="..." />
+            <marker date="1454877264000" expanded="true" signature="3945:3977" placeholder="..." />
+            <marker date="1454877264000" expanded="true" signature="4022:4057" placeholder="..." />
+            <marker date="1454877264000" expanded="true" signature="4185:4860" placeholder="..." />
+            <marker date="1454877264000" expanded="true" signature="4237:4846" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1140,88 +1207,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/options/options.less">
+    <entry file="file://$PROJECT_DIR$/source/manifest.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.708334">
-          <caret line="89" column="1" selection-start-line="89" selection-start-column="1" selection-end-line="89" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="51" column="9" selection-start-line="51" selection-start-column="9" selection-end-line="51" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gulpfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="30" column="35" selection-start-line="30" selection-start-column="35" selection-end-line="30" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/source/tests/tests.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.5555556">
+        <state vertical-scroll-proportion="0.0">
           <caret line="1" column="33" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/tests/testlinks.htm">
+    <entry file="file://$PROJECT_DIR$/source/sciah-content.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4021739">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/sciahData.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="11.823529">
-          <caret line="113" column="19" selection-start-line="113" selection-start-column="13" selection-end-line="113" selection-end-column="19" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/source/options/options.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-20.25">
-          <caret line="108" column="21" selection-start-line="108" selection-start-column="21" selection-end-line="108" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.20627062">
+          <caret line="53" column="14" selection-start-line="53" selection-start-column="10" selection-end-line="53" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/source/options/options.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6431853">
-          <caret line="46" column="7" selection-start-line="46" selection-start-column="7" selection-end-line="46" selection-end-column="7" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="29" column="31" selection-start-line="29" selection-start-column="31" selection-end-line="29" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/Sciah.js">
+    <entry file="file://$PROJECT_DIR$/source/options/options.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-59.555557">
-          <caret line="371" column="26" selection-start-line="371" selection-start-column="26" selection-end-line="371" selection-end-column="26" />
-          <folding>
-            <element signature="n#!!block;n#getSVGFlagURL#0;n#!!block;n#Sciah#0;n#Sciah#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#urlToRegex#0;n#!!block;n#Sciah#0;n#Sciah#0;n#!!top" expanded="false" />
-            <element signature="e#11566#11844#0" expanded="false" />
-            <element signature="e#12762#14943#0" expanded="false" />
-            <marker date="1454684273000" expanded="true" signature="2857:4874" placeholder="..." />
-            <marker date="1454684273000" expanded="true" signature="2887:3001" placeholder="..." />
-            <marker date="1454684273000" expanded="true" signature="3108:3429" placeholder="..." />
-            <marker date="1454684273000" expanded="true" signature="3145:3177" placeholder="..." />
-            <marker date="1454684273000" expanded="true" signature="3218:3250" placeholder="..." />
-            <marker date="1454684273000" expanded="true" signature="3291:3326" placeholder="..." />
-            <marker date="1454684273000" expanded="true" signature="3365:3400" placeholder="..." />
-            <marker date="1454684273000" expanded="true" signature="3529:4086" placeholder="..." />
-            <marker date="1454684273000" expanded="true" signature="3569:3604" placeholder="..." />
-            <marker date="1454684273000" expanded="true" signature="3646:3678" placeholder="..." />
-            <marker date="1454684273000" expanded="true" signature="3720:3752" placeholder="..." />
-            <marker date="1454684273000" expanded="true" signature="3794:3829" placeholder="..." />
-            <marker date="1454684273000" expanded="true" signature="3871:3903" placeholder="..." />
-            <marker date="1454684273000" expanded="true" signature="3945:3977" placeholder="..." />
-            <marker date="1454684273000" expanded="true" signature="4022:4057" placeholder="..." />
-            <marker date="1454684273000" expanded="true" signature="4185:4860" placeholder="..." />
-            <marker date="1454684273000" expanded="true" signature="4237:4846" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/content.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19900498">
-          <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+        <state vertical-scroll-proportion="0.30730897">
+          <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
           <folding />
         </state>
       </provider>

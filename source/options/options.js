@@ -27,7 +27,7 @@ function setRootClass() {
     rootClass = 'browser-firefox';
   }
   else {
-    rootClass = 'browser-source';
+    rootClass = 'browser-chrome';
   }
   document.documentElement.classList.add(rootClass);
 }
