@@ -40,7 +40,7 @@
   var domainsList = '';
   data.forEach(function (site) {
 
-    if (site.addr != '.*') {
+    if (site && site.addr && site.addr != '.*') {
       domainsList += '<li>' + site.addr
     }
   });
