@@ -969,5 +969,11 @@
       { "url": "http://www.vegas.by/global", "notes": "Try from Belarusian IP and a foreign"},
       { "url": "http://www.vegasmattresses.com/"}
     ]
+  },
+
+
+  { "addr": "steamcommunity.com",
+    "images": [{ "i": "*://*.akamaihd.net/public/images/countryflags/by.gif", "w": 16, "h": 11, "gradient": true }],
+    "sample": [{ "url": "http://steamcommunity.com/profiles/76561198282877125", "notes": ""}]
   }
 ]
