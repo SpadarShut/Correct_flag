@@ -958,8 +958,7 @@
     "cssReplace": [{"%1%":  {"f": "res", "arg": "belarus-crystal-48x34.png"}}],
     "sample": [{ "url": "http://www.iherb.com/", "notes": "Top flag menu, click flag, select Belarus"}]
   },
-  
-  
+
   { "addr": "vegas\\.by|vegasmattresses\\.com",
     "images": [
       { "i": "*://*/*frontend/vegas/default/images/flag-by.gif", "w": 19, "h": 15, "gradient": true, "outline": 0.03, "emboss": 0 },
@@ -971,9 +970,13 @@
     ]
   },
 
-
   { "addr": "steamcommunity.com",
     "images": [{ "i": "*://*.akamaihd.net/public/images/countryflags/by.gif", "w": 16, "h": 11, "gradient": true }],
     "sample": [{ "url": "http://steamcommunity.com/profiles/76561198282877125", "notes": ""}]
+  },
+
+  { "addr": "feedjit.com",
+    "images": [{ "i": "*://feedjit.com/images/flags/by.png", "w": 16, "h": 11, "gradient": true }],
+    "sample": [{ "url": "http://www.mguhlin.org/2012/01/saving-mp4-videos-onto-your-ios-ipad.html", "notes": "You should be in the list on the left (From BLR IP!)"}]
   }
 ]
