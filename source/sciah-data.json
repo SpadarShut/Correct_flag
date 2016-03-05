@@ -98,7 +98,9 @@
     "sample": [
       {"url": "https://www.yandex.by/", "notes": "Click keyboard in search field, select Belarusian in dropdow kbd"},
       {"url": "https://mail.yandex.by/?uid=225165401&login=sp-shut#setup/other", "notes": " Mail Settins - Language in sidebar, also in footer"},
-      {"url": "https://metrika.yandex.ru/stat/geo?selected_rows=Od%2FJ%2F9%2Cz%2BIcaA%2C9nRiZj%2CvkYaDN%2Cd1vFww&id=24050107", "notes": "Metrika"}
+      {"url": "https://metrika.yandex.ru/stat/geo?selected_rows=Od%2FJ%2F9%2Cz%2BIcaA%2C9nRiZj%2CvkYaDN%2Cd1vFww&id=24050107", "notes": "Metrika"},
+      {"url": "https://tune.yandex.ru/lang/?retpath=https%3A%2F%2Fwww.yandex.by%2F", "notes": "Tune, lang picker in footer"},
+      {"url": "https://yandex.by/search/?text=курс%20валют", "notes": "In currency picker"}
     ]
   },
   { "addr": "rutracker.org",
