@@ -1,6 +1,5 @@
 var gulp = require('gulp');
 var less = require('gulp-less');
-var path = require('path');
 var del = require('del');
 const zip = require('gulp-zip');
 var gulpSequence = require('gulp-sequence');
@@ -13,19 +12,17 @@ var gulpSequence = require('gulp-sequence');
 //      }))
 //      .pipe(gulp.dest('./public/css'));
 //});
-gulp.task('build', gulpSequence(['copy', 'zip']));
+gulp.task('build', gulpSequence(['clean', 'copy', 'zip']));
 
-gulp.task('copy', function() {
-  return del('build/*').then(
-      function () {
-        return gulp.src([ 'source/**' ])
-            .pipe(gulp.dest('build/codez/'))
-      }
-  )
+gulp.task('clean', function(cb) {
+  return del('build/codez**');
+});
+
+gulp.task('copy', function(cb) {
+  return gulp.src([ 'source/**' ]).pipe(gulp.dest('build/codez/'))
 });
 
 gulp.task('zip', function(cb) {
-
     return gulp.src('build/codez/**')
           .pipe(zip('correct-flag.zip'))
           .pipe(gulp.dest('build'))
