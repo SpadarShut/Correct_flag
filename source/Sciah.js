@@ -116,7 +116,7 @@ var Sciah = function() {
         <stop offset="0.48" style="stop-color: #000; stop-opacity:0.15"/>\n\
         <stop offset="0.76" style="stop-color: #000; stop-opacity:0"/>\n\
         <stop offset="0.79" style="stop-color: #000; stop-opacity:0"/>\n\
-        <stop offset="0.96"    style="stop-color: #000; stop-opacity:0.15"/>\n\
+        <stop offset="0.96" style="stop-color: #000; stop-opacity:0.15"/>\n\
       </linearGradient>\n\
       <rect id="canvasBg" width="100%" height="100%" fill="none"></rect>\n\
       <g id="flag">\n\

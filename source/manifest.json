@@ -1,6 +1,6 @@
 ﻿{
   "name": "Правільны сцяг",
-  "version": "2.2",
+  "version": "2.3",
   "developer": {
     "name": "Spadar Shut",
     "url": "https://www.facebook.com/spadarshut"
@@ -50,7 +50,8 @@
     "res/D83CDDE7D83CDDFE_2x-bcb.png",
     "res/D83CDDE7D83CDDFE-bcb.png",
     "res/belarus-crystal-48x34.png",
-    "res/sciahSphere.svg"
+    "res/sciahSphere.svg",
+    "res/alfabank.by.flag_2.png"
   ],
   "options_ui": {
     "page": "options/options.html",

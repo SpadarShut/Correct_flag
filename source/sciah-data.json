@@ -990,5 +990,10 @@
   { "addr": "feedjit.com",
     "images": [{ "i": "*://feedjit.com/images/flags/by.png", "w": 16, "h": 11, "gradient": true }],
     "sample": [{ "url": "http://www.mguhlin.org/2012/01/saving-mp4-videos-onto-your-ios-ipad.html", "notes": "You should be in the list on the left (From BLR IP!)"}]
+  },
+
+  { "addr": "alfabank.by",
+    "images": [{ "i": "images/flags/flag_2.png", "replacer": {"f": "res", "arg": "alfabank.by.flag_2.png"}}],
+    "sample": [{ "url": "https://www.alfabank.by/exchange.php"}]
   }
 ]
