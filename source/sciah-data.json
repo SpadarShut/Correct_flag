@@ -107,6 +107,8 @@
     "images": [
       {"i": "flags/by.gif", "outline": 1, "w": 24, "h": 15 },
       {"i": "*://static.rutracker.cc/flags/17.gif", "outline": 1, "w": 32, "h": 20 },
+      {"i": "*://static.t-ru.org/flags/17.gif", "outline": 1, "w": 32, "h": 20 },
+      {"i": "flags/17.gif", "outline": 1, "w": 32, "h": 20 },
       {"i": "flags/lang_by.png", "w": 40, "h": 20, "outline": 0 },
       {"i": "logo_new_by.gif", "replacer": {"f": "res", "arg": "rutracker_logo_by.png"} }
     ],
