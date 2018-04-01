@@ -1,3 +1,8 @@
-/.idea
-/build/codez
+node_modules
+*.idea
+.idea
+idea
+/build
 *.DS_Store
+extras
+source/options/fontello

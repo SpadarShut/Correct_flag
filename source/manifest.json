@@ -1,12 +1,13 @@
 ﻿{
   "name": "Правільны сцяг",
-  "version": "2.3",
+  "short_name": "Correct Flag",
+  "version": "2.4",
   "developer": {
     "name": "Spadar Shut",
     "url": "https://www.facebook.com/spadarshut"
   },
   "manifest_version": 2,
-  "description": "Робіць бел-чырвона-белымі беларускія сцягі на розных сайтах",
+  "description": "Пашырэнне робіць беларускі сцяг бел-чырвона-белым на розных сайтах",
   "icons": {  "96": "icon-96.png", "256": "icon-256.png" },
   "content_scripts": [
     {

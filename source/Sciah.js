@@ -39,13 +39,9 @@ var Sciah = function() {
    * @param important boolean Appends !important to the rule if it is true
    * @returns {string}
    */
-  function flagBGI(params, important) {
-    var imp = '';
-    if (important) {
-      imp = ' !important';
-    }
-    return 'background-image: url("'+ flagURL(params) +'")'+ imp +';';
-  }
+  flagBGI = (params, important) =>
+    `background-image: url("${flagURL(params)}") ${ important ? '!important' : '' };`;
+
   /**
    *
    * @param params
@@ -98,38 +94,38 @@ var Sciah = function() {
 //<feComposite in="offsetColor" in2="offsetBlur" operator="in" result="offsetBlur"/>\n\
 //</filter>\n\
 
-    var flagTpl = '\n\
-    <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">\n\
-      <clipPath id="clip">\n\
-        <rect id="clipRect" class="shape" fill="none" width="100%" height="100%" rx="0"/>\n\
-      </clipPath>\n\
-      <radialGradient gradientUnits="objectBoundingBox" id="gradient-simple" fx="22%" fy="14%" r="80%">\n\
-        <stop offset="0" style="stop-color: #000; stop-opacity:0"/>\n\
-        <stop offset="0.2" style="stop-color: #000; stop-opacity:0"/>\n\
-        <stop offset="0.6" style="stop-color: #000; stop-opacity:0.06"/>\n\
-        <stop offset="1" style="stop-color: #000; stop-opacity:0.10"/>\n\
-      </radialGradient>\n\
-      <linearGradient id="gradient-wave" gradientUnits="objectBoundingBox" x1="0" y1="0" y2="0">\n\
-        <stop offset="0"    style="stop-color: #000; stop-opacity:0.15"/>\n\
-        <stop offset="0.21" style="stop-color: #000; stop-opacity:0"/>\n\
-        <stop offset="0.26" style="stop-color: #000; stop-opacity:0"/>\n\
-        <stop offset="0.48" style="stop-color: #000; stop-opacity:0.15"/>\n\
-        <stop offset="0.76" style="stop-color: #000; stop-opacity:0"/>\n\
-        <stop offset="0.79" style="stop-color: #000; stop-opacity:0"/>\n\
-        <stop offset="0.96" style="stop-color: #000; stop-opacity:0.15"/>\n\
-      </linearGradient>\n\
-      <rect id="canvasBg" width="100%" height="100%" fill="none"></rect>\n\
-      <g id="flag">\n\
-        <g id="flagBase" clip-path="url(#clip)">\n\
-          <rect id="white" class="shape" fill="#fff" width="100%" height="100%"/>\n\
-          <rect id="red" fill="#E21313" y="33.3333333%" width="100%" height="33.3333333%"/>\n\
-          <line id="emboss" opacity="0.18" stroke-width="4" stroke="#fff" x1="0" y1="0" x2="0" y2="100%" vector-effect="non-scaling-stroke"/>\n\
-          <rect id="outline" class="shape" opacity="0.1" stroke-width="2" stroke="#000" fill="none" width="100%" height="100%" vector-effect="non-scaling-stroke"/>\n\
-          <rect id="overlayGradient" class="shape" fill="none" width="100%" height="100%"></rect>\n\
-        </g>\n\
-      </g>\n\
-    </svg>\n\
-    ';
+    var flagTpl = `
+    <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <clipPath id="clip">
+        <rect id="clipRect" class="shape" fill="none" width="100%" height="100%" rx="0"/>
+      </clipPath>
+      <radialGradient gradientUnits="objectBoundingBox" id="gradient-simple" fx="22%" fy="14%" r="80%">
+        <stop offset="0" style="stop-color: #000; stop-opacity:0"/>
+        <stop offset="0.2" style="stop-color: #000; stop-opacity:0"/>
+        <stop offset="0.6" style="stop-color: #000; stop-opacity:0.06"/>
+        <stop offset="1" style="stop-color: #000; stop-opacity:0.10"/>
+      </radialGradient>
+      <linearGradient id="gradient-wave" gradientUnits="objectBoundingBox" x1="0" y1="0" y2="0">
+        <stop offset="0"    style="stop-color: #000; stop-opacity:0.15"/>
+        <stop offset="0.21" style="stop-color: #000; stop-opacity:0"/>
+        <stop offset="0.26" style="stop-color: #000; stop-opacity:0"/>
+        <stop offset="0.48" style="stop-color: #000; stop-opacity:0.15"/>
+        <stop offset="0.76" style="stop-color: #000; stop-opacity:0"/>
+        <stop offset="0.79" style="stop-color: #000; stop-opacity:0"/>
+        <stop offset="0.96" style="stop-color: #000; stop-opacity:0.15"/>
+      </linearGradient>
+      <rect id="canvasBg" width="100%" height="100%" fill="none"></rect>
+      <g id="flag">
+        <g id="flagBase" clip-path="url(#clip)">
+          <rect id="white" class="shape" fill="#fff" width="100%" height="100%"/>
+          <rect id="red" fill="#E21313" y="33.3333333%" width="100%" height="33.3333333%"/>
+          <line id="emboss" opacity="0.18" stroke-width="4" stroke="#fff" x1="0" y1="0" x2="0" y2="100%" vector-effect="non-scaling-stroke"/>
+          <rect id="outline" class="shape" opacity="0.1" stroke-width="2" stroke="#000" fill="none" width="100%" height="100%" vector-effect="non-scaling-stroke"/>
+          <rect id="overlayGradient" class="shape" fill="none" width="100%" height="100%"></rect>
+        </g>
+      </g>
+    </svg>
+    `;
 
     var SVGParent = window.document.createElement('div');
     SVGParent.innerHTML = flagTpl;
@@ -151,7 +147,7 @@ var Sciah = function() {
 
     // Set size
     // --------
-    if (img.w == 'auto') {
+    if (img.w === 'auto') {
       // stretch to full width
       SVG.setAttribute('viewBox', '0 0 32 16');
       SVG.setAttribute('width', '100%');
@@ -217,7 +213,7 @@ var Sciah = function() {
     // Set outline darkness
     // --------------------
     if (img.hasOwnProperty('outline')) {
-      if (img.outline == 'none') {
+      if (img.outline === 'none') {
         outline.style.display = 'none';
       }
       if (typeof img.outline === 'number') {
@@ -258,7 +254,7 @@ var Sciah = function() {
     if (img.emboss === false || img.emboss === 0) {
       emboss.setAttribute('opacity', 0);
     }
-    else if (typeof img.emboss == 'number') {
+    else if (typeof img.emboss === 'number') {
       emboss.setAttribute('opacity', img.emboss);
     }
 
@@ -294,7 +290,7 @@ var Sciah = function() {
           img.globs = [];
 
           // if it's filename without protocol
-          if (img.i.indexOf('://') == -1) {
+          if (img.i.indexOf('://') === -1) {
             img.globs.push('*://'+ site.addr +'/*' + img.i + '*');
             img.globs.push('*://*.'+ site.addr +'/*' + img.i + '*'); // www and subdomains
           }
@@ -322,7 +318,7 @@ var Sciah = function() {
     // Listen for CSS requests
     chrome.runtime.onMessage.addListener(
         function(message, sender, cb) {
-          if (typeof message == 'object' && message.domain) {
+          if (typeof message === 'object' && message.domain) {
             var css = '';
             var favicon = '';
             dzieShto.forEach(function (site) {
@@ -356,18 +352,18 @@ var Sciah = function() {
     pahoniaURL: 'https://upload.wikimedia.org/wikipedia/commons/1/16/Coat_of_arms_of_Belarus_%281918%2C_1991-1995%29.svg',
     flagCSS: flagBGI() + '\nbackground-position: 0 0 !important; \nbackground-size: cover;',
     flagBGI: flagBGI,
-    flagURL: flagURL
+    flagURL: flagURL,
   };
 
-  var getDataSource = function () {
-    var data = 'https://raw.githubusercontent.com/SpadarShut/Correct_flag/master/source/sciah-data.json';
-    //var data = 'sciah-data.json';
-    return data;
+  var getDataSource = function (src) {
+    //var data = 'https://raw.githubusercontent.com/SpadarShut/Correct_flag/master/source/sciah-data.json';
+    var data = 'sciah-data.json';
+    return src ? src : data;
   };
 
 
-  this.getSiteData = function () {
-    return fetch(getDataSource())
+  this.getSiteData = function (src) {
+    return fetch(getDataSource(src))
       .then(function (response) {
         if (response.ok) {
           return response.json().then(function (data) {
@@ -393,24 +389,49 @@ var Sciah = function() {
       });
   };
 
+  function getReplacerFnResult (fn, args) {
+    var out = '';
+    // call without arguments if none were provided
+    if (typeof args === 'undefined'){
+      out = self.cssHelpers[fn]();
+    }
+    else {
+      // put a single object into array to call .apply with
+      if (!(args instanceof Array)) {
+        args = [args];
+      }
+
+      out = self.cssHelpers[fn].apply(null, args);
+    }
+    return out;
+  }
+
+  replaceCSSPlaceholders = function (site) {
+
+    // Replace custom placeholders for this site
+    if (site.cssReplace && site.cssReplace instanceof Array) {
+      site.cssReplace.forEach(function (replacer) {
+        Object.keys(replacer).forEach(function (key) {
+          site.css = site.css.replace(new RegExp(key, 'g'), function () {
+            if (replacer[key]['f']){
+              return getReplacerFnResult(replacer[key]['f'], replacer[key]['arg']);
+            }
+          });
+        });
+      });
+    }
+
+    // If there are still unreplaced tokens in CSS
+    if (site.css && site.css.indexOf('%') >-1) {
+      // Replace global replacers
+      site.css = site.css.replace(/%(pahoniaURL|flagCSS)%/g, function (fullMatch, inBrackets) {
+        return self.cssHelpers[inBrackets]
+      });
+    }
+  }
+
   this.prepareDzieShto = function (data) {
 
-    function getReplacerFnResult (fn, args) {
-      var out = '';
-      // call without arguments if none were provided
-      if (typeof args === 'undefined'){
-        out = self.cssHelpers[fn]();
-      }
-      else {
-        // put a single object into array to call .apply with
-        if (!(args instanceof Array)) {
-          args = [args];
-        }
-
-        out = self.cssHelpers[fn].apply(null, args);
-      }
-      return out;
-    }
     var out = data.map(function (site) {
 
       // Join CSS array into a string
@@ -418,29 +439,7 @@ var Sciah = function() {
         site.css = site.css.join('\n');
       }
 
-      // Replace custom replacers for this site
-      if (site.cssReplace && site.cssReplace instanceof Array) {
-        site.cssReplace.forEach(function (replacer) {
-
-          Object.keys(replacer).forEach(function (key) {
-
-            site.css = site.css.replace(new RegExp(key, 'g'), function () {
-
-              if (replacer[key]['f']){
-                return getReplacerFnResult(replacer[key]['f'], replacer[key]['arg']);
-              }
-            });
-          });
-        });
-      }
-
-      // If there are still unreplaced tokens in CSS
-      if (site.css && site.css.indexOf('%') >-1) {
-        // Replace global replacers
-        site.css = site.css.replace(/%(pahoniaURL|flagCSS)%/g, function (fullMatch, inBrackets) {
-          return self.cssHelpers[inBrackets]
-        });
-      }
+      replaceCSSPlaceholders(site)
 
       if (site.images) {
         site.images = site.images.map(function (img) {

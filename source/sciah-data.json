@@ -38,16 +38,24 @@
 
   {
     "addr": "vk.com",
+    "css": ".emoji_d83cdde7d83cddfe { background: url(%1%) 50% 50% / contain no-repeat; }",
+    "cssReplace": [{"%1%": {"f": "res", "arg": "D83CDDE7D83CDDFE_2x-bcb.png"}}],
     "images": [
       { "i": "D83CDDE7D83CDDFE_2x.png", "replacer": {"f": "res", "arg": "D83CDDE7D83CDDFE_2x-bcb.png"} },
-      { "i": "D83CDDE7D83CDDFE.png", "replacer": {"f": "res", "arg": "D83CDDE7D83CDDFE-bcb.png"} }
+      { "i": "D83CDDE7D83CDDFE.png", "replacer": {"f": "res", "arg": "D83CDDE7D83CDDFE-bcb.png"} },
+      { "i": "*://vk.com/images/lang_flags/2_2x.png", "w": 68, "h": 48, "outline": 0.2, "r": 5, "emboss": 0 },
+      { "i": "*://vk.com/images/lang_flags/2.png",    "w": 68, "h": 48, "outline": 0.2, "r": 5, "emboss": 0 }
     ],
-    "sample": [{ "url": "https://vk.com/im?sel=16073387", "notes": "Must be logged in. Open smiley menu in the comment form and scroll it to the bottom "}]
+    "sample": [{
+      "url": "https://vk.com/im?sel=16073387",
+      "notes": "Must be logged in. Open smiley menu in the comment form and scroll it to the bottom "
+    }]
   },
   {"addr": "yandex.",
     "images": [
       {"i": "*://*/*/ftG_g5PBLY3vNpbeycqToQ3F5y8.gif", "w": 16, "h": 11},
       {"i": "*://yastatic.net/lego/_/tHcBUnL3D9mrTyVZel0VrmPwqlc.png", "w": 16, "h": 11, "gradient": true},
+      {"i": "*://yastatic.net/mail/_/8677dfed64c931dd3b426727b005ce4e-b-mail-icon_lang-be.gif", "w": 16, "h": 11, "gradient": true},
       {"i": "*://*/*/b-country-flag_size-16_by", "w": 16, "h": 11},
       {"i": "*://*/*/b-country-flag_size-24_by", "w": 24, "h": 18},
       {"i": "*://*/*/b-country-flag_size-32_by", "w": 32, "h": 22},
@@ -62,7 +70,8 @@
           "content: '';",
           "display: inline-block;",
           "position: absolute;",
-          "top: 7px;",
+          "top: 50%;",
+          "transform: translateY(-50%);",
           "left: 7px;",
           "width: 16px;",
           "height: 12px;",
@@ -78,12 +87,14 @@
       "}",
       "/* Metrika countries */",
       ".icon__country_id_149 {",
-          "%3%",
+      "%3%",
       "}",
       ".b-country-flag_size-16_by {",
-          "%3%",
+      "%3%",
       "}",
+      "/* Currency converter */",
       ".select__item_lang_by .select__text:before,",
+      ".converter-form__flag_lang_by:after,",
       ".select_view_country .button_lang_by:after {",
           "%4%",
           "background-position: 0 0 !important;",
@@ -114,8 +125,8 @@
     ],
     "sample": [
       {"url": "http://rutracker.org/forum/profile.php?mode=viewprofile&u=21923338", "notes": "See user flag. You must be logged in"},
-      {"url": "https://by.rutracker.org/forum/index.php", "notes": "Logo must be white-red-white"},
-      {"url": "https://ua.rutracker.org/forum/", "notes": "In footer"}
+      {"url": "https://by.rutracker.org/forum/index.php", "notes": "Logo must be white-red-white. unavailable 2018-03"},
+      {"url": "https://ua.rutracker.org/forum/", "notes": "In footer. unavailable 2018-03"}
     ]
   },
   { "addr": "skyscanner\\.*",
@@ -124,13 +135,6 @@
       {"i": "*://*/*header/BY.png", "w": 50, "h": 38, "outline": 0 }
     ],
     "sample": [{"url": "http://www.skyscanner.net/", "notes": "In header from BLR IP. Also click it for dialog and hamburger menu"}]
-  },
-  { "addr": "kvitki.by",
-    "images": [
-      { "i": "lang_by.gif", "w": 16, "h": 12, "gradient": true },
-      { "i": "lang_by_ov.gif", "w": 16, "h": 12, "red": "#888", "gradient": true }
-    ],
-    "sample": [{ "url": "http://www.kvitki.by/", "notes": "In header icon + hover"}]
   },
   {
     "addr": "ticketpro.by",
@@ -166,23 +170,6 @@
     "sample": [{"url": "http://www.kinopoisk.ru/lists/m_act%5Bcountry%5D/69/", "notes": "On map and in every search list item"}]
   },
   {
-    "addr": "belpost.by",
-    "images": [{"i": "i/blr.jpg", "w": 25, "h": 13, "outline": 0.2}],
-    "sample": [{"url": "http://belpost.by/", "notes": "In header"}]
-  },
-  {
-    "addr": "gismeteo.",
-    "css": [
-      ".flag.bel {",
-      "%1%",
-      "background-position: 0 0 !important;",
-      "}"],
-    "cssReplace": [
-      {"%1%": {"f": "flagBGI", "arg": { "w": "auto", "outline": 0.04, "white": "#F0EFF0" }}}
-    ],
-    "sample": [{ "url": "http://tourism.gismeteo.ru", "notes": "Flags block"}]
-  },
-  {
     "addr": "vandrouki.",
     "images": [{"i": "*://*/Belarus.png", "w": 17, "h": 10}],
     "sample": [
@@ -202,6 +189,7 @@
     "images": [
       {"i": "th_blr4.jpg", "replacer": {"f": "res", "arg": "pressballFlagBy.png"}},
       {"i": "blr4.jpg", "replacer": {"f": "res", "arg": "pressballFlagBy.png"}},
+      {"i": "th_belarusflag.gif", "replacer": {"f": "res", "arg": "pressballFlagBy.png"}},
       {"i": "th_belarus.jpg", "w": 200, "h": 131}
     ],
     "sample": [{"url": "http://www.pressball.by/online/handball/argentinahand_belarus_2016-01-08", "notes": "Second flag"}]
@@ -247,12 +235,7 @@
     ]
   },
   {
-    "addr": "sportpanorama.by",
-    "images": [{"i": "/flags/1.jpg", "w": 16, "h": 11, "outline": 0.15, "emboss": 0.27, "gradient": true }],
-    "sample": [{"url": "http://sportpanorama.by/themes/49/table/", "notes": "See table"}]
-  },
-  {
-    "addr": "(myscore\\.ru)|(soccerstand\\.com)|(livescore\\.in)",
+    "addr": "(myscore\\.com\\.ua)|(soccerstand\\.com)|(livescore\\.in)",
     "css": [
       ".flag.fl_31 { ",
       "%1%",
@@ -262,11 +245,15 @@
       {"%1%": {"f": "flagBGI", "arg": {"w": 16, "h": 12, "canvasW": 16, "canvasH": 13, "outline": 0.16, "gradient": true}}}
     ],
     "images": [{"i": "/image/data/rN9xhjRc-I7KbpC8c.png", "w": 50, "h": 25, "canvasW": 50, "canvasH": 50}],
-    "sample": [{"url": "http://www.myscore.ru/football/belarus/super-cup/", "notes": "In breadcrumbs"}]
+    "sample": [
+      {"url": "http://www.myscore.com.ua/football/belarus/super-cup/", "notes": "In breadcrumbs"},
+      {"url": "https://www.soccerstand.com/", "notes": "In sidebar"},
+      {"url": "https://www.livescore.in/", "notes": "In sidebar"}
+    ]
   },
   {
     "addr": "championat.com",
-    "images": [{"i": "http://st.championat.com/i/flags/18x12/by.png", "w": 18, "h": 12, "outline": 0}],
+    "images": [{"i": "*://st.championat.com/i/flags/18x12/by.png", "w": 18, "h": 12, "outline": 0}],
     "sample": [{"url": "http://www.championat.com/tennis/player/208.html", "notes": "See bio 'Гражданство'"}]
   },
   {
@@ -325,7 +312,8 @@
   },
   {
     "addr": "soccer.ru",
-    "images": [{"i": "files/flags/15.gif", "w": 21, "h": 13, "gradient": "wave", "outline": 0.02, "emboss": 0}],
+    "css": ".flag-icon.flag-icon-17 { background: url('%1%') 50% 50% no-repeat; }",
+    "cssReplace": [{"%1%": {"f": "flagURL", "arg": {"w": 20, "h": 15, "gradient": true }}}],
     "sample": [{"url": "http://www.soccer.ru/teams/teamfixtures/340.shtml"}]
   },
   {
@@ -356,6 +344,7 @@
 
     "sample": [
       {"url": "http://livetv.sx/livescore/", "notes": "Scroll to find Belarus - national/by.gif"},
+      {"url": "http://livetv.sx/tables/111/"},
       {"url": "http://livetv.sx/eventinfo/311107_belarus_russia/", "notes": "50x50 livetv-teams-fullsize-1373.gif "},
       {"url": "http://livetv.sx/showvideo/252655_belarus_russia/", "notes": "36x36 livetv-teams-1374.gif"}
     ],
@@ -363,6 +352,7 @@
     "images": [
       {"i": "*://cdn.livetvcdn.net/img/national/by.gif", "w": 16, "h": 11, "gradient": true },
       {"i": "*://cdn.livetvcdn.net/img/flags/24.png", "w": 16, "h": 11, "gradient": true },
+      {"i": "*://cdn.livetvcdn.net/img/tables/111.gif", "replacer": {"f": "res", "arg": "livetv-teams-fullsize-1373.gif"}},
       {"i": "*://*/*/icons/by.gif", "replacer": {"f": "res", "arg": "livetv-img-icons-by.gif"}},
 
       {"i": "*://cdn.livetvcdn.net/img/teams/fullsize/1372.gif", "replacer": {"f": "res", "arg": "livetv-teams-fullsize-1373.gif"}},
@@ -442,32 +432,36 @@
 
   { "addr": "uefa.com",
     "images": [
-      { "i": "*://*.uefa.com/imgml/flags/50x50/BLR.png", "replacer": {"f": "res", "arg": "sciahSphere.svg"}},
-      { "i": "*://*.uefa.com/imgml/flags/18x18/BLR.png", "replacer": {"f": "res", "arg": "sciahSphere.svg"}},
-      { "i": "*://*.uefa.com/imgml/flags/18x18/blr.png", "replacer": {"f": "res", "arg": "sciahSphere.svg"}},
-      { "i": "*://*.uefa.com/imgml/flags/36x36/BLR.png", "replacer": {"f": "res", "arg": "sciahSphere.svg"}}
+      { "i": "*://*.uefa.com/imgml/flags/*/BLR.png", "replacer": {"f": "res", "arg": "sciahSphere.svg"}},
+      { "i": "*://*.uefa.com/imgml/flags/*/blr.png", "replacer": {"f": "res", "arg": "sciahSphere.svg"}}
     ],
     "sample": [
       { "url": "http://www.uefa.com/uefaeuro/season=2016/teams/index.html", "notes": ""},
       { "url": "http://www.uefa.com/uefaeuro/season=2016/teams/team=57155/index.html", "notes": ""},
-      { "url": "http://www.uefa.com/uefaeuro/season=2016/teams/player=250011531/index.html", "notes": ""}
+      { "url": "http://www.uefa.com/uefaeuro/season=2016/matches/round=2000446/match=2013822/index.html", "notes": ""}
     ]
   },
 
-  { "addr": "iihf.com",
-    "images": [{ "i": "typo3temp/pics/b02f918562.jpg", "w": 44, "h": 27, "outline": 0.1, "emboss": 0 }],
-    "sample": [{ "url": "http://www.iihf.com/iihf-home/countries/belarus/"}]
+  { "addr": "iihf\\.com|iihfworlds\\.com",
+    "images": [
+      { "i": "typo3temp/pics/b02f918562.jpg", "w": 44, "h": 27, "outline": 0.1, "emboss": 0 },
+      { "i": "*://*.iihfworlds.com/media/182946/belarus.png*", "w": 30, "h": 22, "outline": 0, "emboss": 0 }
+    ],
+    "sample": [
+      { "url": "http://www.iihf.com/iihf-home/countries/belarus/"}
+    ]
   },
 
-  { "addr": "iihfworlds2016\\.com|worldjunior2016\\.com",
+  { "addr": "iihfworlds*\\.com|worldjunior*\\.com",
     "images": [
       { "i": "*://*/*images/umbraco/by.png", "w": 16, "h": 11, "gradient": true },
       { "i": "*://*/*182946/belarus.png", "w": 30, "h": 22, "gradient": true, "outline": 0.02 },
       { "i": "*://stats.iihf.com/Hydra/flags/16x11/BLR.png", "w": 15, "h": 11, "gradient": true },
+      { "i": "*://s.widgets.iihf.hockey/Hydra/flags/16x11/BLR.png", "w": 15, "h": 11, "gradient": true },
       { "i": "*://statspdf.iihf.com/Hydra/flags/30x22/BLR.png", "w": 30, "h": 22, "gradient": true, "outline": 0, "emboss": 0 }
     ],
     "sample": [
-      { "url": "http://www.iihfworlds2016.com/en/games/", "notes": ""},
+      { "url": "http://2018.iihfworlds.com/en/games/"},
       { "url": "http://www.iihfworlds2016.com/en/teams/belarus/#list", "notes": ""}
     ]
   },
@@ -509,8 +503,8 @@
     "cssReplace": [{"%1%": {"f": "flagBGI", "arg": {"red": "#ED5050"}}}],
     "images": [{"i": "*://*/*/country/s/by.gif", "w": 20, "h": 10, "red": "#E36060"}],
     "sample": [{
-      "url": "http://www.aliexpress.com/item/Pagonya-Flag-90x150cm-100D-Polyester-Belarus-Belarusian-flag-Country-Flags-and-Banners-For-Home-Decoration/32238574521.html",
-      "notes": "Scroll to Transaction History & Feedback, see people from Belarus"
+      "url": "https://ru.aliexpress.com/item/FreeShipping-3-5FT-90-150cm-Hanging-Barcelona-Flag-Office-Activity-parade-Festival-Home-Decoration-2016-New/32649045055.html",
+      "notes": "Open Отзывы"
     }]
   },
   {
@@ -527,9 +521,6 @@
     ],
     "images": [{"i": "icon/icon_BY_22x14.gif", "w": 22, "h": 14}],
     "sample": [{"url": "https://www.paypal.com/by/webapps/mpp/home", "notes": "In footer, and in country selector which is opened by clicking it"
-    }, {
-      "url": "https://www.paypal.com/by/signup/account",
-      "notes": "In footer"
     }, {
       "url": "",
       "notes": "icon/icon_BY_22x14.gif ??? don't remember where i saw it "
@@ -612,16 +603,6 @@
     "sample": [{"url": "http://codeforces.com/ratings/countries", "notes": "See Belarus"}]
   },
   {
-    "addr": "budist.ru",
-    "images": [{"i": "img/flags/by.png", "w": 16, "h": 11, "gradient": true}],
-    "sample": [{"url": "http://budist.ru/user740343/"}]
-  },
-  {
-    "addr": "greyorder.su",
-    "images": [{"i": "flags/by.png", "w": 16, "h": 11 }],
-    "sample": [{"url": "http://greyorder.su", "notes": "?? Legacy"}]
-  },
-  {
     "addr": "tamby.info",
     "images": [
       {"i": "images/flag/belarus_small_flag.gif", "w": 200, "h": 100, "outline": 0 },
@@ -668,6 +649,8 @@
   },
   {
     "addr": "flagcounter.com",
+    "css": ".flag-by-png {background: url('%1%') 0 0 no-repeat}",
+    "cssReplace": [{"%1%": {"f": "flagURL", "arg": {"w": 16, "h": 11, "gradient": true}}}],
     "images": [
       { "i": "*://cdn.boardhost.com/flags/by.png", "w": 16, "h": 11, "gradient": true },
       { "i": "*://*/*/flags_128x128/by.png", "w": 114, "h": 84, "gradient": true }
@@ -675,39 +658,11 @@
     "sample": [{ "url": "http://s03.flagcounter.com/factbook/by/7tv", "notes": "dropdown, and large one"}]
   },
   {
-    "addr": "(active)(cloud)?\\.(by|am|az|ge|com|ru|uz)",
-    "css": [
-      ".by > img, .ru-by > img,",
-      ".content .selector .selBar .cont ul.flags li.by a i,",
-      " li.lang a.by i,",
-      "i.by  {",
-      "%1%",
-      "background-position: 0 0 !important; ",
-      "}"],
-    "cssReplace": [{"%1%": {"f": "flagBGI", "arg": [{"w": 16, "h":11, "gradient": true}, true]}}],
-    "sample": [
-      { "url": "http://www.active.am/", "notes": "In menu"},
-      { "url": "http://www.active.by/", "notes": "In menu"},
-      { "url": "http://www.activecloud.ge/", "notes": "In menu"},
-      { "url": "http://www.active.uz/", "notes": "In menu"}
-    ]
-  },
-  {
-    "addr": "1c-bitrix.ru",
-    "images": [{ "i": "images/fsb_2014_country_ico_21.png", "w": 54, "h": 54, "r": 27  }],
-    "sample": [{ "url": "http://www.1c-bitrix.ru/about/seminars/fc/index.php#city_5990", "notes": "Country selector"}]
-  },
-  {
     "addr": "rfe.by",
-    "images": [{ "i": "templates/_ares/images/lang_by.gif", "w": 16, "h": 11, "gradient": "wave" }],
-    "sample": [{ "url": "http://www.rfe.by/", "notes": "In menu"}]
-  },
-  { "addr": "ranking.by",
     "images": [
-      { "i": "img/flags/by_wyb2.gif", "w": 28, "h": 17, "canvasW": 34, "canvasH": 25, "red": "#E13F63", "emboss": 0 },
-      { "i": "img/flags/by_wyb.gif", "w": 28, "h": 17, "canvasW": 34, "canvasH": 25, "emboss": 0 }
+      { "i": "templates/_ares/images/flag/flag_belarusi_.png", "w": 25, "h": 15 }
     ],
-    "sample": [{ "url": "http://ranking.by/", "notes": "Header + open dropdown menu"}]
+    "sample": [{ "url": "http://www.rfe.by/", "notes": "In menu"}]
   },
   { "addr": "paei.by",
     "images": [{ "i": "App_Themes/default/images/by.gif", "w": 39, "h": 26, "outline": 0, "white": "#D2D2D2" }],
@@ -725,10 +680,6 @@
     "images": [{ "i": "frontend/images/flag-by.gif", "w": 18, "h": 12, "outline": 1, "gradient": "wave" }],
     "sample": [{ "url": "http://www.techlabs.by/", "notes": "Side menu"}]
   },
-  { "addr": "techlabs.ua",
-    "images": [{ "i": "frontend/images/flag_by.gif", "w": 18, "h": 12, "outline": "#868186", "gradient": "wave", "red": "#FD4848" }],
-    "sample": [{ "url": "http://www.techlabs.ua/", "notes": "Side menu"}]
-  },
   { "addr": "parta.by",
     "images": [{ "i": "resources/icons/flag_by.gif", "w": 18, "h": 12, "red": "#C62643", "white": "#F9F9F9", "gradient": "wave", "outline": 0 }],
     "sample": [{ "url": "http://www.parta.by/"}]
@@ -736,29 +687,14 @@
   { "addr": "(portal-)?fotoclub.(ru|org\\.ua|kz)",
     "images": [{ "i": "*://*/*-images/icons/flag-by.png", "w": 40, "h": 25, "outline": 0.05, "emboss": 0 }],
     "sample": [
-      { "url": "http://fotoclub.by/"},
       { "url": "http://www.portal-fotoclub.ru/"},
-      { "url": "http://www.fotoclub.org.ua/"},
-      { "url": "http://www.photoclub.kz/"}
-    ]
-  },
-  { "addr": "mypet.by",
-    "images": [
-      { "i": "images/flags/16x12/by.png", "w": 16, "h": 12, "gradient": true},
-      { "i": "images/flags/50x50/by.png", "replacer": {"f": "res", "arg": "sciahSphere.svg"}}
-    ],
-    "css": [ "img[src $='50x50/by.png']{",
-      "width: 50px;",
-      "height: 50px;",
-      "box-sizing: border-box;",
-      "padding: 2px;",
-      "}"],
-    "sample": [
-      { "url": "http://mypet.by/pitomnik/Yaks-Vonavi", "notes": "Sphere & small"}
+      { "url": "http://www.fotoclub.org.ua/"}
     ]
   },
   { "addr": "autoline(-?(eu|ba|nl|bg|arabic|tm|market))?(\\.(com|co))?.*",
-    "images": [{ "i": "*://*/*flags/ids-png/by.png", "w": 16, "h": 11, "gradient": true }],
+    "images": [
+      { "i": "*://autoline.by/img/flags/ids/by.gif", "w": 16, "h": 11, "gradient": true }
+    ],
     "css": [
       ".spr-fl.spr-fl-by {",
       "%1%",
@@ -766,12 +702,6 @@
       "}"],
     "cssReplace": [{"%1%": {"f": "flagBGI", "arg": {"w": 16, "h": 11, "gradient": true} }}],
     "sample": [{ "url": "http://autoline.by/", "notes": "Open menu"}]
-  },
-  { "addr": "brestintourist.by",
-    "images": [{ "i": "media/mod_languages/images/be.gif", "w": 18, "h": 12, "gradient": true, "outline": 0 }],
-    "sample": [
-      { "url": "http://brestintourist.by/"}
-    ]
   },
   { "addr": "yoox.com",
     "images": [{ "i": "*://*/*yoox90/layout/flags/BY.jpg", "w": 20, "h": 13 }],
@@ -825,21 +755,20 @@
 
   {"addr": "megogo.net",
     "css": [
-      ".flag.flag-by {",
+      ".flag.flag--by {",
           "%1%",
-          "background-position: 0 0; ",
+          "background-position: 0 0; background-size: cover;",
       "}"],
     "cssReplace": [{"%1%": {"f": "flagBGI", "arg": {"w": 18, "h": 12, "outline": 0, "red": "#D52B1E", "emboss": 0}}}],
-    "sample": [{ "url": "http://megogo.net/by", "notes": "Lang menu"}]
-  },
-
-  { "addr": "seorank.by",
-    "images": [{ "i": "*://sypexgeo.net/img/flags/by.png", "replacer": {"f": "res", "arg": "sypexgeo-by.png"} }],
-    "sample": [{ "url": "http://seorank.by/doorwood.by", "notes": "Scroll down to map"}]
+    "sample": [{ "url": "http://megogo.net/en", "notes": "Open lang menu"}]
   },
 
   { "addr": "equatorial.by",
-    "images": [{ "i": "equatorial.by/files/belarus_001.gif", "w": 448, "h": 299, "emboss": 0}],
+    "images": [
+      { "i": "*://equatorial.by/sites/all/themes/equatorial/images/bel_62.png",
+        "w": 16, "h": 12, "emboss": 0, "gradient": true, "r": 1, "outline": 0
+      }
+    ],
     "sample": [{ "url": "http://equatorial.by/node/55"}]
   },
 
@@ -853,25 +782,10 @@
   },
 
   { "addr": "weather-forecast.com",
-    "images": [{ "i": "*://*.fast-meteo.com/flags/BO.gif", "w": 108, "h": 54, "outline": 0.02, "emboss": 0 }],
-    "sample": [{ "url": "http://www.weather-forecast.com/locations/Minsk/forecasts/latest"}]
-  },
-
-  { "addr": "goethe.de",
-    "images": [
-      { "i": "flaggen/be-flg.gif", "w": 16, "h": 10, "canvasW": 20, "canvasH": 14, "outline": 0.03, "emboss": 0 },
-      { "i": "flaggen/be-flg_ac.gif", "w": 16, "h": 10, "canvasW": 20, "canvasH": 14, "outline": 0.03, "emboss": 0  },
-      { "i": "flaggen/be-flk.gif", "w": 10, "h": 8, "outline": 0.15, "emboss": 0  }
-    ],
-    "css": [
-      "img[src *='be-flg_ac.gif'] {",
-          "box-shadow: inset 0 0 0 1px #808080;",
-      "}",
-      "img[src *='be-flk.gif'] {",
-          "height: 8px;",
-          "border-top: 2px solid #fff;",
-      "}"],
-    "sample": [{ "url": "http://www.goethe.de/ins/by/be/min.html", "notes": "In header lang switcher and in news small flags"}]
+    "css": ".flag.flag-by { %1%; background-position: 0 0; background-size: contain; }",
+    "cssReplace": [{"%1%": {"f": "flagBGI", "arg": {"w": 18, "h": 12, "gradient": true, "emboss": 0}}}],
+    "images": [{ "i": "*://*.weather-forecast.com/flags/BO.gif", "w": 108, "h": 54, "outline": 0.1, "emboss": 0 }],
+    "sample": [{ "url": "https://www.weather-forecast.com/countries/Belarus"}]
   },
 
   { "addr": "lichess.org",
@@ -880,7 +794,11 @@
   },
 
   { "addr": "daroo\\.*",
-    "images": [{ "i": "*://*/*images/new/flags/flag_01.png", "w": 45 , "h": 26, "outline": 0, "red": "#DA4B4C", "emboss": 0 }],
+    "images": [
+      { "i": "*://daroo.by/img/flags/by.png", "canvasW": 16, "canvasH": 16, "w": 14 , "h": 14, "outline": 0.05, "emboss": 0},
+      { "i": "*://daroo.ru/img/flags/by.png", "canvasW": 16, "canvasH": 16, "w": 14 , "h": 14, "outline": 0.05, "emboss": 0},
+      { "i": "*://daroo.ua/img/flags/by.png", "canvasW": 16, "canvasH": 16, "w": 14 , "h": 14, "outline": 0.05, "emboss": 0}
+    ],
     "sample": [
       { "url": "http://daroo.by/", "notes": "In footer"},
       { "url": "http://daroo.ru/", "notes": "In footer"},
@@ -910,10 +828,10 @@
   { "addr": "all.biz",
     "css": [ "[class *='g-flag_']._by {",
       "%1%",
-      "background-position: 0 0;",
+      "background-position: center;",
       "}"],
-    "cssReplace": [{"%1%": {"f": "flagBGI", "arg": [{"w": "auto", "white": "#fdfdfd", "emboss": 0 }, true]}}],
-    "sample": [{ "url": "http://minsk.all.biz/odezhda-zashchitnaya-dlya-pozharnyh-bgg1043233/taksir-ooo-k18353"}]
+    "cssReplace": [{"%1%": {"f": "flagBGI", "arg": [{"w": 22, "h": 16, "outline": 0.07 }, true]}}],
+    "sample": [{ "url": "https://all.biz/", "notes": "in footer"}]
   },
 
   { "addr": "eliteprospects.com",
@@ -933,7 +851,7 @@
   },
 
   { "addr": "censor.net.ua",
-    "images": [{ "i": "images/flags/by.png", "w": 16, "h": 11, "gradient": true}],
+    "images": [{ "i": "*://*.censor.net/images/flags/by.png", "w": 16, "h": 11, "gradient": true}],
     "sample": [{ "url": "http://censor.net.ua/user/347339", "notes": "Must be logged in from belarusian IP. See flag in header near your own username"}]
   },
 
@@ -959,7 +877,7 @@
     "cssReplace": [{"%1%": {"f": "flagBGI", "arg": {"w": 16, "h": 11, "gradient": true }}}],
     "sample": [{ "url": "http://goodgame.ru/user/167963/", "notes": ""}]
   },
-  
+
   { "addr": "iherb.com",
     "css": [
       ".flag-sprite.by {",
@@ -976,11 +894,13 @@
   { "addr": "vegas\\.by|vegasmattresses\\.com",
     "images": [
       { "i": "*://*/*frontend/vegas/default/images/flag-by.gif", "w": 19, "h": 15, "gradient": true, "outline": 0.03, "emboss": 0 },
-      { "i": "*://www.vegas.by/geo/images/flag_belarus.png", "canvasW": 48, "canvasH": 48, "w": 46, "h": 36, "gradient": true, "emboss": 0 }
+      { "i": "*://www.vegas.by/geo/images/flag_belarus.png", "canvasW": 48, "canvasH": 48, "w": 46, "h": 36, "gradient": true, "emboss": 0 },
+      { "i": "*://*.vegasgroup.by/skin/frontend/vegas5/default/images/flag-by.png",  "canvasW": 48, "canvasH": 48, "w": 46, "h": 36, "gradient": true, "emboss": 0  }
     ],
     "sample": [
       { "url": "http://www.vegas.by/global", "notes": "Try from Belarusian IP and a foreign"},
-      { "url": "http://www.vegasmattresses.com/"}
+      { "url": "http://www.vegasmattresses.com/"},
+      { "url": "https://www.vegasgroup.by/ru/dealers"}
     ]
   },
 
@@ -989,13 +909,277 @@
     "sample": [{ "url": "http://steamcommunity.com/profiles/76561198282877125", "notes": ""}]
   },
 
-  { "addr": "feedjit.com",
-    "images": [{ "i": "*://feedjit.com/images/flags/by.png", "w": 16, "h": 11, "gradient": true }],
-    "sample": [{ "url": "http://www.mguhlin.org/2012/01/saving-mp4-videos-onto-your-ios-ipad.html", "notes": "You should be in the list on the left (From BLR IP!)"}]
+  { "addr": "alfabank.by",
+    "images": [{
+      "i": "*://*.alfabank.by/local/images/markup-images/currency/blr.png",
+      "w": 40, "h": 28, "outline": 0, "emboss": 0
+    }],
+    "sample": [{ "url": "https://www.alfabank.by/exchange.php"}]
   },
 
-  { "addr": "alfabank.by",
-    "images": [{ "i": "images/flags/flag_2.png", "replacer": {"f": "res", "arg": "alfabank.by.flag_2.png"}}],
-    "sample": [{ "url": "https://www.alfabank.by/exchange.php"}]
-  }
+  { "addr": "booking.com",
+    "css": ".cflag-by { background: url('%1%') center no-repeat; }",
+    "cssReplace": [{"%1%": {"f": "flagURL", "arg": {"w": 18, "h": 14, "outline": 0.1, "r": 1 }}}],
+    "images": [
+      {
+        "i": "*://*.bstatic.com/static/img/flags/32/by/26572bd2cd60aee24b4bf96e55d0346969c022d9.png",
+        "w": 16, "h": 11, "gradient": true
+      },
+      {
+        "i": "*://*.bstatic.com/static/img/flags/24/by/e48d805eea48584a4fa1f187158086e183942a57.png",
+        "canvasW": 24, "canvaH": 24, "w": 18, "h": 14, "gradient": true, "r": 1, "emboss": 0.2
+      }
+    ],
+    "sample": [
+      {"url": "http://www.booking.com/?aid=912188&label=affnetadmitad-index-1_pub-90289_site-83837_clkid-2ecce643ef1214b5d3e2bb85d59f8eab&utm_medium=affnet&utm_source=admitad&utm_campaign=ru&utm_term=index-1",
+      "notes": "Search something in minsk. In the right screen half there should be Minsk card with the flag after search. "}
+    ]
+  },
+
+  { "addr": "minsktrans.by",
+    "images": [
+      { "i": "*://*.minsktrans.by/media/mod_languages/images/be.gif", "w": 18, "h": 12, "outline": 0.07 }
+    ],
+    "sample": [{ "url": "http://www.minsktrans.by/by/", "notes": "Header menu"}]
+  },
+
+  { "addr": "lamoda\\.*",
+    "images": [
+      { "i": "*://*.lmcdn.ru/st/d/*/*/i/global/icon-flag-by.svg", "w": 16, "h": 11, "outline": 0 }
+    ],
+    "sample": [{ "url": "https://www.lamoda.by/p/lo019ewctm96/clothes-lostink-plate/"}]
+  },
+
+  { "addr": "synlab.by",
+    "images": [
+      { "i": "*://*.synlab.by/fileadmin/template/img/flag_by.gif",
+        "w": 16, "h": 11, "gradient": true, "outline": 0, "emboss": 0.1
+      },
+      { "i": "*://*.synlab.by/fileadmin/template/img/flag/flag_Belarus.gif",
+        "w": 16, "h": 11, "gradient": true, "outline": 0, "emboss": 0.1
+      }
+    ],
+    "sample": [{ "url": "http://www.synlab.by/by/glavnaja/"}]
+  },
+
+  { "addr": "originalam.net",
+    "css": [
+      ".select2-container--currency .select2-selection__rendered[title=BYN] {",
+        "%1%",
+        "background-position: 0 50%;",
+      "}",
+      ".select2-container--currency .select2-results__option[id$=BYN]{",
+        "%1%",
+        "background-position: 15px 50%;",
+      "}"
+    ],
+    "cssReplace": [
+      {"%1%": {"f": "flagBGI", "arg": {"w": 20, "h": 14, "emboss": 0, "outline": 0.05}}}
+    ],
+    "sample": [{ "url": "https://originalam.net", "notes": ""}]
+  },
+
+  { "addr": "domofoto.ru",
+    "images": [
+      { "i": "*://domofoto.ru/img/r/by.gif", "w": 16, "h": 11, "gradient": true, "outline": 0.07 }
+    ],
+    "sample": [{ "url": "http://domofoto.ru/cities"}]
+  },
+
+  { "addr": "ipinfo.io",
+    "css": [
+      ".flag.flag-by:before {",
+        "%1%",
+        "background-position: 0 50%",
+      "}"
+    ],
+    "cssReplace": [
+      {"%1%": {"f": "flagBGI", "arg": {"w": 16, "h": 11, "outline": 0.1}}}
+    ],
+    "sample": [{ "url": "https://ipinfo.io/93.84.107.76"}]
+  },
+
+  { "addr": "5legko.com",
+    "images": [
+      {"i": "http://5legko.com/files/location_countries/4/phone_flag/previewby.png", "w": 16, "h": 11, "outline": 0.1}
+    ],
+    "sample": [{ "url": "https://5legko.com/ru/registration/tutor/"}]
+  },
+
+  { "addr": "koltyrin.ru",
+    "images": [
+      { "i": "*://geo.koltyrin.ru/img/country/13flag.png", "w": 135, "h": 90, "outline": 0.05, "emboss": 0 },
+      { "i": "*://geo.koltyrin.ru/img/country/13coat.png", "replacer": "%pahoniaURL%" }
+    ],
+    "css": "img[src*='img/country/13coat.png']:not([style*=width]):not([width]){ width:100px }",
+    "sample": [
+      { "url": "http://geo.koltyrin.ru/kody_stran_mira.php", "notes": ""},
+      { "url": "http://geo.koltyrin.ru/country.php?country=Белоруссия", "notes": ""},
+      { "url": "http://geo.koltyrin.ru/goroda.php?country=Белоруссия", "notes": ""}
+    ]
+  },
+
+  { "addr": "tapochek.net",
+    "images": [
+      { "i": "http://tapochek.net/images/flags/112.png",
+        "canvasW": 32, "canvasH": 32, "w": 30, "h": 24, "gradient": true, "outline": 0.1, "emboss": 0.05 }
+    ],
+    "sample": [{ "url": "http://tapochek.net/viewtopic.php?t=4859&start=1550", "notes": "Search Aspid"}]
+  },
+
+  { "addr": "accuweather.com",
+    "images": [
+      { "i": "*://*.accuweather.com/adc2010/images/flags/BY.png",
+        "w": 22, "h": 16, "gradient": true, "outline": 0.05, "emboss": 0.1 }
+    ],
+    "css": "#menu-country .menu-title span span {background-position: 0 0;}",
+    "sample": [{ "url": "https://www.accuweather.com/ru/by/-/29704/daily-weather-forecast/29704#menu-country", "notes": ""}]
+  },
+
+  { "addr": "countrymeters.info",
+    "images": [
+      { "i": "*://countrymeters.info/images/flags/big/by.png", "w": 160, "h": 80, "outline": 0, "emboss": 0 }
+    ],
+    "sample": [{ "url": "http://countrymeters.info/ru/Belarus"}]
+  },
+
+  { "addr": "nnm-club.me",
+    "images": [
+      { "i": "*://*.nnm-club.ws/forum/images/flags/belarus.gif", "w": 32, "h": 20, "outline": 1 }
+    ],
+    "sample": [{ "url": "https://nnm-club.me/forum/viewtopic.php?p=5613914"}]
+  },
+
+  { "addr": "parimatch.by",
+    "images": [
+      { "i": "*://*.parimatch.by/wp-content/themes/retail/images/by.jpg",
+        "w": 22, "h": 14, "outline": 0.07, "emboss": 0 }
+    ],
+    "sample": [{ "url": "http://retail.parimatch.by/", "notes": ""}]
+  },
+
+  { "addr": "eda.by",
+    "images": [
+      { "i": "*://*.eda.by/images/by.png", "w": 16, "h": 11, "gradient": true, "outline": 0 }
+    ],
+    "css": [
+      ".langby {",
+        "background: url('%1%') center right / 28px 28px no-repeat !important;",
+        "margin-right: 1px;",
+        "width: 14px;",
+        "height: 28px;",
+        "border-radius: 0 14px 14px 0;",
+        "box-shadow: 0 1px 1px rgba(0,0,0,.2);",
+      "}",
+      ".langby:hover {",
+        "filter: brightness(107%);",
+        "box-shadow: 0 1px 1px rgba(0,0,0,.22);",
+      "}"
+    ],
+    "cssReplace": [
+      {"%1%": {"f": "res", "arg": "sciahSphere.svg"}}
+    ],
+    "sample": [{ "url": "http://eda.by", "notes": "+ hover"}]
+  },
+
+  { "addr": "flyuia.com",
+    "images": [
+      { "i": "*://*.flyuia.com/assets/img/header/countries/by.png*", "w": 20, "h": 20, "outline": 1, "r": 10 }
+    ],
+    "sample": [{ "url": "https://www.flyuia.com/by/en/home", "notes": ""}]
+  },
+
+  { "addr": "itftennis.com",
+    "images": [
+      { "i": "*://*.itftennis.com/itf/flags/46/BLR.gif", "w": 46, "h": 33, "gradient": true, "outline": 0.07 }
+    ],
+    "sample": [{ "url": "http://www.itftennis.com/juniors/players/player/profile.aspx?playerid=100160537", "notes": ""}]
+  },
+
+  { "addr": "15gdp.by",
+    "css": [
+      "a.uk-lang-link.flag[title='Belarusian'] {",
+        "background: url('%1%') no-repeat 50% 50% !important;",
+      "}"
+    ],
+    "cssReplace": [
+      {"%1%": {"f": "flagURL", "arg": {"w": 32, "h": 22, "outline": 0.07, "gradient": true, "r": 1}}}
+    ],
+    "sample": [{ "url": "http://www.15gdp.by/", "notes": "Open flag menu"}]
+  },
+
+  { "addr": "tb.by",
+    "images": [
+      { "i": "*://tb.by/upload/iblock/c77/d85886f7818fbb4a4f22a352c2800535.png", "w": 22, "h": 14, "outline": 0.05, "emboss":0 }
+    ],
+    "sample": [{ "url": "https://tb.by/by/individuals/", "notes": "Currency converter"}]
+  },
+
+  { "addr": "ustraveldocs.com",
+    "images": [
+      { "i": "*://ustraveldocs.com/images/the_belarus_flag.png", "w": 15, "h": 10, "outline": 0, "emboss": 0 }
+    ],
+    "sample": [{ "url": "http://ustraveldocs.com", "notes": "Click Europe, see dialog"}]
+  },
+
+  { "addr": "britishairways.com",
+    "images": [
+      { "i": "*://*.britishairways.com/cms/global/assets/images/Wherewefly/routemaps2010/flags/24/by.png",
+        "w": 20, "h": 16, "outline": 0, "emboss": 0 }
+    ],
+    "sample": [{ "url": "https://www.britishairways.com/travel/home/public/en_by", "notes": ""}]
+  },
+
+  { "addr": "fastspring.com",
+    "images": [
+      { "i": "*://dcnz2rrcot657.cloudfront.net/country/fam/by.png", "w": 16, "h": 11, "gradient": true }
+    ],
+    "sample": [{ "url": "https://sites.fastspring.com/bohemian/order/contents", "notes": ""}]
+  },
+
+  { "addr": "36gp.by",
+    "css": [
+      "#flags.size24 a[title='Belarusian'],",
+      " .tool-container .tool-items a[title='Belarusian'],",
+      " a.single-language[title='Belarusian'] span.size24 {",
+        "background: url('%1%') 50% 0 no-repeat !important;",
+        "width: 22px !important; height: 16px !important; padding: 0; margin: 0 3px 0 0; ",
+        "box-shadow: 0 1px 2px rgba(0,0,0,.3);",
+        "border-radius: 1px;",
+        "transform: translateX(1px);",
+      "}"
+    ],
+    "cssReplace": [
+      {"%1%": {"f": "flagURL", "arg": {"w": 22, "h": 16, "gradient": true, "emboss": 0, "outline": 0.02}}}
+    ],
+    "sample": [{ "url": "http://36gp.by", "notes": ""}]
+  },
+
+  { "addr": "017.by",
+    "images": [
+      { "i": "*://017.by/sites/all/modules/currency_converter/css/images/byr.png",
+        "w": 22, "h": 22, "gradient": true, "outline": 0.3, "r": 2 }
+    ],
+    "sample": [{ "url": "http://017.by/kogda-vklyuchat-otoplenie", "notes": "Currency converter"}]
+  },
+
+  { "addr": "olympic.org",
+    "images": [
+      { "i": "*://*.pyeongchang2018.com/**/resCOMMON/img/flags/BLR.png", "w": 270, "h": 180, "emboss": 0, "outline": 0},
+      { "i": "*://stillimg.olympic.org/flags/3x2/45x30/blr.png", "w": 45, "h": 30, "outline": 0, "emboss": 0 }
+    ],
+    "sample": [
+      { "url": "https://www.pyeongchang2018.com/en/game-time/results/PWG2018/en/general/npc-entries-belarus.htm", "notes": "Select Belarus in sidebar"},
+      { "url": "https://www.pyeongchang2018.com/en/game-time/results/PWG2018/en/biathlon/daily-schedule.htm"},
+      { "url": "https://www.pyeongchang2018.com/en/game-time/results/PWG2018/en/cross-country-skiing/athlete-profile-n3051074-sviatlana-sakhanenka.htm"}
+    ]
+  },
+
+  { "addr": "palas.by",
+    "images": [
+      { "i": "*://*.palas.by/upload/small/upfilebb6298d027.jpg", "w": 105, "h": 98, "gradient": true, "outline": 0.1, "r": 8 }
+    ],
+    "sample": [{ "url": "http://www.palas.by/wallpaper/", "notes": ""}]
+  },
+  {"//": "CHECK THAT getDataSource PULLS LOCAL DATA LOCALLY!"}
 ]

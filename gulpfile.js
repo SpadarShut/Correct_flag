@@ -12,7 +12,7 @@ var gulpSequence = require('gulp-sequence');
 //      }))
 //      .pipe(gulp.dest('./public/css'));
 //});
-gulp.task('build', gulpSequence(['clean', 'copy', 'zip']));
+gulp.task('build', gulpSequence('clean', 'copy', 'zip'));
 
 gulp.task('clean', function(cb) {
   return del('build/codez**');
